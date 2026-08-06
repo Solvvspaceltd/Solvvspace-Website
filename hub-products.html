@@ -1,52 +1,403 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>SS Hub — Products | SolvvSpace</title><meta name="description" content="SolvvSpace HR and IT Support software built on Microsoft Power Apps."/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SS Hub — Products | SolvvSpace</title>
+<meta name="description" content="SolvvSpace HR, Payslip Management, and IT Support — Microsoft 365-native business apps with transparent per-user monthly pricing."/>
 <link rel="icon" type="image/png" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-<style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;color:#1C2231;background:#fff;-webkit-font-smoothing:antialiased;}a{text-decoration:none;color:inherit;}
-.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}.fu.vis{opacity:1;transform:translateY(0);}
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;--sky-400:#4AABF0;--sky-600:#1A7EC4;--sky-800:#0D4F80;--sky-900:#072F50;--slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;--slate-400:#8A909E;--slate-600:#545B6B;--slate-900:#1C2231;--green:#1D9E75;--purple:#7c3aed;--amber:#d97706;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;}a{text-decoration:none;color:inherit;}img{display:block;max-width:100%;}
+.fu{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}.fu.vis{opacity:1;transform:translateY(0);}
 .fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
-@media(max-width:900px){nav{padding:0 20px!important;}[style*="padding:60px 40px"],[style*="padding:56px 40px"]{padding:40px 20px!important;}[style*="grid-template-columns:repeat(2"],[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}[style*="grid-template-columns:2fr"]{grid-template-columns:1fr!important;}footer{padding:16px 20px!important;flex-direction:column!important;}}
+.nav{position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);}
+.nav-brand{display:flex;align-items:center;gap:9px;}.nav-brand img{height:44px;width:44px;object-fit:contain;mix-blend-mode:screen;}
+.nav-brand-text{font-family:var(--fh);font-size:18px;font-weight:700;letter-spacing:-.3px;color:#fff;}.nav-brand-text span{color:var(--sky-400);}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nla{font-family:var(--fb);font-size:13.5px;color:rgba(255,255,255,.62);padding:7px 13px;border-radius:6px;transition:color .15s,background .15s;}.nla:hover,.nla.active{color:#fff;background:rgba(255,255,255,.08);}
+.nav-cta{font-family:var(--fh);font-size:13px;font-weight:500;background:var(--sky-600);color:#fff;border:none;padding:9px 22px;border-radius:8px;transition:background .15s;white-space:nowrap;display:inline-block;}.nav-cta:hover{background:var(--sky-800);}
+.page-hero{background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:60px 40px 56px;position:relative;overflow:hidden;}
+.page-hero-glow{position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.13) 0%,transparent 70%);}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.35);margin-bottom:14px;}
+.breadcrumb a{color:rgba(255,255,255,.35);}.breadcrumb a:hover{color:rgba(255,255,255,.7);}.bc-sep{color:rgba(255,255,255,.18);}
+.page-eyebrow{font-size:11px;font-weight:600;letter-spacing:2px;color:var(--sky-400);text-transform:uppercase;margin-bottom:10px;}
+.page-hero h1{font-family:var(--fh);font-size:clamp(26px,4vw,38px);font-weight:700;color:#fff;line-height:1.15;letter-spacing:-.5px;margin-bottom:14px;}
+.page-hero h1 em{font-style:normal;color:var(--sky-400);}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.56);line-height:1.75;max-width:560px;margin-bottom:22px;}
+.m365-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:7px 16px 7px 10px;font-size:12px;font-weight:500;color:rgba(255,255,255,.7);}
+.mslg{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:18px;height:18px;}.mslg div{border-radius:1px;}
+.pricing-toggle-wrap{display:flex;justify-content:center;align-items:center;gap:14px;padding:28px 40px 0;background:#fff;}
+.ptoggle-label{font-size:13px;font-weight:500;color:var(--slate-600);}
+.ptoggle{position:relative;width:46px;height:26px;background:var(--slate-200);border-radius:13px;cursor:pointer;border:none;transition:background .2s;}
+.ptoggle::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:transform .2s;}
+.ptoggle.annual{background:var(--green);}.ptoggle.annual::after{transform:translateX(20px);}
+.ptoggle-save{font-size:11px;font-weight:600;color:var(--green);background:#e6faf4;border:0.5px solid #9fe1cb;border-radius:20px;padding:2px 9px;}
+.products-sec{padding:40px 40px 76px;background:#fff;}
+.sec-ey{font-size:11px;font-weight:600;letter-spacing:1.2px;color:var(--sky-600);text-transform:uppercase;margin-bottom:7px;}
+.sec-h2{font-family:var(--fh);font-size:clamp(22px,3vw,30px);font-weight:700;color:var(--slate-900);line-height:1.15;letter-spacing:-.4px;margin-bottom:10px;}
+.sec-sub{font-size:14px;color:var(--slate-600);line-height:1.72;max-width:540px;margin-bottom:40px;}
+.product-card{border-radius:18px;overflow:hidden;border:1.5px solid var(--slate-100);margin-bottom:20px;transition:box-shadow .25s;}
+.product-card:hover{box-shadow:0 20px 60px rgba(0,0,0,.08);}
+.pc-header{display:flex;align-items:flex-start;justify-content:space-between;padding:28px 28px 0;gap:24px;flex-wrap:wrap;}
+.pc-meta{flex:1;min-width:260px;}
+.pc-icon-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.pc-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pc-name{font-family:var(--fh);font-size:22px;font-weight:700;color:var(--slate-900);margin-bottom:4px;}
+.pc-tagline{font-size:13px;color:var(--slate-600);line-height:1.5;}
+.pc-m365-tag{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;}
+.pc-pricing{display:flex;gap:12px;padding:20px 28px 28px;flex-wrap:wrap;}
+.pt{flex:1;min-width:180px;border-radius:12px;padding:20px 18px;border:1.5px solid var(--slate-100);position:relative;transition:border-color .2s,transform .2s;}
+.pt:hover{transform:translateY(-2px);}
+.pt.featured{border-color:currentColor;}
+.pt-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#fff;padding:3px 12px;border-radius:0 0 8px 8px;white-space:nowrap;}
+.pt-name{font-family:var(--fh);font-size:13px;font-weight:600;color:var(--slate-900);margin-bottom:12px;}
+.pt-price{display:flex;align-items:baseline;gap:3px;margin-bottom:4px;}
+.pt-amount{font-family:var(--fh);font-size:28px;font-weight:700;color:var(--slate-900);}
+.pt-period{font-size:12px;color:var(--slate-400);}
+.pt-annual{font-size:11px;color:var(--green);font-weight:500;margin-bottom:14px;min-height:16px;}
+.pt-features{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.pt-features li{display:flex;align-items:flex-start;gap:7px;font-size:12.5px;color:var(--slate-600);line-height:1.45;}
+.pt-features li::before{content:'✓';font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.pt-cta{display:block;text-align:center;font-family:var(--fh);font-size:13px;font-weight:600;padding:10px;border-radius:8px;color:#fff;transition:opacity .18s;}
+.pt-cta:hover{opacity:.88;}
+.pt-cta.ghost{color:var(--slate-900);border:1px solid var(--slate-200);background:var(--slate-50);}
+.pt-cta.ghost:hover{background:var(--slate-100);opacity:1;}
+.pc-features{padding:20px 28px 26px;border-top:1px solid var(--slate-100);background:var(--slate-50);}
+.pc-features-label{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--slate-400);text-transform:uppercase;margin-bottom:14px;}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+.feat-item{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--slate-600);line-height:1.45;}
+.feat-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+/* CARD HR */
+.card-hr .pc-icon{background:#f3e8ff;}.card-hr .pc-m365-tag{color:var(--purple);background:#fdf4ff;border:0.5px solid #e9d5ff;}
+.card-hr .pt.featured{border-color:var(--purple);background:linear-gradient(145deg,#fdf4ff,#f5e8ff);}
+.card-hr .pt-badge{background:var(--purple);}
+.card-hr .pt-cta:not(.ghost){background:var(--purple);}
+.card-hr .pt-features li::before{color:var(--purple);}
+/* CARD PAYSLIP */
+.card-payslip .pc-icon{background:#ccfbf1;}.card-payslip .pc-m365-tag{color:#0f766e;background:#f0fffe;border:0.5px solid #99f6e4;}
+.card-payslip .pt.featured{border-color:#0d9488;background:linear-gradient(145deg,#f0fffe,#ccfbf1);}
+.card-payslip .pt-badge{background:#0f766e;}
+.card-payslip .pt-cta:not(.ghost){background:#0f766e;}
+.card-payslip .pt-features li::before{color:#0f766e;}
+/* CARD IT */
+.card-it .pc-icon{background:#fef3c7;}.card-it .pc-m365-tag{color:var(--amber);background:#fffbeb;border:0.5px solid #fde68a;}
+.card-it .pt.featured{border-color:#f59e0b;background:linear-gradient(145deg,#fffbeb,#fef3c7);}
+.card-it .pt-badge{background:#b45309;}
+.card-it .pt-cta:not(.ghost){background:#b45309;}
+.card-it .pt-features li::before{color:var(--amber);}
+/* M365 SECTION */
+.m365-sec{padding:72px 40px;background:linear-gradient(180deg,#0f172a 0%,#0d2d4f 100%);}
+.m365-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:32px;}
+.m365-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:13px;padding:20px 18px;transition:background .2s;}
+.m365-card:hover{background:rgba(255,255,255,.09);}
+.m365-app-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:14px;font-weight:700;color:#fff;margin-bottom:10px;}
+.m365-card h3{font-family:var(--fh);font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;}
+.m365-card p{font-size:12px;color:rgba(255,255,255,.48);line-height:1.6;}
+/* ENTERPRISE */
+.enterprise-sec{padding:60px 40px;background:var(--slate-50);display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
+.enterprise-left{flex:1;min-width:260px;}
+.enterprise-left h2{font-family:var(--fh);font-size:26px;font-weight:700;color:var(--slate-900);margin-bottom:10px;}
+.enterprise-left p{font-size:14px;color:var(--slate-600);line-height:1.75;margin-bottom:18px;}
+.enterprise-features{display:flex;flex-direction:column;gap:7px;}
+.ef{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--slate-700);}
+.ef::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sky-400);flex-shrink:0;}
+.enterprise-right{display:flex;flex-direction:column;gap:10px;min-width:220px;}
+.ent-btn{font-family:var(--fh);font-size:13px;font-weight:600;padding:12px 22px;border-radius:9px;transition:all .2s;display:inline-block;text-align:center;}
+.ent-btn-p{background:var(--sky-600);color:#fff;}.ent-btn-p:hover{background:var(--sky-800);}
+.ent-btn-g{background:#fff;color:var(--slate-900);border:1px solid var(--slate-200);}.ent-btn-g:hover{background:var(--slate-50);}
+.cert-bar{background:var(--slate-50);border-top:1px solid var(--slate-100);padding:14px 40px;}
+.cert-bar-inner{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.cert-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.cert-badge{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500;color:var(--slate-600);}
+.cert-divider{width:1px;height:14px;background:var(--slate-200);}
+.footer{background:var(--slate-50);border-top:1px solid var(--slate-100);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--slate-400);}
+.footer-logo{display:flex;align-items:center;gap:12px;}.footer-logo img{height:30px;mix-blend-mode:multiply;opacity:.65;}
+.footer-links{display:flex;gap:20px;}.footer-links a{color:var(--slate-400);transition:color .15s;}.footer-links a:hover{color:var(--sky-600);}
+@media(max-width:900px){
+  .nav{padding:0 20px;}.nav-links,.nav-cta{display:none;}
+  .page-hero,.products-sec,.m365-sec,.enterprise-sec{padding:40px 20px;}
+  .pc-header{padding:20px 20px 0;}.pc-pricing{padding:0 20px 20px;}.pc-features{padding:18px 20px;}
+  .feat-grid,.m365-grid{grid-template-columns:1fr 1fr;}
+  .enterprise-sec{flex-direction:column;gap:24px;}
+  .footer,.cert-bar{padding:16px 20px;}
+}
+@media(max-width:600px){.pc-pricing{flex-direction:column;}.feat-grid,.m365-grid{grid-template-columns:1fr;}}
 </style>
-</head><body><nav style="position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);">
-<a href="index.html" style="display:flex;align-items:center;"><img src="logo-horizontal.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:screen;"/></a>
-<ul style="display:flex;align-items:center;gap:2px;list-style:none;">
-<li style="position:relative;"><button onclick="toggleDD('s',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;font-family:'Inter',sans-serif;">Services &#9662;</button>
-<div id="s" style="display:none;position:absolute;top:74px;left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:230px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
-<a href="service-bespoke.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Bespoke development</a>
-<a href="service-cyber.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Cyber Essentials &amp; security</a>
-<a href="service-m365.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Microsoft 365 deployment</a>
-<a href="service-managed-it.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">IT &amp; managed services</a>
-<a href="service-hr.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">HR systems development</a>
-<a href="service-advisory.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Advisory &amp; consultancy</a>
-<a href="service-sharepoint.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">SharePoint &amp; Power Apps</a>
-</div></li>
-<li><a href="solutions.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;">Solutions</a></li>
-<li style="position:relative;"><button onclick="toggleDD('h',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;font-family:'Inter',sans-serif;">SS Hub &#9662;</button>
-<div id="h" style="display:none;position:absolute;top:74px;left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:200px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
-<a href="hub-products.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Products</a>
-<a href="hub-insights.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Insights &amp; learning</a>
-<a href="hub-tech-updates.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Technology updates</a>
-</div></li>
-<li><a href="about.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;">About</a></li>
-</ul>
-<a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:#1A7EC4;color:#fff;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;text-decoration:none;">Talk to an expert</a>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo-stacked.png" alt="SolvvSpace"/>
+    <span class="nav-brand-text">Solvv<span>Space</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a class="nla" href="solutions.html">Solutions</a></li>
+    <li><a class="nla active" href="hub-products.html">Products</a></li>
+    <li><a class="nla" href="hub-insights.html">Insights</a></li>
+    <li><a class="nla" href="about.html">About</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Talk to an expert</a>
 </nav>
-<script>function toggleDD(id,btn){var el=document.getElementById(id);var o=el.style.display==='block';['s','h'].forEach(function(i){document.getElementById(i).style.display='none';});if(!o)el.style.display='block';document.addEventListener('click',function c(e){if(!el.contains(e.target)&&e.target!==btn){el.style.display='none';document.removeEventListener('click',c);}});}</script><div style="background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:52px 40px 48px;position:relative;overflow:hidden;">
-<div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.12) 0%,transparent 70%);"></div>
-<div style="position:relative;z-index:2;max-width:660px;">
-<div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:12px;"><a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Home</a> / <span style="color:rgba(255,255,255,.6);">Products</span></div>
-<div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">SS Hub &middot; Products</div>
-<h1 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:#fff;line-height:1.18;margin-bottom:12px;">Software built by SolvvSpace,<br><span style="color:#4AABF0;">for the businesses we serve</span></h1>
-<p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;">We build our own products from real-world client needs — deployable today, fully supported, running inside your Microsoft 365 tenant.</p>
-</div></div><section style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);">
-<div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Our products</div>
-<h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:36px;" class="fu d1">Two flagship platforms, built in-house</h2>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;"><div class="fu d1" style="border-radius:16px;overflow:hidden;position:relative;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;"><div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&fit=crop');background-size:cover;background-position:center;"></div><div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,.88) 0%,rgba(13,79,128,.70) 100%);"></div><div style="position:relative;z-index:2;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#4AABF0;text-transform:uppercase;margin-bottom:8px;">HR Platform · Power Apps</div><h3 style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;">SolvvSpace HR</h3><p style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.6;margin-bottom:12px;">Complete HR management covering the full employee lifecycle — onboarding, performance, leave, compliance, and offboarding. Deployed in your Microsoft 365 tenant.</p><a href="contact.html" style="font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);padding:7px 16px;border-radius:20px;border:.5px solid rgba(255,255,255,.3);text-decoration:none;">Book a demo &rarr;</a></div></div><div class="fu d2" style="border-radius:16px;overflow:hidden;position:relative;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;"><div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80&fit=crop');background-size:cover;background-position:center;"></div><div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,.88) 0%,rgba(13,79,128,.70) 100%);"></div><div style="position:relative;z-index:2;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#4AABF0;text-transform:uppercase;margin-bottom:8px;">IT Support · Managed Services</div><h3 style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;">SolvvSpace IT Support</h3><p style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.6;margin-bottom:12px;">A structured IT support and ticketing platform giving your team a single point of contact with real-time SLA and issue visibility.</p><a href="contact.html" style="font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.18);padding:7px 16px;border-radius:20px;border:.5px solid rgba(255,255,255,.3);text-decoration:none;">Book a demo &rarr;</a></div></div></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;"><div class="fu d1" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;">Deployed in your tenant</h3><p style="font-size:13px;color:#545B6B;line-height:1.6;">Installed directly into your Microsoft 365 — your data never leaves your control.</p></div><div class="fu d2" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;">Fully configurable</h3><p style="font-size:13px;color:#545B6B;line-height:1.6;">Tailored to match your policies, workflows, and branding — not a generic template.</p></div><div class="fu d3" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;">Supported by us</h3><p style="font-size:13px;color:#545B6B;line-height:1.6;">Full onboarding, training, and ongoing support from the same team that built the product.</p></div><div class="fu d4" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;">SharePoint & Teams native</h3><p style="font-size:13px;color:#545B6B;line-height:1.6;">Works seamlessly inside your existing Microsoft 365 — no new platforms.</p></div><div class="fu d5" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;">Secure by design</h3><p style="font-size:13px;color:#545B6B;line-height:1.6;">Role-based access, audit trails, and Microsoft security compliance built in.</p></div><div class="fu d6" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;">Multi-tenant ready</h3><p style="font-size:13px;color:#545B6B;line-height:1.6;">SolvvSpaceMultiTenant supports organisations managing multiple entities.</p></div></div></section><div style="background:#0f172a;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
-<div><h2 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#fff;margin-bottom:8px;">Ready to take the next step?</h2><p style="font-size:14px;color:rgba(255,255,255,.5);max-width:440px;line-height:1.7;">Talk to us about any of our services &mdash; free, no commitment, no pressure.</p></div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:11px 24px;border-radius:8px;text-decoration:none;">Book a free IT audit</a><a href="solutions.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);padding:11px 22px;border-radius:8px;text-decoration:none;">Explore services &rarr;</a></div>
-</div><footer style="background:#F7F8FA;border-top:1px solid #ECEEF2;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8A909E;">
-<div style="display:flex;align-items:center;gap:14px;"><img src="logo-stacked.png" alt="SolvvSpace" style="height:44px;width:auto;mix-blend-mode:multiply;opacity:0.75;"/><span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span></div>
-<div style="display:flex;gap:18px;"><a href="privacy.html" style="color:#8A909E;text-decoration:none;">Privacy</a><a href="cookies.html" style="color:#8A909E;text-decoration:none;">Cookies</a><a href="https://linkedin.com" target="_blank" style="color:#8A909E;text-decoration:none;">LinkedIn</a><a href="contact.html" style="color:#8A909E;text-decoration:none;">Contact</a></div>
-</footer><script>const _o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else _o.observe(el);});</script></body></html>
+
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,.65);">Products</span></div>
+  <div class="page-eyebrow">SS Hub · Products</div>
+  <h1>Software built by SolvvSpace,<br><em>for the businesses we serve</em></h1>
+  <p>Three Microsoft 365-native platforms covering HR management, payslip administration, and IT support — all deployed inside your existing tenant. No extra logins. No data leaving your environment.</p>
+  <div class="m365-badge">
+    <div class="mslg"><div style="background:#F25022;"></div><div style="background:#7FBA00;"></div><div style="background:#00A4EF;"></div><div style="background:#FFB900;"></div></div>
+    Built natively on Microsoft 365 · Power Apps &amp; Power Automate
+  </div>
+</div>
+
+<div class="pricing-toggle-wrap fu">
+  <span class="ptoggle-label">Monthly</span>
+  <button class="ptoggle" id="ptoggle" aria-label="Toggle annual pricing"></button>
+  <span class="ptoggle-label">Annual</span>
+  <span class="ptoggle-save" id="annual-save" style="display:none;">Save up to 17%</span>
+</div>
+
+<section class="products-sec">
+  <div class="sec-ey fu">Our products</div>
+  <div class="sec-h2 fu d1">Three platforms. One Microsoft 365 environment.</div>
+  <p class="sec-sub fu d2">Each product is deployed directly into your Microsoft 365 tenant — configured to your policies, branded to your organisation, and supported by the team that built it.</p>
+
+  <!-- HR -->
+  <div class="product-card card-hr fu d1">
+    <div class="pc-header">
+      <div class="pc-meta">
+        <div class="pc-icon-row">
+          <div class="pc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="9" cy="8" r="3" stroke="#9333ea" stroke-width="1.5"/><circle cx="17" cy="8" r="3" stroke="#9333ea" stroke-width="1.5"/><path d="M3 22c0-3.3 2.7-6 6-6m5 0c3.3 0 6 2.7 6 6" stroke="#9333ea" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div><div class="pc-name">SolvvSpace HR</div><div class="pc-tagline">Complete employee lifecycle management — onboarding to offboarding</div></div>
+        </div>
+        <div class="pc-m365-tag"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="0" y="0" width="4.8" height="4.8" rx="1" fill="#9333ea" opacity=".8"/><rect x="6.2" y="0" width="4.8" height="4.8" rx="1" fill="#9333ea" opacity=".5"/><rect x="0" y="6.2" width="4.8" height="4.8" rx="1" fill="#9333ea" opacity=".3"/><rect x="6.2" y="6.2" width="4.8" height="4.8" rx="1" fill="#9333ea" opacity=".15"/></svg> Power Apps · Dataverse · SharePoint</div>
+      </div>
+    </div>
+    <div class="pc-pricing">
+      <div class="pt">
+        <div class="pt-name">Essentials</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="12" data-annual="10">£12</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="hr-ess-a"></div>
+        <ul class="pt-features">
+          <li>Employee records &amp; profiles</li><li>Onboarding workflows</li><li>Leave requests &amp; approvals</li><li>Document storage</li><li>Manager self-service portal</li><li>Standard reporting</li>
+        </ul>
+        <a href="contact.html" class="pt-cta ghost">Book a demo</a>
+      </div>
+      <div class="pt featured" style="border-color:var(--purple);background:linear-gradient(145deg,#fdf4ff,#f5e8ff);">
+        <div class="pt-badge" style="background:var(--purple);">Most popular</div>
+        <div class="pt-name">Professional</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="15" data-annual="12.50">£15</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="hr-pro-a"></div>
+        <ul class="pt-features">
+          <li>Everything in Essentials</li><li>Performance review cycles</li><li>Offboarding workflows</li><li>Compliance tracking &amp; reporting</li><li>Training record management</li><li>Role-based access controls</li><li>Full audit trail</li><li>Microsoft Teams integration</li>
+        </ul>
+        <a href="contact.html" class="pt-cta" style="background:var(--purple);">Get started</a>
+      </div>
+      <div class="pt">
+        <div class="pt-name">Enterprise</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="20" data-annual="17">£20</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="hr-ent-a"></div>
+        <ul class="pt-features">
+          <li>Everything in Professional</li><li>Multi-entity / multi-site</li><li>Custom workflows &amp; fields</li><li>Advanced Power BI analytics</li><li>Payroll integration ready</li><li>Priority support SLA</li><li>Dedicated account manager</li>
+        </ul>
+        <a href="contact.html" class="pt-cta ghost">Contact us</a>
+      </div>
+    </div>
+    <div class="pc-features">
+      <div class="pc-features-label">Included in every plan</div>
+      <div class="feat-grid">
+        <div class="feat-item"><div class="feat-dot" style="background:var(--purple);"></div>Deployed in your M365 tenant</div>
+        <div class="feat-item"><div class="feat-dot" style="background:var(--purple);"></div>Employee self-service portal</div>
+        <div class="feat-item"><div class="feat-dot" style="background:var(--purple);"></div>GDPR-compliant data handling</div>
+        <div class="feat-item"><div class="feat-dot" style="background:var(--purple);"></div>SharePoint-native document store</div>
+        <div class="feat-item"><div class="feat-dot" style="background:var(--purple);"></div>Outlook &amp; Teams integration</div>
+        <div class="feat-item"><div class="feat-dot" style="background:var(--purple);"></div>Onboarding &amp; training included</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYSLIP -->
+  <div class="product-card card-payslip fu d2">
+    <div class="pc-header">
+      <div class="pc-meta">
+        <div class="pc-icon-row">
+          <div class="pc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="4" y="2" width="15" height="20" rx="2.5" stroke="#0f766e" stroke-width="1.5"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#0f766e" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="4" fill="#0f766e"/><path d="M18.5 20l1 1 2-2" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="pc-name">SolvvSpace Payslip</div><div class="pc-tagline">Automated payslip generation, distribution, and secure employee access</div></div>
+        </div>
+        <div class="pc-m365-tag"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="0" y="0" width="4.8" height="4.8" rx="1" fill="#0f766e" opacity=".8"/><rect x="6.2" y="0" width="4.8" height="4.8" rx="1" fill="#0f766e" opacity=".5"/><rect x="0" y="6.2" width="4.8" height="4.8" rx="1" fill="#0f766e" opacity=".3"/><rect x="6.2" y="6.2" width="4.8" height="4.8" rx="1" fill="#0f766e" opacity=".15"/></svg> Power Apps · Azure Blob · SharePoint · Power Automate</div>
+      </div>
+    </div>
+    <div class="pc-pricing">
+      <div class="pt">
+        <div class="pt-name">Starter</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="8" data-annual="7">£8</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="pay-st-a"></div>
+        <ul class="pt-features">
+          <li>Automated payslip generation</li><li>Secure employee portal</li><li>PDF payslip download</li><li>Email distribution</li><li>12-month payslip history</li><li>Basic admin dashboard</li>
+        </ul>
+        <a href="contact.html" class="pt-cta ghost">Book a demo</a>
+      </div>
+      <div class="pt featured" style="border-color:#0d9488;background:linear-gradient(145deg,#f0fffe,#ccfbf1);">
+        <div class="pt-badge" style="background:#0f766e;">Most popular</div>
+        <div class="pt-name">Standard</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="12" data-annual="10">£12</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="pay-std-a"></div>
+        <ul class="pt-features">
+          <li>Everything in Starter</li><li>Unlimited payslip history</li><li>Payroll system integration</li><li>Custom payslip branding</li><li>Bulk payslip upload</li><li>Compliance audit trail</li><li>HR system sync</li><li>Mobile-responsive portal</li>
+        </ul>
+        <a href="contact.html" class="pt-cta" style="background:#0f766e;">Get started</a>
+      </div>
+      <div class="pt">
+        <div class="pt-name">Advanced</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="16" data-annual="13.50">£16</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="pay-adv-a"></div>
+        <ul class="pt-features">
+          <li>Everything in Standard</li><li>Multi-payroll provider support</li><li>P60 &amp; P45 document management</li><li>Advanced analytics &amp; reporting</li><li>Multi-entity management</li><li>Custom approval workflows</li><li>API access for integrations</li>
+        </ul>
+        <a href="contact.html" class="pt-cta ghost">Contact us</a>
+      </div>
+    </div>
+    <div class="pc-features">
+      <div class="pc-features-label">Included in every plan</div>
+      <div class="feat-grid">
+        <div class="feat-item"><div class="feat-dot" style="background:#0f766e;"></div>Secure Azure Blob encrypted storage</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#0f766e;"></div>HMRC-compliant payslip format</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#0f766e;"></div>Employee self-service access</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#0f766e;"></div>Automated distribution via Outlook</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#0f766e;"></div>GDPR-compliant data handling</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#0f766e;"></div>Setup, training &amp; onboarding included</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IT SUPPORT -->
+  <div class="product-card card-it fu d3">
+    <div class="pc-header">
+      <div class="pc-meta">
+        <div class="pc-icon-row">
+          <div class="pc-icon"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="9" stroke="#d97706" stroke-width="1.5"/><path d="M10 13l2.5 2.5 4-4" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="pc-name">SolvvSpace IT Support</div><div class="pc-tagline">Structured IT ticketing, SLA tracking, and real-time support visibility</div></div>
+        </div>
+        <div class="pc-m365-tag"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="0" y="0" width="4.8" height="4.8" rx="1" fill="#d97706" opacity=".8"/><rect x="6.2" y="0" width="4.8" height="4.8" rx="1" fill="#d97706" opacity=".5"/><rect x="0" y="6.2" width="4.8" height="4.8" rx="1" fill="#d97706" opacity=".3"/><rect x="6.2" y="6.2" width="4.8" height="4.8" rx="1" fill="#d97706" opacity=".15"/></svg> Power Apps · Teams · SharePoint · Power Automate</div>
+      </div>
+    </div>
+    <div class="pc-pricing">
+      <div class="pt">
+        <div class="pt-name">Basic</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="10" data-annual="8.50">£10</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="it-bas-a"></div>
+        <ul class="pt-features">
+          <li>IT ticket submission portal</li><li>Email notifications</li><li>Basic ticket tracking</li><li>Admin dashboard</li><li>Standard categories &amp; priorities</li><li>Monthly summary reports</li>
+        </ul>
+        <a href="contact.html" class="pt-cta ghost">Book a demo</a>
+      </div>
+      <div class="pt featured" style="border-color:#f59e0b;background:linear-gradient(145deg,#fffbeb,#fef3c7);">
+        <div class="pt-badge" style="background:#b45309;">Most popular</div>
+        <div class="pt-name">Professional</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="14" data-annual="11.67">£14</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="it-pro-a"></div>
+        <ul class="pt-features">
+          <li>Everything in Basic</li><li>SLA configuration &amp; tracking</li><li>Microsoft Teams integration</li><li>Ticket escalation workflows</li><li>Asset register management</li><li>Real-time dashboards</li><li>User satisfaction surveys</li><li>Automated SLA breach alerts</li>
+        </ul>
+        <a href="contact.html" class="pt-cta" style="background:#b45309;">Get started</a>
+      </div>
+      <div class="pt">
+        <div class="pt-name">Managed</div>
+        <div class="pt-price"><span class="pt-amount" data-monthly="18" data-annual="15">£18</span><span class="pt-period">/user/mo</span></div>
+        <div class="pt-annual" id="it-man-a"></div>
+        <ul class="pt-features">
+          <li>Everything in Professional</li><li>Proactive monitoring alerts</li><li>Change management module</li><li>Knowledge base &amp; self-help</li><li>Multi-site management</li><li>Power BI reporting suite</li><li>Vendor management</li><li>API &amp; integration access</li>
+        </ul>
+        <a href="contact.html" class="pt-cta ghost">Contact us</a>
+      </div>
+    </div>
+    <div class="pc-features">
+      <div class="pc-features-label">Included in every plan</div>
+      <div class="feat-grid">
+        <div class="feat-item"><div class="feat-dot" style="background:#d97706;"></div>Deployed in your M365 tenant</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#d97706;"></div>Teams-native ticket submission</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#d97706;"></div>Role-based access controls</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#d97706;"></div>Automated Power Automate flows</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#d97706;"></div>Full audit log &amp; history</div>
+        <div class="feat-item"><div class="feat-dot" style="background:#d97706;"></div>Setup, training &amp; onboarding included</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- M365 STACK -->
+<section class="m365-sec">
+  <div class="sec-ey fu" style="color:var(--sky-400);">Built on</div>
+  <div class="sec-h2 fu d1" style="color:#fff;">The Microsoft 365 platform</div>
+  <p style="font-size:14px;color:rgba(255,255,255,.52);line-height:1.7;max-width:520px;margin-bottom:0;" class="fu d2">Every SolvvSpace product is built natively on Microsoft 365 — no external servers, no third-party databases. Your data stays in your tenant, protected by Microsoft's enterprise security.</p>
+  <div class="m365-grid">
+    <div class="m365-card fu d1"><div class="m365-app-icon" style="background:#742774;">P</div><h3>Power Apps</h3><p>All three products are built as Power Apps, deployed directly into your Microsoft 365 environment.</p></div>
+    <div class="m365-card fu d2"><div class="m365-app-icon" style="background:#0066FF;">A</div><h3>Power Automate</h3><p>Approvals, notifications, payslip distribution, and escalations run through Power Automate flows.</p></div>
+    <div class="m365-card fu d3"><div class="m365-app-icon" style="background:#217346;">S</div><h3>SharePoint &amp; Dataverse</h3><p>Employee records, documents, and payslips stored securely in SharePoint or Dataverse within your tenant.</p></div>
+    <div class="m365-card fu d4"><div class="m365-app-icon" style="background:#6264A7;">T</div><h3>Microsoft Teams</h3><p>All products surface inside Teams so your team works from one hub without switching applications.</p></div>
+    <div class="m365-card fu d5"><div class="m365-app-icon" style="background:#0364B8;">O</div><h3>Outlook</h3><p>Payslip alerts, HR approvals, and IT ticket updates all delivered through Outlook.</p></div>
+    <div class="m365-card fu d6"><div class="m365-app-icon" style="background:#F2C811;">P</div><h3>Power BI</h3><p>HR metrics, payroll summaries, and IT support KPIs — dashboards built on Power BI.</p></div>
+  </div>
+</section>
+
+<!-- ENTERPRISE -->
+<section class="enterprise-sec">
+  <div class="enterprise-left fu">
+    <h2>Need something bespoke?</h2>
+    <p>All three products are fully configurable to your organisation's workflows, branding, and policies. We also build custom extensions, additional modules, and integrations with your existing payroll, finance, or HR platforms.</p>
+    <div class="enterprise-features">
+      <div class="ef">Custom fields, workflows, and approval chains</div>
+      <div class="ef">Integration with Sage, Xero, BrightPay, and other payroll providers</div>
+      <div class="ef">White-labelled with your branding and domain</div>
+      <div class="ef">Multi-entity and multi-site deployments</div>
+      <div class="ef">Dedicated implementation project manager</div>
+    </div>
+  </div>
+  <div class="enterprise-right fu d2">
+    <a href="contact.html" class="ent-btn ent-btn-p">Talk to us about your requirements</a>
+    <a href="service-bespoke.html" class="ent-btn ent-btn-g">Explore bespoke development</a>
+  </div>
+</section>
+
+<div class="cert-bar"><div class="cert-bar-inner"><div class="cert-badges">
+  <div class="cert-badge"><div class="mslg" style="width:16px;height:16px;gap:2px;"><div style="background:#F25022;border-radius:1px;"></div><div style="background:#7FBA00;border-radius:1px;"></div><div style="background:#00A4EF;border-radius:1px;"></div><div style="background:#FFB900;border-radius:1px;"></div></div>Microsoft Gold Partner</div>
+  <div class="cert-divider"></div>
+  <div class="cert-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L2 3v3c0 2.2 1.7 4 4 4.5C8.3 10 10 8.2 10 6V3L6 1z" fill="#1A7EC4"/></svg>Cyber Essentials</div>
+  <div class="cert-divider"></div>
+  <div class="cert-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#1A7EC4" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="#1A7EC4" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>ITIL &amp; PRINCE2</div>
+  <div class="cert-divider"></div>
+  <div class="cert-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#1A7EC4" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="#1A7EC4" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Agile PM</div>
+</div></div></div>
+<footer class="footer">
+  <div class="footer-logo"><img src="logo-stacked.png" alt="SolvvSpace"/><span>© 2025 SolvvSpace Limited · Registered in England &amp; Wales (16153942) · Bedford MK41 9ST</span></div>
+  <div class="footer-links"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html">Contact</a></div>
+</footer>
+
+<script>
+const _obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else _obs.observe(el);});
+const toggle=document.getElementById('ptoggle');
+const saveBadge=document.getElementById('annual-save');
+let isAnnual=false;
+const ids=[['hr-ess-a',10,'£120'],['hr-pro-a',12.50,'£150'],['hr-ent-a',17,'£204'],['pay-st-a',7,'£84'],['pay-std-a',10,'£120'],['pay-adv-a',13.50,'£162'],['it-bas-a',8.50,'£102'],['it-pro-a',11.67,'£140'],['it-man-a',15,'£180']];
+toggle.addEventListener('click',()=>{
+  isAnnual=!isAnnual;
+  toggle.classList.toggle('annual',isAnnual);
+  saveBadge.style.display=isAnnual?'inline-block':'none';
+  document.querySelectorAll('.pt-amount').forEach(el=>{
+    const v=isAnnual?parseFloat(el.dataset.annual):parseFloat(el.dataset.monthly);
+    el.textContent='£'+v.toLocaleString('en-GB',{minimumFractionDigits:0,maximumFractionDigits:2});
+  });
+  ids.forEach(([id,,yr])=>{
+    const el=document.getElementById(id);
+    if(el)el.textContent=isAnnual?'Billed annually ('+yr+'/user/yr)':'';
+  });
+});
+</script>
+</body>
+</html>

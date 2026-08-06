@@ -1,49 +1,297 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>SS Hub — Insights & Learning | SolvvSpace</title><meta name="description" content="Practical IT and HR guides for UK small businesses from the SolvvSpace team."/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Insights &amp; Learning | SolvvSpace</title>
+<meta name="description" content="Practical IT and HR guides for UK small businesses from the SolvvSpace team."/>
 <link rel="icon" type="image/png" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-<style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;color:#1C2231;background:#fff;-webkit-font-smoothing:antialiased;}a{text-decoration:none;color:inherit;}
-.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}.fu.vis{opacity:1;transform:translateY(0);}
+<style>
+:root{--sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;--sky-400:#4AABF0;--sky-600:#1A7EC4;--sky-800:#0D4F80;--sky-900:#072F50;--slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;--slate-400:#8A909E;--slate-600:#545B6B;--slate-900:#1C2231;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;}a{text-decoration:none;color:inherit;}
+.fu{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}.fu.vis{opacity:1;transform:translateY(0);}
 .fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
-@media(max-width:900px){nav{padding:0 20px!important;}[style*="padding:60px 40px"],[style*="padding:56px 40px"]{padding:40px 20px!important;}[style*="grid-template-columns:repeat(2"],[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}[style*="grid-template-columns:2fr"]{grid-template-columns:1fr!important;}footer{padding:16px 20px!important;flex-direction:column!important;}}
+.nav{position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);}
+.nav-brand{display:flex;align-items:center;gap:9px;}.nav-brand img{height:44px;width:44px;object-fit:contain;mix-blend-mode:screen;}
+.nav-brand-text{font-family:var(--fh);font-size:18px;font-weight:700;letter-spacing:-.3px;color:#fff;}.nav-brand-text span{color:var(--sky-400);}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nla{font-family:var(--fb);font-size:13.5px;color:rgba(255,255,255,.62);padding:7px 13px;border-radius:6px;transition:color .15s,background .15s;}.nla:hover,.nla.active{color:#fff;background:rgba(255,255,255,.08);}
+.nav-cta{font-family:var(--fh);font-size:13px;font-weight:500;background:var(--sky-600);color:#fff;border:none;padding:9px 22px;border-radius:8px;transition:background .15s;white-space:nowrap;display:inline-block;}.nav-cta:hover{background:var(--sky-800);}
+.page-hero{background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:56px 40px 52px;position:relative;overflow:hidden;}
+.page-hero-glow{position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.13) 0%,transparent 70%);}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.35);margin-bottom:14px;}
+.breadcrumb a{color:rgba(255,255,255,.35);}.bc-sep{color:rgba(255,255,255,.18);}
+.page-eyebrow{font-size:11px;font-weight:600;letter-spacing:2px;color:var(--sky-400);text-transform:uppercase;margin-bottom:10px;}
+.page-hero h1{font-family:var(--fh);font-size:clamp(26px,4vw,36px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:12px;}
+.page-hero h1 em{font-style:normal;color:var(--sky-400);}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.56);line-height:1.72;max-width:520px;}
+/* FILTER TABS */
+.filter-bar{background:#fff;border-bottom:1px solid var(--slate-100);padding:0 40px;display:flex;gap:0;overflow-x:auto;position:sticky;top:64px;z-index:90;}
+.filter-bar::-webkit-scrollbar{display:none;}
+.ftab{font-size:13px;font-weight:500;color:var(--slate-400);padding:14px 16px;border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;}
+.ftab:hover{color:var(--slate-900);}
+.ftab.active{color:var(--sky-600);border-bottom-color:var(--sky-600);}
+/* FEATURED ARTICLE */
+.featured-sec{padding:48px 40px 0;}
+.featured-label{font-size:11px;font-weight:600;letter-spacing:1px;color:var(--sky-600);text-transform:uppercase;margin-bottom:16px;}
+.featured-card{
+  display:grid;grid-template-columns:1fr 420px;gap:0;
+  border-radius:16px;overflow:hidden;border:1.5px solid var(--slate-100);
+  transition:box-shadow .25s;
+}
+.featured-card:hover{box-shadow:0 20px 60px rgba(0,0,0,.09);}
+.featured-img{
+  height:320px;
+  background:linear-gradient(135deg,#0d2d4f 0%,#0d4f80 100%);
+  position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:28px;
+}
+.featured-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.3;}
+.featured-cat{display:inline-flex;align-items:center;position:relative;z-index:2;font-size:11px;font-weight:600;color:var(--sky-400);background:rgba(255,255,255,.1);border:0.5px solid rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;margin-bottom:10px;}
+.featured-title{font-family:var(--fh);font-size:20px;font-weight:700;color:#fff;line-height:1.3;position:relative;z-index:2;}
+.featured-body{padding:28px;background:#fff;display:flex;flex-direction:column;justify-content:space-between;}
+.featured-excerpt{font-size:14px;color:var(--slate-600);line-height:1.75;margin-bottom:20px;}
+.featured-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--slate-400);}
+.feat-author{display:flex;align-items:center;gap:8px;}
+.feat-av{width:28px;height:28px;border-radius:50%;background:var(--sky-600);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:10px;font-weight:700;color:#fff;}
+.featured-read{display:inline-flex;align-items:center;gap:6px;font-family:var(--fh);font-size:13px;font-weight:600;color:var(--sky-600);margin-top:16px;transition:color .15s;}
+.featured-read:hover{color:var(--sky-800);}
+/* ARTICLE GRID */
+.articles-sec{padding:40px 40px 76px;}
+.sec-ey{font-size:11px;font-weight:600;letter-spacing:1.2px;color:var(--sky-600);text-transform:uppercase;margin-bottom:7px;}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+.article-card{
+  border-radius:14px;overflow:hidden;border:1.5px solid var(--slate-100);
+  display:flex;flex-direction:column;
+  transition:border-color .22s,transform .22s,box-shadow .22s;
+}
+.article-card:hover{border-color:var(--sky-200);transform:translateY(-3px);box-shadow:0 12px 36px rgba(26,126,196,.1);}
+.ac-img{
+  height:140px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--sky-800),var(--sky-600));
+}
+.ac-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.35;}
+.ac-cat{position:absolute;top:12px;left:12px;font-size:10px;font-weight:600;color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);padding:3px 10px;border-radius:20px;letter-spacing:.5px;}
+.ac-read-time{position:absolute;bottom:10px;right:10px;font-size:10px;color:rgba(255,255,255,.7);background:rgba(0,0,0,.3);padding:2px 8px;border-radius:20px;}
+.ac-body{padding:18px;flex:1;display:flex;flex-direction:column;}
+.ac-title{font-family:var(--fh);font-size:15px;font-weight:600;color:var(--slate-900);line-height:1.35;margin-bottom:8px;}
+.ac-excerpt{font-size:12.5px;color:var(--slate-600);line-height:1.65;flex:1;margin-bottom:14px;}
+.ac-meta{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--slate-400);}
+.ac-read{font-size:12px;font-weight:600;color:var(--sky-600);}
+/* NEWSLETTER */
+.newsletter-sec{background:linear-gradient(135deg,var(--sky-900) 0%,var(--sky-800) 100%);padding:60px 40px;display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
+.nl-left{flex:1;min-width:260px;}
+.nl-left h2{font-family:var(--fh);font-size:24px;font-weight:700;color:#fff;margin-bottom:8px;}
+.nl-left p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;max-width:400px;}
+.nl-form{display:flex;gap:10px;flex-wrap:wrap;flex:0 0 360px;}
+.nl-input{flex:1;min-width:200px;padding:11px 16px;border-radius:8px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-family:var(--fb);font-size:14px;outline:none;transition:border-color .15s;}
+.nl-input::placeholder{color:rgba(255,255,255,.4);}
+.nl-input:focus{border-color:var(--sky-400);}
+.nl-btn{font-family:var(--fh);font-size:13px;font-weight:600;background:#fff;color:var(--sky-800);padding:11px 22px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;transition:background .15s;}
+.nl-btn:hover{background:var(--sky-50);}
+/* CERT/FOOTER */
+.cert-bar{background:var(--slate-50);border-top:1px solid var(--slate-100);padding:14px 40px;}
+.cert-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.cert-badge{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500;color:var(--slate-600);}
+.cert-divider{width:1px;height:14px;background:var(--slate-200);}
+.mslg{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:16px;height:16px;}.mslg div{border-radius:1px;}
+.footer{background:var(--slate-50);border-top:1px solid var(--slate-100);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--slate-400);}
+.footer-logo{display:flex;align-items:center;gap:12px;}.footer-logo img{height:30px;mix-blend-mode:multiply;opacity:.65;}
+.footer-links{display:flex;gap:20px;}.footer-links a{color:var(--slate-400);transition:color .15s;}.footer-links a:hover{color:var(--sky-600);}
+@media(max-width:900px){
+  .nav{padding:0 20px;}.nav-links,.nav-cta{display:none;}
+  .page-hero,.featured-sec,.articles-sec,.newsletter-sec{padding:36px 20px;}
+  .filter-bar{padding:0 20px;}
+  .featured-card{grid-template-columns:1fr;}
+  .featured-img{height:200px;}
+  .articles-grid{grid-template-columns:1fr 1fr;}
+  .newsletter-sec{flex-direction:column;gap:24px;}
+  .nl-form{flex:none;width:100%;}
+  .footer,.cert-bar{padding:16px 20px;}
+}
+@media(max-width:600px){.articles-grid{grid-template-columns:1fr;}}
 </style>
-</head><body><nav style="position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);">
-<a href="index.html" style="display:flex;align-items:center;"><img src="logo-horizontal.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:screen;"/></a>
-<ul style="display:flex;align-items:center;gap:2px;list-style:none;">
-<li style="position:relative;"><button onclick="toggleDD('s',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;font-family:'Inter',sans-serif;">Services &#9662;</button>
-<div id="s" style="display:none;position:absolute;top:74px;left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:230px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
-<a href="service-bespoke.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Bespoke development</a>
-<a href="service-cyber.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Cyber Essentials &amp; security</a>
-<a href="service-m365.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Microsoft 365 deployment</a>
-<a href="service-managed-it.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">IT &amp; managed services</a>
-<a href="service-hr.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">HR systems development</a>
-<a href="service-advisory.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Advisory &amp; consultancy</a>
-<a href="service-sharepoint.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">SharePoint &amp; Power Apps</a>
-</div></li>
-<li><a href="solutions.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;">Solutions</a></li>
-<li style="position:relative;"><button onclick="toggleDD('h',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;font-family:'Inter',sans-serif;">SS Hub &#9662;</button>
-<div id="h" style="display:none;position:absolute;top:74px;left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:200px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
-<a href="hub-products.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Products</a>
-<a href="hub-insights.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Insights &amp; learning</a>
-<a href="hub-tech-updates.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Technology updates</a>
-</div></li>
-<li><a href="about.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;">About</a></li>
-</ul>
-<a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:#1A7EC4;color:#fff;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;text-decoration:none;">Talk to an expert</a>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><img src="logo-stacked.png" alt="SolvvSpace"/><span class="nav-brand-text">Solvv<span>Space</span></span></a>
+  <ul class="nav-links">
+    <li><a class="nla" href="solutions.html">Solutions</a></li>
+    <li><a class="nla" href="hub-products.html">Products</a></li>
+    <li><a class="nla active" href="hub-insights.html">Insights</a></li>
+    <li><a class="nla" href="about.html">About</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Talk to an expert</a>
 </nav>
-<script>function toggleDD(id,btn){var el=document.getElementById(id);var o=el.style.display==='block';['s','h'].forEach(function(i){document.getElementById(i).style.display='none';});if(!o)el.style.display='block';document.addEventListener('click',function c(e){if(!el.contains(e.target)&&e.target!==btn){el.style.display='none';document.removeEventListener('click',c);}});}</script><div style="background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:52px 40px 48px;position:relative;overflow:hidden;">
-<div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.12) 0%,transparent 70%);"></div>
-<div style="position:relative;z-index:2;max-width:660px;">
-<div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:12px;"><a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Home</a> / <span style="color:rgba(255,255,255,.6);">Insights &amp; learning</span></div>
-<div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">SS Hub &middot; Insights</div>
-<h1 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:#fff;line-height:1.18;margin-bottom:12px;">Practical knowledge to help<br><span style="color:#4AABF0;">your business grow smarter</span></h1>
-<p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;">Guides, how-tos, and best practice articles written for business owners and decision-makers, not just techies.</p>
-</div></div><section style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);"><div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Insights &amp; learning</div><h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:36px;" class="fu d1">Latest from the SolvvSpace team</h2><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;"><a href="#" class="fu d1" style="background:#fff;border:1px solid #ECEEF2;border-radius:14px;overflow:hidden;display:block;text-decoration:none;"><div style="height:130px;background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&q=80&fit=crop');background-size:cover;background-position:center;position:relative;"><div style="position:absolute;top:10px;left:10px;font-size:10px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:3px 9px;border-radius:10px;">Cyber security</div></div><div style="padding:16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.4;">Is Cyber Essentials worth it for a small business?</h3><p style="font-size:12px;color:#545B6B;line-height:1.65;">A straight-talking guide to what Cyber Essentials covers, what it costs, and whether your organisation needs it.</p><div style="font-size:11px;color:#8A909E;margin-top:10px;">5 min read &middot; Cyber security</div></div></a><a href="#" class="fu d2" style="background:#fff;border:1px solid #ECEEF2;border-radius:14px;overflow:hidden;display:block;text-decoration:none;"><div style="height:130px;background-image:url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&q=80&fit=crop');background-size:cover;background-position:center;position:relative;"><div style="position:absolute;top:10px;left:10px;font-size:10px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:3px 9px;border-radius:10px;">Microsoft 365</div></div><div style="padding:16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.4;">M365 Business Basic vs Premium — which plan do you need?</h3><p style="font-size:12px;color:#545B6B;line-height:1.65;">We break down the real differences between M365 licence tiers so you only pay for what your team uses.</p><div style="font-size:11px;color:#8A909E;margin-top:10px;">7 min read &middot; Microsoft 365</div></div></a><a href="#" class="fu d3" style="background:#fff;border:1px solid #ECEEF2;border-radius:14px;overflow:hidden;display:block;text-decoration:none;"><div style="height:130px;background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80&fit=crop');background-size:cover;background-position:center;position:relative;"><div style="position:absolute;top:10px;left:10px;font-size:10px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:3px 9px;border-radius:10px;">Managed IT</div></div><div style="padding:16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.4;">How to switch IT supplier without disrupting your business</h3><p style="font-size:12px;color:#545B6B;line-height:1.65;">A practical checklist for moving to a new IT provider — covering data, contracts, and continuity.</p><div style="font-size:11px;color:#8A909E;margin-top:10px;">6 min read &middot; Managed IT</div></div></a><a href="#" class="fu d4" style="background:#fff;border:1px solid #ECEEF2;border-radius:14px;overflow:hidden;display:block;text-decoration:none;"><div style="height:130px;background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&q=80&fit=crop');background-size:cover;background-position:center;position:relative;"><div style="position:absolute;top:10px;left:10px;font-size:10px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:3px 9px;border-radius:10px;">HR & people</div></div><div style="padding:16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.4;">Using Microsoft Teams to streamline your onboarding process</h3><p style="font-size:12px;color:#545B6B;line-height:1.65;">Build a structured, repeatable onboarding experience using Teams, SharePoint, and Power Automate.</p><div style="font-size:11px;color:#8A909E;margin-top:10px;">8 min read &middot; HR & people</div></div></a><a href="#" class="fu d5" style="background:#fff;border:1px solid #ECEEF2;border-radius:14px;overflow:hidden;display:block;text-decoration:none;"><div style="height:130px;background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80&fit=crop');background-size:cover;background-position:center;position:relative;"><div style="position:absolute;top:10px;left:10px;font-size:10px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:3px 9px;border-radius:10px;">Cloud</div></div><div style="padding:16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.4;">Do you actually need Azure if you're on Microsoft 365?</h3><p style="font-size:12px;color:#545B6B;line-height:1.65;">A clear explanation of what Azure is and when you'd pay for it separately from M365.</p><div style="font-size:11px;color:#8A909E;margin-top:10px;">5 min read &middot; Cloud</div></div></a><a href="#" class="fu d6" style="background:#fff;border:1px solid #ECEEF2;border-radius:14px;overflow:hidden;display:block;text-decoration:none;"><div style="height:130px;background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&q=80&fit=crop');background-size:cover;background-position:center;position:relative;"><div style="position:absolute;top:10px;left:10px;font-size:10px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:3px 9px;border-radius:10px;">AI</div></div><div style="padding:16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.4;">Microsoft Copilot — should your business be using it yet?</h3><p style="font-size:12px;color:#545B6B;line-height:1.65;">An honest look at what Copilot can and can't do for a small business today.</p><div style="font-size:11px;color:#8A909E;margin-top:10px;">6 min read &middot; AI</div></div></a></div></section><div style="background:#0f172a;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
-<div><h2 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#fff;margin-bottom:8px;">Ready to take the next step?</h2><p style="font-size:14px;color:rgba(255,255,255,.5);max-width:440px;line-height:1.7;">Talk to us about any of our services &mdash; free, no commitment, no pressure.</p></div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:11px 24px;border-radius:8px;text-decoration:none;">Book a free IT audit</a><a href="solutions.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);padding:11px 22px;border-radius:8px;text-decoration:none;">Explore services &rarr;</a></div>
-</div><footer style="background:#F7F8FA;border-top:1px solid #ECEEF2;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8A909E;">
-<div style="display:flex;align-items:center;gap:14px;"><img src="logo-stacked.png" alt="SolvvSpace" style="height:44px;width:auto;mix-blend-mode:multiply;opacity:0.75;"/><span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span></div>
-<div style="display:flex;gap:18px;"><a href="privacy.html" style="color:#8A909E;text-decoration:none;">Privacy</a><a href="cookies.html" style="color:#8A909E;text-decoration:none;">Cookies</a><a href="https://linkedin.com" target="_blank" style="color:#8A909E;text-decoration:none;">LinkedIn</a><a href="contact.html" style="color:#8A909E;text-decoration:none;">Contact</a></div>
-</footer><script>const _o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else _o.observe(el);});</script></body></html>
+
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,.65);">Insights &amp; learning</span></div>
+  <div class="page-eyebrow">SS Hub · Insights</div>
+  <h1>Practical knowledge to help<br><em>your business grow smarter</em></h1>
+  <p>Guides, how-tos, and straight-talking advice from the SolvvSpace team — written for business owners and decision-makers, not just techies.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="ftab active" data-cat="all">All articles</button>
+  <button class="ftab" data-cat="microsoft">Microsoft 365</button>
+  <button class="ftab" data-cat="cyber">Cyber security</button>
+  <button class="ftab" data-cat="hr">HR &amp; people</button>
+  <button class="ftab" data-cat="managed">Managed IT</button>
+  <button class="ftab" data-cat="ai">AI &amp; Copilot</button>
+</div>
+
+<!-- FEATURED -->
+<div class="featured-sec fu">
+  <div class="featured-label">Featured article</div>
+  <a class="featured-card" href="article-cyber-essentials.html">
+    <div class="featured-img">
+      <div class="featured-img-bg" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80&fit=crop');"></div>
+      <div style="position:relative;z-index:2;">
+        <div class="featured-cat">Cyber security</div>
+        <div class="featured-title">Is Cyber Essentials worth it for a small business? A straight-talking guide</div>
+      </div>
+    </div>
+    <div class="featured-body">
+      <div>
+        <div class="featured-excerpt">Cyber Essentials is a UK government-backed scheme designed to help organisations guard against the most common cyber threats. But what does it actually cover, how much does it cost, and is it right for a business at your scale? We break it down — no jargon, no upsell, just the facts.</div>
+        <div class="featured-meta">
+          <div class="feat-author"><div class="feat-av">SS</div><span>SolvvSpace team</span></div>
+          <span>·</span><span>8 min read</span><span>·</span><span>March 2025</span>
+        </div>
+      </div>
+      <span class="featured-read">Read the full article →</span>
+    </div>
+  </a>
+</div>
+
+<!-- ARTICLES GRID -->
+<section class="articles-sec">
+  <div class="sec-ey fu">Latest articles</div>
+  <div class="articles-grid" id="articles-grid">
+
+    <a class="article-card fu d1" href="article-m365-licences.html" data-cat="microsoft">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&q=80&fit=crop');"></div><div class="ac-cat">Microsoft 365</div><div class="ac-read-time">7 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">M365 Business Basic vs Premium — which licence does your team actually need?</div>
+        <p class="ac-excerpt">Microsoft's licence tiers are confusing by design. We cut through the marketing and tell you which features matter, which you'll never use, and how to avoid paying for the wrong plan.</p>
+        <div class="ac-meta"><span>April 2025</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+    <a class="article-card fu d2" href="article-switch-it-supplier.html" data-cat="managed">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80&fit=crop');"></div><div class="ac-cat">Managed IT</div><div class="ac-read-time">6 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">How to switch IT supplier without disrupting your business</div>
+        <p class="ac-excerpt">Changing IT provider feels risky — but staying with the wrong one costs more. A practical checklist covering data migration, contract exit, continuity planning, and what questions to ask.</p>
+        <div class="ac-meta"><span>March 2025</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+    <a class="article-card fu d3" href="article-teams-onboarding.html" data-cat="hr">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&q=80&fit=crop');"></div><div class="ac-cat">HR &amp; people</div><div class="ac-read-time">8 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">Using Microsoft Teams to build a structured onboarding process — without any coding</div>
+        <p class="ac-excerpt">A repeatable, professional onboarding experience is within reach for any business already on Microsoft 365. Here's how to build one using Teams, SharePoint, and Power Automate — step by step.</p>
+        <div class="ac-meta"><span>February 2025</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+    <a class="article-card fu d4" href="article-azure-vs-m365.html" data-cat="microsoft">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80&fit=crop');"></div><div class="ac-cat">Microsoft 365</div><div class="ac-read-time">5 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">Do you actually need Azure if you're already on Microsoft 365?</div>
+        <p class="ac-excerpt">Many small businesses already use Azure without realising it. Others pay for it when they don't need it. We explain the difference, when Azure adds value, and when M365 alone is enough.</p>
+        <div class="ac-meta"><span>February 2025</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+    <a class="article-card fu d5" href="article-copilot-sme.html" data-cat="ai">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&q=80&fit=crop');"></div><div class="ac-cat">AI &amp; Copilot</div><div class="ac-read-time">6 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">Microsoft Copilot for small business — should you be using it yet?</div>
+        <p class="ac-excerpt">An honest look at what Copilot can and can't do for a business under 50 users. What it costs, what you need in place before switching it on, and whether the ROI stacks up at your scale.</p>
+        <div class="ac-meta"><span>January 2025</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+    <a class="article-card fu d6" href="article-sharepoint-intranet.html" data-cat="microsoft">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80&fit=crop');"></div><div class="ac-cat">Microsoft 365</div><div class="ac-read-time">7 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">What makes a SharePoint intranet people actually use?</div>
+        <p class="ac-excerpt">Most SharePoint intranets fail because they're built for the IT team, not the people using them. Here's what separates a site that gets adopted from one that collects digital dust.</p>
+        <div class="ac-meta"><span>December 2024</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+    <a class="article-card fu d1" href="article-cyber-insurance.html" data-cat="cyber">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&q=80&fit=crop');"></div><div class="ac-cat">Cyber security</div><div class="ac-read-time">5 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">Cyber insurance and Cyber Essentials — what you need to know</div>
+        <p class="ac-excerpt">Cyber insurance premiums are rising and underwriters are asking harder questions. Cyber Essentials certification can reduce your premium and make your application stronger. Here's how.</p>
+        <div class="ac-meta"><span>November 2024</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+    <a class="article-card fu d2" href="article-hr-system-choice.html" data-cat="hr">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80&fit=crop');"></div><div class="ac-cat">HR &amp; people</div><div class="ac-read-time">9 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">Choosing an HR system for a business under 100 people — what actually matters</div>
+        <p class="ac-excerpt">The HR software market is full of enterprise platforms scaled down for SMEs. But most are over-engineered and under-supported. What should you actually look for — and what can you safely ignore?</p>
+        <div class="ac-meta"><span>October 2024</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+    <a class="article-card fu d3" href="article-windows10-eol.html" data-cat="managed">
+      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=400&q=80&fit=crop');"></div><div class="ac-cat">Managed IT</div><div class="ac-read-time">5 min</div></div>
+      <div class="ac-body">
+        <div class="ac-title">Windows 10 end of life — what your business needs to do before October 2025</div>
+        <p class="ac-excerpt">Microsoft ends support for Windows 10 in October 2025. After that, no security patches. If your team is still running it, here's what to do — and how long you have to do it.</p>
+        <div class="ac-meta"><span>September 2024</span><span class="ac-read">Read article →</span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-sec">
+  <div class="nl-left fu">
+    <h2>Stay informed — without the noise</h2>
+    <p>A short monthly update with practical technology tips for small businesses. No filler, no sales emails. Just the things that are actually useful.</p>
+  </div>
+  <div class="nl-form fu d2">
+    <input type="email" class="nl-input" placeholder="your@email.com" aria-label="Email address"/>
+    <button class="nl-btn" onclick="this.textContent='Subscribed ✓';this.style.background='#e6faf4';this.style.color='#0f766e';">Subscribe</button>
+  </div>
+</section>
+
+<div class="cert-bar"><div class="cert-badges">
+  <div class="cert-badge"><div class="mslg"><div style="background:#F25022;"></div><div style="background:#7FBA00;"></div><div style="background:#00A4EF;"></div><div style="background:#FFB900;"></div></div>Microsoft Gold Partner</div>
+  <div class="cert-divider"></div>
+  <div class="cert-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L2 3v3c0 2.2 1.7 4 4 4.5C8.3 10 10 8.2 10 6V3L6 1z" fill="#1A7EC4"/></svg>Cyber Essentials</div>
+  <div class="cert-divider"></div>
+  <div class="cert-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#1A7EC4" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="#1A7EC4" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>ITIL &amp; PRINCE2</div>
+</div></div>
+<footer class="footer">
+  <div class="footer-logo"><img src="logo-stacked.png" alt="SolvvSpace"/><span>© 2025 SolvvSpace Limited · Registered in England &amp; Wales (16153942) · Bedford MK41 9ST</span></div>
+  <div class="footer-links"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html">Contact</a></div>
+</footer>
+
+<script>
+const _obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else _obs.observe(el);});
+document.querySelectorAll('.ftab').forEach(tab=>{
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+    this.classList.add('active');
+    const cat=this.dataset.cat;
+    document.querySelectorAll('.article-card').forEach(card=>{
+      card.style.display=(cat==='all'||card.dataset.cat===cat)?'flex':'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
