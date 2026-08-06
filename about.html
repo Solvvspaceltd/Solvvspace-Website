@@ -1,160 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="./"/>
-<link rel="icon" type="image/png" href="logo.png"/>
-<link rel="apple-touch-icon" href="logo.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>About Us — Small enough to care, large enough to deliver | SolvvSpace</title>
-<meta name="description" content="SolvvSpace is a Bedford-based IT and HR consultancy. Learn how we work, who we serve, and what makes us different."/>
+<title>About Us | SolvvSpace</title>
+<meta name="description" content="SolvvSpace — Bedford-based IT and HR consultancy. Microsoft Gold Partner."/>
+<link rel="icon" type="image/png" href="logo-stacked.png"/>
+<link rel="apple-touch-icon" href="logo-stacked.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
-<nav class="nav" role="navigation"><a href="index.html" class="nav-logo"><img src="logo.png" alt="SolvvSpace" class="nav-logo-img"/><span class="nav-logo-text">Solvv<span>Space</span></span></a><ul class="nav-links"><li class="nav-dd"><button class="nav-dd-btn">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd-menu"><a class="dd-item" href="service-bespoke.html"><div class="dd-icon">&#9632;</div>Bespoke app &amp; systems dev</a><div class="dd-divider"></div><a class="dd-item" href="service-cyber.html"><div class="dd-icon">&#9632;</div>Cyber Essentials &amp; security</a><div class="dd-divider"></div><a class="dd-item" href="service-m365.html"><div class="dd-icon">&#9632;</div>Microsoft 365 deployment</a><div class="dd-divider"></div><a class="dd-item" href="service-managed-it.html"><div class="dd-icon">&#9632;</div>IT &amp; managed services</a><div class="dd-divider"></div><a class="dd-item" href="service-hr.html"><div class="dd-icon">&#9632;</div>HR systems development</a><div class="dd-divider"></div><a class="dd-item" href="service-advisory.html"><div class="dd-icon">&#9632;</div>Advisory &amp; consultancy</a><div class="dd-divider"></div><a class="dd-item" href="service-sharepoint.html"><div class="dd-icon">&#9632;</div>SharePoint &amp; Power Apps</a></div></li><li><a href="solutions.html">Solutions</a></li><li class="nav-dd"><button class="nav-dd-btn">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="hub-menu"><div class="hub-menu-header"><div class="hub-menu-title">SS Hub</div><div class="hub-menu-sub">Products, insights and technology updates</div></div><div class="hub-cols"><div><div class="hub-col-label">Products</div><a class="hub-item" href="hub-products.html"><div class="hub-item-icon">&#9670;</div><div><div class="hub-item-name">SolvvSpace HR</div><div class="hub-item-desc">HR management platform</div></div></a><a class="hub-item" href="hub-products.html#it-support"><div class="hub-item-icon">&#9670;</div><div><div class="hub-item-name">SolvvSpace IT Support</div><div class="hub-item-desc">Managed IT support tool</div></div></a></div><div><div class="hub-col-label">Insights</div><a class="hub-item" href="hub-insights.html"><div class="hub-item-icon">&#9670;</div><div><div class="hub-item-name">Insights &amp; learning</div><div class="hub-item-desc">Guides &amp; best practice</div></div></a></div><div><div class="hub-col-label">Updates</div><a class="hub-item" href="hub-tech-updates.html"><div class="hub-item-icon">&#9670;</div><div><div class="hub-item-name">Technology updates</div><div class="hub-item-desc">Microsoft &amp; industry news</div></div></a></div></div></div></li><li><a href="about.html">About</a></li></ul><a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a><button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button></nav><div class="mobile-menu" id="mobileMenu"><div class="mobile-section-label">Services</div><a href="service-bespoke.html">Bespoke app dev</a><a href="service-cyber.html">Cyber Essentials</a><a href="service-m365.html">Microsoft 365</a><a href="service-managed-it.html">IT &amp; managed services</a><a href="service-hr.html">HR systems</a><a href="service-advisory.html">Advisory</a><a href="service-sharepoint.html">SharePoint &amp; Power Apps</a><div class="mobile-section-label">Main</div><a href="solutions.html">Solutions</a><div class="mobile-section-label">SS Hub</div><a href="hub-products.html">Products</a><a href="hub-insights.html">Insights</a><a href="hub-tech-updates.html">Tech updates</a><div class="mobile-section-label">Company</div><a href="about.html">About</a><a href="contact.html">Get in touch</a></div>
-
-<div class="page-hero">
-  <div class="page-hero-grid"></div><div class="page-hero-glow"></div>
-  <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,0.65)">About us</span></div>
-    <div class="page-hero-label">About SolvvSpace</div>
-    <h1>Small enough to care.<br><span>Large enough to deliver.</span></h1>
-    <p>A Bedford-based IT and HR consultancy with one purpose — to help businesses cut through complexity, adopt the right technology, and build the foundations to grow with confidence.</p>
+<body><style>
+.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+.fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}
+.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
+@media(max-width:900px){
+  nav{padding:0 20px!important;}
+  section{padding:40px 20px!important;}
+  div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important;}
+  div[style*="padding:56px 40px"]{padding:40px 20px!important;flex-direction:column!important;}
+  div[style*="padding:52px 40px"]{padding:36px 20px!important;}
+}
+</style><nav style="position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);">
+  <a href="index.html" style="display:flex;align-items:center;"><img src="logo-horizontal.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:screen;"/></a>
+  <ul style="display:flex;align-items:center;gap:2px;list-style:none;">
+    <li style="position:relative;">
+      <button onclick="toggleDD('dd-svc',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;display:flex;align-items:center;gap:4px;font-family:'Inter',sans-serif;transition:color .15s,background .15s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div id="dd-svc" style="display:none;position:absolute;top:calc(100% + 10px);left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:230px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
+        <a href="service-bespoke.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;transition:background .12s;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Bespoke app &amp; systems dev</a>
+        <a href="service-cyber.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Cyber Essentials &amp; security</a>
+        <a href="service-m365.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Microsoft 365 deployment</a>
+        <a href="service-managed-it.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">IT &amp; managed services</a>
+        <a href="service-hr.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">HR systems development</a>
+        <a href="service-advisory.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Advisory &amp; consultancy</a>
+        <a href="service-sharepoint.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">SharePoint &amp; Power Apps</a>
+      </div>
+    </li>
+    <li><a href="solutions.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;transition:color .15s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">Solutions</a></li>
+    <li style="position:relative;">
+      <button onclick="toggleDD('dd-hub',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;display:flex;align-items:center;gap:4px;font-family:'Inter',sans-serif;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div id="dd-hub" style="display:none;position:absolute;top:calc(100% + 10px);left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:200px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
+        <a href="hub-products.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Products</a>
+        <a href="hub-insights.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Insights &amp; learning</a>
+        <a href="hub-tech-updates.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Technology updates</a>
+      </div>
+    </li>
+    <li><a href="about.html" class="active" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">About</a></li>
+  </ul>
+  <a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:#1A7EC4;color:#fff;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;text-decoration:none;white-space:nowrap;">Talk to an expert</a>
+</nav>
+<script>
+function toggleDD(id,btn){
+  var el=document.getElementById(id);
+  var isOpen=el.style.display==='block';
+  document.querySelectorAll('[id^="dd-"]').forEach(function(d){d.style.display='none';});
+  if(!isOpen)el.style.display='block';
+  document.addEventListener('click',function close(e){if(!el.contains(e.target)&&e.target!==btn){el.style.display='none';document.removeEventListener('click',close);}});
+}
+</script><div style="background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:52px 40px 48px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px);"></div>
+  <div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.12) 0%,transparent 70%);"></div>
+  <div style="position:relative;z-index:2;max-width:660px;">
+    <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.35);margin-bottom:14px;">
+      <a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Home</a>
+      <span style="color:rgba(255,255,255,.18);">/</span>
+      <span style="color:rgba(255,255,255,.6);">About us</span>
+    </div>
+    <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">About SolvvSpace</div>
+    <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4vw,38px);font-weight:700;color:#fff;line-height:1.18;letter-spacing:-.5px;margin-bottom:14px;">Small enough to care.<br><span style="color:#4AABF0;">Large enough to deliver.</span></h1>
+    <p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;margin-bottom:24px;">A Bedford-based IT and HR consultancy with one purpose — helping businesses cut through complexity, adopt the right technology, and grow with confidence.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;"><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.68);">Microsoft Gold Partner</div><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.68);">IT & HR expertise</div><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.68);">SME specialists</div><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.68);">Under 100 users</div></div>
   </div>
 </div>
-
-<section class="section" style="display:flex;gap:48px;align-items:center;flex-wrap:wrap;">
-  <div style="flex:1;min-width:260px;" class="fade-up">
-    <div class="sec-label">Who we are</div>
-    <div class="sec-title">A team of specialists who put your business first</div>
-    <p style="font-size:14px;color:var(--slate-600);line-height:1.8;margin-bottom:16px;">At SolvvSpace, our team of highly skilled IT and HR consultants brings deep expertise across cloud computing, bespoke development, business solutions, cyber security, and managed services. We don't believe in one-size solutions — we take the time to understand how your organisation works before we recommend anything.</p>
-    <p style="font-size:14px;color:var(--slate-600);line-height:1.8;margin-bottom:20px;">Our mission is to enhance your operational efficiency and drive growth in a rapidly evolving digital landscape. As a Microsoft Gold Partner, we combine world-class technology with the kind of personal service that larger firms simply can't offer.</p>
+<section style="padding:60px 40px;background:#fff;display:flex;gap:48px;align-items:center;flex-wrap:wrap;">
+  <div style="flex:1;min-width:260px;" class="fu">
+    <div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;">Who we are</div>
+    <h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;line-height:1.2;margin-bottom:14px;">A team of specialists who put your business first</h2>
+    <p style="font-size:14px;color:#545B6B;line-height:1.8;margin-bottom:14px;">At SolvvSpace, our team of highly skilled IT and HR consultants brings deep expertise across cloud computing, bespoke development, cyber security, and managed services. We take the time to understand how your organisation works before recommending anything.</p>
+    <p style="font-size:14px;color:#545B6B;line-height:1.8;margin-bottom:20px;">Our mission: enhance your operational efficiency and drive growth in a rapidly evolving digital landscape. As a Microsoft Gold Partner, we combine world-class technology with personal service that larger firms simply can't match.</p>
     <div style="display:flex;flex-wrap:wrap;gap:8px;">
-      <span style="font-size:12px;font-weight:500;color:var(--sky-800);background:var(--sky-50);border:0.5px solid var(--sky-200);padding:5px 13px;border-radius:20px;">Microsoft Gold Partner</span>
-      <span style="font-size:12px;font-weight:500;color:var(--sky-800);background:var(--sky-50);border:0.5px solid var(--sky-200);padding:5px 13px;border-radius:20px;">IT &amp; HR expertise</span>
-      <span style="font-size:12px;font-weight:500;color:var(--sky-800);background:var(--sky-50);border:0.5px solid var(--sky-200);padding:5px 13px;border-radius:20px;">SME specialists</span>
-      <span style="font-size:12px;font-weight:500;color:var(--sky-800);background:var(--sky-50);border:0.5px solid var(--sky-200);padding:5px 13px;border-radius:20px;">Under 100 users</span>
+      <span style="font-size:12px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:5px 13px;border-radius:20px;">Microsoft Gold Partner</span><span style="font-size:12px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:5px 13px;border-radius:20px;">IT & HR expertise</span><span style="font-size:12px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:5px 13px;border-radius:20px;">SME specialists</span><span style="font-size:12px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:5px 13px;border-radius:20px;"><100 users focus</span><span style="font-size:12px;font-weight:500;color:#0D4F80;background:#F0F8FF;border:.5px solid #B3DCFA;padding:5px 13px;border-radius:20px;">Bedford, UK</span>
     </div>
   </div>
-  <div class="fade-up d2" style="flex:0 0 300px;border-radius:16px;overflow:hidden;height:240px;">
-    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80&fit=crop" alt="SolvvSpace team" style="width:100%;height:100%;object-fit:cover;"/>
+  <div class="fu d2" style="flex:0 0 300px;border-radius:16px;overflow:hidden;height:240px;">
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80&fit=crop" alt="Team" style="width:100%;height:100%;object-fit:cover;"/>
   </div>
 </section>
-
-<div class="stats-row">
-  <div class="stat-cell fade-up"><div class="stat-val">7</div><div class="stat-label">Core service areas</div></div>
-  <div class="stat-cell fade-up d1"><div class="stat-val">24/7</div><div class="stat-label">Managed monitoring</div></div>
-  <div class="stat-cell fade-up d2"><div class="stat-val">&lt;100</div><div class="stat-label">User SME focus</div></div>
-  <div class="stat-cell fade-up d3"><div class="stat-val">Gold</div><div class="stat-label">Microsoft Partner</div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);background:#0f172a;">
+  <div style="padding:26px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.08);" class="fu d1"><div style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:4px;">7</div><div style="font-size:12px;color:rgba(255,255,255,.42);">Core service areas</div></div><div style="padding:26px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.08);" class="fu d2"><div style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:4px;">24/7</div><div style="font-size:12px;color:rgba(255,255,255,.42);">Managed monitoring</div></div><div style="padding:26px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.08);" class="fu d3"><div style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:4px;"><100</div><div style="font-size:12px;color:rgba(255,255,255,.42);">User SME focus</div></div><div style="padding:26px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.08);" class="fu d4"><div style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:4px;">Gold</div><div style="font-size:12px;color:rgba(255,255,255,.42);">Microsoft Partner</div></div>
 </div>
-
-<section class="section sky">
-  <div class="sec-label fade-up">How we work</div>
-  <div class="sec-title fade-up d1">Your journey with SolvvSpace</div>
-  <div class="sec-sub fade-up d2">Every engagement follows a clear, collaborative process — because technology only succeeds when the people using it are fully on board.</div>
-
+<section style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);">
+  <div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">How we work</div>
+  <h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:8px;" class="fu d1">Your journey with SolvvSpace</h2>
+  <p style="font-size:14px;color:#545B6B;line-height:1.7;max-width:480px;margin-bottom:44px;" class="fu d2">Technology only succeeds when the people using it are fully on board. Every engagement follows our four-step process.</p>
   <div style="display:flex;flex-direction:column;gap:0;">
-
-    <div style="display:flex;gap:0;align-items:stretch;" class="fade-up d1">
+    <div style="display:flex;gap:0;align-items:stretch;" class="fu d1">
       <div style="display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0;">
-        <div style="width:40px;height:40px;border-radius:50%;background:var(--sky-600);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;color:#fff;">1</div>
-        <div style="width:2px;background:var(--sky-100);flex:1;margin:4px 0;"></div>
+        <div style="width:40px;height:40px;border-radius:50%;background:#1A7EC4;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:#fff;">1</div>
+        <div style='width:2px;background:#DCF0FD;flex:1;margin:4px 0;'></div>
       </div>
       <div style="flex:1;display:flex;gap:24px;align-items:flex-start;padding-bottom:40px;padding-left:8px;flex-wrap:wrap;">
-        <div style="flex:0 0 200px;height:140px;border-radius:12px;overflow:hidden;position:relative;min-width:160px;">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&fit=crop" alt="Discovery" style="width:100%;height:100%;object-fit:cover;"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,0.25) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:10px;left:12px;font-size:10px;font-weight:500;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:0.85;">Discovery</div>
+        <div style="flex:0 0 180px;height:130px;border-radius:12px;overflow:hidden;position:relative;min-width:140px;">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&fit=crop" alt="Getting to know you" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,.25) 0%,transparent 60%);"></div>
+          <div style="position:absolute;bottom:8px;left:10px;font-size:9.5px;font-weight:600;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:.85;">Discovery</div>
         </div>
-        <div style="flex:1;min-width:200px;">
-          <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;color:var(--sky-600);text-transform:uppercase;margin-bottom:6px;">Step one</div>
-          <h3 style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:500;color:var(--slate-900);margin-bottom:8px;">Getting to know you</h3>
-          <p style="font-size:13px;color:var(--slate-600);line-height:1.75;">It's not just about the technology. Before we recommend a single tool, we invest time in understanding how you and your team actually work — your culture, your goals, your frustrations, and your ambitions. Understanding what you want to achieve and the strategic context of your business is just as important as any platform decision. This is where great outcomes begin.</p>
+        <div style="flex:1;min-width:180px;">
+          <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:#1A7EC4;text-transform:uppercase;margin-bottom:5px;">Step 1</div>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;color:#1C2231;margin-bottom:7px;">Getting to know you</h3>
+          <p style="font-size:13px;color:#545B6B;line-height:1.75;">It's not just about technology. We invest time understanding how you and your team actually work — your culture, goals, frustrations, and ambitions — before recommending anything.</p>
         </div>
       </div>
-    </div>
-
-    <div style="display:flex;gap:0;align-items:stretch;" class="fade-up d2">
+    </div><div style="display:flex;gap:0;align-items:stretch;" class="fu d2">
       <div style="display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0;">
-        <div style="width:40px;height:40px;border-radius:50%;background:var(--sky-600);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;color:#fff;">2</div>
-        <div style="width:2px;background:var(--sky-100);flex:1;margin:4px 0;"></div>
+        <div style="width:40px;height:40px;border-radius:50%;background:#1A7EC4;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:#fff;">2</div>
+        <div style='width:2px;background:#DCF0FD;flex:1;margin:4px 0;'></div>
       </div>
       <div style="flex:1;display:flex;gap:24px;align-items:flex-start;padding-bottom:40px;padding-left:8px;flex-wrap:wrap;">
-        <div style="flex:0 0 200px;height:140px;border-radius:12px;overflow:hidden;position:relative;min-width:160px;">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80&fit=crop" alt="Planning" style="width:100%;height:100%;object-fit:cover;"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,0.25) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:10px;left:12px;font-size:10px;font-weight:500;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:0.85;">Planning</div>
+        <div style="flex:0 0 180px;height:130px;border-radius:12px;overflow:hidden;position:relative;min-width:140px;">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80&fit=crop" alt="First steps together" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,.25) 0%,transparent 60%);"></div>
+          <div style="position:absolute;bottom:8px;left:10px;font-size:9.5px;font-weight:600;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:.85;">Planning</div>
         </div>
-        <div style="flex:1;min-width:200px;">
-          <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;color:var(--sky-600);text-transform:uppercase;margin-bottom:6px;">Step two</div>
-          <h3 style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:500;color:var(--slate-900);margin-bottom:8px;">First steps together</h3>
-          <p style="font-size:13px;color:var(--slate-600);line-height:1.75;">Taking the first steps towards digital transformation can feel daunting — there are so many options and so many different routes. We make sure you fully understand the process and the outcome of every choice before committing. We help you manage change within your team, define clear expectations, and plan for a smooth project where you start seeing return as quickly as possible.</p>
+        <div style="flex:1;min-width:180px;">
+          <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:#1A7EC4;text-transform:uppercase;margin-bottom:5px;">Step 2</div>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;color:#1C2231;margin-bottom:7px;">First steps together</h3>
+          <p style="font-size:13px;color:#545B6B;line-height:1.75;">We make sure you fully understand the process and outcome of every choice before committing. We help manage change, define expectations, and plan for a smooth project with fast return.</p>
         </div>
       </div>
-    </div>
-
-    <div style="display:flex;gap:0;align-items:stretch;" class="fade-up d3">
+    </div><div style="display:flex;gap:0;align-items:stretch;" class="fu d3">
       <div style="display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0;">
-        <div style="width:40px;height:40px;border-radius:50%;background:var(--sky-600);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;color:#fff;">3</div>
-        <div style="width:2px;background:var(--sky-100);flex:1;margin:4px 0;"></div>
+        <div style="width:40px;height:40px;border-radius:50%;background:#1A7EC4;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:#fff;">3</div>
+        <div style='width:2px;background:#DCF0FD;flex:1;margin:4px 0;'></div>
       </div>
       <div style="flex:1;display:flex;gap:24px;align-items:flex-start;padding-bottom:40px;padding-left:8px;flex-wrap:wrap;">
-        <div style="flex:0 0 200px;height:140px;border-radius:12px;overflow:hidden;position:relative;min-width:160px;">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80&fit=crop" alt="Delivery" style="width:100%;height:100%;object-fit:cover;"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,0.25) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:10px;left:12px;font-size:10px;font-weight:500;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:0.85;">Delivery</div>
+        <div style="flex:0 0 180px;height:130px;border-radius:12px;overflow:hidden;position:relative;min-width:140px;">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80&fit=crop" alt="Working with you" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,.25) 0%,transparent 60%);"></div>
+          <div style="position:absolute;bottom:8px;left:10px;font-size:9.5px;font-weight:600;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:.85;">Delivery</div>
         </div>
-        <div style="flex:1;min-width:200px;">
-          <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;color:var(--sky-600);text-transform:uppercase;margin-bottom:6px;">Step three</div>
-          <h3 style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:500;color:var(--slate-900);margin-bottom:8px;">Working with you</h3>
-          <p style="font-size:13px;color:var(--slate-600);line-height:1.75;">We don't hand over and walk away. We support the change, deliver training to empower your staff, and share a wealth of experience and good practice to ensure your project succeeds — and that you maintain momentum long after go-live. Your team's confidence in the new way of working is as important to us as the technology itself.</p>
+        <div style="flex:1;min-width:180px;">
+          <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:#1A7EC4;text-transform:uppercase;margin-bottom:5px;">Step 3</div>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;color:#1C2231;margin-bottom:7px;">Working with you</h3>
+          <p style="font-size:13px;color:#545B6B;line-height:1.75;">We don't hand over and walk away. We support the change, deliver training to empower your staff, and share best practice to ensure your project succeeds long after go-live.</p>
         </div>
       </div>
-    </div>
-
-    <div style="display:flex;gap:0;align-items:flex-start;" class="fade-up d4">
+    </div><div style="display:flex;gap:0;align-items:stretch;" class="fu d4">
       <div style="display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0;">
-        <div style="width:40px;height:40px;border-radius:50%;background:var(--sky-600);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;color:#fff;">4</div>
+        <div style="width:40px;height:40px;border-radius:50%;background:#1A7EC4;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:#fff;">4</div>
+        
       </div>
-      <div style="flex:1;display:flex;gap:24px;align-items:flex-start;padding-left:8px;flex-wrap:wrap;">
-        <div style="flex:0 0 200px;height:140px;border-radius:12px;overflow:hidden;position:relative;min-width:160px;">
-          <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80&fit=crop" alt="Partnership" style="width:100%;height:100%;object-fit:cover;"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,0.25) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:10px;left:12px;font-size:10px;font-weight:500;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:0.85;">Partnership</div>
+      <div style="flex:1;display:flex;gap:24px;align-items:flex-start;padding-bottom:0px;padding-left:8px;flex-wrap:wrap;">
+        <div style="flex:0 0 180px;height:130px;border-radius:12px;overflow:hidden;position:relative;min-width:140px;">
+          <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=400&q=80&fit=crop" alt="Transform and build success" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,47,80,.25) 0%,transparent 60%);"></div>
+          <div style="position:absolute;bottom:8px;left:10px;font-size:9.5px;font-weight:600;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:.85;">Partnership</div>
         </div>
-        <div style="flex:1;min-width:200px;">
-          <div style="font-size:10px;font-weight:500;letter-spacing:1.5px;color:var(--sky-600);text-transform:uppercase;margin-bottom:6px;">Step four</div>
-          <h3 style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:500;color:var(--slate-900);margin-bottom:8px;">Transform and build success</h3>
-          <p style="font-size:13px;color:var(--slate-600);line-height:1.75;">For SolvvSpace, it's all about the relationships we build with our clients. Together we evaluate progress, measure what's working, and decide what comes next. Building a trusted, long-term partnership with you is how we make sure your business keeps achieving more — not just at project close, but for every milestone ahead.</p>
+        <div style="flex:1;min-width:180px;">
+          <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:#1A7EC4;text-transform:uppercase;margin-bottom:5px;">Step 4</div>
+          <h3 style="font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;color:#1C2231;margin-bottom:7px;">Transform and build success</h3>
+          <p style="font-size:13px;color:#545B6B;line-height:1.75;">We evaluate progress together, measure what's working, and decide what comes next. Building a trusted, long-term partnership with you is how we ensure your business keeps achieving more.</p>
         </div>
       </div>
     </div>
-
   </div>
 </section>
-
-<section class="section slate">
-  <div class="sec-label fade-up">Built for small businesses</div>
-  <div class="sec-title fade-up d1">We exist to serve organisations like yours</div>
-  <div class="sec-sub fade-up d2">We exclusively work with businesses of fewer than 100 users — every resource we have is focused on clients at your scale.</div>
-  <div class="grid-2">
-    <div class="accard fade-up d1"><h3>Microsoft 365 experts for small business</h3><p>We've built a proven, standardised process to migrate small businesses to the cloud and unlock the full potential of Microsoft 365 — without the disruption.</p></div>
-    <div class="accard fade-up d2"><h3>We only work with businesses under 100 users</h3><p>We understand small business culture. We don't carry large enterprise clients that could consume our time and attention. You always get the best of us.</p></div>
-    <div class="accard fade-up d3"><h3>Need to switch IT supplier but don't have the time?</h3><p>Our team manages the entire onboarding process — it's hassle-free. We guarantee your time won't be eroded, even if you're locked into a current contract.</p></div>
-    <div class="accard fade-up d4"><h3>IT issues eating into your day?</h3><p>We take care of the day-to-day running of your IT governance. No need to employ dedicated IT admin staff. We bridge the gap, at a fraction of the cost.</p></div>
-    <div class="accard fade-up d5"><h3>Tired of over-promise, under-deliver?</h3><p>We're direct, honest, and accountable. If something isn't working, we tell you — and we fix it. No excuses, no complacency, no hidden costs.</p></div>
-    <div class="accard fade-up d6"><h3>Looking for Cyber Essentials certification?</h3><p>Our team manages the entire certification process — assessment, remediation, and submission. We track your renewal so it never lapses.</p></div>
-  </div>
+<section style="padding:60px 40px;background:linear-gradient(180deg,#F7F8FA 0%,#fff 80%);">
+  <div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Built for small businesses</div>
+  <h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:8px;" class="fu d1">We exist to serve organisations like yours</h2>
+  <p style="font-size:14px;color:#545B6B;line-height:1.65;max-width:480px;margin-bottom:32px;" class="fu d2">We exclusively work with businesses of fewer than 100 users — every resource focused on your scale.</p>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;"><div class="fu d1" style="background:#fff;border:1px solid #ECEEF2;border-left:3px solid #4AABF0;border-radius:0 12px 12px 0;padding:18px 16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:5px;">Microsoft 365 experts for small business</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">We've built a proven, standardised process to migrate small businesses to the cloud and unlock the full potential of Microsoft 365 — without the disruption.</p></div><div class="fu d2" style="background:#fff;border:1px solid #ECEEF2;border-left:3px solid #4AABF0;border-radius:0 12px 12px 0;padding:18px 16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:5px;">We only work with businesses under 100 users</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">We understand small business culture. We don't carry large enterprise clients that consume our time. You always get the best of us.</p></div><div class="fu d3" style="background:#fff;border:1px solid #ECEEF2;border-left:3px solid #4AABF0;border-radius:0 12px 12px 0;padding:18px 16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:5px;">Need to switch IT supplier but don't have the time?</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Our team manages the entire onboarding process — hassle-free. We guarantee your time won't be eroded, even if you're locked into a current contract.</p></div><div class="fu d4" style="background:#fff;border:1px solid #ECEEF2;border-left:3px solid #4AABF0;border-radius:0 12px 12px 0;padding:18px 16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:5px;">IT issues eating into your day?</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">We take care of the day-to-day running of your IT governance. No need to employ dedicated IT admin staff. We bridge the gap at a fraction of the cost.</p></div><div class="fu d5" style="background:#fff;border:1px solid #ECEEF2;border-left:3px solid #4AABF0;border-radius:0 12px 12px 0;padding:18px 16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:5px;">Tired of over-promise, under-deliver?</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">We're direct, honest, and accountable. If something isn't working, we tell you — and fix it. No excuses, no complacency, no hidden costs.</p></div><div class="fu d6" style="background:#fff;border:1px solid #ECEEF2;border-left:3px solid #4AABF0;border-radius:0 12px 12px 0;padding:18px 16px;"><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:5px;">Looking for Cyber Essentials certification?</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Our team manages the entire certification process — assessment, remediation, and submission. We track your renewal so it never lapses.</p></div></div>
 </section>
-
-<div class="cta-strip">
-  <div class="fade-up"><h2>Ready to work with a partner who gets it?</h2><p>Book a free, no-obligation conversation — we'll listen first, then tell you honestly what you need.</p></div>
-  <div class="btn-row fade-up d2"><a href="contact.html" class="btn btn-white">Let's talk</a><a href="solutions.html" class="btn btn-ghost">See our services →</a></div>
-</div>
-
-<footer class="footer"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;"><img src="logo.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:multiply;opacity:0.7;"/><span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942)</span><span>55 Barkers Lane, Bedford, MK41 9ST</span><div class="footer-links"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html">Contact</a></div></footer><script src="js/main.js"></script>
-</body>
-</html>
+<div style="background:#0f172a;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+  <div><h2 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#fff;margin-bottom:8px;">Ready to work with a partner who gets it?</h2><p style="font-size:14px;color:rgba(255,255,255,.5);max-width:440px;line-height:1.7;">Book a free conversation — we'll listen first, then tell you honestly what you need.</p></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:11px 24px;border-radius:8px;text-decoration:none;">Let's talk</a>
+    <a href="solutions.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);padding:11px 22px;border-radius:8px;text-decoration:none;">See our services →</a>
+  </div>
+</div><footer style="background:#F7F8FA;border-top:1px solid #ECEEF2;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8A909E;">
+  <div style="display:flex;align-items:center;gap:14px;">
+    <img src="logo-stacked.png" alt="SolvvSpace" style="height:44px;width:auto;mix-blend-mode:multiply;opacity:0.75;"/>
+    <span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span>
+  </div>
+  <div style="display:flex;gap:18px;">
+    <a href="privacy.html" style="color:#8A909E;text-decoration:none;">Privacy</a>
+    <a href="cookies.html" style="color:#8A909E;text-decoration:none;">Cookies</a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener" style="color:#8A909E;text-decoration:none;">LinkedIn</a>
+    <a href="contact.html" style="color:#8A909E;text-decoration:none;">Contact</a>
+  </div>
+</footer><script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else obs.observe(el);});
+</script></body></html>

@@ -1,179 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<base href="./"/>
-<link rel="icon" type="image/png" href="logo.png"/>
-<link rel="apple-touch-icon" href="logo.png"/>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Solutions | SolvvSpace</title><meta name="description" content="Complete IT and HR solutions from SolvvSpace — Microsoft technologies, cyber security, bespoke development, HR systems, managed IT and advisory."/>
+<link rel="icon" type="image/png" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Solutions — Microsoft Technologies, Cyber Security, Bespoke Development & More | SolvvSpace</title>
-<meta name="description" content="Complete IT and HR solutions from SolvvSpace — Microsoft technologies, cyber security, bespoke application development, HR systems, managed IT, and advisory."/>
-<link rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
-<nav class="nav" role="navigation">
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="SolvvSpace" class="nav-logo-img"/><span class="nav-logo-text">Solvv<span>Space</span></span></a>
-  <ul class="nav-links">
-    <li class="nav-dd">
-      <button class="nav-dd-btn">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="dd-menu">
-        <a class="dd-item" href="service-bespoke.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Bespoke app &amp; systems dev</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-cyber.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Cyber Essentials &amp; security</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-m365.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Microsoft 365 deployment</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-managed-it.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>IT &amp; managed services</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-hr.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>HR systems development</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-advisory.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Advisory &amp; consultancy</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-sharepoint.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>SharePoint &amp; Power Apps</a>
-      </div>
-    </li>
-    <li><a href="solutions.html" class="active">Solutions</a></li>
-    <li class="nav-dd">
-      <button class="nav-dd-btn">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="hub-menu">
-        <div class="hub-menu-header"><div class="hub-menu-title">SS Hub</div><div class="hub-menu-sub">Products, insights and technology updates</div></div>
-        <div class="hub-cols">
-          <div><div class="hub-col-label">Products</div><a class="hub-item" href="hub-products.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">SolvvSpace HR</div><div class="hub-item-desc">HR management platform</div></div></a><a class="hub-item" href="hub-products.html#it-support"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">SolvvSpace IT Support</div><div class="hub-item-desc">Managed IT support tool</div></div></a></div>
-          <div><div class="hub-col-label">Insights</div><a class="hub-item" href="hub-insights.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">Insights &amp; learning</div><div class="hub-item-desc">Guides &amp; best practice</div></div></a></div>
-          <div><div class="hub-col-label">Updates</div><a class="hub-item" href="hub-tech-updates.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">Technology updates</div><div class="hub-item-desc">Microsoft &amp; industry news</div></div></a></div>
-        </div>
-      </div>
-    </li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-  <a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;color:#1C2231;background:#fff;-webkit-font-smoothing:antialiased;}a{text-decoration:none;color:inherit;}
+.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}.fu.vis{opacity:1;transform:translateY(0);}
+.fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
+@media(max-width:900px){nav{padding:0 20px!important;}[style*="padding:60px 40px"],[style*="padding:56px 40px"]{padding:40px 20px!important;}[style*="grid-template-columns:repeat(2"],[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}[style*="grid-template-columns:2fr"]{grid-template-columns:1fr!important;}footer{padding:16px 20px!important;flex-direction:column!important;}}
+</style>
+</head><body><nav style="position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);">
+<a href="index.html" style="display:flex;align-items:center;"><img src="logo-horizontal.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:screen;"/></a>
+<ul style="display:flex;align-items:center;gap:2px;list-style:none;">
+<li style="position:relative;"><button onclick="toggleDD('s',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;font-family:'Inter',sans-serif;">Services &#9662;</button>
+<div id="s" style="display:none;position:absolute;top:74px;left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:230px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
+<a href="service-bespoke.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Bespoke development</a>
+<a href="service-cyber.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Cyber Essentials &amp; security</a>
+<a href="service-m365.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Microsoft 365 deployment</a>
+<a href="service-managed-it.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">IT &amp; managed services</a>
+<a href="service-hr.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">HR systems development</a>
+<a href="service-advisory.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Advisory &amp; consultancy</a>
+<a href="service-sharepoint.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">SharePoint &amp; Power Apps</a>
+</div></li>
+<li><a href="solutions.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;">Solutions</a></li>
+<li style="position:relative;"><button onclick="toggleDD('h',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;font-family:'Inter',sans-serif;">SS Hub &#9662;</button>
+<div id="h" style="display:none;position:absolute;top:74px;left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:200px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
+<a href="hub-products.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Products</a>
+<a href="hub-insights.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Insights &amp; learning</a>
+<a href="hub-tech-updates.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Technology updates</a>
+</div></li>
+<li><a href="about.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;">About</a></li>
+</ul>
+<a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:#1A7EC4;color:#fff;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;text-decoration:none;">Talk to an expert</a>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-section-label">Services</div>
-  <a href="service-bespoke.html">Bespoke app &amp; systems development</a>
-  <a href="service-cyber.html">Cyber Essentials &amp; security</a>
-  <a href="service-m365.html">Microsoft 365 deployment</a>
-  <a href="service-managed-it.html">IT &amp; managed services</a>
-  <a href="service-hr.html">HR systems development</a>
-  <a href="service-advisory.html">Advisory &amp; consultancy</a>
-  <a href="service-sharepoint.html">SharePoint &amp; Power Apps</a>
-  <div class="mobile-section-label">Main</div>
-  <a href="solutions.html">Solutions</a>
-  <div class="mobile-section-label">SS Hub</div>
-  <a href="hub-products.html">Products</a>
-  <a href="hub-insights.html">Insights</a>
-  <a href="hub-tech-updates.html">Tech updates</a>
-  <div class="mobile-section-label">Company</div>
-  <a href="about.html">About</a>
-  <a href="contact.html">Get in touch</a>
-</div>
-
-<div class="page-hero">
-  <div class="page-hero-grid"></div><div class="page-hero-glow"></div>
-  <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,0.65)">Solutions</span></div>
-    <div class="page-hero-label">Solutions</div>
-    <h1>Technology &amp; strategy solutions<br>that <span>actually move the needle</span></h1>
-    <p>From Microsoft cloud deployments to bespoke applications, cyber security audits, and HR systems — every solution we deliver is shaped around your organisation, not a one-size template.</p>
-    <div class="hero-badges">
-      <div class="hero-badge"><svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="#4AABF0"/></svg>Microsoft Gold Partner</div>
-      <div class="hero-badge"><svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="#4AABF0"/></svg>IT &amp; HR under one roof</div>
-      <div class="hero-badge"><svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="#4AABF0"/></svg>Bedford, UK</div>
-    </div>
-  </div>
-</div>
-
-<div class="sub-tabs">
-  <button class="stab active" data-target="ms">Microsoft technologies</button>
-  <button class="stab" data-target="cyber">Cyber &amp; security</button>
-  <button class="stab" data-target="bespoke">Bespoke development</button>
-  <button class="stab" data-target="hr">HR systems</button>
-  <button class="stab" data-target="managed">Managed IT</button>
-  <button class="stab" data-target="advisory">Advisory</button>
-</div>
-
-<section class="section sky" id="ms">
-  <div class="partner-strip fade-up">
-    <div class="partner-left"><div class="ms-logo"><div style="background:#F25022;"></div><div style="background:#7FBA00;"></div><div style="background:#00A4EF;"></div><div style="background:#FFB900;"></div></div><div class="partner-text"><h3>Microsoft Gold Partner</h3><p>Certified across Modern Work, Azure, Security &amp; Business Applications</p></div></div>
-    <div class="partner-badges"><span class="pbadge">Modern Work</span><span class="pbadge">Azure</span><span class="pbadge">Security</span><span class="pbadge">Business Apps</span></div>
-  </div>
-  <div class="sec-label fade-up">Microsoft technologies</div>
-  <div class="sec-title fade-up d1">The full Microsoft stack, expertly delivered</div>
-  <div class="sec-sub fade-up d2">We deploy and manage every layer of the Microsoft ecosystem — productivity, cloud, data, and AI.</div>
-  <div class="grid-2">
-    <div class="card span-2 fade-up d1" style="border-color:var(--sky-200);"><h3>Microsoft 365</h3><p>The complete cloud productivity suite — Word, Excel, Teams, Outlook — with enterprise security and compliance built in. We handle full deployment, licence optimisation, and ongoing management.</p><div class="feat-pills"><span class="feat-pill">Teams &amp; collaboration</span><span class="feat-pill">Licence management</span><span class="feat-pill">Compliance tools</span><span class="feat-pill">Migration from Office 365</span></div><a href="service-m365.html" class="card-link">Explore Microsoft 365 →</a></div>
-    <div class="card fade-up d2" style="border-color:var(--sky-200);"><h3>Azure cloud</h3><p>Scalable public cloud to replace or supplement on-premises servers. Pay-as-you-go compute, storage, analytics, and networking — we architect and manage the whole environment.</p><a href="solutions.html" class="card-link">Explore Azure →</a></div>
-    <div class="card fade-up d3" style="border-color:var(--sky-200);"><h3>SharePoint &amp; Teams</h3><p>Modern intranet portals, document libraries, and team collaboration spaces — secure, scalable, and accessible from any device.</p><a href="service-sharepoint.html" class="card-link">Explore SharePoint &amp; Teams →</a></div>
-    <div class="card fade-up d4" style="border-color:var(--sky-200);"><h3>Dynamics 365</h3><p>All-in-one CRM and ERP — sales, marketing, customer service, finance, and operations. A Gartner Leaders Quadrant product we implement end to end.</p><a href="solutions.html" class="card-link">Explore Dynamics 365 →</a></div>
-    <div class="card fade-up d5" style="border-color:var(--sky-200);"><h3>Power BI</h3><p>Real-time dashboards and intelligent reporting across all your data sources. We configure models tailored to your KPIs.</p><a href="solutions.html" class="card-link">Explore Power BI →</a></div>
-    <div class="card fade-up d6" style="border-color:var(--sky-200);"><h3>Power Platform</h3><p>Bespoke Power Apps built for your workflows — including SolvvSpaceHR, SolvvSpaceStaff, and SolvvSpaceMultiTenant.</p><a href="service-sharepoint.html" class="card-link">Explore Power Platform →</a></div>
-    <div class="card span-2 fade-up d1" style="border-color:var(--sky-200);"><h3>Microsoft Copilot</h3><p>AI woven into every Microsoft 365 app — drafting documents, summarising meetings, generating insights, and writing code. We govern, configure, and train your team on Copilot to maximise adoption and ROI.</p><div class="feat-pills"><span class="feat-pill">Copilot for M365</span><span class="feat-pill">Copilot for Sales</span><span class="feat-pill">Copilot Studio</span><span class="feat-pill">AI governance setup</span></div></div>
-  </div>
-</section>
-
-<div class="section-rule"></div>
-
-<section class="section slate" id="cyber">
-  <div class="sec-label fade-up">Cyber &amp; security</div>
-  <div class="sec-title fade-up d1">Know your risk — before someone else finds it</div>
-  <div class="sec-sub fade-up d2">From IT system audits to Cyber Essentials certification and managed protection.</div>
-  <div class="grid-2">
-    <div class="card span-2 fade-up d1" style="border-color:var(--sky-200);"><h3>IT system audit &amp; cyber security assessment</h3><p>A thorough review of your entire IT environment — infrastructure, user access, endpoints, and cloud configuration — to identify vulnerabilities before they become incidents.</p><div class="outcomes"><div class="outcome">Full infrastructure and endpoint vulnerability review</div><div class="outcome">User access and privilege audit with remediation recommendations</div><div class="outcome">Written risk report with prioritised, costed next steps</div></div><a href="service-cyber.html" class="card-link">Book a free IT audit →</a></div>
-    <div class="card fade-up d2" style="border-color:var(--sky-200);"><h3>Cyber Essentials certification</h3><p>Government-backed certification — we guide you through the full process and handle technical remediation. Certification in as little as 6 weeks.</p><a href="service-cyber.html" class="card-link">Learn more →</a></div>
-    <div class="card fade-up d3" style="border-color:var(--sky-200);"><h3>Managed security &amp; BitDefender</h3><p>Continuous endpoint protection with 24/7 monitoring and rapid incident response powered by BitDefender Gravity Zone.</p><a href="service-cyber.html" class="card-link">Learn more →</a></div>
-  </div>
-</section>
-
-<div class="section-rule"></div>
-
-<section class="section sky" id="bespoke">
-  <div class="sec-label fade-up">Bespoke development</div>
-  <div class="sec-title fade-up d1">Built for you — not adapted from a template</div>
-  <div class="sec-sub fade-up d2">Custom applications, integrations, and platforms that work exactly the way your business does.</div>
-  <div class="grid-2">
-    <div class="card span-2 fade-up d1" style="border-color:var(--sky-200);"><h3>Bespoke application &amp; systems development</h3><p>We build custom web applications, internal tools, and integrated systems from scratch — designed around your processes, not the other way around.</p><div class="outcomes"><div class="outcome">Discovery workshops to map your exact requirements</div><div class="outcome">Agile build with regular demos and feedback loops</div><div class="outcome">Integration with Microsoft, HR, and third-party systems</div><div class="outcome">Ongoing support, hosting, and feature development</div></div><a href="service-bespoke.html" class="card-link">Discuss your project →</a></div>
-    <div class="card fade-up d2" style="border-color:var(--sky-200);"><h3>SharePoint &amp; Power Platform</h3><p>Tailored intranet portals and Power Apps — including SolvvSpaceHR, SolvvSpaceStaff, and SolvvSpaceMultiTenant, deployable today.</p><a href="service-sharepoint.html" class="card-link">Learn more →</a></div>
-    <div class="card fade-up d3" style="border-color:var(--sky-200);"><h3>System integration &amp; APIs</h3><p>Connect your existing tools into a single coherent technology stack. No more duplicate data or manual handoffs between systems.</p><a href="service-bespoke.html" class="card-link">Learn more →</a></div>
-  </div>
-</section>
-
-<div class="section-rule"></div>
-
-<section class="section slate" id="hr">
-  <div class="sec-label fade-up">HR systems development</div>
-  <div class="sec-title fade-up d1">HR technology that works the way your people do</div>
-  <div class="sec-sub fade-up d2">Custom HR platforms, workforce planning, and compliance advisory.</div>
-  <div class="grid-2">
-    <div class="card fade-up d1" style="border-color:var(--sky-200);"><h3>SolvvSpaceHR platform</h3><p>Full employee lifecycle management — onboarding, performance, leave, compliance, and offboarding — deployed in your Microsoft 365 tenant.</p><a href="hub-products.html" class="card-link">See the product →</a></div>
-    <div class="card fade-up d2" style="border-color:var(--sky-200);"><h3>HR strategy &amp; workforce planning</h3><p>Strategic HR consultancy — workforce planning, talent management, employment law compliance, and organisational design.</p><a href="service-hr.html" class="card-link">Learn more →</a></div>
-  </div>
-</section>
-
-<div class="section-rule"></div>
-
-<section class="section sky" id="managed">
-  <div class="sec-label fade-up">Managed IT &amp; advisory</div>
-  <div class="sec-title fade-up d1">Your IT department — without the overhead</div>
-  <div class="sec-sub fade-up d2">Day-to-day support and strategic guidance from one trusted partner.</div>
-  <div class="grid-2">
-    <div class="card fade-up d1" style="border-color:var(--sky-200);"><h3>IT &amp; managed services</h3><p>24/7 monitoring, dedicated helpdesk, infrastructure management, and virtual IT Director — usage-based pricing, no bloated retainers.</p><div class="outcomes"><div class="outcome">Dedicated helpdesk with agreed SLAs</div><div class="outcome">Proactive 24/7 infrastructure monitoring</div><div class="outcome">Virtual CTO / IT Director on demand</div><div class="outcome">Data backup &amp; disaster recovery</div></div><a href="service-managed-it.html" class="card-link">Learn more →</a></div>
-    <div class="card fade-up d2" style="border-color:var(--sky-200);" id="advisory"><h3>Advisory &amp; consultancy</h3><p>Technology and HR strategy that aligns investment with your business goals. Technology roadmaps, vendor selection, digital transformation planning, and board-level advisory.</p><div class="outcomes"><div class="outcome">Technology roadmap development</div><div class="outcome">Procurement &amp; vendor selection support</div><div class="outcome">Digital transformation planning</div><div class="outcome">Board-level IT &amp; HR advisory</div></div><a href="service-advisory.html" class="card-link">Learn more →</a></div>
-  </div>
-</section>
-
-<div class="cta-strip"><div class="fade-up"><h2>Not sure where to start?</h2><p>Book a free discovery call — we'll map your current situation against your goals. No sales pressure, just a straight conversation about what you actually need.</p></div><div class="btn-row fade-up d2"><a href="contact.html" class="btn btn-white">Book a discovery call</a><a href="index.html#services" class="btn btn-ghost">View our services →</a></div></div>
-<footer class="footer">
-  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-    <img src="logo.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:multiply;opacity:0.7;"/>
-    <span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942)</span>
-  </div>
-  <span>55 Barkers Lane, Bedford, MK41 9ST</span>
-  <div class="footer-links"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html">Contact</a></div>
-</footer>
-<script src="js/main.js"></script>
-</body>
-</html>
+<script>function toggleDD(id,btn){var el=document.getElementById(id);var o=el.style.display==='block';['s','h'].forEach(function(i){document.getElementById(i).style.display='none';});if(!o)el.style.display='block';document.addEventListener('click',function c(e){if(!el.contains(e.target)&&e.target!==btn){el.style.display='none';document.removeEventListener('click',c);}});}</script><div style="background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:52px 40px 48px;position:relative;overflow:hidden;">
+<div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.12) 0%,transparent 70%);"></div>
+<div style="position:relative;z-index:2;max-width:660px;">
+<div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:12px;"><a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Home</a> / <span style="color:rgba(255,255,255,.6);">Solutions</span></div>
+<div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">Solutions</div>
+<h1 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:#fff;line-height:1.18;margin-bottom:12px;">Technology & strategy solutions that<br><span style="color:#4AABF0;">actually move the needle</span></h1>
+<p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;">Every solution is shaped around your organisation — from Microsoft cloud to bespoke applications and HR systems.</p>
+</div></div><div style="background:#fff;border-bottom:1px solid #ECEEF2;padding:0 40px;display:flex;gap:0;overflow-x:auto;position:sticky;top:64px;z-index:90;"><a href="#sol-ms" style="font-size:13px;font-weight:500;color:#8A909E;padding:14px 16px;border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none;">Microsoft technologies</a><a href="#sol-cyber" style="font-size:13px;font-weight:500;color:#8A909E;padding:14px 16px;border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none;">Cyber &amp; security</a><a href="#sol-bespoke" style="font-size:13px;font-weight:500;color:#8A909E;padding:14px 16px;border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none;">Bespoke development</a><a href="#sol-hr" style="font-size:13px;font-weight:500;color:#8A909E;padding:14px 16px;border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none;">HR systems</a><a href="#sol-managed" style="font-size:13px;font-weight:500;color:#8A909E;padding:14px 16px;border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none;">Managed IT &amp; advisory</a></div><section id="sol-ms" style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);">
+<div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Microsoft technologies</div>
+<h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:36px;" class="fu d1">The full Microsoft stack, expertly delivered</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;"><div class="fu d1" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;grid-column:span 2;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Productivity · Most popular</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Microsoft 365</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Full deployment, licence optimisation, Teams, SharePoint, and Copilot readiness as your Gold Partner.</p><a href="service-m365.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d2" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Cloud & infrastructure</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Azure cloud</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Scalable public cloud — pay-as-you-go compute, storage, analytics, and networking.</p><a href="solutions.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d3" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Collaboration</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">SharePoint & Teams</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Modern intranet portals, document libraries, and team spaces — secure and scalable.</p><a href="service-sharepoint.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d4" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">AI · New</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Microsoft Copilot</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">AI embedded across M365 — we govern, configure, and train your team for maximum ROI.</p><a href="solutions.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d5" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Automation</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Power Platform</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Bespoke Power Apps and flows — including SolvvSpaceHR, SolvvSpaceStaff, and SolvvSpaceMultiTenant.</p><a href="service-sharepoint.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d6" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Business applications</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Dynamics 365</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">All-in-one CRM and ERP for sales, marketing, customer service, and finance — end to end.</p><a href="solutions.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div></div>
+</section><section id="sol-cyber" style="padding:60px 40px;background:#fff;">
+<div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Cyber & security</div>
+<h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:36px;" class="fu d1">Know your risk before someone else finds it</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;"><div class="fu d1" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;grid-column:span 2;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Assessment</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">IT system audit & cyber security assessment</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Full infrastructure and endpoint review with a prioritised written risk report.</p><a href="service-cyber.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d2" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Certification</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Cyber Essentials certification</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Government-backed certification — full process managed by our team in as little as 6 weeks.</p><a href="service-cyber.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d3" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Protection</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Managed security & BitDefender</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">24/7 continuous endpoint protection with rapid incident response.</p><a href="service-cyber.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div></div>
+</section><section id="sol-bespoke" style="padding:60px 40px;background:linear-gradient(180deg,#F7F8FA 0%,#fff 80%);">
+<div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Bespoke development</div>
+<h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:36px;" class="fu d1">Built for you — not adapted from a template</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;"><div class="fu d1" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;grid-column:span 2;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Applications</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Bespoke application development</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Custom web apps, internal tools, and integrated systems — scoped, built, and supported by our team.</p><a href="service-bespoke.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d2" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Low-code</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">SharePoint & Power Platform</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Tailored Power Apps — SolvvSpaceHR, SolvvSpaceStaff, SolvvSpaceMultiTenant deployable today.</p><a href="service-sharepoint.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d3" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Integration</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">System integration & APIs</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Connect your CRM, HR, finance, and other tools into a single coherent technology stack.</p><a href="service-bespoke.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d4" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Data</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Database design & analytics</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Azure SQL, Dataverse, and Power BI reporting that gives your team actionable information.</p><a href="service-bespoke.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div></div>
+</section><section id="sol-hr" style="padding:60px 40px;background:#fff;">
+<div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">HR systems</div>
+<h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:36px;" class="fu d1">HR technology that works the way your people do</h2>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;"><div class="fu d1" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Platform</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">SolvvSpaceHR platform</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Full lifecycle HR management — onboarding, performance, leave, compliance — in your Microsoft 365 tenant.</p><a href="service-hr.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d2" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Consultancy</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">HR strategy & workforce planning</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Workforce planning, talent management, employment law compliance, and organisational design.</p><a href="service-hr.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div></div>
+</section><section id="sol-managed" style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);">
+<div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Managed IT & advisory</div>
+<h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:36px;" class="fu d1">Your IT department — without the overhead</h2>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;"><div class="fu d1" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Managed IT</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">IT & managed services</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">24/7 monitoring, dedicated helpdesk, and virtual IT Director — usage-based pricing, no bloated retainers.</p><a href="service-managed-it.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div><div class="fu d2" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Advisory</div><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:6px;">Advisory & consultancy</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Technology roadmaps, vendor selection, digital transformation, and board-level advisory.</p><a href="service-advisory.html" style="font-size:12px;font-weight:500;color:#1A7EC4;margin-top:10px;display:block;">Learn more &rarr;</a></div></div>
+</section><div style="background:#0f172a;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+<div><h2 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#fff;margin-bottom:8px;">Not sure where to start?</h2><p style="font-size:14px;color:rgba(255,255,255,.5);max-width:440px;line-height:1.7;">Book a free discovery session — we'll map your situation against your goals and tell you honestly what you need.</p></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:11px 24px;border-radius:8px;text-decoration:none;">Book a free IT audit</a><a href="solutions.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);padding:11px 22px;border-radius:8px;text-decoration:none;">Explore services &rarr;</a></div>
+</div><footer style="background:#F7F8FA;border-top:1px solid #ECEEF2;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8A909E;">
+<div style="display:flex;align-items:center;gap:14px;"><img src="logo-stacked.png" alt="SolvvSpace" style="height:44px;width:auto;mix-blend-mode:multiply;opacity:0.75;"/><span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span></div>
+<div style="display:flex;gap:18px;"><a href="privacy.html" style="color:#8A909E;text-decoration:none;">Privacy</a><a href="cookies.html" style="color:#8A909E;text-decoration:none;">Cookies</a><a href="https://linkedin.com" target="_blank" style="color:#8A909E;text-decoration:none;">LinkedIn</a><a href="contact.html" style="color:#8A909E;text-decoration:none;">Contact</a></div>
+</footer><script>const _o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else _o.observe(el);});</script></body></html>

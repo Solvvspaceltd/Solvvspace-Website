@@ -1,166 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="./"/>
-<link rel="icon" type="image/png" href="logo.png"/>
-<link rel="apple-touch-icon" href="logo.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact Us — Get in Touch with SolvvSpace | SolvvSpace</title>
-<meta name="description" content="Contact SolvvSpace for IT and HR consultancy, a free IT audit, or to discuss any of our services. Based in Bedford, serving businesses across the UK."/>
+<title>Contact Us | SolvvSpace</title>
+<meta name="description" content="Get in touch with SolvvSpace — book a free IT audit or discovery session."/>
+<link rel="icon" type="image/png" href="logo-stacked.png"/>
+<link rel="apple-touch-icon" href="logo-stacked.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
-<nav class="nav" role="navigation">
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="SolvvSpace" class="nav-logo-img"/><span class="nav-logo-text">Solvv<span>Space</span></span></a>
-  <ul class="nav-links">
-    <li class="nav-dd">
-      <button class="nav-dd-btn">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="dd-menu">
-        <a class="dd-item" href="service-bespoke.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Bespoke app &amp; systems dev</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-cyber.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Cyber Essentials &amp; security</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-m365.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Microsoft 365 deployment</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-managed-it.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>IT &amp; managed services</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-hr.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>HR systems development</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-advisory.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Advisory &amp; consultancy</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-sharepoint.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>SharePoint &amp; Power Apps</a>
+<body><style>
+.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+.fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}
+.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
+@media(max-width:900px){
+  nav{padding:0 20px!important;}
+  section{padding:40px 20px!important;}
+  div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important;}
+  div[style*="padding:56px 40px"]{padding:40px 20px!important;flex-direction:column!important;}
+  div[style*="padding:52px 40px"]{padding:36px 20px!important;}
+}
+</style><nav style="position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);">
+  <a href="index.html" style="display:flex;align-items:center;"><img src="logo-horizontal.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:screen;"/></a>
+  <ul style="display:flex;align-items:center;gap:2px;list-style:none;">
+    <li style="position:relative;">
+      <button onclick="toggleDD('dd-svc',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;display:flex;align-items:center;gap:4px;font-family:'Inter',sans-serif;transition:color .15s,background .15s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div id="dd-svc" style="display:none;position:absolute;top:calc(100% + 10px);left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:230px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
+        <a href="service-bespoke.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;transition:background .12s;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Bespoke app &amp; systems dev</a>
+        <a href="service-cyber.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Cyber Essentials &amp; security</a>
+        <a href="service-m365.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Microsoft 365 deployment</a>
+        <a href="service-managed-it.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">IT &amp; managed services</a>
+        <a href="service-hr.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">HR systems development</a>
+        <a href="service-advisory.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Advisory &amp; consultancy</a>
+        <a href="service-sharepoint.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">SharePoint &amp; Power Apps</a>
       </div>
     </li>
-    <li><a href="solutions.html">Solutions</a></li>
-    <li class="nav-dd">
-      <button class="nav-dd-btn">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="hub-menu">
-        <div class="hub-menu-header"><div class="hub-menu-title">SS Hub</div><div class="hub-menu-sub">Products, insights and technology updates</div></div>
-        <div class="hub-cols">
-          <div><div class="hub-col-label">Products</div><a class="hub-item" href="hub-products.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">SolvvSpace HR</div><div class="hub-item-desc">HR management platform</div></div></a><a class="hub-item" href="hub-products.html#it-support"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">SolvvSpace IT Support</div><div class="hub-item-desc">Managed IT support tool</div></div></a></div>
-          <div><div class="hub-col-label">Insights</div><a class="hub-item" href="hub-insights.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">Insights &amp; learning</div><div class="hub-item-desc">Guides &amp; best practice</div></div></a></div>
-          <div><div class="hub-col-label">Updates</div><a class="hub-item" href="hub-tech-updates.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">Technology updates</div><div class="hub-item-desc">Microsoft &amp; industry news</div></div></a></div>
-        </div>
+    <li><a href="solutions.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;transition:color .15s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">Solutions</a></li>
+    <li style="position:relative;">
+      <button onclick="toggleDD('dd-hub',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;display:flex;align-items:center;gap:4px;font-family:'Inter',sans-serif;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div id="dd-hub" style="display:none;position:absolute;top:calc(100% + 10px);left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:200px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
+        <a href="hub-products.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Products</a>
+        <a href="hub-insights.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Insights &amp; learning</a>
+        <a href="hub-tech-updates.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Technology updates</a>
       </div>
     </li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">About</a></li>
   </ul>
-  <a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:#1A7EC4;color:#fff;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;text-decoration:none;white-space:nowrap;">Talk to an expert</a>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-section-label">Services</div>
-  <a href="service-bespoke.html">Bespoke app &amp; systems development</a>
-  <a href="service-cyber.html">Cyber Essentials &amp; security</a>
-  <a href="service-m365.html">Microsoft 365 deployment</a>
-  <a href="service-managed-it.html">IT &amp; managed services</a>
-  <a href="service-hr.html">HR systems development</a>
-  <a href="service-advisory.html">Advisory &amp; consultancy</a>
-  <a href="service-sharepoint.html">SharePoint &amp; Power Apps</a>
-  <div class="mobile-section-label">Main</div>
-  <a href="solutions.html">Solutions</a>
-  <div class="mobile-section-label">SS Hub</div>
-  <a href="hub-products.html">Products</a>
-  <a href="hub-insights.html">Insights</a>
-  <a href="hub-tech-updates.html">Tech updates</a>
-  <div class="mobile-section-label">Company</div>
-  <a href="about.html">About</a>
-  <a href="contact.html">Get in touch</a>
-</div>
-
-<div class="page-hero">
-  <div class="page-hero-grid"></div><div class="page-hero-glow"></div>
-  <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,0.65)">Contact us</span></div>
-    <div class="page-hero-label">Get in touch</div>
-    <h1>Let's talk about<br><span>what you actually need</span></h1>
-    <p>Whether you're ready to get started or still figuring out what you need — we're happy to have a straight conversation. No sales pressure, just honest advice.</p>
+<script>
+function toggleDD(id,btn){
+  var el=document.getElementById(id);
+  var isOpen=el.style.display==='block';
+  document.querySelectorAll('[id^="dd-"]').forEach(function(d){d.style.display='none';});
+  if(!isOpen)el.style.display='block';
+  document.addEventListener('click',function close(e){if(!el.contains(e.target)&&e.target!==btn){el.style.display='none';document.removeEventListener('click',close);}});
+}
+</script><div style="background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:52px 40px 48px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px);"></div>
+  <div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.12) 0%,transparent 70%);"></div>
+  <div style="position:relative;z-index:2;max-width:660px;">
+    <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.35);margin-bottom:14px;">
+      <a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Home</a>
+      <span style="color:rgba(255,255,255,.18);">/</span>
+      <span style="color:rgba(255,255,255,.6);">Contact us</span>
+    </div>
+    <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">Get in touch</div>
+    <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4vw,38px);font-weight:700;color:#fff;line-height:1.18;letter-spacing:-.5px;margin-bottom:14px;">Let's talk about<br><span style="color:#4AABF0;">what you actually need</span></h1>
+    <p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;margin-bottom:24px;">Whether you're ready to start or still figuring out what you need — we're happy to have a straight conversation. No sales pressure, no commitment.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;"></div>
   </div>
 </div>
-
-<section class="section sky" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;flex-wrap:wrap;">
-  <div class="fade-up">
-    <div class="sec-label">Send us a message</div>
-    <div class="sec-title" style="margin-bottom:24px;">We'll get back to you within one business day</div>
-    <form style="display:flex;flex-direction:column;gap:14px;" action="mailto:hello@solvvspace.com" method="POST" enctype="text/plain">
-      <div>
-        <label style="display:block;font-size:12px;font-weight:500;color:var(--slate-600);margin-bottom:5px;">Full name <span style="color:var(--sky-600);">*</span></label>
-        <input type="text" name="name" required placeholder="Jane Smith" style="width:100%;padding:10px 14px;border:1px solid var(--slate-200);border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:var(--slate-900);background:var(--white);outline:none;" onfocus="this.style.borderColor='var(--sky-400)'" onblur="this.style.borderColor='var(--slate-200)'"/>
-      </div>
-      <div>
-        <label style="display:block;font-size:12px;font-weight:500;color:var(--slate-600);margin-bottom:5px;">Work email <span style="color:var(--sky-600);">*</span></label>
-        <input type="email" name="email" required placeholder="jane@company.com" style="width:100%;padding:10px 14px;border:1px solid var(--slate-200);border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:var(--slate-900);background:var(--white);outline:none;" onfocus="this.style.borderColor='var(--sky-400)'" onblur="this.style.borderColor='var(--slate-200)'"/>
-      </div>
-      <div>
-        <label style="display:block;font-size:12px;font-weight:500;color:var(--slate-600);margin-bottom:5px;">Company</label>
-        <input type="text" name="company" placeholder="Your company name" style="width:100%;padding:10px 14px;border:1px solid var(--slate-200);border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:var(--slate-900);background:var(--white);outline:none;" onfocus="this.style.borderColor='var(--sky-400)'" onblur="this.style.borderColor='var(--slate-200)'"/>
-      </div>
-      <div>
-        <label style="display:block;font-size:12px;font-weight:500;color:var(--slate-600);margin-bottom:5px;">How can we help? <span style="color:var(--sky-600);">*</span></label>
-        <select name="service" style="width:100%;padding:10px 14px;border:1px solid var(--slate-200);border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:var(--slate-900);background:var(--white);outline:none;" onfocus="this.style.borderColor='var(--sky-400)'" onblur="this.style.borderColor='var(--slate-200)'">
-          <option value="">Select a service...</option>
-          <option>Free IT audit</option>
-          <option>Bespoke application development</option>
-          <option>Cyber Essentials &amp; security</option>
-          <option>Microsoft 365 deployment</option>
-          <option>IT &amp; managed services</option>
-          <option>HR systems development</option>
-          <option>Advisory &amp; consultancy</option>
-          <option>SharePoint &amp; Power Apps</option>
-          <option>Product demo (SolvvSpaceHR / IT Support)</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div>
-        <label style="display:block;font-size:12px;font-weight:500;color:var(--slate-600);margin-bottom:5px;">Message</label>
-        <textarea name="message" rows="4" placeholder="Tell us a bit about what you're trying to solve..." style="width:100%;padding:10px 14px;border:1px solid var(--slate-200);border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:var(--slate-900);background:var(--white);outline:none;resize:vertical;" onfocus="this.style.borderColor='var(--sky-400)'" onblur="this.style.borderColor='var(--slate-200)'"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send message →</button>
-      <p style="font-size:11px;color:var(--slate-400);">We'll reply within one business day. Your details are never shared with third parties.</p>
+<section style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);display:grid;grid-template-columns:1fr 1fr;gap:40px;flex-wrap:wrap;">
+  <div class="fu">
+    <div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;">Send us a message</div>
+    <h2 style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:#1C2231;margin-bottom:22px;">We'll get back to you within one business day</h2>
+    <form style="display:flex;flex-direction:column;gap:14px;" action="mailto:hello@solvvspace.com" method="POST">
+      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Full name *</label><input type="text" name="name" required placeholder="Jane Smith" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
+      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Work email *</label><input type="email" name="email" required placeholder="jane@company.com" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
+      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Company</label><input type="text" name="company" placeholder="Your company" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
+      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">How can we help? *</label><select name="service" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"><option value="">Select...</option><option>Free IT audit</option><option>Bespoke application development</option><option>Cyber Essentials &amp; security</option><option>Microsoft 365 deployment</option><option>IT &amp; managed services</option><option>HR systems development</option><option>Advisory &amp; consultancy</option><option>SharePoint &amp; Power Apps</option><option>Product demo (SolvvSpaceHR / IT Support)</option><option>Something else</option></select></div>
+      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Message</label><textarea name="message" rows="4" placeholder="Tell us what you're trying to solve..." style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;resize:vertical;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"></textarea></div>
+      <button type="submit" style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;background:#1A7EC4;color:#fff;padding:12px 28px;border-radius:8px;border:none;cursor:pointer;align-self:flex-start;">Send message →</button>
+      <p style="font-size:11px;color:#8A909E;">We'll reply within one business day. Your details are never shared with third parties.</p>
     </form>
   </div>
-
-  <div class="fade-up d2" style="display:flex;flex-direction:column;gap:20px;">
-    <div style="background:var(--white);border:1px solid var(--sky-100);border-radius:14px;padding:24px;">
-      <div class="sec-label" style="margin-bottom:12px;">Our office</div>
-      <h3 style="font-family:'Outfit',sans-serif;font-size:16px;margin-bottom:8px;">SolvvSpace Limited</h3>
-      <p style="font-size:14px;color:var(--slate-600);line-height:1.8;">55 Barkers Lane<br>Bedford<br>MK41 9ST<br>England</p>
-      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--slate-100);">
-        <p style="font-size:12px;color:var(--slate-400);">Registered in England &amp; Wales</p>
-        <p style="font-size:12px;color:var(--slate-400);">Company No. 16153942</p>
-      </div>
+  <div class="fu d2" style="display:flex;flex-direction:column;gap:16px;">
+    <div style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:24px;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#1A7EC4;text-transform:uppercase;margin-bottom:12px;">Our office</div>
+      <h3 style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;margin-bottom:8px;">SolvvSpace Limited</h3>
+      <p style="font-size:14px;color:#545B6B;line-height:1.8;">55 Barkers Lane<br>Bedford<br>MK41 9ST<br>England</p>
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid #ECEEF2;font-size:12px;color:#8A909E;">Registered in England &amp; Wales · Company No. 16153942</div>
     </div>
-    <div style="background:var(--white);border:1px solid var(--sky-100);border-radius:14px;padding:24px;">
-      <div class="sec-label" style="margin-bottom:12px;">Office hours</div>
-      <table style="width:100%;font-size:13px;color:var(--slate-600);">
-        <tr><td style="padding:4px 0;">Monday – Friday</td><td style="text-align:right;padding:4px 0;font-weight:500;color:var(--slate-900);">09:00 – 17:30</td></tr>
-        <tr><td style="padding:4px 0;">Saturday – Sunday</td><td style="text-align:right;padding:4px 0;color:var(--slate-400);">Closed</td></tr>
+    <div style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:24px;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#1A7EC4;text-transform:uppercase;margin-bottom:12px;">Office hours</div>
+      <table style="width:100%;font-size:13px;color:#545B6B;border-collapse:collapse;">
+        <tr><td style="padding:4px 0;">Monday – Friday</td><td style="text-align:right;font-weight:600;color:#1C2231;">09:00 – 17:30</td></tr>
+        <tr><td style="padding:4px 0;">Saturday – Sunday</td><td style="text-align:right;color:#8A909E;">Closed</td></tr>
       </table>
-      <p style="font-size:12px;color:var(--sky-600);margin-top:12px;">24/7 monitoring for managed service clients</p>
+      <p style="font-size:12px;color:#1A7EC4;margin-top:10px;">24/7 monitoring for managed service clients</p>
     </div>
-    <div style="background:var(--sky-900);border-radius:14px;padding:24px;">
-      <div style="font-size:11px;color:var(--sky-400);font-weight:500;letter-spacing:0.5px;margin-bottom:8px;">FREE OFFER</div>
-      <h3 style="font-family:'Outfit',sans-serif;font-size:16px;color:#fff;margin-bottom:8px;">Book a free IT audit</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,0.62);line-height:1.65;margin-bottom:16px;">A no-obligation review of your IT environment — we'll identify risks, inefficiencies, and quick wins and give you a written report with prioritised recommendations.</p>
-      <a href="#" onclick="document.querySelector('select[name=service]').value='Free IT audit';document.querySelector('select[name=service]').scrollIntoView({behavior:'smooth'});return false;" class="btn btn-white" style="font-size:13px;padding:9px 18px;">Request the audit →</a>
+    <div style="background:linear-gradient(135deg,#0f172a,#0d4f80);border-radius:14px;padding:24px;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#4AABF0;text-transform:uppercase;margin-bottom:8px;">Free offer</div>
+      <h3 style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;margin-bottom:8px;">Book a free IT audit</h3>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:14px;">A no-obligation review of your IT environment. We'll identify risks, inefficiencies, and quick wins — and give you a written report with prioritised recommendations.</p>
+      <a href="#" onclick="document.querySelector('select[name=service]').value='Free IT audit';return false;" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:9px 18px;border-radius:8px;text-decoration:none;display:inline-block;">Request the audit →</a>
     </div>
   </div>
 </section>
-
-@media (max-width:900px){section.section{display:flex;flex-direction:column;}}</style>
-
-<footer class="footer">
-  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-    <img src="logo.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:multiply;opacity:0.7;"/>
-    <span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942)</span>
+<footer style="background:#F7F8FA;border-top:1px solid #ECEEF2;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8A909E;">
+  <div style="display:flex;align-items:center;gap:14px;">
+    <img src="logo-stacked.png" alt="SolvvSpace" style="height:44px;width:auto;mix-blend-mode:multiply;opacity:0.75;"/>
+    <span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span>
   </div>
-  <span>55 Barkers Lane, Bedford, MK41 9ST</span>
-  <div class="footer-links"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html">Contact</a></div>
-</footer>
-<script src="js/main.js"></script>
-</body>
-</html>
+  <div style="display:flex;gap:18px;">
+    <a href="privacy.html" style="color:#8A909E;text-decoration:none;">Privacy</a>
+    <a href="cookies.html" style="color:#8A909E;text-decoration:none;">Cookies</a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener" style="color:#8A909E;text-decoration:none;">LinkedIn</a>
+    <a href="contact.html" style="color:#8A909E;text-decoration:none;">Contact</a>
+  </div>
+</footer><script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else obs.observe(el);});
+</script></body></html>

@@ -1,115 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<base href="./"/>
-<link rel="icon" type="image/png" href="logo.png"/>
-<link rel="apple-touch-icon" href="logo.png"/>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SS Hub — Technology Updates | SolvvSpace</title><meta name="description" content="Latest Microsoft and technology updates for UK small businesses, curated by SolvvSpace."/>
+<link rel="icon" type="image/png" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SS Hub — Technology Updates | SolvvSpace</title>
-<meta name="description" content="Latest Microsoft and technology updates relevant to UK small businesses, curated by the SolvvSpace team."/>
-<link rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
-<nav class="nav" role="navigation">
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="SolvvSpace" class="nav-logo-img"/><span class="nav-logo-text">Solvv<span>Space</span></span></a>
-  <ul class="nav-links">
-    <li class="nav-dd">
-      <button class="nav-dd-btn">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="dd-menu">
-        <a class="dd-item" href="service-bespoke.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Bespoke app &amp; systems dev</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-cyber.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Cyber Essentials &amp; security</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-m365.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Microsoft 365 deployment</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-managed-it.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>IT &amp; managed services</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-hr.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>HR systems development</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-advisory.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>Advisory &amp; consultancy</a>
-        <div class="dd-divider"></div>
-        <a class="dd-item" href="service-sharepoint.html"><div class="dd-icon" style="font-size:10px;color:var(--sky-400);">&#9632;</div>SharePoint &amp; Power Apps</a>
-      </div>
-    </li>
-    <li><a href="solutions.html">Solutions</a></li>
-    <li class="nav-dd">
-      <button class="nav-dd-btn">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="hub-menu">
-        <div class="hub-menu-header"><div class="hub-menu-title">SS Hub</div><div class="hub-menu-sub">Products, insights and technology updates</div></div>
-        <div class="hub-cols">
-          <div><div class="hub-col-label">Products</div><a class="hub-item" href="hub-products.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">SolvvSpace HR</div><div class="hub-item-desc">HR management platform</div></div></a><a class="hub-item" href="hub-products.html#it-support"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">SolvvSpace IT Support</div><div class="hub-item-desc">Managed IT support tool</div></div></a></div>
-          <div><div class="hub-col-label">Insights</div><a class="hub-item" href="hub-insights.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">Insights &amp; learning</div><div class="hub-item-desc">Guides &amp; best practice</div></div></a></div>
-          <div><div class="hub-col-label">Updates</div><a class="hub-item" href="hub-tech-updates.html"><div class="hub-item-icon" style="font-size:10px;color:var(--sky-400);">&#9670;</div><div><div class="hub-item-name">Technology updates</div><div class="hub-item-desc">Microsoft &amp; industry news</div></div></a></div>
-        </div>
-      </div>
-    </li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-  <a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;color:#1C2231;background:#fff;-webkit-font-smoothing:antialiased;}a{text-decoration:none;color:inherit;}
+.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}.fu.vis{opacity:1;transform:translateY(0);}
+.fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
+@media(max-width:900px){nav{padding:0 20px!important;}[style*="padding:60px 40px"],[style*="padding:56px 40px"]{padding:40px 20px!important;}[style*="grid-template-columns:repeat(2"],[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}[style*="grid-template-columns:2fr"]{grid-template-columns:1fr!important;}footer{padding:16px 20px!important;flex-direction:column!important;}}
+</style>
+</head><body><nav style="position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);">
+<a href="index.html" style="display:flex;align-items:center;"><img src="logo-horizontal.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:screen;"/></a>
+<ul style="display:flex;align-items:center;gap:2px;list-style:none;">
+<li style="position:relative;"><button onclick="toggleDD('s',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;font-family:'Inter',sans-serif;">Services &#9662;</button>
+<div id="s" style="display:none;position:absolute;top:74px;left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:230px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
+<a href="service-bespoke.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Bespoke development</a>
+<a href="service-cyber.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Cyber Essentials &amp; security</a>
+<a href="service-m365.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Microsoft 365 deployment</a>
+<a href="service-managed-it.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">IT &amp; managed services</a>
+<a href="service-hr.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">HR systems development</a>
+<a href="service-advisory.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Advisory &amp; consultancy</a>
+<a href="service-sharepoint.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">SharePoint &amp; Power Apps</a>
+</div></li>
+<li><a href="solutions.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;">Solutions</a></li>
+<li style="position:relative;"><button onclick="toggleDD('h',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;font-family:'Inter',sans-serif;">SS Hub &#9662;</button>
+<div id="h" style="display:none;position:absolute;top:74px;left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:200px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
+<a href="hub-products.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Products</a>
+<a href="hub-insights.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Insights &amp; learning</a>
+<a href="hub-tech-updates.html" style="display:block;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;">Technology updates</a>
+</div></li>
+<li><a href="about.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;">About</a></li>
+</ul>
+<a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:#1A7EC4;color:#fff;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;text-decoration:none;">Talk to an expert</a>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-section-label">Services</div>
-  <a href="service-bespoke.html">Bespoke app &amp; systems development</a>
-  <a href="service-cyber.html">Cyber Essentials &amp; security</a>
-  <a href="service-m365.html">Microsoft 365 deployment</a>
-  <a href="service-managed-it.html">IT &amp; managed services</a>
-  <a href="service-hr.html">HR systems development</a>
-  <a href="service-advisory.html">Advisory &amp; consultancy</a>
-  <a href="service-sharepoint.html">SharePoint &amp; Power Apps</a>
-  <div class="mobile-section-label">Main</div>
-  <a href="solutions.html">Solutions</a>
-  <div class="mobile-section-label">SS Hub</div>
-  <a href="hub-products.html">Products</a>
-  <a href="hub-insights.html">Insights</a>
-  <a href="hub-tech-updates.html">Tech updates</a>
-  <div class="mobile-section-label">Company</div>
-  <a href="about.html">About</a>
-  <a href="contact.html">Get in touch</a>
-</div>
-
-<div class="page-hero">
-  <div class="page-hero-grid"></div><div class="page-hero-glow"></div>
-  <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><a href="hub-tech-updates.html">SS Hub</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,0.65)">Technology updates</span></div>
-    <div class="page-hero-label">SS Hub &middot; Technology updates</div>
-    <h1>What's new in Microsoft<br><span>&amp; the wider tech landscape</span></h1>
-    <p>We track the updates that matter to your business — Microsoft product releases, security advisories, and industry shifts — and translate them into plain English.</p>
-  </div>
-</div>
-<div class="sub-tabs">
-  <button class="stab active">All</button>
-  <button class="stab">Microsoft 365</button>
-  <button class="stab">Azure</button>
-  <button class="stab">Security</button>
-  <button class="stab">AI &amp; Copilot</button>
-</div>
-<section class="section sky">
-  <div class="sec-label fade-up">Technology updates</div>
-  <div class="sec-title fade-up d1">What you need to know, right now</div>
-  <div class="sec-sub fade-up d2">Curated by the SolvvSpace team — relevant updates filtered for small and medium-sized businesses.</div>
-  <div class="grid-2">
-    <div class="tu-card tu-featured fade-up d1"><div class="tu-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#4AABF0" stroke-width="1.3"/><path d="M7 10c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3" stroke="#4AABF0" stroke-width="1.3" stroke-linecap="round"/><circle cx="10" cy="10" r="1.5" fill="#4AABF0"/></svg></div><div><div class="tu-label">AI &amp; Copilot &middot; Featured</div><h3>Microsoft Copilot Wave 2 — what's new for business users in 2025</h3><p>Microsoft's latest Copilot release brings significant updates to Teams, Outlook, and Word. Here's what's changed and how it affects your daily workflow.</p><div class="tu-meta">April 2025 &middot; 6 min read</div></div></div>
-    <a class="tu-card fade-up d2" href="#"><div class="tu-icon" style="background:#EAF3FF;border:1px solid #B3D0F7;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" fill="#1A7EC4" opacity=".9"/><rect x="9" y="2" width="5" height="5" rx="1" fill="#1A7EC4" opacity=".6"/><rect x="2" y="9" width="5" height="5" rx="1" fill="#1A7EC4" opacity=".35"/><rect x="9" y="9" width="5" height="5" rx="1" fill="#1A7EC4" opacity=".18"/></svg></div><div><div class="tu-label">Microsoft 365</div><h3>M365 April 2025 update roundup</h3><p>New features in Teams, updates to SharePoint Viva, and changes to the Microsoft 365 admin centre this month.</p><div class="tu-meta">April 2025 &middot; 4 min read</div></div></a>
-    <a class="tu-card fade-up d3" href="#"><div class="tu-icon" style="background:#FFF0EE;border:1px solid #FFBDB5;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v5M8 11v1" stroke="#D84040" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6" stroke="#D84040" stroke-width="1.3"/></svg></div><div><div class="tu-label">Security advisory</div><h3>Windows 10 end of life — what your business must do before October 2025</h3><p>Support ends this year. Here's what that means for security, compliance, and your upgrade options.</p><div class="tu-meta">March 2025 &middot; 5 min read</div></div></a>
-    <a class="tu-card fade-up d4" href="#"><div class="tu-icon" style="background:#E6F9F4;border:1px solid #9FE1CB;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 12L6.5 4l5 8H8L6.5 12H3z" fill="#0F9B7A" opacity=".8"/></svg></div><div><div class="tu-label">Azure</div><h3>Azure pricing changes in 2025 — what SMEs need to know</h3><p>Microsoft has updated pricing across several Azure services. We've broken down which changes affect small business workloads.</p><div class="tu-meta">March 2025 &middot; 4 min read</div></div></a>
-    <a class="tu-card fade-up d5" href="#"><div class="tu-icon" style="background:#F0EEFF;border:1px solid #C4BAFF;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L3 4v4c0 3 2.2 5.2 5 6 2.8-.8 5-3 5-6V4L8 2z" stroke="#6C5CE7" stroke-width="1.2" stroke-linejoin="round"/></svg></div><div><div class="tu-label">Cyber security</div><h3>Cyber Essentials scheme updated — new requirements for 2025</h3><p>The NCSC has updated the Cyber Essentials technical requirements. Here's what's changed and whether your current certification is still valid.</p><div class="tu-meta">February 2025 &middot; 5 min read</div></div></a>
-    <a class="tu-card fade-up d6" href="#"><div class="tu-icon" style="background:#EAF3FF;border:1px solid #B3D0F7;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="#1A7EC4" stroke-width="1.2"/><path d="M2 8h12M8 2v12" stroke="#1A7EC4" stroke-width="1.2"/></svg></div><div><div class="tu-label">Microsoft 365</div><h3>Five Teams features released in 2025 your team probably isn't using yet</h3><p>Microsoft has shipped significant quality-of-life improvements to Teams — here's how to switch them on.</p><div class="tu-meta">January 2025 &middot; 5 min read</div></div></a>
-  </div>
-</section>
-<div class="cta-strip"><div class="fade-up"><h2>Never miss an update that matters</h2><p>We alert you to the technology changes that actually affect your business — straight to your inbox, monthly.</p></div><div class="btn-row fade-up d2"><a href="contact.html" class="btn btn-white">Get the update</a><a href="solutions.html" class="btn btn-ghost">Explore our services →</a></div></div>
-<footer class="footer">
-  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-    <img src="logo.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:multiply;opacity:0.7;"/>
-    <span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942)</span>
-  </div>
-  <span>55 Barkers Lane, Bedford, MK41 9ST</span>
-  <div class="footer-links"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html">Contact</a></div>
-</footer>
-<script src="js/main.js"></script>
-</body>
-</html>
+<script>function toggleDD(id,btn){var el=document.getElementById(id);var o=el.style.display==='block';['s','h'].forEach(function(i){document.getElementById(i).style.display='none';});if(!o)el.style.display='block';document.addEventListener('click',function c(e){if(!el.contains(e.target)&&e.target!==btn){el.style.display='none';document.removeEventListener('click',c);}});}</script><div style="background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:52px 40px 48px;position:relative;overflow:hidden;">
+<div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.12) 0%,transparent 70%);"></div>
+<div style="position:relative;z-index:2;max-width:660px;">
+<div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:12px;"><a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Home</a> / <span style="color:rgba(255,255,255,.6);">Technology updates</span></div>
+<div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">SS Hub &middot; Technology updates</div>
+<h1 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:#fff;line-height:1.18;margin-bottom:12px;">What&rsquo;s new in Microsoft<br><span style="color:#4AABF0;">&amp; the wider tech landscape</span></h1>
+<p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;">We track the updates that matter to your business &mdash; Microsoft releases, security advisories, and industry shifts &mdash; in plain English.</p>
+</div></div><section style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);"><div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Technology updates</div><h2 style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;color:#1C2231;margin-bottom:36px;" class="fu d1">What you need to know, right now</h2><div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;"><div class="fu d1" style="background:linear-gradient(135deg,#0f172a,#0d4f80);border-radius:14px;padding:26px;grid-column:span 2;"><div style="font-size:10px;font-weight:600;letter-spacing:1px;color:#4AABF0;text-transform:uppercase;margin-bottom:6px;">AI &amp; Copilot &middot; Featured</div><h3 style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;">Microsoft Copilot Wave 2 &mdash; what&rsquo;s new for business users in 2025</h3><p style="font-size:13px;color:rgba(255,255,255,.58);line-height:1.65;margin-bottom:12px;">Microsoft&rsquo;s latest Copilot release brings significant updates to Teams, Outlook, and Word. Here&rsquo;s what&rsquo;s changed and how it affects your daily workflow.</p><div style="font-size:11px;color:rgba(255,255,255,.35);">April 2025 &middot; 6 min read</div></div><div class="fu d2" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Microsoft 365</div><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.35;">M365 April 2025 update roundup</h3><p style="font-size:12px;color:#545B6B;line-height:1.6;">New features in Teams, updates to SharePoint Viva, and changes to the M365 admin centre.</p><div style="font-size:11px;color:#8A909E;margin-top:8px;">April 2025 &middot; 4 min read</div></div><div class="fu d3" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Security advisory</div><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.35;">Windows 10 end of life &mdash; what your business must do</h3><p style="font-size:12px;color:#545B6B;line-height:1.6;">Support ends this year. What it means for security and your upgrade options.</p><div style="font-size:11px;color:#8A909E;margin-top:8px;">March 2025 &middot; 5 min read</div></div><div class="fu d4" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Azure</div><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.35;">Azure pricing changes in 2025 &mdash; SME impact</h3><p style="font-size:12px;color:#545B6B;line-height:1.6;">Microsoft has updated pricing across several Azure services. Which changes affect small business workloads.</p><div style="font-size:11px;color:#8A909E;margin-top:8px;">March 2025 &middot; 4 min read</div></div><div class="fu d5" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:20px 18px;"><div style="font-size:10px;font-weight:600;letter-spacing:.8px;color:#1A7EC4;text-transform:uppercase;margin-bottom:6px;">Cyber security</div><h3 style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#1C2231;margin-bottom:6px;line-height:1.35;">Cyber Essentials scheme updated &mdash; new requirements</h3><p style="font-size:12px;color:#545B6B;line-height:1.6;">The NCSC has updated Cyber Essentials technical requirements. What&rsquo;s changed.</p><div style="font-size:11px;color:#8A909E;margin-top:8px;">February 2025 &middot; 5 min read</div></div></div></section><div style="background:#0f172a;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+<div><h2 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#fff;margin-bottom:8px;">Ready to take the next step?</h2><p style="font-size:14px;color:rgba(255,255,255,.5);max-width:440px;line-height:1.7;">Talk to us about any of our services &mdash; free, no commitment, no pressure.</p></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:11px 24px;border-radius:8px;text-decoration:none;">Book a free IT audit</a><a href="solutions.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);padding:11px 22px;border-radius:8px;text-decoration:none;">Explore services &rarr;</a></div>
+</div><footer style="background:#F7F8FA;border-top:1px solid #ECEEF2;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8A909E;">
+<div style="display:flex;align-items:center;gap:14px;"><img src="logo-stacked.png" alt="SolvvSpace" style="height:44px;width:auto;mix-blend-mode:multiply;opacity:0.75;"/><span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span></div>
+<div style="display:flex;gap:18px;"><a href="privacy.html" style="color:#8A909E;text-decoration:none;">Privacy</a><a href="cookies.html" style="color:#8A909E;text-decoration:none;">Cookies</a><a href="https://linkedin.com" target="_blank" style="color:#8A909E;text-decoration:none;">LinkedIn</a><a href="contact.html" style="color:#8A909E;text-decoration:none;">Contact</a></div>
+</footer><script>const _o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else _o.observe(el);});</script></body></html>
