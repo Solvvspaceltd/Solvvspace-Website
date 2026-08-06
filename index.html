@@ -3,113 +3,190 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SolvvSpace — Solve. Transform. Innovate.</title>
-<meta name="description" content="SolvvSpace is a Bedford-based Microsoft Gold Partner delivering IT consultancy, managed services, cyber security, bespoke development, and HR systems for growing UK businesses."/>
-<link rel="icon" type="image/png" href="logo.png"/>
+<title>SolvvSpace — We solve it. We build it. We manage it.</title>
+<meta name="description" content="SolvvSpace — Microsoft Gold Partner delivering IT consultancy, managed services, cyber security, bespoke applications, and HR systems for growing UK businesses. Bedford-based, SME-focused."/>
+<link rel="icon" type="image/png" href="logo-stacked.png"/>
+<link rel="apple-touch-icon" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
+/* ═══ TOKENS ═══════════════════════════════════════════════════════ */
 :root{
   --sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;
   --sky-400:#4AABF0;--sky-500:#2196D3;--sky-600:#1A7EC4;
   --sky-800:#0D4F80;--sky-900:#072F50;
   --slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;
-  --slate-400:#8A909E;--slate-500:#6B7280;--slate-600:#545B6B;--slate-700:#374151;--slate-900:#1C2231;
-  --white:#fff;
-  --fh:'Outfit',sans-serif;
-  --fb:'Inter',sans-serif;
-  --nh:64px;
+  --slate-400:#8A909E;--slate-600:#545B6B;--slate-700:#374151;--slate-900:#1C2231;
+  --green:#1D9E75;--amber:#F59E0B;--purple:#9333ea;--rose:#e11d48;
+  --fh:'Outfit',sans-serif; --fb:'Inter',sans-serif;
 }
+
+/* ═══ RESET ═══════════════════════════════════════════════════════ */
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--fb);color:var(--slate-900);background:var(--white);-webkit-font-smoothing:antialiased;}
+body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
+button{cursor:pointer;}
 
-.fu{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
+/* ═══ SCROLL FADE ══════════════════════════════════════════════════ */
+.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
 .fu.vis{opacity:1;transform:translateY(0);}
-.fu.d1{transition-delay:.08s}.fu.d2{transition-delay:.16s}.fu.d3{transition-delay:.24s}
-.fu.d4{transition-delay:.32s}.fu.d5{transition-delay:.40s}.fu.d6{transition-delay:.48s}
+.fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}
+.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:500;height:var(--nh);background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);}
-.nav-logo img{height:40px;width:auto;mix-blend-mode:screen;}
+
+/* ── BRAND LOGO (nav) ── */
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.nav-brand-globe{height:44px;width:44px;object-fit:contain;mix-blend-mode:screen;}
+.nav-brand-text{font-family:var(--fh);font-size:18px;font-weight:700;letter-spacing:-.3px;color:#fff;line-height:1;}
+.nav-brand-text span{color:var(--sky-400);}
+
+/* ═══ NAV ══════════════════════════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;z-index:500;
+  height:64px;background:#1a1f2e;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-logo img{height:38px;width:auto;mix-blend-mode:screen;display:block;}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
 .nav-links>li{position:relative;}
-.nl-a,.nav-dd-btn{font-family:var(--fb);font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;transition:color .15s,background .15s;}
-.nl-a:hover,.nav-dd-btn:hover,.nav-dd-btn.open{color:#fff;background:rgba(255,255,255,.08);}
+.nla,.nav-dd-btn{
+  font-family:var(--fb);font-size:13.5px;color:rgba(255,255,255,.62);
+  padding:7px 13px;border-radius:6px;
+  display:flex;align-items:center;gap:4px;
+  background:none;border:none;
+  transition:color .15s,background .15s;
+}
+.nla:hover,.nav-dd-btn:hover,.nav-dd-btn.open{color:#fff;background:rgba(255,255,255,.08);}
 .nav-dd-btn svg{transition:transform .18s;}
 .nav-dd-btn.open svg{transform:rotate(180deg);}
-.nav-cta{font-family:var(--fh);font-size:13px;font-weight:500;background:var(--sky-600);color:#fff;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+.nav-cta{
+  font-family:var(--fh);font-size:13px;font-weight:500;
+  background:var(--sky-600);color:#fff;
+  border:none;padding:9px 22px;border-radius:8px;
+  transition:background .15s;white-space:nowrap;
+  display:inline-block;
+}
 .nav-cta:hover{background:var(--sky-800);}
 
-.dd,.mega{position:absolute;top:calc(100% + 10px);left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:6px;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .18s,transform .18s;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);}
+/* Dropdowns */
+.dd,.mega{
+  position:absolute;top:calc(100% + 10px);left:0;
+  background:#1e2638;
+  border:1px solid rgba(255,255,255,.1);border-radius:13px;
+  padding:6px;
+  opacity:0;pointer-events:none;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s;
+  z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);
+}
 .dd.open,.mega.open{opacity:1;pointer-events:all;transform:translateY(0);}
 .dd{min-width:220px;}
 .mega{left:-20px;min-width:660px;padding:0;}
-
-.dd-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.75);cursor:pointer;transition:background .12s,color .12s;}
-.dd-item:hover{background:rgba(255,255,255,.08);color:#fff;}
+.ddi-wrap{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.75);transition:background .12s,color .12s;}
+.ddi-wrap:hover{background:rgba(255,255,255,.08);color:#fff;}
 .ddi{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.dd-div{height:.5px;background:rgba(255,255,255,.07);margin:4px 6px;}
-
+.ddiv{height:.5px;background:rgba(255,255,255,.07);margin:4px 6px;}
 .mega-inner{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:.5px solid rgba(255,255,255,.07);}
 .mcol{padding:20px 18px;border-right:.5px solid rgba(255,255,255,.07);}
 .mcol:last-child{border-right:none;}
 .mclabel{font-size:10px;font-weight:600;letter-spacing:1.2px;color:var(--sky-400);text-transform:uppercase;margin-bottom:14px;}
-.mi{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;transition:background .12s;margin-bottom:2px;}
+.mi{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;transition:background .12s;margin-bottom:2px;}
 .mi:hover{background:rgba(255,255,255,.07);}
 .mi-icon{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
 .mi-name{font-size:13px;font-weight:500;color:#fff;line-height:1.3;}
 .mi-desc{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;line-height:1.4;}
 .mfoot{display:flex;gap:4px;padding:12px 16px;}
-.mfl{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);padding:7px 12px;border-radius:7px;transition:color .12s,background .12s;cursor:pointer;}
+.mfl{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);padding:7px 12px;border-radius:7px;transition:color .12s,background .12s;}
 .mfl:hover{color:#fff;background:rgba(255,255,255,.06);}
 
-.hburg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
-.hburg span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;}
-.mobm{display:none;position:absolute;top:var(--nh);left:0;right:0;background:#1a1f2e;border-top:1px solid rgba(255,255,255,.07);padding:16px;z-index:400;}
-.mobm.open{display:block;}
-.mobm a{display:block;padding:10px 12px;color:rgba(255,255,255,.75);font-size:14px;border-radius:6px;}
+/* Mobile */
+.hburg{display:none;flex-direction:column;gap:5px;padding:6px;background:none;border:none;}
+.hburg span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .2s;}
+.hburg.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hburg.open span:nth-child(2){opacity:0;}
+.hburg.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobm{
+  display:none;
+  position:fixed;top:64px;left:0;right:0;bottom:0;
+  background:#1a1f2e;
+  overflow-y:auto;
+  padding:12px 16px 32px;
+  z-index:450;
+  opacity:0;transform:translateX(100%);
+  transition:opacity .2s,transform .2s;
+}
+.mobm.open{display:block;opacity:1;transform:translateX(0);}
+.mobm a{display:block;padding:11px 14px;color:rgba(255,255,255,.78);font-size:15px;border-radius:8px;transition:background .12s;}
 .mobm a:hover{background:rgba(255,255,255,.07);color:#fff;}
-.moblabel{font-size:10px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase;padding:12px 12px 4px;}
+.moblabel{font-size:10px;font-weight:600;letter-spacing:1.1px;color:rgba(255,255,255,.3);text-transform:uppercase;padding:16px 14px 6px;}
+.mob-cta{display:block;margin:16px 0 0;font-family:var(--fh);font-size:15px;font-weight:500;text-align:center;background:var(--sky-600);color:#fff;padding:13px;border-radius:10px;}
 
-/* HERO */
-.hero{background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 45%,#0d4f80 100%);position:relative;overflow:hidden;padding:88px 40px 0;display:flex;align-items:flex-start;min-height:660px;}
-.hgrid{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 60px);}
-.hglow{position:absolute;top:-150px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.15) 0%,transparent 65%);}
-.hglow2{position:absolute;bottom:-60px;left:5%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(26,126,196,.1) 0%,transparent 70%);}
+/* ═══ HERO ═════════════════════════════════════════════════════════ */
+.hero{
+  background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 45%,#0d4f80 100%);
+  position:relative;overflow:hidden;
+  padding:84px 40px 0;
+  display:flex;align-items:flex-start;
+  min-height:660px;
+}
+.hgrid{
+  position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0,rgba(255,255,255,.018) 1px,transparent 1px,transparent 60px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0,rgba(255,255,255,.018) 1px,transparent 1px,transparent 60px);
+}
+.hglow{position:absolute;top:-150px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.14) 0%,transparent 65%);}
+.hglow2{position:absolute;bottom:-60px;left:8%;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(26,126,196,.09) 0%,transparent 70%);}
 
-.hero-text{position:relative;z-index:2;flex:1;max-width:540px;padding-bottom:88px;}
-.heyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:1.5px;color:var(--sky-400);text-transform:uppercase;margin-bottom:24px;}
-.hpulse{width:6px;height:6px;border-radius:50%;background:var(--sky-400);animation:hpulse 2s infinite;}
-@keyframes hpulse{0%,100%{opacity:1;}50%{opacity:.4;}}
-.hero-text h1{font-family:var(--fh);font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.08;letter-spacing:-1.5px;color:#fff;margin-bottom:22px;}
+.hero-text{position:relative;z-index:2;flex:1;max-width:540px;padding-bottom:84px;}
+
+.hero-text h1{
+  font-family:var(--fh);
+  margin-top:8px;
+  font-size:clamp(34px,4.5vw,54px);
+  font-weight:700;line-height:1.09;letter-spacing:-1.5px;
+  color:#fff;margin-bottom:20px;
+}
 .hero-text h1 em{font-style:normal;color:var(--sky-400);}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.58);line-height:1.75;max-width:440px;margin-bottom:36px;}
+.hero-sub{
+  font-size:16px;color:rgba(255,255,255,.58);
+  line-height:1.78;max-width:440px;margin-bottom:34px;
+}
 .hbtns{display:flex;gap:12px;flex-wrap:wrap;}
-.hbtn{font-family:var(--fh);font-size:14px;font-weight:500;padding:12px 26px;border-radius:8px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:7px;transition:all .2s;}
+.hbtn{
+  font-family:var(--fh);font-size:14px;font-weight:500;
+  padding:12px 26px;border-radius:8px;border:none;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .2s;
+}
 .hbtn-p{background:var(--sky-600);color:#fff;}
 .hbtn-p:hover{background:#1570ae;transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,126,196,.4);}
 .hbtn-g{background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);}
 .hbtn-g:hover{background:rgba(255,255,255,.15);}
-.htrust{display:flex;align-items:center;gap:10px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.09);}
-.htrust-label{font-size:11px;color:rgba(255,255,255,.32);}
-.hbadge{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:20px;padding:5px 14px 5px 8px;font-size:11px;font-weight:500;color:rgba(255,255,255,.6);}
+
+/* Trust row */
 .mslg{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:20px;height:20px;}
 .mslg div{border-radius:1.5px;}
 
 /* Hero floating cards */
 .hvisual{position:relative;flex:0 0 500px;height:580px;margin-left:40px;margin-top:-20px;}
-.hc{position:absolute;background:rgba(255,255,255,.97);border-radius:14px;padding:16px;box-shadow:0 20px 56px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.14);}
+.hc{
+  position:absolute;
+  background:rgba(255,255,255,.97);
+  border-radius:14px;padding:16px;
+  box-shadow:0 20px 56px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.14);
+}
 .hc-lbl{font-size:9.5px;font-weight:600;letter-spacing:.8px;color:var(--slate-400);text-transform:uppercase;margin-bottom:7px;}
 .hc-ttl{font-family:var(--fh);font-size:13.5px;font-weight:600;color:var(--slate-900);margin-bottom:3px;}
 
 .hc1{width:198px;top:24px;left:0;animation:hf1 5s ease-in-out infinite;}
 @keyframes hf1{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 .cring{display:flex;align-items:center;gap:10px;margin-top:10px;}
-.cring-circle{width:50px;height:50px;border-radius:50%;background:conic-gradient(#1D9E75 0% 82%,var(--slate-100) 82% 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cring-circle{width:50px;height:50px;border-radius:50%;background:conic-gradient(#1D9E75 0% 82%,#ECEEF2 82% 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .cring-inner{width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:11px;font-weight:700;color:var(--slate-900);}
 .cstat{font-size:11px;color:var(--slate-600);line-height:1.4;}
 .cstat strong{display:block;font-family:var(--fh);font-size:13px;font-weight:600;color:var(--slate-900);}
@@ -118,7 +195,7 @@ img{display:block;max-width:100%;}
 @keyframes hf2{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 .apps{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
 .app{width:34px;height:34px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;}
-.app-note{font-size:10px;color:#1D9E75;font-weight:600;margin-top:8px;}
+.app-note{font-size:10px;color:var(--green);font-weight:600;margin-top:8px;}
 
 .hc3{width:185px;bottom:140px;left:8px;animation:hf3 5.5s ease-in-out infinite 1s;}
 @keyframes hf3{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
@@ -136,230 +213,498 @@ img{display:block;max-width:100%;}
 .tkt-n{font-family:var(--fh);font-size:11px;font-weight:600;color:var(--slate-900);}
 .tkt-meta{font-size:10px;color:var(--slate-400);margin-top:6px;}
 
-.hc5{width:166px;top:248px;left:118px;animation:hf5 7s ease-in-out infinite .8s;}
+.hc5{width:166px;top:250px;left:118px;animation:hf5 7s ease-in-out infinite .8s;}
 @keyframes hf5{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
 .badge-r{display:flex;align-items:center;gap:8px;margin-top:8px;}
 .badge-ic{width:30px;height:30px;border-radius:7px;background:var(--sky-600);display:flex;align-items:center;justify-content:center;}
 .badge-t{font-size:11px;font-weight:500;color:var(--slate-700);line-height:1.35;}
 
-/* CLIENT STRIP */
-.client-strip{background:var(--white);border-top:1px solid var(--slate-100);border-bottom:1px solid var(--slate-100);padding:16px 40px;display:flex;align-items:center;gap:18px;}
-.cs-label{font-size:11px;color:var(--slate-400);white-space:nowrap;font-weight:500;}
-.cs-logos{display:flex;gap:8px;flex-wrap:wrap;}
-.cs-pill{font-size:12px;font-weight:500;color:var(--slate-500);background:var(--slate-50);border:1px solid var(--slate-200);padding:5px 13px;border-radius:20px;}
+/* ═══ PROOF BAR (replaces sector pills) ═════════════════════════════ */
+/* ── PROOF BAR */
+.proof-bar{
+  background:linear-gradient(135deg,#0f172a 0%,#0d2d4f 60%,#0d4f80 100%);
+  padding:0 40px;
+  display:flex;align-items:stretch;
+}
+.pb-item{
+  flex:1;
+  display:flex;align-items:center;gap:14px;
+  padding:22px 28px;
+  border-right:1px solid rgba(255,255,255,.08);
+  position:relative;overflow:hidden;
+  transition:background .22s ease;
+}
+.pb-item:first-child{padding-left:0;}
+.pb-item:last-child{border-right:none;}
+.pb-item::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:2px;background:var(--sky-400);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .28s ease;
+}
+.pb-item:hover{background:rgba(255,255,255,.05);}
+.pb-item:hover::after{transform:scaleX(1);}
+.pb-icon{
+  width:38px;height:38px;border-radius:10px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:background .22s,border-color .22s,transform .22s;
+}
+.pb-icon svg{filter:invert(1);}
+.pb-item:hover .pb-icon{background:rgba(255,255,255,.14);transform:scale(1.08);}
+.pb-val{
+  font-family:var(--fh);font-size:20px;font-weight:700;
+  color:#fff;line-height:1;transition:color .22s;
+}
+.pb-item:hover .pb-val{color:var(--sky-400);}
+.pb-label{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;line-height:1.3;}
 
-/* OUTCOMES */
-.outcomes{padding:80px 40px;background:var(--white);}
-.sec-ey{font-size:11px;font-weight:600;letter-spacing:1.2px;color:var(--sky-600);text-transform:uppercase;margin-bottom:8px;}
-.sec-h2{font-family:var(--fh);font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--slate-900);line-height:1.15;letter-spacing:-.5px;margin-bottom:12px;}
-.sec-sub{font-size:15px;color:var(--slate-600);line-height:1.7;max-width:520px;margin-bottom:48px;}
-.og{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.oc{background:var(--slate-50);border-radius:14px;padding:26px 22px;transition:background .2s,transform .2s;}
-.oc:hover{background:var(--sky-50);transform:translateY(-2px);}
-.oc.cta{background:linear-gradient(135deg,var(--sky-50),var(--sky-100));border:1.5px solid var(--sky-200);display:flex;flex-direction:column;justify-content:space-between;}
-.oc-icon{width:40px;height:40px;border-radius:10px;background:var(--white);border:1px solid var(--slate-200);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-.oc-h3{font-family:var(--fh);font-size:16px;font-weight:600;color:var(--slate-900);margin-bottom:8px;line-height:1.3;}
-.oc-p{font-size:13px;color:var(--slate-600);line-height:1.65;}
-.oc-link{font-size:13px;font-weight:600;color:var(--sky-600);margin-top:16px;display:inline-flex;align-items:center;gap:5px;}
+/* ═══ SHARED SECTION TOKENS */
+.sec-ey{font-size:11px;font-weight:600;letter-spacing:1.2px;color:var(--sky-600);text-transform:uppercase;margin-bottom:7px;}
+.sec-h2{font-family:var(--fh);font-size:clamp(24px,3.2vw,36px);font-weight:700;color:var(--slate-900);line-height:1.15;letter-spacing:-.4px;margin-bottom:10px;}
+.sec-sub{font-size:15px;color:var(--slate-600);line-height:1.72;max-width:500px;margin-bottom:44px;}
 
-/* CHOOSE PATH */
-.path-sec{padding:80px 40px;background:var(--slate-50);}
-.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px;}
-.pc{border-radius:20px;padding:36px 32px 28px;position:relative;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s;}
-.pc:hover{transform:translateY(-3px);}
-.pc-svc{background:linear-gradient(135deg,#e8f4ff,#d0e8f8);border:1.5px solid var(--sky-200);}
-.pc-prd{background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1.5px solid #c4b5fd;}
-.pc-bg{position:absolute;bottom:-20px;right:-20px;width:160px;height:160px;border-radius:50%;opacity:.15;}
-.pc-svc .pc-bg{background:var(--sky-600);}
-.pc-prd .pc-bg{background:#7c3aed;}
-.pc-tag{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
-.pc-svc .pc-tag{color:var(--sky-600);}
-.pc-prd .pc-tag{color:#6d28d9;}
-.pc-h3{font-family:var(--fh);font-size:clamp(18px,2.2vw,24px);font-weight:700;line-height:1.2;margin-bottom:12px;}
-.pc-svc .pc-h3{color:var(--sky-900);}
-.pc-prd .pc-h3{color:#2e1065;}
-.pc-p{font-size:13.5px;line-height:1.7;margin-bottom:20px;}
-.pc-svc .pc-p{color:var(--sky-800);}
-.pc-prd .pc-p{color:#4c1d95;}
-.pc-arrow{font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:6px;}
-.pc-svc .pc-arrow{color:var(--sky-600);}
-.pc-prd .pc-arrow{color:#6d28d9;}
+/* ═══ BUSINESS OUTCOMES — 6-card grid */
+.outcomes-sec{
+  padding:80px 40px;
+  background:linear-gradient(180deg,var(--sky-50) 0%,#fff 80%);
+}
+.og6{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.oc6{
+  background:#fff;
+  border:1px solid var(--slate-100);
+  border-radius:14px;
+  padding:24px 20px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color .22s,transform .22s,box-shadow .22s;
+}
+.oc6::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--sky-400),var(--sky-600));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.oc6:hover{border-color:var(--sky-200);transform:translateY(-3px);box-shadow:0 12px 32px rgba(26,126,196,.1);}
+.oc6:hover::before{transform:scaleX(1);}
+.oc6-cta{
+  background:linear-gradient(135deg,var(--sky-600) 0%,var(--sky-800) 100%);
+  border:none;
+}
+.oc6-cta::before{display:none;}
+.oc6-cta:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(26,126,196,.3);}
+.oc6-num{
+  font-family:var(--fh);font-size:11px;font-weight:700;
+  letter-spacing:1.2px;color:var(--sky-400);
+  margin-bottom:12px;
+}
+.oc6-h{
+  font-family:var(--fh);font-size:15px;font-weight:600;
+  color:var(--slate-900);line-height:1.3;margin-bottom:8px;
+}
+.oc6-p{font-size:13px;color:var(--slate-600);line-height:1.65;}
+.oc6-tag{
+  display:inline-block;margin-top:14px;
+  font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;
+  color:var(--sky-600);background:var(--sky-50);
+  border:0.5px solid var(--sky-200);
+  padding:3px 9px;border-radius:20px;
+}
+.oc6-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--fh);font-size:13px;font-weight:600;
+  color:#fff;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+  padding:9px 18px;border-radius:8px;
+  transition:background .18s;text-decoration:none;
+}
+.oc6-btn:hover{background:rgba(255,255,255,.25);}
 
-/* PRODUCT CARDS */
-.prods-sec{padding:80px 40px;background:var(--white);}
-.bstrip{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;background:var(--sky-50);border:1px solid var(--sky-200);font-size:13px;color:var(--sky-800);font-weight:500;margin-bottom:44px;}
-.prods-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.pcard{border-radius:18px;padding:26px 24px;border:1.5px solid transparent;transition:border-color .2s,transform .2s;display:block;}
+/* ═══ PATH ════════════════════════════════════════════════════════════ */
+.path-sec{padding:76px 40px;background:var(--slate-50);}
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px;}
+.pcard{
+  border-radius:18px;padding:34px 30px 26px;
+  position:relative;overflow:hidden;
+  min-height:290px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:transform .2s;
+}
 .pcard:hover{transform:translateY(-3px);}
-.pcard.blue{background:linear-gradient(145deg,#f0f9ff,#e0f2fe);border-color:var(--sky-200);}
-.pcard.blue:hover{border-color:var(--sky-400);}
-.pcard.purple{background:linear-gradient(145deg,#fdf4ff,#fae8ff);border-color:#f0abfc;}
-.pcard.purple:hover{border-color:#d946ef;}
-.pcard.green{background:linear-gradient(145deg,#f0fdf4,#dcfce7);border-color:#86efac;}
-.pcard.green:hover{border-color:#22c55e;}
-.pcard.orange{background:linear-gradient(145deg,#fff7ed,#ffedd5);border-color:#fed7aa;}
-.pcard.orange:hover{border-color:#fb923c;}
-.ptag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
-.blue .ptag{color:var(--sky-600);}
-.purple .ptag{color:#9333ea;}
-.green .ptag{color:#16a34a;}
-.orange .ptag{color:#ea580c;}
-.picon-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
-.picon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.blue .picon{background:#dbeafe;}
-.purple .picon{background:#f3e8ff;}
-.green .picon{background:#dcfce7;}
-.orange .picon{background:#ffedd5;}
-.pname{font-family:var(--fh);font-size:20px;font-weight:700;}
-.blue .pname{color:var(--sky-900);}
-.purple .pname{color:#3b0764;}
-.green .pname{color:#14532d;}
-.orange .pname{color:#431407;}
-.pdesc{font-size:13px;line-height:1.65;margin-bottom:14px;}
-.blue .pdesc{color:var(--sky-800);}
-.purple .pdesc{color:#581c87;}
-.green .pdesc{color:#166534;}
-.orange .pdesc{color:#7c2d12;}
-.pouts{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
-.pout{font-size:12px;display:flex;align-items:center;gap:7px;}
-.pout::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;}
-.blue .pout{color:var(--sky-700, #0369a1);}.blue .pout::before{background:var(--sky-500);}
-.purple .pout{color:#7c3aed;}.purple .pout::before{background:#a855f7;}
-.green .pout{color:#15803d;}.green .pout::before{background:#22c55e;}
-.orange .pout{color:#c2410c;}.orange .pout::before{background:#f97316;}
-.plink{font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:5px;}
-.blue .plink{color:var(--sky-600);}
-.purple .plink{color:#9333ea;}
-.green .plink{color:#16a34a;}
-.orange .plink{color:#ea580c;}
+.pcard-svc{background:linear-gradient(135deg,#e8f4ff 0%,#cfe6f8 100%);border:1.5px solid var(--sky-200);}
+.pcard-prd{background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%);border:1.5px solid #c4b5fd;}
+.pcard-bg{position:absolute;bottom:-20px;right:-20px;width:150px;height:150px;border-radius:50%;opacity:.14;}
+.pcard-svc .pcard-bg{background:var(--sky-600);}
+.pcard-prd .pcard-bg{background:#7c3aed;}
+.ptag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
+.pcard-svc .ptag{color:var(--sky-600);}
+.pcard-prd .ptag{color:#6d28d9;}
+.ph3{font-family:var(--fh);font-size:clamp(17px,2vw,22px);font-weight:700;line-height:1.22;margin-bottom:11px;}
+.pcard-svc .ph3{color:var(--sky-900);}
+.pcard-prd .ph3{color:#2e1065;}
+.pp{font-size:13.5px;line-height:1.7;margin-bottom:18px;}
+.pcard-svc .pp{color:var(--sky-800);}
+.pcard-prd .pp{color:#4c1d95;}
+.parr{font-size:13.5px;font-weight:700;display:inline-flex;align-items:center;gap:6px;}
+.pcard-svc .parr{color:var(--sky-600);}
+.pcard-prd .parr{color:#6d28d9;}
 
-/* MS SECTION */
-.ms-sec{padding:80px 40px;background:linear-gradient(180deg,#0f172a 0%,#0d2d4f 100%);}
+/* ═══ SERVICE CARDS ═══════════════════════════════════════════════════ */
+.svcs-sec{padding:76px 40px;background:#fff;}
+.bstrip{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 16px;border-radius:9px;
+  background:var(--sky-50);border:1px solid var(--sky-200);
+  font-size:12.5px;color:var(--sky-800);font-weight:500;
+  margin-bottom:40px;
+}
+.svcs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.sc{
+  border-radius:16px;padding:24px 22px;
+  border:1.5px solid transparent;
+  transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+  display:block;
+  position:relative;
+  overflow:hidden;
+}
+.sc::before{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;
+  width:3px;
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform .3s ease;
+  border-radius:2px 0 0 2px;
+}
+.blue::before{background:var(--sky-600);}
+.purple::before{background:var(--purple);}
+.green::before{background:#16a34a;}
+.orange::before{background:#ea580c;}
+.teal::before{background:#0f766e;}
+.sc:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.1);}
+.sc:hover::before{transform:scaleY(1);}
+.sc.blue{background:linear-gradient(145deg,#f0f9ff,#e0f2fe);border-color:var(--sky-200);}
+.sc.blue:hover{border-color:var(--sky-400);}
+.sc.purple{background:linear-gradient(145deg,#fdf4ff,#fae8ff);border-color:#f0abfc;}
+.sc.purple:hover{border-color:#d946ef;}
+.sc.green{background:linear-gradient(145deg,#f0fdf4,#dcfce7);border-color:#86efac;}
+.sc.green:hover{border-color:#22c55e;}
+.sc.orange{background:linear-gradient(145deg,#fff7ed,#ffedd5);border-color:#fed7aa;}
+.sc.teal{background:linear-gradient(145deg,#f0fffe,#ccfbf1);border-color:#5eead4;}
+.sc.teal:hover{border-color:#14b8a6;}
+.teal .sc-out::before{background:#0f766e;}
+
+.sc.orange:hover{border-color:#fb923c;}
+.sc-tag{font-size:10px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;margin-bottom:9px;}
+.blue .sc-tag{color:var(--sky-600);}
+.purple .sc-tag{color:var(--purple);}
+.green .sc-tag{color:#16a34a;}
+.orange .sc-tag{color:#ea580c;}
+.sc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.sc-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.blue .sc-icon{background:#dbeafe;}
+.purple .sc-icon{background:#f3e8ff;}
+.green .sc-icon{background:#dcfce7;}
+.orange .sc-icon{background:#ffedd5;}
+.sc-name{font-family:var(--fh);font-size:19px;font-weight:700;}
+.blue .sc-name{color:var(--sky-900);}
+.purple .sc-name{color:#3b0764;}
+.green .sc-name{color:#14532d;}
+.orange .sc-name{color:#431407;}
+.sc-desc{font-size:13px;line-height:1.65;margin-bottom:12px;}
+.blue .sc-desc{color:var(--sky-800);}
+.purple .sc-desc{color:#581c87;}
+.green .sc-desc{color:#166534;}
+.orange .sc-desc{color:#7c2d12;}
+.sc-outs{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+.sc-out{font-size:12px;display:flex;align-items:flex-start;gap:7px;line-height:1.45;}
+.sc-out::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.blue .sc-out{color:#0369a1;}.blue .sc-out::before{background:var(--sky-500);}
+.purple .sc-out{color:#7c3aed;}.purple .sc-out::before{background:#a855f7;}
+.green .sc-out{color:#15803d;}.green .sc-out::before{background:#22c55e;}
+.orange .sc-out{color:#c2410c;}.orange .sc-out::before{background:#f97316;}
+.sc-link{font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:5px;}
+.blue .sc-link{color:var(--sky-600);}
+.purple .sc-link{color:var(--purple);}
+.green .sc-link{color:#16a34a;}
+.orange .sc-link{color:#ea580c;}
+
+/* ═══ MICROSOFT SECTION ═══════════════════════════════════════════════ */
+.ms-sec{
+  padding:76px 40px;
+  background:linear-gradient(180deg,#0f172a 0%,#0d2d4f 100%);
+}
 .ms-sec .sec-ey{color:var(--sky-400);}
 .ms-sec .sec-h2{color:#fff;}
-.ms-sec .sec-sub{color:rgba(255,255,255,.55);margin-bottom:14px;}
-.ms-built{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:8px 16px;font-size:12px;font-weight:500;color:rgba(255,255,255,.58);margin-bottom:44px;}
-.msg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.mspc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:22px 20px;transition:background .2s,border-color .2s;display:block;}
-.mspc:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18);}
-.mspc.featured{grid-column:span 2;background:rgba(255,255,255,.07);}
-.mstag{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--sky-400);text-transform:uppercase;margin-bottom:6px;}
-.mspc h3{font-family:var(--fh);font-size:17px;font-weight:600;color:#fff;margin-bottom:6px;}
-.mspc p{font-size:12.5px;color:rgba(255,255,255,.52);line-height:1.65;}
-.ms-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+.ms-sec .sec-sub{color:rgba(255,255,255,.52);}
+.ms-built{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;padding:7px 15px;
+  font-size:12px;font-weight:500;color:rgba(255,255,255,.55);
+  margin-bottom:40px;
+}
+.msg{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;}
+.mspc{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:13px;padding:20px 18px;
+  transition:background .2s,border-color .2s;
+  display:block;
+}
+.mspc:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.17);}
+.mspc.feat{grid-column:span 2;background:rgba(255,255,255,.07);}
+.mstag{font-size:10px;font-weight:600;letter-spacing:.9px;color:var(--sky-400);text-transform:uppercase;margin-bottom:5px;}
+.mspc h3{font-family:var(--fh);font-size:16px;font-weight:600;color:#fff;margin-bottom:5px;}
+.mspc p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.65;}
+.ms-pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px;}
 .ms-pill{font-size:10px;font-weight:500;color:rgba(180,220,250,.8);background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.12);padding:3px 9px;border-radius:20px;}
-.ms-plink{font-size:12px;color:var(--sky-400);margin-top:10px;display:block;}
-.ms-partrow{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px 24px;margin-top:18px;flex-wrap:wrap;gap:14px;}
-.ms-partleft{display:flex;align-items:center;gap:14px;}
+.ms-plink{font-size:12px;color:var(--sky-400);margin-top:9px;display:block;}
+.ms-partrow{
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:11px;padding:16px 22px;margin-top:16px;flex-wrap:wrap;gap:12px;
+}
+.ms-partleft{display:flex;align-items:center;gap:12px;}
 .ms-parttext h4{font-family:var(--fh);font-size:14px;font-weight:500;color:#fff;margin-bottom:2px;}
-.ms-parttext p{font-size:12px;color:rgba(255,255,255,.38);}
-.ms-pbadges{display:flex;gap:7px;flex-wrap:wrap;}
-.ms-pbadge{font-size:11px;font-weight:500;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.11);padding:4px 11px;border-radius:20px;}
+.ms-parttext p{font-size:12px;color:rgba(255,255,255,.36);}
+.ms-pbadges{display:flex;gap:6px;flex-wrap:wrap;}
+.ms-pbadge{font-size:11px;font-weight:500;color:rgba(255,255,255,.52);background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.1);padding:4px 11px;border-radius:20px;}
 
-/* TESTIMONIALS */
-.testis{padding:80px 40px;background:var(--slate-50);}
-.testis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px;}
-.tc{background:var(--white);border:1px solid var(--slate-100);border-radius:14px;padding:24px 22px;}
-.stars{display:flex;gap:3px;margin-bottom:12px;}
-.tq{font-size:13.5px;color:var(--slate-700);line-height:1.75;margin-bottom:18px;font-style:italic;}
-.tau{display:flex;align-items:center;gap:11px;}
-.tav{width:36px;height:36px;border-radius:50%;background:var(--sky-600);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;}
+/* ═══ TESTIMONIALS ════════════════════════════════════════════════════ */
+.testis{padding:76px 40px;background:var(--slate-50);}
+.testis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px;}
+.tc{background:#fff;border:1px solid var(--slate-100);border-radius:14px;padding:24px 20px;display:flex;flex-direction:column;}
+.tc.placeholder{border-style:dashed;border-color:var(--slate-200);background:var(--slate-50);}
+.stars{display:flex;gap:3px;margin-bottom:11px;}
+.tq{font-size:13.5px;color:var(--slate-700);line-height:1.78;margin-bottom:16px;font-style:italic;flex:1;}
+.tau{display:flex;align-items:center;gap:11px;margin-top:auto;}
+.tav{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;}
 .tname{font-family:var(--fh);font-size:13px;font-weight:600;color:var(--slate-900);}
 .trole{font-size:11px;color:var(--slate-400);margin-top:1px;}
+.placeholder-label{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--slate-400);background:var(--slate-100);border-radius:4px;padding:2px 7px;display:inline-block;margin-bottom:10px;}
 
-/* CTA */
-.cta-sec{background:#0f172a;padding:80px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;position:relative;overflow:hidden;}
-.cta-glow{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.1) 0%,transparent 70%);}
-.cta-sec h2{font-family:var(--fh);font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;margin-bottom:10px;line-height:1.2;}
-.cta-sec p{font-size:15px;color:rgba(255,255,255,.5);max-width:460px;line-height:1.7;}
+/* ═══ CTA ══════════════════════════════════════════════════════════════ */
+.cta-sec{
+  background:#0f172a;padding:76px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:32px;position:relative;overflow:hidden;
+}
+.cta-glow{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.09) 0%,transparent 70%);}
+.cta-sec h2{font-family:var(--fh);font-size:clamp(20px,2.8vw,30px);font-weight:700;color:#fff;margin-bottom:9px;line-height:1.2;}
+.cta-sec p{font-size:15px;color:rgba(255,255,255,.48);max-width:440px;line-height:1.72;}
 .cta-btns{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;}
 
-/* FOOTER */
-.footer{background:var(--slate-50);border-top:1px solid var(--slate-100);padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--slate-400);}
-.footer-logo{display:flex;align-items:center;gap:10px;}
-.footer-logo img{height:28px;mix-blend-mode:multiply;opacity:.65;}
-.footer-links{display:flex;gap:18px;}
+/* ═══ CERT BAR ══════════════════════════════════════════════════════════ */
+.cert-bar{
+  background:var(--slate-50);
+  border-top:1px solid var(--slate-100);
+  padding:14px 40px;
+}
+.cert-bar-inner{
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.cert-bar-label{
+  font-size:11px;font-weight:600;
+  color:var(--slate-400);
+  white-space:nowrap;letter-spacing:.3px;
+}
+.cert-badges{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.cert-badge{
+  display:flex;align-items:center;gap:6px;
+  font-size:11.5px;font-weight:500;
+  color:var(--slate-600);
+}
+.cert-divider{
+  width:1px;height:14px;
+  background:var(--slate-200);
+}
+
+/* ═══ FOOTER ═══════════════════════════════════════════════════════════ */
+.footer{
+  background:var(--slate-50);border-top:1px solid var(--slate-100);
+  padding:24px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+  font-size:12px;color:var(--slate-400);
+}
+.footer-logo{display:flex;align-items:center;gap:12px;}
+.footer-logo img{height:30px;mix-blend-mode:multiply;opacity:.65;}
+.footer-links{display:flex;gap:20px;}
 .footer-links a{color:var(--slate-400);transition:color .15s;}
 .footer-links a:hover{color:var(--sky-600);}
 
-/* RESPONSIVE */
-@media(max-width:1024px){.hvisual{flex:0 0 380px;}}
-@media(max-width:900px){
-  .nav{padding:0 20px;}.nav-links,.nav-cta{display:none;}.hburg{display:flex;}
-  .hero{flex-direction:column;padding:56px 20px 0;min-height:auto;}.hvisual{display:none;}
-  .hero-text{max-width:100%;padding-bottom:56px;}
-  .og,.prods-grid,.msg,.testis-grid,.path-grid{grid-template-columns:1fr;}
-  .mspc.featured{grid-column:span 1;}
-  .outcomes,.path-sec,.prods-sec,.ms-sec,.testis{padding:56px 20px;}
-  .client-strip,.footer,.cta-sec{padding:16px 20px;}
-  .cta-sec{flex-direction:column;text-align:center;}
+/* ═══ RESPONSIVE ════════════════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .hvisual{flex:0 0 380px;}
 }
+
+@media(max-width:900px){
+  /* Nav */
+  .nav{padding:0 20px;}
+  .nav-links,.nav-cta{display:none;}
+  .hburg{display:flex;}
+  /* Hero */
+  .hero{flex-direction:column;padding:52px 20px 0;min-height:auto;}
+  .hvisual{display:none;}
+  .hero-text{max-width:100%;padding-bottom:52px;}
+  .hero-text h1{letter-spacing:-1px;}
+  /* Proof bar */
+  .proof-bar{
+    padding:0;
+    display:grid;grid-template-columns:1fr 1fr;
+  }
+  .pb-item{
+    padding:18px 20px;
+    border-right:1px solid var(--slate-100);
+    border-bottom:1px solid var(--slate-100);
+  }
+  .pb-item:nth-child(2n){border-right:none;}
+  .pb-item:nth-last-child(-n+2){border-bottom:none;}
+  /* Deliver section */
+  .outcomes-sec{padding:52px 20px;}
+  .og6{grid-template-columns:1fr 1fr;}
+  /* Sections */
+  .path-sec,.svcs-sec,.ms-sec,.testis{padding:52px 20px;}
+  .svcs-grid,.msg,.testis-grid,.path-grid{grid-template-columns:1fr;}
+  .mspc.feat{grid-column:span 1;}
+  /* CTA */
+  .cta-sec{flex-direction:column;text-align:center;padding:52px 20px;}
+  .cta-btns{justify-content:center;}
+  /* Footer */
+  .footer{padding:20px;flex-direction:column;align-items:flex-start;gap:14px;}
+}
+
 @media(max-width:600px){
-  .hero-text h1{font-size:32px;letter-spacing:-.8px;}
+  .hero-text h1{font-size:30px;letter-spacing:-.8px;}
   .hbtns{flex-direction:column;}
-  .hbtn{justify-content:center;}
+  .hbtn{width:100%;justify-content:center;}
+  .htrust{gap:8px;}
+  .hbadge{font-size:10.5px;padding:4px 12px 4px 7px;}
+  .sec-h2{letter-spacing:-.3px;}
+  .proof-bar{grid-template-columns:1fr;}
+  .pb-item{border-right:none;border-bottom:1px solid var(--slate-100);}
+  .pb-item:last-child{border-bottom:none;}
+  .og6{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ══ NAV ══════════════════════════════════════════════════════════ -->
 <nav class="nav">
-  <a href="index.html" style="display:flex;align-items:center;"><img src="logo-horizontal.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:screen;"/></a>
+  <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
+    <img src="logo-stacked.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
+    <span class="nav-brand-text">Solvv<span>Space</span></span>
+  </a>
 
   <ul class="nav-links">
     <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-svc">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="nav-dd-btn" data-dd="dd-svc">
+        Services
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
       <div class="mega" id="dd-svc">
         <div class="mega-inner">
           <div class="mcol">
             <div class="mclabel">Core services</div>
-            <a class="mi" href="service-bespoke.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div><div><div class="mi-name">Bespoke development</div><div class="mi-desc">Custom apps & system integrations</div></div></a>
-            <a class="mi" href="service-m365.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div><div><div class="mi-name">Microsoft 365 deployment</div><div class="mi-desc">Licencing, migration & management</div></div></a>
-            <a class="mi" href="service-sharepoint.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div><div><div class="mi-name">SharePoint & Power Apps</div><div class="mi-desc">Intranet, automation & low-code</div></div></a>
+            <a class="mi" href="service-bespoke.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>
+              <div><div class="mi-name">Bespoke development</div><div class="mi-desc">Custom apps &amp; system integrations</div></div>
+            </a>
+            <a class="mi" href="service-m365.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>
+              <div><div class="mi-name">Microsoft 365 deployment</div><div class="mi-desc">Licencing, migration &amp; management</div></div>
+            </a>
+            <a class="mi" href="service-sharepoint.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>
+              <div><div class="mi-name">SharePoint &amp; Power Apps</div><div class="mi-desc">Intranet, automation &amp; low-code</div></div>
+            </a>
           </div>
           <div class="mcol">
-            <div class="mclabel">Security & support</div>
-            <a class="mi" href="service-cyber.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div><div><div class="mi-name">Cyber Essentials & security</div><div class="mi-desc">Certification & managed protection</div></div></a>
-            <a class="mi" href="service-managed-it.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="mi-name">IT & managed services</div><div class="mi-desc">24/7 monitoring & helpdesk</div></div></a>
-            <a class="mi" href="service-hr.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div><div><div class="mi-name">HR systems development</div><div class="mi-desc">Custom HR platforms & consultancy</div></div></a>
-            <a class="mi" href="service-advisory.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div><div><div class="mi-name">Advisory & consultancy</div><div class="mi-desc">Technology roadmaps & strategy</div></div></a>
+            <div class="mclabel">Security &amp; support</div>
+            <a class="mi" href="service-cyber.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
+              <div><div class="mi-name">Cyber Essentials &amp; security</div><div class="mi-desc">Certification &amp; managed protection</div></div>
+            </a>
+            <a class="mi" href="service-managed-it.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="mi-name">IT &amp; managed services</div><div class="mi-desc">24/7 monitoring &amp; helpdesk</div></div>
+            </a>
+            <a class="mi" href="service-hr.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>
+              <div><div class="mi-name">HR systems development</div><div class="mi-desc">Custom HR platforms &amp; consultancy</div></div>
+            </a>
+            <a class="mi" href="service-advisory.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>
+              <div><div class="mi-name">Advisory &amp; consultancy</div><div class="mi-desc">Technology roadmaps &amp; strategy</div></div>
+            </a>
           </div>
           <div class="mcol">
             <div class="mclabel">Quick starts</div>
-            <a class="mi" href="contact.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="mi-name">Free IT audit</div><div class="mi-desc">No obligation — find the gaps</div></div></a>
-            <a class="mi" href="service-cyber.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="mi-name">Cyber Essentials cert</div><div class="mi-desc">Certified in 6 weeks</div></div></a>
-            <a class="mi" href="service-m365.html"><div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 3v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/></svg></div><div><div class="mi-name">M365 migration</div><div class="mi-desc">Move to cloud, the right way</div></div></a>
+            <a class="mi" href="contact.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="mi-name">Free IT audit</div><div class="mi-desc">No obligation — find the gaps</div></div>
+            </a>
+            <a class="mi" href="service-cyber.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1"/></svg></div>
+              <div><div class="mi-name">Cyber Essentials cert</div><div class="mi-desc">Certified in 6 weeks</div></div>
+            </a>
+            <a class="mi" href="service-m365.html">
+              <div class="mi-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 3v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/></svg></div>
+              <div><div class="mi-name">M365 migration</div><div class="mi-desc">Move to cloud, the right way</div></div>
+            </a>
           </div>
         </div>
         <div class="mfoot">
           <a class="mfl" href="solutions.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6M7 4l2 2-2 2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>All services</a>
-          <a class="mfl" href="contact.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 3h8v6H2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M2 3l4 4 4-4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Free discovery call — no pressure, no commitment</a>
+          <a class="mfl" href="contact.html"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 3h8v6H2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M2 3l4 4 4-4" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Book a free discovery call</a>
         </div>
       </div>
     </li>
 
-    <li><a class="nl-a" href="solutions.html">Solutions</a></li>
+    <li><a class="nla" href="solutions.html">Solutions</a></li>
 
     <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-hub">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="nav-dd-btn" data-dd="dd-hub">
+        SS Hub
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
       <div class="dd" id="dd-hub">
-        <a class="dd-item" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Products</a>
-        <div class="dd-div"></div>
-        <a class="dd-item" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights &amp; learning</a>
-        <div class="dd-div"></div>
-        <a class="dd-item" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
+        <a class="ddi-wrap" href="hub-products.html">
+          <div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>
+          Products
+        </a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hub-insights.html">
+          <div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>
+          Insights &amp; learning
+        </a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hub-tech-updates.html">
+          <div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Technology updates
+        </a>
       </div>
     </li>
 
-    <li><a class="nl-a" href="about.html">About</a></li>
+    <li><a class="nla" href="about.html">About</a></li>
   </ul>
 
   <a href="contact.html" class="nav-cta">Talk to an expert</a>
-  <button class="hburg" id="hburg"><span></span><span></span><span></span></button>
+  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<div class="mobm" id="mobm">
+<!-- Mobile menu -->
+<div class="mobm" id="mobm" role="dialog" aria-label="Mobile navigation">
   <div class="moblabel">Services</div>
   <a href="service-bespoke.html">Bespoke development</a>
   <a href="service-cyber.html">Cyber Essentials &amp; security</a>
@@ -371,43 +716,46 @@ img{display:block;max-width:100%;}
   <div class="moblabel">Explore</div>
   <a href="solutions.html">Solutions</a>
   <a href="hub-products.html">Products</a>
-  <a href="hub-insights.html">Insights</a>
-  <a href="hub-tech-updates.html">Tech updates</a>
+  <a href="hub-insights.html">Insights &amp; learning</a>
+  <a href="hub-tech-updates.html">Technology updates</a>
   <div class="moblabel">Company</div>
   <a href="about.html">About</a>
-  <a href="contact.html">Talk to an expert</a>
+  <a href="contact.html" class="mob-cta">Talk to an expert</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hgrid"></div>
-  <div class="hglow"></div>
-  <div class="hglow2"></div>
+<!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hgrid" aria-hidden="true"></div>
+  <div class="hglow" aria-hidden="true"></div>
+  <div class="hglow2" aria-hidden="true"></div>
 
   <div class="hero-text">
-    <div class="heyebrow"><span class="hpulse"></span>Microsoft Gold Partner · Bedford, UK</div>
-    <h1>Make your technology<br>work <em>harder</em><br>for your business</h1>
-    <p class="hero-sub">Expert IT &amp; HR consultancy and Microsoft-native solutions that streamline work, reduce tool overload, and deliver measurable improvements across your organisation.</p>
+    <h1>We <em>build</em> it.<br>We <em>solve</em> it.<br>We <em>manage</em> it.</h1>
+
+    <p class="hero-sub">Microsoft 365 deployment, bespoke applications, HR systems, cyber security, and managed IT — all under one roof, for businesses ready to grow.</p>
+
     <div class="hbtns">
-      <a href="contact.html" class="hbtn hbtn-p">Get started <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="contact.html" class="hbtn hbtn-p">
+        Get started
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
       <a href="contact.html" class="hbtn hbtn-g">Book a free IT audit</a>
     </div>
-    <div class="htrust">
-      <span class="htrust-label">Certified by</span>
-      <div class="hbadge"><div class="mslg"><div style="background:#F25022;border-radius:1.5px;"></div><div style="background:#7FBA00;border-radius:1.5px;"></div><div style="background:#00A4EF;border-radius:1.5px;"></div><div style="background:#FFB900;border-radius:1.5px;"></div></div>Microsoft Gold Partner</div>
-      <div class="hbadge" style="margin-left:4px;"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="rgba(255,255,255,.55)" stroke-width="1.1" stroke-linejoin="round"/><path d="M4.5 6.5l2 2 3-3" stroke="rgba(255,255,255,.55)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Cyber Essentials</div>
-    </div>
+
   </div>
 
-  <!-- Floating product UI cards -->
-  <div class="hvisual">
+  <!-- Floating product UI cards — desktop only -->
+  <div class="hvisual" aria-hidden="true">
 
     <div class="hc hc1">
       <div class="hc-lbl">IT audit result</div>
       <div class="hc-ttl">Security posture</div>
       <div class="cring">
         <div class="cring-circle"><div class="cring-inner">82%</div></div>
-        <div><div class="cstat"><strong>Cyber Essentials</strong>12 of 12 controls met</div><div style="font-size:10px;color:#1D9E75;font-weight:600;margin-top:4px;">✓ Certification ready</div></div>
+        <div>
+          <div class="cstat"><strong>Cyber Essentials</strong>12 of 12 controls met</div>
+          <div style="font-size:10px;color:#1D9E75;font-weight:600;margin-top:4px;">✓ Certification ready</div>
+        </div>
       </div>
     </div>
 
@@ -415,12 +763,12 @@ img{display:block;max-width:100%;}
       <div class="hc-lbl">Microsoft 365</div>
       <div class="hc-ttl">Your workplace, unified</div>
       <div class="apps">
-        <div class="app" style="background:#0078D4;">T</div>
-        <div class="app" style="background:#217346;">S</div>
-        <div class="app" style="background:#00B4F0;">O</div>
-        <div class="app" style="background:#0364B8;">O</div>
-        <div class="app" style="background:#185ABD;">W</div>
-        <div class="app" style="background:#1D6F42;">E</div>
+        <div class="app" style="background:#0078D4;" title="Teams">T</div>
+        <div class="app" style="background:#217346;" title="SharePoint">S</div>
+        <div class="app" style="background:#00B4F0;" title="OneDrive">O</div>
+        <div class="app" style="background:#0364B8;" title="Outlook">O</div>
+        <div class="app" style="background:#185ABD;" title="Word">W</div>
+        <div class="app" style="background:#1D6F42;" title="Excel">E</div>
       </div>
       <div class="app-note">✓ 24 users migrated this week</div>
     </div>
@@ -458,165 +806,452 @@ img{display:block;max-width:100%;}
   </div>
 </section>
 
-<!-- CLIENT STRIP -->
-<div class="client-strip fu">
-  <span class="cs-label">Trusted by organisations in</span>
-  <div class="cs-logos">
-    <span class="cs-pill">Healthcare</span>
-    <span class="cs-pill">Education</span>
-    <span class="cs-pill">Retail</span>
-    <span class="cs-pill">Professional services</span>
-    <span class="cs-pill">Non-profit</span>
-    <span class="cs-pill">Construction</span>
+<!-- ══ PROOF BAR ══════════════════════════════════════════════════════ -->
+<div class="proof-bar fu">
+  <div class="pb-item">
+    <div class="pb-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L4 5v4c0 3.3 2 6 5 7 3-1 5-3.7 5-7V5L9 2z" stroke="#1A7EC4" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.5 9l2 2 3-3" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div>
+      <div class="pb-val">Gold</div>
+      <div class="pb-label">Microsoft Gold Partner</div>
+    </div>
+  </div>
+  <div class="pb-item">
+    <div class="pb-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2.5" y="2.5" width="13" height="13" rx="3" stroke="#1A7EC4" stroke-width="1.4"/><path d="M5.5 9l2.5 2.5 4.5-4.5" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div>
+      <div class="pb-val">7</div>
+      <div class="pb-label">Core service areas</div>
+    </div>
+  </div>
+  <div class="pb-item">
+    <div class="pb-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.5" stroke="#1A7EC4" stroke-width="1.4"/><path d="M9 5.5v4l2.5 1.5" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div>
+      <div class="pb-val">24/7</div>
+      <div class="pb-label">Managed monitoring</div>
+    </div>
+  </div>
+  <div class="pb-item">
+    <div class="pb-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#1A7EC4" stroke-width="1.4"/><circle cx="13" cy="6" r="2" stroke="#1A7EC4" stroke-width="1.4"/><path d="M2 15c0-2.8 2.2-5 5-5m4 0a4 4 0 014 4" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </div>
+    <div>
+      <div class="pb-val">&lt;100</div>
+      <div class="pb-label">SME focus — users</div>
+    </div>
+  </div>
+  <div class="pb-item">
+    <div class="pb-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 10l3-3 3 3 3-6 3 4" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div>
+      <div class="pb-val">Bedford</div>
+      <div class="pb-label">Based in the UK</div>
+    </div>
   </div>
 </div>
 
-<!-- BUSINESS OUTCOMES -->
-<section class="outcomes">
-  <div class="sec-ey fu">Business outcomes</div>
-  <div class="sec-h2 fu d1">We focus on results that create<br>measurable improvements</div>
-  <p class="sec-sub fu d2">Everything we do is measured against outcomes that make a real difference to your organisation — not just tasks completed.</p>
-  <div class="og">
-    <div class="oc fu d1"><div class="oc-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 3.5 8-8" stroke="#1A7EC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="oc-h3">Streamline daily operations</div><p class="oc-p">Remove slow, manual steps with structured Microsoft 365 workflows and bespoke automation that saves your team hours every week.</p></div>
-    <div class="oc fu d2"><div class="oc-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v5l3 2" stroke="#1A7EC4" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="9" r="6.5" stroke="#1A7EC4" stroke-width="1.5"/></svg></div><div class="oc-h3">Adopt modern, AI-ready working</div><p class="oc-p">Build Copilot-ready structures that improve collaboration and productivity — and prepare your team for intelligent, AI-assisted working.</p></div>
-    <div class="oc fu d3"><div class="oc-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 5v5c0 3.5 2.5 6.5 6 7.5 3.5-1 6-4 6-7.5V5L9 2z" stroke="#1A7EC4" stroke-width="1.5" stroke-linejoin="round"/></svg></div><div class="oc-h3">Strengthen security &amp; compliance</div><p class="oc-p">Achieve Cyber Essentials, track policies, and evidence compliance controls — all managed by our team so you focus on the business.</p></div>
-    <div class="oc fu d4"><div class="oc-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 9l2.5 2.5L13 5" stroke="#1A7EC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="9" r="7" stroke="#1A7EC4" stroke-width="1.5"/></svg></div><div class="oc-h3">Accelerate automation across teams</div><p class="oc-p">Automate everyday tasks using Power Platform and our ready-made SolvvSpace solutions — without writing a single line of code.</p></div>
-    <div class="oc fu d5"><div class="oc-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2.5" y="2.5" width="13" height="13" rx="3" stroke="#1A7EC4" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="#1A7EC4" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="oc-h3">Do more with tools you already own</div><p class="oc-p">Replace fragmented third-party tools with Microsoft-native solutions — reducing cost and complexity across your organisation.</p></div>
-    <div class="oc cta fu d6">
-      <div><div class="oc-h3" style="color:var(--sky-800);">Start with a discovery session →</div><p class="oc-p" style="color:var(--sky-700);">We'll map your current setup against these outcomes and show exactly where the biggest gains are. Free, no commitment.</p></div>
-      <a href="contact.html" class="oc-link">Book a session →</a>
+<!-- ══ BUSINESS OUTCOMES ══════════════════════════════════════════════ -->
+<section class="outcomes-sec">
+  <div class="sec-ey fu">What we deliver</div>
+  <div class="sec-h2 fu d1">Outcomes that move<br>your business forward</div>
+  <p class="sec-sub fu d2">Every engagement is measured against what actually changes inside your organisation — not just tasks completed or projects closed.</p>
+  <div class="og6">
+    <div class="oc6 fu d1">
+      <div class="oc6-num">01</div>
+      <h3 class="oc6-h">Hours saved, every week</h3>
+      <p class="oc6-p">Manual steps cut. Approvals automated. Your team gets time back — not more IT tickets to raise.</p>
+      <div class="oc6-tag">Automation</div>
+    </div>
+    <div class="oc6 fu d2">
+      <div class="oc6-num">02</div>
+      <h3 class="oc6-h">Security you can evidence</h3>
+      <p class="oc6-p">Cyber Essentials, policy tracking, and compliance documentation — provable to clients, insurers, and regulators.</p>
+      <div class="oc6-tag">Cyber &amp; compliance</div>
+    </div>
+    <div class="oc6 fu d3">
+      <div class="oc6-num">03</div>
+      <h3 class="oc6-h">A stack your team actually uses</h3>
+      <p class="oc6-p">Microsoft 365 configured for how you work — adoption built in, not bolted on.</p>
+      <div class="oc6-tag">Microsoft 365</div>
+    </div>
+    <div class="oc6 fu d4">
+      <div class="oc6-num">04</div>
+      <h3 class="oc6-h">Less IT overhead</h3>
+      <p class="oc6-p">One partner for infrastructure, support, HR, and security. Fewer contracts. No handoffs. Strategy that holds together.</p>
+      <div class="oc6-tag">Managed IT</div>
+    </div>
+    <div class="oc6 fu d5">
+      <div class="oc6-num">05</div>
+      <h3 class="oc6-h">AI-ready, today</h3>
+      <p class="oc6-p">Copilot works when your data is structured and your team is trained. We get you there — then switch it on.</p>
+      <div class="oc6-tag">AI &amp; Copilot</div>
+    </div>
+    <div class="oc6 oc6-cta fu d6">
+      <div class="oc6-h" style="font-size:16px;font-weight:700;color:var(--sky-800);margin-bottom:9px;">Start with a free<br>discovery session</div>
+      <p class="oc6-p" style="color:var(--sky-700);margin-bottom:16px;">We'll map your setup against these outcomes and show you exactly where the gains are. No commitment, no sales pressure.</p>
+      <a href="contact.html" class="oc6-btn">Book a session →</a>
     </div>
   </div>
 </section>
 
-<!-- CHOOSE YOUR PATH -->
+<!-- ══ CHOOSE YOUR PATH ════════════════════════════════════════════════ -->
 <section class="path-sec">
   <div class="sec-ey fu">Where to start</div>
   <div class="sec-h2 fu d1">Choose your path</div>
-  <p class="sec-sub fu d2" style="margin-bottom:0;">Explore the best way to get more from your technology investment.</p>
+  <p class="sec-sub fu d2" style="margin-bottom:0;">Two ways to work with us — find the one that fits where you are right now.</p>
+
   <div class="path-grid">
-    <a class="pc pc-svc fu d1" href="solutions.html">
+    <a class="pcard pcard-svc fu d1" href="solutions.html">
       <div style="position:relative;z-index:2;">
-        <div class="pc-tag">Services</div>
-        <div class="pc-h3">Expert services that deliver real outcomes — not just advice</div>
-        <p class="pc-p">Microsoft 365-native services that simplify your environment, accelerate productivity, automate the work that slows you down — and prepare your organisation for AI and Copilot.</p>
-        <span class="pc-arrow">Explore services →</span>
+        <div class="ptag">Services</div>
+        <div class="ph3">Expert services that deliver real outcomes — not just advice</div>
+        <p class="pp">Microsoft 365-native services that simplify your environment, accelerate productivity, and automate the work that slows you down.</p>
+        <span class="parr">Explore services →</span>
       </div>
-      <div class="pc-bg"></div>
+      <div class="pcard-bg" aria-hidden="true"></div>
     </a>
-    <a class="pc pc-prd fu d2" href="hub-products.html">
+
+    <a class="pcard pcard-prd fu d2" href="hub-products.html">
       <div style="position:relative;z-index:2;">
-        <div class="pc-tag">Products</div>
-        <div class="pc-h3">Microsoft 365-native apps. Simple to deploy. Easy to adopt.</div>
-        <p class="pc-p">Ready-made business apps for HR management, IT support, staff coordination, and compliance — all running inside your Microsoft 365 platform. No extra logins, no data leaving your tenant.</p>
-        <span class="pc-arrow">Explore products →</span>
+        <div class="ptag">Products</div>
+        <div class="ph3">Microsoft 365-native apps. Simple to deploy. Easy to adopt.</div>
+        <p class="pp">Ready-made business apps for HR management, IT support, and staff coordination — running inside your M365 tenant. No extra logins, no data leaving your environment.</p>
+        <span class="parr">Explore products →</span>
       </div>
-      <div class="pc-bg"></div>
+      <div class="pcard-bg" aria-hidden="true"></div>
     </a>
   </div>
 </section>
 
-<!-- PRODUCT SHOWCASE -->
-<section class="prods-sec">
+<!-- ══ CORE SERVICES ══════════════════════════════════════════════════ -->
+<section class="svcs-sec">
   <div class="sec-ey fu">Our core services</div>
   <div class="sec-h2 fu d1">Built inside Microsoft 365</div>
-  <p class="sec-sub fu d2" style="margin-bottom:16px;">Real solutions, built natively on Microsoft 365 — no extra platforms, no new logins, no data leaving your tenant.</p>
+  <p class="sec-sub fu d2" style="margin-bottom:14px;">Real solutions, built natively on Microsoft 365 — no extra platforms, no new logins, no data leaving your tenant.</p>
+
   <div class="bstrip fu d3">
-    <div class="mslg" style="width:18px;height:18px;gap:2px;"><div style="background:#F25022;border-radius:1.5px;"></div><div style="background:#7FBA00;border-radius:1.5px;"></div><div style="background:#00A4EF;border-radius:1.5px;"></div><div style="background:#FFB900;border-radius:1.5px;"></div></div>
+    <div class="mslg" style="width:18px;height:18px;gap:2px;" aria-hidden="true">
+      <div style="background:#F25022;border-radius:1.5px;"></div>
+      <div style="background:#7FBA00;border-radius:1.5px;"></div>
+      <div style="background:#00A4EF;border-radius:1.5px;"></div>
+      <div style="background:#FFB900;border-radius:1.5px;"></div>
+    </div>
     Microsoft Gold Partner — certified across Modern Work, Azure, Security &amp; Business Applications
   </div>
-  <div class="prods-grid">
-    <a class="pcard blue fu d1" href="service-m365.html">
-      <div class="ptag">Microsoft 365 &amp; Azure</div>
-      <div class="picon-row"><div class="picon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="8" height="8" rx="1.5" fill="#1A7EC4" opacity=".9"/><rect x="12" y="2" width="8" height="8" rx="1.5" fill="#1A7EC4" opacity=".6"/><rect x="2" y="12" width="8" height="8" rx="1.5" fill="#1A7EC4" opacity=".35"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="#1A7EC4" opacity=".18"/></svg></div><span class="pname">Microsoft 365 &amp; Azure</span></div>
-      <p class="pdesc">Deploy and manage the complete Microsoft cloud stack. Licence optimisation, Teams setup, SharePoint, Copilot readiness — as your dedicated Gold Partner.</p>
-      <div class="pouts"><div class="pout">Full M365 deployment &amp; migration</div><div class="pout">Licence management &amp; cost optimisation</div><div class="pout">Teams, SharePoint &amp; Copilot configuration</div><div class="pout">Azure cloud architecture &amp; management</div></div>
-      <span class="plink">Explore Microsoft 365 →</span>
+
+  <div class="svcs-grid">
+    <a class="sc blue fu d1" href="service-m365.html">
+      <div class="sc-tag">Microsoft 365 &amp; Azure</div>
+      <div class="sc-head">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="8" height="8" rx="1.5" fill="#1A7EC4" opacity=".9"/><rect x="12" y="2" width="8" height="8" rx="1.5" fill="#1A7EC4" opacity=".6"/><rect x="2" y="12" width="8" height="8" rx="1.5" fill="#1A7EC4" opacity=".35"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="#1A7EC4" opacity=".18"/></svg></div>
+        <span class="sc-name">Microsoft 365 &amp; Azure</span>
+      </div>
+      <p class="sc-desc">Deploy and manage the complete Microsoft cloud stack — licence optimisation, Teams, SharePoint, and Copilot readiness as your dedicated Gold Partner.</p>
+      <div class="sc-outs">
+        <div class="sc-out">Full M365 deployment &amp; migration</div>
+        <div class="sc-out">Licence management &amp; cost optimisation</div>
+        <div class="sc-out">Teams, SharePoint &amp; Copilot configuration</div>
+        <div class="sc-out">Azure cloud architecture &amp; management</div>
+      </div>
+      <span class="sc-link">Explore Microsoft 365 →</span>
     </a>
-    <a class="pcard purple fu d2" href="service-hr.html">
-      <div class="ptag">HR systems</div>
-      <div class="picon-row"><div class="picon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#9333ea" stroke-width="1.4"/><circle cx="15" cy="6" r="2.5" stroke="#9333ea" stroke-width="1.4"/><path d="M2 18c0-3 2.2-5 5-5m5 0c2.8 0 5 2 5 5" stroke="#9333ea" stroke-width="1.4" stroke-linecap="round"/></svg></div><span class="pname">SolvvSpace HR</span></div>
-      <p class="pdesc">Complete HR management platform covering the full employee lifecycle — onboarding, performance, leave, compliance, and offboarding — deployed in your Microsoft 365 tenant.</p>
-      <div class="pouts"><div class="pout">Employee records &amp; document management</div><div class="pout">Onboarding &amp; offboarding workflows</div><div class="pout">Performance reviews &amp; compliance tracking</div><div class="pout">Role-based access controls &amp; audit trails</div></div>
-      <span class="plink">Explore SolvvSpace HR →</span>
+
+    <a class="sc purple fu d2" href="service-hr.html">
+      <div class="sc-tag">HR systems</div>
+      <div class="sc-head">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#9333ea" stroke-width="1.4"/><circle cx="15" cy="6" r="2.5" stroke="#9333ea" stroke-width="1.4"/><path d="M2 18c0-3 2.2-5 5-5m5 0c2.8 0 5 2 5 5" stroke="#9333ea" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <span class="sc-name">SolvvSpace HR</span>
+      </div>
+      <p class="sc-desc">Complete HR management covering the full employee lifecycle — onboarding, performance, leave, compliance, and offboarding — deployed in your M365 tenant.</p>
+      <div class="sc-outs">
+        <div class="sc-out">Employee records &amp; document management</div>
+        <div class="sc-out">Onboarding &amp; offboarding workflows</div>
+        <div class="sc-out">Performance reviews &amp; compliance tracking</div>
+        <div class="sc-out">Role-based access &amp; full audit trail</div>
+      </div>
+      <span class="sc-link">Explore SolvvSpace HR →</span>
     </a>
-    <a class="pcard green fu d3" href="service-cyber.html">
-      <div class="ptag">Cyber security</div>
-      <div class="picon-row"><div class="picon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 6v6c0 4.5 3.2 8.5 8 10 4.8-1.5 8-5.5 8-10V6L11 2z" stroke="#16a34a" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 11l3 3 5-5" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="pname">Cyber Essentials</span></div>
-      <p class="pdesc">Government-backed Cyber Essentials certification, IT system audits, and continuous managed protection powered by BitDefender Gravity Zone. Certified in as little as 6 weeks.</p>
-      <div class="pouts"><div class="pout">IT system audit &amp; vulnerability review</div><div class="pout">Cyber Essentials certification &amp; Plus</div><div class="pout">24/7 managed endpoint protection</div><div class="pout">Monthly security health reporting</div></div>
-      <span class="plink">Explore cyber security →</span>
+
+    <a class="sc green fu d3" href="service-cyber.html">
+      <div class="sc-tag">Cyber security</div>
+      <div class="sc-head">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 6v6c0 4.5 3.2 8.5 8 10 4.8-1.5 8-5.5 8-10V6L11 2z" stroke="#16a34a" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 11l3 3 5-5" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="sc-name">Cyber Essentials</span>
+      </div>
+      <p class="sc-desc">Government-backed Cyber Essentials certification, IT system audits, and managed protection powered by BitDefender Gravity Zone. Certified in as little as 6 weeks.</p>
+      <div class="sc-outs">
+        <div class="sc-out">IT system audit &amp; vulnerability review</div>
+        <div class="sc-out">Cyber Essentials certification &amp; Plus</div>
+        <div class="sc-out">24/7 managed endpoint protection</div>
+        <div class="sc-out">Monthly security health reporting</div>
+      </div>
+      <span class="sc-link">Explore cyber security →</span>
     </a>
-    <a class="pcard orange fu d4" href="service-managed-it.html">
-      <div class="ptag">Managed IT</div>
-      <div class="picon-row"><div class="picon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#ea580c" stroke-width="1.4"/><path d="M8 11l2.5 2.5L14 9" stroke="#ea580c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="pname">IT &amp; managed services</span></div>
-      <p class="pdesc">Your IT department, without the overhead. 24/7 monitoring, dedicated helpdesk, infrastructure management, and virtual IT Director — at a fraction of in-house cost.</p>
-      <div class="pouts"><div class="pout">Dedicated helpdesk with agreed SLAs</div><div class="pout">24/7 proactive infrastructure monitoring</div><div class="pout">Virtual CTO / IT Director on demand</div><div class="pout">Data backup &amp; disaster recovery</div></div>
-      <span class="plink">Explore managed IT →</span>
+
+    <a class="sc orange fu d4" href="service-managed-it.html">
+      <div class="sc-tag">Managed IT</div>
+      <div class="sc-head">
+        <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#ea580c" stroke-width="1.4"/><path d="M8 11l2.5 2.5L14 9" stroke="#ea580c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="sc-name">IT &amp; managed services</span>
+      </div>
+      <p class="sc-desc">Your IT department, without the overhead. 24/7 monitoring, dedicated helpdesk, infrastructure management, and virtual IT Director — at a fraction of in-house cost.</p>
+      <div class="sc-outs">
+        <div class="sc-out">Dedicated helpdesk with agreed SLAs</div>
+        <div class="sc-out">24/7 proactive infrastructure monitoring</div>
+        <div class="sc-out">Virtual CTO / IT Director on demand</div>
+        <div class="sc-out">Data backup &amp; disaster recovery</div>
+      </div>
+      <span class="sc-link">Explore managed IT →</span>
+    </a>
+
+    <a class="sc teal fu d3" href="contact.html" style="grid-column:1/-1;">
+      <div class="sc-tag">Payroll &amp; HR</div>
+      <div class="sc-head">
+        <div class="sc-icon" style="background:#e0f9f2;">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <rect x="3" y="2" width="13" height="18" rx="2" stroke="#0f766e" stroke-width="1.4"/>
+            <path d="M7 7h6M7 10h6M7 13h4" stroke="#0f766e" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="17" cy="17" r="3.5" fill="#0f766e"/>
+            <path d="M15.5 17l1 1 2-2" stroke="#fff" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="sc-name" style="color:#134e4a;">Payslip Management System</span>
+      </div>
+      <p class="sc-desc" style="color:#1f5956;max-width:680px;">A secure, cloud-based payslip management system that automates payslip generation, distribution, and record-keeping — fully integrated with your HR and finance systems. Employees access their payslips anytime via a secure portal, eliminating manual distribution and reducing admin burden.</p>
+      <div class="sc-outs" style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;">
+        <div class="sc-out" style="color:#166047;">Automated payslip generation &amp; distribution</div>
+        <div class="sc-out" style="color:#166047;">Secure employee self-service portal</div>
+        <div class="sc-out" style="color:#166047;">Integration with HR &amp; payroll systems</div>
+        <div class="sc-out" style="color:#166047;">Full audit trail &amp; compliance reporting</div>
+      </div>
+      <span class="sc-link" style="color:#0f766e;">Learn more &amp; request a demo →</span>
     </a>
   </div>
 </section>
 
-<!-- MICROSOFT SECTION -->
+<!-- ══ MICROSOFT TECHNOLOGIES ═════════════════════════════════════════ -->
 <section class="ms-sec">
   <div class="sec-ey fu">Microsoft technologies</div>
   <div class="sec-h2 fu d1">The full Microsoft stack,<br>expertly delivered</div>
-  <p class="sec-sub fu d2" style="max-width:500px;">As a certified Gold Partner we deploy, manage, and optimise every layer of the Microsoft ecosystem for your organisation.</p>
+  <p class="sec-sub fu d2" style="max-width:480px;margin-bottom:14px;">As a certified Gold Partner we deploy, manage, and optimise every layer of the Microsoft ecosystem.</p>
+
   <div class="ms-built fu d3">
-    <div class="mslg" style="width:18px;height:18px;gap:2px;"><div style="background:#F25022;border-radius:1.5px;"></div><div style="background:#7FBA00;border-radius:1.5px;"></div><div style="background:#00A4EF;border-radius:1.5px;"></div><div style="background:#FFB900;border-radius:1.5px;"></div></div>
-    Real solutions built natively on Microsoft 365 — no extra platforms, no new logins, no data leaving your tenant
+    <div class="mslg" style="width:18px;height:18px;gap:2px;" aria-hidden="true">
+      <div style="background:#F25022;border-radius:1.5px;"></div>
+      <div style="background:#7FBA00;border-radius:1.5px;"></div>
+      <div style="background:#00A4EF;border-radius:1.5px;"></div>
+      <div style="background:#FFB900;border-radius:1.5px;"></div>
+    </div>
+    Built natively on Microsoft 365 — no extra platforms, no new logins, no data leaving your tenant
   </div>
+
   <div class="msg">
-    <a class="mspc featured fu d1" href="service-m365.html"><div class="mstag">Productivity · Most popular</div><h3>Microsoft 365</h3><p>The complete cloud productivity suite — Word, Excel, Teams, Outlook — with enterprise security and compliance built in. We handle full deployment, licence optimisation, and ongoing management.</p><div class="ms-pills"><span class="ms-pill">Teams &amp; collaboration</span><span class="ms-pill">Licence management</span><span class="ms-pill">Compliance tools</span><span class="ms-pill">Migration from Office 365</span><span class="ms-pill">Copilot ready</span></div><span class="ms-plink">Explore Microsoft 365 →</span></a>
-    <a class="mspc fu d2" href="solutions.html"><div class="mstag">Cloud &amp; infrastructure</div><h3>Azure cloud</h3><p>Scalable public cloud to replace or supplement on-premises servers. Pay-as-you-go compute, storage, analytics, and networking — architected and managed by our certified team.</p><span class="ms-plink">Explore Azure →</span></a>
-    <a class="mspc fu d3" href="service-sharepoint.html"><div class="mstag">Collaboration</div><h3>SharePoint &amp; Teams</h3><p>Modern intranet portals, document libraries, and team collaboration spaces — secure, scalable, accessible from any device or location.</p><span class="ms-plink">Explore SharePoint →</span></a>
-    <a class="mspc fu d4" href="solutions.html"><div class="mstag">AI · New</div><h3>Microsoft Copilot</h3><p>AI woven into every M365 app — drafting, summarising meetings, generating insights. We govern, configure, and train your team to maximise adoption and ROI.</p><div class="ms-pills"><span class="ms-pill">Copilot for M365</span><span class="ms-pill">Copilot Studio</span><span class="ms-pill">AI governance setup</span></div><span class="ms-plink">Explore Copilot →</span></a>
-    <a class="mspc fu d5" href="service-sharepoint.html"><div class="mstag">Automation &amp; low-code</div><h3>Power Platform</h3><p>Bespoke Power Apps and Power Automate flows — including SolvvSpaceHR, SolvvSpaceStaff, and SolvvSpaceMultiTenant, deployable today.</p><span class="ms-plink">Explore Power Platform →</span></a>
-    <a class="mspc fu d6" href="solutions.html"><div class="mstag">Business applications</div><h3>Dynamics 365</h3><p>All-in-one CRM and ERP for sales, marketing, customer service, and finance. A Gartner Leaders Quadrant platform — implemented end to end by our team.</p><span class="ms-plink">Explore Dynamics 365 →</span></a>
+    <a class="mspc feat fu d1" href="service-m365.html">
+      <div class="mstag">Productivity · Most popular</div>
+      <h3>Microsoft 365</h3>
+      <p>The complete cloud productivity suite — Word, Excel, Teams, Outlook — with enterprise security and compliance built in. We handle deployment, licence optimisation, and ongoing management.</p>
+      <div class="ms-pills">
+        <span class="ms-pill">Teams &amp; collaboration</span>
+        <span class="ms-pill">Licence management</span>
+        <span class="ms-pill">Compliance tools</span>
+        <span class="ms-pill">Migration from Office 365</span>
+        <span class="ms-pill">Copilot ready</span>
+      </div>
+      <span class="ms-plink">Explore Microsoft 365 →</span>
+    </a>
+    <a class="mspc fu d2" href="solutions.html">
+      <div class="mstag">Cloud &amp; infrastructure</div>
+      <h3>Azure cloud</h3>
+      <p>Scalable public cloud to replace or supplement on-premises servers — compute, storage, analytics, and networking managed by our certified team.</p>
+      <span class="ms-plink">Explore Azure →</span>
+    </a>
+    <a class="mspc fu d3" href="service-sharepoint.html">
+      <div class="mstag">Collaboration</div>
+      <h3>SharePoint &amp; Teams</h3>
+      <p>Modern intranet portals, document libraries, and team collaboration spaces — secure, scalable, accessible from any device.</p>
+      <span class="ms-plink">Explore SharePoint →</span>
+    </a>
+    <a class="mspc fu d4" href="solutions.html">
+      <div class="mstag">AI · New</div>
+      <h3>Microsoft Copilot</h3>
+      <p>AI woven into every M365 app — drafting, summarising meetings, generating insights. We govern, configure, and train your team for real ROI.</p>
+      <div class="ms-pills">
+        <span class="ms-pill">Copilot for M365</span>
+        <span class="ms-pill">Copilot Studio</span>
+        <span class="ms-pill">AI governance</span>
+      </div>
+      <span class="ms-plink">Explore Copilot →</span>
+    </a>
+    <a class="mspc fu d5" href="service-sharepoint.html">
+      <div class="mstag">Automation &amp; low-code</div>
+      <h3>Power Platform</h3>
+      <p>Bespoke Power Apps and Power Automate flows — including SolvvSpaceHR, SolvvSpaceStaff, and SolvvSpaceMultiTenant, deployable today.</p>
+      <span class="ms-plink">Explore Power Platform →</span>
+    </a>
+    <a class="mspc fu d6" href="solutions.html">
+      <div class="mstag">Business applications</div>
+      <h3>Dynamics 365</h3>
+      <p>All-in-one CRM and ERP for sales, marketing, customer service, and finance — a Gartner Leaders Quadrant platform, implemented end to end.</p>
+      <span class="ms-plink">Explore Dynamics 365 →</span>
+    </a>
   </div>
+
   <div class="ms-partrow fu">
-    <div class="ms-partleft"><div class="mslg" style="width:28px;height:28px;gap:3px;"><div style="background:#F25022;border-radius:2px;"></div><div style="background:#7FBA00;border-radius:2px;"></div><div style="background:#00A4EF;border-radius:2px;"></div><div style="background:#FFB900;border-radius:2px;"></div></div><div class="ms-parttext"><h4>Certified Microsoft Gold Partner</h4><p>Independently verified expertise across the Microsoft Cloud portfolio</p></div></div>
-    <div class="ms-pbadges"><span class="ms-pbadge">Modern Work</span><span class="ms-pbadge">Azure Infrastructure</span><span class="ms-pbadge">Business Applications</span><span class="ms-pbadge">Security</span></div>
+    <div class="ms-partleft">
+      <div class="mslg" style="width:26px;height:26px;gap:3px;" aria-hidden="true">
+        <div style="background:#F25022;border-radius:2px;"></div>
+        <div style="background:#7FBA00;border-radius:2px;"></div>
+        <div style="background:#00A4EF;border-radius:2px;"></div>
+        <div style="background:#FFB900;border-radius:2px;"></div>
+      </div>
+      <div class="ms-parttext">
+        <h4>Certified Microsoft Gold Partner</h4>
+        <p>Independently verified expertise across the Microsoft Cloud portfolio</p>
+      </div>
+    </div>
+    <div class="ms-pbadges">
+      <span class="ms-pbadge">Modern Work</span>
+      <span class="ms-pbadge">Azure Infrastructure</span>
+      <span class="ms-pbadge">Business Applications</span>
+      <span class="ms-pbadge">Security</span>
+    </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ══ TESTIMONIALS ═══════════════════════════════════════════════════ -->
 <section class="testis">
   <div class="sec-ey fu">Client stories</div>
-  <div class="sec-h2 fu d1">Trusted by organisations across the UK</div>
+  <div class="sec-h2 fu d1">What our clients say</div>
+
   <div class="testis-grid">
+
+    <!-- Miss Amy's Daycare -->
     <div class="tc fu d1">
-      <div class="stars"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg></div>
-      <p class="tq">"SolvvSpace transformed the way our team collaborates. The Microsoft 365 rollout was seamless — they handled everything and kept us informed at every step."</p>
-      <div class="tau"><div class="tav">JM</div><div><div class="tname">James Mitchell</div><div class="trole">Operations Director, Paradigm Housing</div></div></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div class="stars" aria-label="5 stars"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg></div>
+        <!-- Miss Amy's Daycare logo placeholder — swap img src when logo file is available -->
+        <div style="height:36px;display:flex;align-items:center;justify-content:center;background:#fdf2f8;border-radius:7px;padding:0 10px;">
+          <span style="font-family:var(--fh);font-size:11px;font-weight:700;color:#be185d;white-space:nowrap;">Miss Amy's<br style="line-height:0;"/> <span style="color:#db2777;">Daycare</span></span>
+        </div>
+      </div>
+      <p class="tq">"SolvvSpace built us a website and systems that genuinely fit the way we run our nursery. They listened, they delivered, and they were with us every step of the way. Couldn't recommend them more highly."</p>
+      <div class="tau">
+        <div class="tav" style="background:linear-gradient(135deg,#ec4899,#be185d);">MA</div>
+        <div>
+          <div class="tname">Miss Amy</div>
+          <div class="trole">Founder, Miss Amy's Daycare</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Sierra Leone Embassy Turkey -->
     <div class="tc fu d2">
-      <div class="stars"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg></div>
-      <p class="tq">"Their cyber security advisory gave us the confidence to achieve Cyber Essentials certification in under six weeks. Knowledgeable, practical, and genuinely supportive."</p>
-      <div class="tau"><div class="tav">SR</div><div><div class="tname">Sarah Rahman</div><div class="trole">Head of IT, Bedford Borough Council</div></div></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div class="stars" aria-label="5 stars"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg></div>
+        <!-- Sierra Leone coat of arms SVG (simplified heraldic shield) -->
+        <div style="width:36px;height:36px;flex-shrink:0;" title="Sierra Leone Embassy">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Sierra Leone coat of arms">
+            <!-- Shield outline -->
+            <path d="M4 4h28v20c0 6-14 9-14 9S4 30 4 24V4z" fill="#1D9E75" stroke="#0f6e56" stroke-width="1"/>
+            <!-- Green/white/blue thirds -->
+            <path d="M4 4h9v20.5c-3.5-1.2-7.5-3.5-9-6.5V4z" fill="#1D9E75"/>
+            <path d="M13 4h10v22.5c-1.5.7-3.4 1.3-5 1.5V4z" fill="#fff"/>
+            <path d="M23 4h9v16c-1.5 3-5.5 5.3-9 6.5V4z" fill="#1A7EC4"/>
+            <!-- Mountain silhouette -->
+            <path d="M7 19l5-7 4 5 4-7 5 9" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Top border line -->
+            <path d="M4 4h28" stroke="#0f6e56" stroke-width=".5"/>
+          </svg>
+        </div>
+      </div>
+      <p class="tq">"SolvvSpace provided outstanding IT consultancy and digital support for our mission in Turkey. Professional, knowledgeable, and understanding of our specific requirements as a diplomatic institution."</p>
+      <div class="tau">
+        <div class="tav" style="background:linear-gradient(135deg,#1D9E75,#0f6e56);">SL</div>
+        <div>
+          <div class="tname">Embassy Representative</div>
+          <div class="trole">Sierra Leone Embassy, Turkey</div>
+        </div>
+      </div>
     </div>
-    <div class="tc fu d3">
-      <div class="stars"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg></div>
-      <p class="tq">"We needed an IT partner who understood our scale. SolvvSpace built us a custom SharePoint intranet that our whole team actually uses — and loves."</p>
-      <div class="tau"><div class="tav">TK</div><div><div class="tname">Tom Keane</div><div class="trole">CEO, Cranfield Technology Park</div></div></div>
+
+    <!-- Benevolent School — black & white treatment -->
+    <div class="tc fu d3" style="border-color:var(--slate-200);">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div class="stars" aria-label="5 stars"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#1C2231"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#1C2231"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#1C2231"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#1C2231"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#1C2231"/></svg></div>
+        <!-- Benevolent School logo block — black/white -->
+        <div style="height:36px;display:flex;align-items:center;background:var(--slate-900);border-radius:7px;padding:0 10px;">
+          <span style="font-family:var(--fh);font-size:10px;font-weight:700;color:#fff;letter-spacing:.5px;white-space:nowrap;">BENEVOLENT<br/><span style="font-weight:400;letter-spacing:1px;font-size:9px;color:rgba(255,255,255,.6);">SECONDARY SCHOOL</span></span>
+        </div>
+      </div>
+      <p class="tq" style="color:var(--slate-600);">"SolvvSpace delivered a school management system that genuinely transformed how we manage student records, staff, and day-to-day administration. Reliable, professional, and completely built around how a school actually works."</p>
+      <div class="tau">
+        <div class="tav" style="background:var(--slate-900);color:#fff;">BS</div>
+        <div>
+          <div class="tname">School Administrator</div>
+          <div class="trole">Benevolent Secondary School</div>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-sec">
-  <div class="cta-glow"></div>
+<!-- ══ CTA ════════════════════════════════════════════════════════════ -->
+<section class="cta-sec" aria-label="Call to action">
+  <div class="cta-glow" aria-hidden="true"></div>
   <div style="position:relative;z-index:2;" class="fu">
     <h2>Ready to make your technology<br>work harder?</h2>
-    <p>Book a free, no-obligation discovery session — we'll identify exactly where you can save time, reduce risk, and cut costs. No pressure. No commitment.</p>
+    <p>Book a free, no-obligation discovery session — we'll identify exactly where you can save time, reduce risk, and cut costs.</p>
   </div>
   <div class="cta-btns fu d2">
-    <a href="contact.html" class="hbtn" style="background:#fff;color:var(--sky-800);font-family:var(--fh);font-size:14px;font-weight:500;padding:12px 26px;border-radius:8px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:7px;">Talk to an expert</a>
-    <a href="contact.html" class="hbtn hbtn-g" style="font-family:var(--fh);font-size:14px;font-weight:500;padding:12px 26px;border-radius:8px;cursor:pointer;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);display:inline-flex;align-items:center;gap:7px;">Book a free IT audit</a>
+    <a href="contact.html" class="hbtn" style="font-family:var(--fh);font-size:14px;font-weight:600;padding:12px 26px;border-radius:8px;background:#fff;color:var(--sky-800);display:inline-flex;align-items:center;gap:8px;">
+      Talk to an expert
+    </a>
+    <a href="contact.html" class="hbtn hbtn-g" style="font-family:var(--fh);font-size:14px;font-weight:500;padding:12px 24px;border-radius:8px;">
+      Book a free IT audit
+    </a>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══ CERT BAR ═══════════════════════════════════════════════════════ -->
+<div class="cert-bar">
+  <div class="cert-bar-inner">
+    <div class="cert-badges">
+      <div class="cert-badge">
+        <div class="mslg" style="width:16px;height:16px;gap:2px;" aria-hidden="true">
+          <div style="background:#F25022;border-radius:1px;"></div>
+          <div style="background:#7FBA00;border-radius:1px;"></div>
+          <div style="background:#00A4EF;border-radius:1px;"></div>
+          <div style="background:#FFB900;border-radius:1px;"></div>
+        </div>
+        Microsoft Gold Partner
+      </div>
+      <div class="cert-divider"></div>
+      <div class="cert-badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1L2 3v3c0 2.2 1.7 4 4 4.5C8.3 10 10 8.2 10 6V3L6 1z" fill="#1A7EC4"/></svg>
+        Cyber Essentials
+      </div>
+      <div class="cert-divider"></div>
+      <div class="cert-badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="4.5" stroke="#1A7EC4" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="#1A7EC4" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        ITIL &amp; PRINCE2
+      </div>
+      <div class="cert-divider"></div>
+      <div class="cert-badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="4.5" stroke="#1A7EC4" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="#1A7EC4" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Agile PM
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="footer-logo">
     <img src="logo-stacked.png" alt="SolvvSpace"/>
@@ -631,18 +1266,20 @@ img{display:block;max-width:100%;}
 </footer>
 
 <script>
-const obs = new IntersectionObserver(
+// ── Scroll fade
+const _obs = new IntersectionObserver(
   es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); }),
-  { threshold:.08, rootMargin:'0px 0px -20px 0px' }
+  { threshold: .08, rootMargin: '0px 0px -20px 0px' }
 );
 document.querySelectorAll('.fu').forEach(el => {
   if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('vis');
-  else obs.observe(el);
+  else _obs.observe(el);
 });
 
-function closeAll(){
+// ── Nav dropdowns
+function closeAll() {
   document.querySelectorAll('.dd.open,.mega.open').forEach(m => m.classList.remove('open'));
-  document.querySelectorAll('.nav-dd-btn.open').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.nav-dd-btn.open').forEach(b => { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
 }
 document.querySelectorAll('[data-dd]').forEach(btn => {
   btn.addEventListener('click', e => {
@@ -651,14 +1288,35 @@ document.querySelectorAll('[data-dd]').forEach(btn => {
     const menu = document.getElementById(id);
     const isOpen = menu.classList.contains('open');
     closeAll();
-    if(!isOpen){ menu.classList.add('open'); btn.classList.add('open'); }
+    if(!isOpen) {
+      menu.classList.add('open');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+    }
   });
 });
 document.addEventListener('click', closeAll);
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeAll(); });
 
-document.getElementById('hburg').addEventListener('click', () => {
-  document.getElementById('mobm').classList.toggle('open');
+// ── Mobile menu
+const hburg = document.getElementById('hburg');
+const mobm  = document.getElementById('mobm');
+hburg.addEventListener('click', () => {
+  const open = mobm.classList.toggle('open');
+  hburg.classList.toggle('open', open);
+  hburg.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+// Close mobile on link click
+mobm.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobm.classList.remove('open');
+    hburg.classList.remove('open');
+    hburg.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  });
 });
 </script>
+
 </body>
 </html>
