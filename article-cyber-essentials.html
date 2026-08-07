@@ -3,18 +3,118 @@
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Is Cyber Essentials worth it for a small business? | SolvvSpace Insights</title>
-<meta name="description" content="A straight-talking guide to Cyber Essentials — what it covers, what it costs, and whether your organisation needs it right now."/>
+<meta name="description" content="A straight-talking guide to Cyber Essentials, what it covers, what it costs, and whether your organisation needs it right now."/>
 <link rel="icon" type="image/png" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
+/* ═══ CANONICAL NAV ══════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;z-index:500;
+  height:68px;
+  background:#F0F8FF;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+  border-bottom:1.5px solid #B3DCFA;
+  box-shadow:0 1px 8px rgba(13,79,128,.06);
+}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nav-brand-globe{height:48px;width:48px;object-fit:contain;flex-shrink:0;display:block;}
+.nav-brand-wordmark{
+  font-family:'Outfit',sans-serif;
+  font-size:20px;font-weight:700;
+  letter-spacing:3px;
+  color:#072F50;
+  line-height:1;white-space:nowrap;
+}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links>li{position:relative;}
+.nla,.nav-dd-btn{
+  font-family:'Inter',sans-serif;font-size:13.5px;
+  color:#0D4F80;padding:7px 13px;border-radius:6px;
+  display:flex;align-items:center;gap:4px;
+  background:none;border:none;cursor:pointer;
+  transition:color .15s,background .15s;
+  text-decoration:none;
+}
+.nla:hover,.nav-dd-btn:hover,.nla.active,.nav-dd-btn.open{
+  color:#072F50;background:rgba(13,79,128,.08);
+}
+.nav-dd-btn svg{transition:transform .18s;stroke:#0D4F80;}
+.nav-dd-btn.open svg{transform:rotate(180deg);}
+.nav-cta{
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;
+  background:#1A7EC4;color:#fff;
+  padding:9px 22px;border-radius:8px;
+  transition:background .15s;white-space:nowrap;
+  display:inline-block;text-decoration:none;border:none;
+}
+.nav-cta:hover{background:#0D4F80;}
+/* Dropdowns */
+.dd,.mega{
+  position:absolute;top:calc(100% + 8px);left:0;
+  background:#1e2638;border:1px solid rgba(255,255,255,.1);
+  border-radius:13px;padding:6px;
+  opacity:0;pointer-events:none;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s;
+  z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);
+}
+.dd.open,.mega.open{opacity:1;pointer-events:all;transform:translateY(0);}
+.dd{min-width:220px;}
+.mega{left:-20px;min-width:660px;padding:0;}
+.ddi-wrap{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.75);transition:background .12s,color .12s;text-decoration:none;}
+.ddi-wrap:hover{background:rgba(255,255,255,.08);color:#fff;}
+.ddi{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ddiv{height:.5px;background:rgba(255,255,255,.07);margin:4px 6px;}
+.mega-inner{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:.5px solid rgba(255,255,255,.07);}
+.mcol{padding:20px 18px;border-right:.5px solid rgba(255,255,255,.07);}
+.mcol:last-child{border-right:none;}
+.mclabel{font-size:10px;font-weight:600;letter-spacing:1.2px;color:#4AABF0;text-transform:uppercase;margin-bottom:14px;}
+.mi{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;transition:background .12s;margin-bottom:2px;text-decoration:none;}
+.mi:hover{background:rgba(255,255,255,.07);}
+.mi-icon{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.mi-name{font-size:13px;font-weight:500;color:#fff;line-height:1.3;}
+.mi-desc{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;line-height:1.4;}
+.mfoot{display:flex;gap:4px;padding:12px 16px;}
+.mfl{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);padding:7px 12px;border-radius:7px;transition:color .12s,background .12s;text-decoration:none;}
+.mfl:hover{color:#fff;background:rgba(255,255,255,.06);}
+/* Mobile burger */
+.hburg{
+  display:none;flex-direction:column;gap:5px;
+  padding:6px;background:none;border:none;cursor:pointer;
+}
+.hburg span{display:block;width:22px;height:2px;background:#0D4F80;border-radius:2px;transition:all .22s;}
+.hburg.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hburg.open span:nth-child(2){opacity:0;}
+.hburg.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+/* Mobile menu panel */
+.mobm{
+  display:none;position:fixed;
+  top:68px;left:0;right:0;bottom:0;
+  background:#0f172a;overflow-y:auto;
+  padding:16px 20px 40px;z-index:450;
+}
+.mobm.open{display:block;}
+.mobm a{display:block;padding:12px 14px;color:rgba(255,255,255,.78);font-size:15px;border-radius:8px;transition:background .12s;text-decoration:none;}
+.mobm a:hover{background:rgba(255,255,255,.07);color:#fff;}
+.mob-label{font-size:10px;font-weight:600;letter-spacing:1.1px;color:rgba(255,255,255,.3);text-transform:uppercase;padding:18px 14px 6px;}
+.mob-cta{
+  display:block;margin:20px 0 0;
+  font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;
+  text-align:center;background:#1A7EC4;color:#fff;
+  padding:14px;border-radius:10px;text-decoration:none;
+}
+/* Responsive */
+@media(max-width:900px){
+  .nav{padding:0 20px;}
+  .nav-links,.nav-cta{display:none;}
+  .hburg{display:flex;}
+}
+/* ═══ END CANONICAL NAV ═══════════════════════════════════ */
+
 :root{--sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;--sky-400:#4AABF0;--sky-600:#1A7EC4;--sky-800:#0D4F80;--sky-900:#072F50;--slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;--slate-400:#8A909E;--slate-600:#545B6B;--slate-900:#1C2231;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;}
 *{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;}a{text-decoration:none;color:inherit;}
-.nav{position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);}
-.nav-brand{display:flex;align-items:center;gap:9px;}.nav-brand img{height:44px;width:44px;object-fit:contain;mix-blend-mode:screen;}
-.nav-brand-text{font-family:var(--fh);font-size:18px;font-weight:700;letter-spacing:-.3px;color:#fff;}.nav-brand-text span{color:var(--sky-400);}
-.nav-cta{font-family:var(--fh);font-size:13px;font-weight:500;background:var(--sky-600);color:#fff;border:none;padding:9px 22px;border-radius:8px;transition:background .15s;white-space:nowrap;display:inline-block;}.nav-cta:hover{background:var(--sky-800);}
 /* ARTICLE LAYOUT */
 .article-hero{background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 55%,#0d4f80 100%);padding:56px 40px 52px;position:relative;overflow:hidden;}
 .article-hero-glow{position:absolute;right:-60px;top:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.13) 0%,transparent 70%);}
@@ -73,9 +173,72 @@
 </head>
 <body>
 <nav class="nav">
-  <a href="index.html" class="nav-brand"><img src="logo-stacked.png" alt="SolvvSpace"/><span class="nav-brand-text">Solvv<span>Space</span></span></a>
-  <a href="contact.html" class="nav-cta">Talk to an expert</a>
+  <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
+    <img src="solvvspace-logo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
+    <span class="nav-brand-wordmark">SOLVVSPACE</span>
+  </a>
+  <ul class="nav-links">
+    <li style="position:relative;">
+      <button class="nav-dd-btn" data-dd="dd-svc">
+        Services
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dd" id="dd-svc">
+        <a class="ddi-wrap" href="service-bespoke.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Bespoke development</a>
+        <a class="ddi-wrap" href="service-cyber.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>Cyber Essentials and security</a>
+        <a class="ddi-wrap" href="service-m365.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>Microsoft 365 deployment</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="service-managed-it.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>IT and managed services</a>
+        <a class="ddi-wrap" href="service-hr.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR systems development</a>
+        <a class="ddi-wrap" href="service-advisory.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Advisory and consultancy</a>
+        <a class="ddi-wrap" href="service-sharepoint.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>SharePoint and Power Apps</a>
+      </div>
+    </li>
+    <li><a class="nla" href="solutions.html">Solutions</a></li>
+    <li style="position:relative;">
+      <button class="nav-dd-btn" data-dd="dd-hub">
+        SS Hub
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dd" id="dd-hub">
+        <a class="ddi-wrap" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Products</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hr-consulting.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR and Compliance</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights and learning</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
+      </div>
+    </li>
+    <li><a class="nla active" href="hub-insights.html">Insights</a></li>
+    <li><a class="nla" href="about.html">About</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a free call</a>
+  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
+  <div class="mob-label">Services</div>
+  <a href="service-bespoke.html">Bespoke development</a>
+  <a href="service-cyber.html">Cyber Essentials and security</a>
+  <a href="service-m365.html">Microsoft 365 deployment</a>
+  <a href="service-managed-it.html">IT and managed services</a>
+  <a href="service-hr.html">HR systems development</a>
+  <a href="service-advisory.html">Advisory and consultancy</a>
+  <a href="service-sharepoint.html">SharePoint and Power Apps</a>
+  <div class="mob-label">Explore</div>
+  <a href="solutions.html">Solutions</a>
+  <a href="hub-products.html">Products</a>
+  <a href="hr-consulting.html">HR and Compliance</a>
+  <a href="hub-insights.html">Insights and learning</a>
+  <a href="hub-tech-updates.html">Technology updates</a>
+  <div class="mob-label">Company</div>
+  <a href="about.html">About</a>
+  <a href="contact.html" class="mob-cta">Book a free call</a>
+</div>
 
 <div class="article-hero">
   <div class="article-hero-glow"></div>
@@ -92,9 +255,9 @@
 <div class="article-wrap">
   <div class="article-body">
 
-    <p>Cyber Essentials is a UK government-backed certification scheme designed to help organisations protect themselves against the most common cyber threats. It was developed by the National Cyber Security Centre (NCSC) and has been mandatory for suppliers handling government contracts since 2014. But for the thousands of small businesses it wasn't designed for — is it actually worth doing?</p>
+    <p>Cyber Essentials is a UK government backed certification scheme designed to help organisations protect themselves against the most common cyber threats. It was developed by the National Cyber Security Centre (NCSC) and has been mandatory for suppliers handling government contracts since 2014. But for the thousands of small businesses it wasn't designed for and is it actually worth doing?</p>
 
-    <p>The short answer: for most businesses under 100 people, yes — but not for the reasons most people expect.</p>
+    <p>The short answer: for most businesses under 100 people, yes and but not for the reasons most people expect.</p>
 
     <div class="summary-box">
       <div class="summary-box-title">What this article covers</div>
@@ -108,55 +271,55 @@
     </div>
 
     <h2>What does Cyber Essentials actually cover?</h2>
-    <p>The scheme tests your organisation against five technical controls — the areas where the vast majority of cyber breaches occur:</p>
+    <p>The scheme tests your organisation against five technical controls and the areas where the vast majority of cyber breaches occur:</p>
     <ul>
-      <li><strong>Firewalls</strong> — are your network boundaries properly protected?</li>
-      <li><strong>Secure configuration</strong> — have you removed unnecessary features and changed default passwords?</li>
-      <li><strong>User access control</strong> — do staff only have access to what they actually need?</li>
-      <li><strong>Malware protection</strong> — are your devices protected against malicious software?</li>
-      <li><strong>Patch management</strong> — are your systems and software kept up to date?</li>
+      <li><strong>Firewalls</strong> and are your network boundaries properly protected?</li>
+      <li><strong>Secure configuration</strong> and have you removed unnecessary features and changed default passwords?</li>
+      <li><strong>User access control</strong> and do staff only have access to what they actually need?</li>
+      <li><strong>Malware protection</strong> and are your devices protected against malicious software?</li>
+      <li><strong>Patch management</strong> and are your systems and software kept up to date?</li>
     </ul>
-    <p>It doesn't test everything. It won't protect you against a sophisticated nation-state attack or a determined insider threat. What it does do is close the door on the opportunistic, automated attacks that account for the vast majority of breaches affecting small businesses.</p>
+    <p>It doesn't test everything. It won't protect you against a sophisticated nation state attack or a determined insider threat. What it does do is close the door on the opportunistic, automated attacks that account for the vast majority of breaches affecting small businesses.</p>
 
     <div class="callout">
       <div class="callout-title">NCSC finding</div>
       <p>The NCSC estimates that Cyber Essentials can prevent around 80% of the most common cyber attacks. For most small businesses, that's where the risk actually sits.</p>
     </div>
 
-    <h2>Cyber Essentials vs Cyber Essentials Plus — what's the difference?</h2>
-    <p><strong>Cyber Essentials</strong> is a self-assessment. You fill in a questionnaire, an assessor reviews your answers, and if you pass, you receive certification. It's the starting point for most organisations.</p>
-    <p><strong>Cyber Essentials Plus</strong> goes further. An assessor actually tests your systems — running vulnerability scans, checking your patch status, and verifying that your technical controls do what you say they do. It carries more credibility and is increasingly required by larger procurement teams.</p>
+    <h2>Cyber Essentials vs Cyber Essentials Plus and what's the difference?</h2>
+    <p><strong>Cyber Essentials</strong> is a self assessment. You fill in a questionnaire, an assessor reviews your answers, and if you pass, you receive certification. It's the starting point for most organisations.</p>
+    <p><strong>Cyber Essentials Plus</strong> goes further. An assessor actually tests your systems and running vulnerability scans, checking your patch status, and verifying that your technical controls do what you say they do. It carries more credibility and is increasingly required by larger procurement teams.</p>
     <p>If you're primarily looking to reduce risk and have a defensible security posture, Cyber Essentials is usually the right starting point. If you're selling to enterprise clients or tendering for larger contracts, Cyber Essentials Plus signals a higher level of assurance.</p>
 
     <h2>How much does it cost and how long does it take?</h2>
     <p>The certification fee itself varies by assessor but typically ranges from <strong>£300–£500 for Cyber Essentials</strong> and <strong>£1,500–£3,000 for Cyber Essentials Plus</strong>, depending on the size of your organisation and the scope being assessed.</p>
-    <p>The real cost is the time and remediation work required to pass. Most organisations have at least some gaps — a device running an outdated OS, a shared admin account, a firewall policy that hasn't been reviewed. Fixing these before assessment is where most of the effort goes.</p>
-    <p>Working with SolvvSpace, organisations typically achieve certification <strong>in four to six weeks</strong> from starting the process. We handle the pre-assessment gap analysis, the remediation work, and the submission — so your team's time is minimal.</p>
+    <p>The real cost is the time and remediation work required to pass. Most organisations have at least some gaps and a device running an outdated OS, a shared admin account, a firewall policy that hasn't been reviewed. Fixing these before assessment is where most of the effort goes.</p>
+    <p>Working with SolvvSpace, organisations typically achieve certification <strong>in four to six weeks</strong> from starting the process. We handle the pre assessment gap analysis, the remediation work, and the submission and so your team's time is minimal.</p>
 
     <div class="divider"></div>
 
     <h2>Three reasons SMEs need Cyber Essentials that aren't about cyber attacks</h2>
 
     <h3>1. Cyber insurance is getting harder to obtain without it</h3>
-    <p>Cyber insurance underwriters are tightening their requirements. Many now ask detailed questions about your technical controls as part of the application process — and some explicitly offer better terms or lower premiums to organisations with Cyber Essentials certification. Getting certified before you renew your policy is increasingly good financial sense.</p>
+    <p>Cyber insurance underwriters are tightening their requirements. Many now ask detailed questions about your technical controls as part of the application process and and some explicitly offer better terms or lower premiums to organisations with Cyber Essentials certification. Getting certified before you renew your policy is increasingly good financial sense.</p>
 
     <h3>2. Your clients and prospects are starting to ask for it</h3>
-    <p>Enterprise procurement teams — NHS trusts, local authorities, housing associations, larger corporates — are increasingly including cyber security requirements in their supplier questionnaires. Cyber Essentials gives you a credible, standardised answer. Without it, you're relying on narrative responses that carry less weight.</p>
+    <p>Enterprise procurement teams and NHS trusts, local authorities, housing associations, larger corporates and are increasingly including cyber security requirements in their supplier questionnaires. Cyber Essentials gives you a credible, standardised answer. Without it, you're relying on narrative responses that carry less weight.</p>
 
     <h3>3. Government contracts require it</h3>
-    <p>If you supply to any UK government body — directly or as a subcontractor — Cyber Essentials has been a contractual requirement since 2014. This applies to contracts involving the handling of personal data or the provision of certain technical services. If you're in this space and don't hold certification, you're already out of scope for a significant proportion of public sector work.</p>
+    <p>If you supply to any UK government body and directly or as a subcontractor and Cyber Essentials has been a contractual requirement since 2014. This applies to contracts involving the handling of personal data or the provision of certain technical services. If you're in this space and don't hold certification, you're already out of scope for a significant proportion of public sector work.</p>
 
     <div class="callout">
       <div class="callout-title">Is your business ready to certify?</div>
-      <p>SolvvSpace offers a free pre-assessment review — we'll look at your current setup against the five Cyber Essentials controls and tell you exactly what needs to change before you apply. No commitment required.</p>
+      <p>SolvvSpace offers a free pre assessment review and we'll look at your current setup against the five Cyber Essentials controls and tell you exactly what needs to change before you apply. No commitment required.</p>
     </div>
 
     <h2>How SolvvSpace manages the process</h2>
     <p>Most organisations attempt Cyber Essentials in-house and either take far longer than expected or fail on their first attempt because the gap analysis wasn't thorough enough. Our approach removes both problems:</p>
     <ul>
-      <li><strong>Week 1–2:</strong> Pre-assessment gap analysis — we review your infrastructure, policies, and configurations against all five controls and produce a prioritised remediation list.</li>
-      <li><strong>Week 2–4:</strong> Remediation — we handle the technical fixes directly, or provide your IT team with clear instructions if you prefer to manage this internally.</li>
-      <li><strong>Week 4–6:</strong> Assessment and submission — we complete the questionnaire with you, submit to the certification body, and manage any follow-up queries from the assessor.</li>
+      <li><strong>Week 1–2:</strong> Pre assessment gap analysis and we review your infrastructure, policies, and configurations against all five controls and produce a prioritised remediation list.</li>
+      <li><strong>Week 2–4:</strong> Remediation and we handle the technical fixes directly, or provide your IT team with clear instructions if you prefer to manage this internally.</li>
+      <li><strong>Week 4–6:</strong> Assessment and submission and we complete the questionnaire with you, submit to the certification body, and manage any follow up queries from the assessor.</li>
     </ul>
     <p>After certification, we track your renewal date and flag it in advance so your certificate never lapses without notice.</p>
 
@@ -171,7 +334,7 @@
   <div class="related-grid">
     <a class="related-card" href="article-cyber-insurance.html">
       <div class="related-img" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&q=80&fit=crop');"><div class="related-cat">Cyber security</div></div>
-      <div class="related-body"><div class="related-card-title">Cyber insurance and Cyber Essentials — what you need to know</div><div class="related-read">Read article →</div></div>
+      <div class="related-body"><div class="related-card-title">Cyber insurance and Cyber Essentials and what you need to know</div><div class="related-read">Read article →</div></div>
     </a>
     <a class="related-card" href="article-switch-it-supplier.html">
       <div class="related-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80&fit=crop');"><div class="related-cat">Managed IT</div></div>
@@ -179,19 +342,69 @@
     </a>
     <a class="related-card" href="article-m365-licences.html">
       <div class="related-img" style="background-image:url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&q=80&fit=crop');"><div class="related-cat">Microsoft 365</div></div>
-      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium — which licence does your team actually need?</div><div class="related-read">Read article →</div></div>
+      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium and which licence does your team actually need?</div><div class="related-read">Read article →</div></div>
     </a>
   </div>
 </div>
 
 <div class="article-cta">
-  <div><h2>Ready to get Cyber Essentials certified?</h2><p>We handle the full process — gap analysis, remediation, and submission — so your team's time is minimal. Most organisations achieve certification in four to six weeks.</p></div>
-  <div style="display:flex;flex-direction:column;gap:10px;"><a href="contact.html" class="art-cta-btn">Book a free pre-assessment</a><a href="service-cyber.html" style="font-size:13px;color:rgba(255,255,255,.55);text-align:center;padding:8px;">Learn about our cyber services →</a></div>
+  <div><h2>Ready to get Cyber Essentials certified?</h2><p>We handle the full process and gap analysis, remediation, and submission and so your team's time is minimal. Most organisations achieve certification in four to six weeks.</p></div>
+  <div style="display:flex;flex-direction:column;gap:10px;"><a href="contact.html" class="art-cta-btn">Book a free pre assessment</a><a href="service-cyber.html" style="font-size:13px;color:rgba(255,255,255,.55);text-align:center;padding:8px;">Learn about our cyber services →</a></div>
 </div>
 
 <footer class="footer">
   <div class="footer-logo"><img src="logo-stacked.png" alt="SolvvSpace"/><span>© 2025 SolvvSpace Limited · Registered in England &amp; Wales (16153942)</span></div>
   <div class="footer-links"><a href="privacy.html">Privacy</a><a href="hub-insights.html">More articles</a><a href="contact.html">Contact</a></div>
 </footer>
+
+<script>
+// Scroll fade
+const _obs=new IntersectionObserver(
+  es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),
+  {threshold:.08,rootMargin:'0px 0px -20px 0px'}
+);
+document.querySelectorAll('.fu').forEach(el=>{
+  if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');
+  else _obs.observe(el);
+});
+// Dropdowns
+function closeAll(){
+  document.querySelectorAll('.dd.open,.mega.open').forEach(m=>m.classList.remove('open'));
+  document.querySelectorAll('.nav-dd-btn.open').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');});
+}
+document.querySelectorAll('[data-dd]').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    const id=btn.dataset.dd;
+    const menu=document.getElementById(id);
+    if(!menu)return;
+    const isOpen=menu.classList.contains('open');
+    closeAll();
+    if(!isOpen){menu.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true');}
+  });
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();});
+// Mobile menu
+const hburg=document.getElementById('hburg');
+const mobm=document.getElementById('mobm');
+if(hburg&&mobm){
+  hburg.addEventListener('click',()=>{
+    const open=mobm.classList.toggle('open');
+    hburg.classList.toggle('open',open);
+    hburg.setAttribute('aria-expanded',open);
+    document.body.style.overflow=open?'hidden':'';
+  });
+  mobm.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      mobm.classList.remove('open');
+      hburg.classList.remove('open');
+      hburg.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+}
+</script>
+
 </body>
 </html>

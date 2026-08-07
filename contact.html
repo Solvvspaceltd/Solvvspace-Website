@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact Us | SolvvSpace</title>
-<meta name="description" content="Get in touch with SolvvSpace — book a free IT audit or discovery session."/>
+<meta name="description" content="Get in touch with SolvvSpace, book a free IT audit or discovery session."/>
 <link rel="icon" type="image/png" href="logo-stacked.png"/>
 <link rel="apple-touch-icon" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -13,6 +13,110 @@
 <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body><style>
+/* ═══ CANONICAL NAV ══════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;z-index:500;
+  height:68px;
+  background:#F0F8FF;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+  border-bottom:1.5px solid #B3DCFA;
+  box-shadow:0 1px 8px rgba(13,79,128,.06);
+}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nav-brand-globe{height:48px;width:48px;object-fit:contain;flex-shrink:0;display:block;}
+.nav-brand-wordmark{
+  font-family:'Outfit',sans-serif;
+  font-size:20px;font-weight:700;
+  letter-spacing:3px;
+  color:#072F50;
+  line-height:1;white-space:nowrap;
+}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links>li{position:relative;}
+.nla,.nav-dd-btn{
+  font-family:'Inter',sans-serif;font-size:13.5px;
+  color:#0D4F80;padding:7px 13px;border-radius:6px;
+  display:flex;align-items:center;gap:4px;
+  background:none;border:none;cursor:pointer;
+  transition:color .15s,background .15s;
+  text-decoration:none;
+}
+.nla:hover,.nav-dd-btn:hover,.nla.active,.nav-dd-btn.open{
+  color:#072F50;background:rgba(13,79,128,.08);
+}
+.nav-dd-btn svg{transition:transform .18s;stroke:#0D4F80;}
+.nav-dd-btn.open svg{transform:rotate(180deg);}
+.nav-cta{
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;
+  background:#1A7EC4;color:#fff;
+  padding:9px 22px;border-radius:8px;
+  transition:background .15s;white-space:nowrap;
+  display:inline-block;text-decoration:none;border:none;
+}
+.nav-cta:hover{background:#0D4F80;}
+/* Dropdowns */
+.dd,.mega{
+  position:absolute;top:calc(100% + 8px);left:0;
+  background:#1e2638;border:1px solid rgba(255,255,255,.1);
+  border-radius:13px;padding:6px;
+  opacity:0;pointer-events:none;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s;
+  z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);
+}
+.dd.open,.mega.open{opacity:1;pointer-events:all;transform:translateY(0);}
+.dd{min-width:220px;}
+.mega{left:-20px;min-width:660px;padding:0;}
+.ddi-wrap{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.75);transition:background .12s,color .12s;text-decoration:none;}
+.ddi-wrap:hover{background:rgba(255,255,255,.08);color:#fff;}
+.ddi{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ddiv{height:.5px;background:rgba(255,255,255,.07);margin:4px 6px;}
+.mega-inner{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:.5px solid rgba(255,255,255,.07);}
+.mcol{padding:20px 18px;border-right:.5px solid rgba(255,255,255,.07);}
+.mcol:last-child{border-right:none;}
+.mclabel{font-size:10px;font-weight:600;letter-spacing:1.2px;color:#4AABF0;text-transform:uppercase;margin-bottom:14px;}
+.mi{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;transition:background .12s;margin-bottom:2px;text-decoration:none;}
+.mi:hover{background:rgba(255,255,255,.07);}
+.mi-icon{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.mi-name{font-size:13px;font-weight:500;color:#fff;line-height:1.3;}
+.mi-desc{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;line-height:1.4;}
+.mfoot{display:flex;gap:4px;padding:12px 16px;}
+.mfl{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);padding:7px 12px;border-radius:7px;transition:color .12s,background .12s;text-decoration:none;}
+.mfl:hover{color:#fff;background:rgba(255,255,255,.06);}
+/* Mobile burger */
+.hburg{
+  display:none;flex-direction:column;gap:5px;
+  padding:6px;background:none;border:none;cursor:pointer;
+}
+.hburg span{display:block;width:22px;height:2px;background:#0D4F80;border-radius:2px;transition:all .22s;}
+.hburg.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hburg.open span:nth-child(2){opacity:0;}
+.hburg.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+/* Mobile menu panel */
+.mobm{
+  display:none;position:fixed;
+  top:68px;left:0;right:0;bottom:0;
+  background:#0f172a;overflow-y:auto;
+  padding:16px 20px 40px;z-index:450;
+}
+.mobm.open{display:block;}
+.mobm a{display:block;padding:12px 14px;color:rgba(255,255,255,.78);font-size:15px;border-radius:8px;transition:background .12s;text-decoration:none;}
+.mobm a:hover{background:rgba(255,255,255,.07);color:#fff;}
+.mob-label{font-size:10px;font-weight:600;letter-spacing:1.1px;color:rgba(255,255,255,.3);text-transform:uppercase;padding:18px 14px 6px;}
+.mob-cta{
+  display:block;margin:20px 0 0;
+  font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;
+  text-align:center;background:#1A7EC4;color:#fff;
+  padding:14px;border-radius:10px;text-decoration:none;
+}
+/* Responsive */
+@media(max-width:900px){
+  .nav{padding:0 20px;}
+  .nav-links,.nav-cta{display:none;}
+  .hburg{display:flex;}
+}
+/* ═══ END CANONICAL NAV ═══════════════════════════════════ */
+
 .fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
 .fu.vis{opacity:1;transform:translateY(0);}
 .fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}
@@ -26,34 +130,103 @@
   div[style*="padding:56px 40px"]{padding:40px 20px!important;flex-direction:column!important;}
   div[style*="padding:52px 40px"]{padding:36px 20px!important;}
 }
-</style><nav style="position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);">
-  <a href="index.html" style="display:flex;align-items:center;"><img src="logo-horizontal.png" alt="SolvvSpace" style="height:36px;width:auto;mix-blend-mode:screen;"/></a>
-  <ul style="display:flex;align-items:center;gap:2px;list-style:none;">
+
+.success-msg{
+  display:none;
+  background:linear-gradient(135deg,#f0fdf9,#dcfce7);
+  border:1.5px solid #86efac;
+  border-radius:16px;
+  padding:40px 32px;
+  text-align:center;
+}
+.success-msg.show{display:block;}
+.success-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:#1D9E75;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+}
+.success-msg h3{
+  font-family:'Outfit',sans-serif;
+  font-size:20px;font-weight:700;
+  color:#14532d;margin-bottom:8px;
+}
+.success-msg p{font-size:14px;color:#166534;line-height:1.72;}
+.success-msg .back-btn{
+  display:inline-block;margin-top:20px;
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;
+  background:#1D9E75;color:#fff;
+  padding:10px 24px;border-radius:8px;
+  text-decoration:none;transition:background .18s;
+}
+.success-msg .back-btn:hover{background:#15803d;}
+</style><nav class="nav">
+  <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
+    <img src="solvvspace-logo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
+    <span class="nav-brand-wordmark">SOLVVSPACE</span>
+  </a>
+  <ul class="nav-links">
     <li style="position:relative;">
-      <button onclick="toggleDD('dd-svc',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;display:flex;align-items:center;gap:4px;font-family:'Inter',sans-serif;transition:color .15s,background .15s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div id="dd-svc" style="display:none;position:absolute;top:calc(100% + 10px);left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:230px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
-        <a href="service-bespoke.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;transition:background .12s;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Bespoke app &amp; systems dev</a>
-        <a href="service-cyber.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Cyber Essentials &amp; security</a>
-        <a href="service-m365.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Microsoft 365 deployment</a>
-        <a href="service-managed-it.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">IT &amp; managed services</a>
-        <a href="service-hr.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">HR systems development</a>
-        <a href="service-advisory.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Advisory &amp; consultancy</a>
-        <a href="service-sharepoint.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">SharePoint &amp; Power Apps</a>
+      <button class="nav-dd-btn" data-dd="dd-svc">
+        Services
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dd" id="dd-svc">
+        <a class="ddi-wrap" href="service-bespoke.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Bespoke development</a>
+        <a class="ddi-wrap" href="service-cyber.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>Cyber Essentials and security</a>
+        <a class="ddi-wrap" href="service-m365.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>Microsoft 365 deployment</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="service-managed-it.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>IT and managed services</a>
+        <a class="ddi-wrap" href="service-hr.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR systems development</a>
+        <a class="ddi-wrap" href="service-advisory.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Advisory and consultancy</a>
+        <a class="ddi-wrap" href="service-sharepoint.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>SharePoint and Power Apps</a>
       </div>
     </li>
-    <li><a href="solutions.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;transition:color .15s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">Solutions</a></li>
+    <li><a class="nla" href="solutions.html">Solutions</a></li>
     <li style="position:relative;">
-      <button onclick="toggleDD('dd-hub',this)" style="font-size:14px;color:rgba(255,255,255,.65);background:none;border:none;cursor:pointer;padding:7px 13px;border-radius:6px;display:flex;align-items:center;gap:4px;font-family:'Inter',sans-serif;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div id="dd-hub" style="display:none;position:absolute;top:calc(100% + 10px);left:0;background:#1e2638;border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:8px;min-width:200px;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);">
-        <a href="hub-products.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Products</a>
-        <a href="hub-insights.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Insights &amp; learning</a>
-        <a href="hub-tech-updates.html" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none;" onmouseenter="this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.background='none'">Technology updates</a>
+      <button class="nav-dd-btn" data-dd="dd-hub">
+        SS Hub
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dd" id="dd-hub">
+        <a class="ddi-wrap" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Products</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hr-consulting.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR and Compliance</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights and learning</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
       </div>
     </li>
-    <li><a href="about.html" style="font-size:14px;color:rgba(255,255,255,.65);padding:7px 13px;border-radius:6px;text-decoration:none;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.65)';this.style.background='none'">About</a></li>
+    <li><a class="nla" href="hub-insights.html">Insights</a></li>
+    <li><a class="nla" href="about.html">About</a></li>
   </ul>
-  <a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:#1A7EC4;color:#fff;border:none;padding:9px 22px;border-radius:8px;cursor:pointer;text-decoration:none;white-space:nowrap;">Talk to an expert</a>
+  <a href="contact.html" class="nav-cta">Book a free call</a>
+  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
+  <div class="mob-label">Services</div>
+  <a href="service-bespoke.html">Bespoke development</a>
+  <a href="service-cyber.html">Cyber Essentials and security</a>
+  <a href="service-m365.html">Microsoft 365 deployment</a>
+  <a href="service-managed-it.html">IT and managed services</a>
+  <a href="service-hr.html">HR systems development</a>
+  <a href="service-advisory.html">Advisory and consultancy</a>
+  <a href="service-sharepoint.html">SharePoint and Power Apps</a>
+  <div class="mob-label">Explore</div>
+  <a href="solutions.html">Solutions</a>
+  <a href="hub-products.html">Products</a>
+  <a href="hr-consulting.html">HR and Compliance</a>
+  <a href="hub-insights.html">Insights and learning</a>
+  <a href="hub-tech-updates.html">Technology updates</a>
+  <div class="mob-label">Company</div>
+  <a href="about.html">About</a>
+  <a href="contact.html" class="mob-cta">Book a free call</a>
+</div>
 <script>
 function toggleDD(id,btn){
   var el=document.getElementById(id);
@@ -73,7 +246,7 @@ function toggleDD(id,btn){
     </div>
     <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">Get in touch</div>
     <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4vw,38px);font-weight:700;color:#fff;line-height:1.18;letter-spacing:-.5px;margin-bottom:14px;">Let's talk about<br><span style="color:#4AABF0;">what you actually need</span></h1>
-    <p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;margin-bottom:24px;">Whether you're ready to start or still figuring out what you need — we're happy to have a straight conversation. No sales pressure, no commitment.</p>
+    <p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;margin-bottom:24px;">Whether you're ready to start or still figuring out what you need and we're happy to have a straight conversation. No sales pressure, no commitment.</p>
     <div style="display:flex;gap:8px;flex-wrap:wrap;"></div>
   </div>
 </div>
@@ -94,6 +267,18 @@ function toggleDD(id,btn){
       <button type="submit" style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;background:#1A7EC4;color:#fff;padding:12px 28px;border-radius:8px;border:none;cursor:pointer;align-self:flex-start;">Send message →</button>
       <p style="font-size:11px;color:#8A909E;">We'll reply within one business day. Your details are never shared with third parties.</p>
     </form>
+
+    <!-- Success message shown after submission -->
+    <div class="success-msg" id="success-msg">
+      <div class="success-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M6 13l5 5 9-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Message received and thank you!</h3>
+      <p>We'll get back to you within one business day.<br/>In the meantime, feel free to explore our services or read our latest insights.</p>
+      <a href="index.html" class="back-btn">Back to home</a>
+    </div>
   </div>
   <div class="fu d2" style="display:flex;flex-direction:column;gap:16px;">
     <div style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:24px;">
@@ -105,15 +290,15 @@ function toggleDD(id,btn){
     <div style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:24px;">
       <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#1A7EC4;text-transform:uppercase;margin-bottom:12px;">Office hours</div>
       <table style="width:100%;font-size:13px;color:#545B6B;border-collapse:collapse;">
-        <tr><td style="padding:4px 0;">Monday – Friday</td><td style="text-align:right;font-weight:600;color:#1C2231;">09:00 – 17:30</td></tr>
-        <tr><td style="padding:4px 0;">Saturday – Sunday</td><td style="text-align:right;color:#8A909E;">Closed</td></tr>
+        <tr><td style="padding:4px 0;">Monday and Friday</td><td style="text-align:right;font-weight:600;color:#1C2231;">09:00 and 17:30</td></tr>
+        <tr><td style="padding:4px 0;">Saturday and Sunday</td><td style="text-align:right;color:#8A909E;">Closed</td></tr>
       </table>
       <p style="font-size:12px;color:#1A7EC4;margin-top:10px;">24/7 monitoring for managed service clients</p>
     </div>
     <div style="background:linear-gradient(135deg,#0f172a,#0d4f80);border-radius:14px;padding:24px;">
       <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#4AABF0;text-transform:uppercase;margin-bottom:8px;">Free offer</div>
       <h3 style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;margin-bottom:8px;">Book a free IT audit</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:14px;">A no-obligation review of your IT environment. We'll identify risks, inefficiencies, and quick wins — and give you a written report with prioritised recommendations.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:14px;">A no obligation review of your IT environment. We'll identify risks, inefficiencies, and quick wins and and give you a written report with prioritised recommendations.</p>
       <a href="#" onclick="document.querySelector('select[name=service]').value='Free IT audit';return false;" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:9px 18px;border-radius:8px;text-decoration:none;display:inline-block;">Request the audit →</a>
     </div>
   </div>
@@ -132,4 +317,66 @@ function toggleDD(id,btn){
 </footer><script>
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else obs.observe(el);});
-</script></body></html>
+</script>
+<script>
+  // Show success message if redirected back with ?sent=true
+  if(window.location.search.includes('sent=true')) {
+    const form = document.querySelector('form');
+    const msg = document.getElementById('success-msg');
+    if(form) form.style.display = 'none';
+    if(msg) msg.classList.add('show');
+    // Clean URL
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+</script>
+
+<script>
+// Scroll fade
+const _obs=new IntersectionObserver(
+  es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),
+  {threshold:.08,rootMargin:'0px 0px -20px 0px'}
+);
+document.querySelectorAll('.fu').forEach(el=>{
+  if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');
+  else _obs.observe(el);
+});
+// Dropdowns
+function closeAll(){
+  document.querySelectorAll('.dd.open,.mega.open').forEach(m=>m.classList.remove('open'));
+  document.querySelectorAll('.nav-dd-btn.open').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');});
+}
+document.querySelectorAll('[data-dd]').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    const id=btn.dataset.dd;
+    const menu=document.getElementById(id);
+    if(!menu)return;
+    const isOpen=menu.classList.contains('open');
+    closeAll();
+    if(!isOpen){menu.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true');}
+  });
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();});
+// Mobile menu
+const hburg=document.getElementById('hburg');
+const mobm=document.getElementById('mobm');
+if(hburg&&mobm){
+  hburg.addEventListener('click',()=>{
+    const open=mobm.classList.toggle('open');
+    hburg.classList.toggle('open',open);
+    hburg.setAttribute('aria-expanded',open);
+    document.body.style.overflow=open?'hidden':'';
+  });
+  mobm.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      mobm.classList.remove('open');
+      hburg.classList.remove('open');
+      hburg.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+}
+</script>
+
+</body></html>

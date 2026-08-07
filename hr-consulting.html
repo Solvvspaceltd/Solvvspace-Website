@@ -3,23 +3,120 @@
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>HR &amp; Compliance Consulting | SolvvSpace</title>
-<meta name="description" content="Expert HR consultancy, employment law compliance, business consulting, and training — practical support for UK employers."/>
+<meta name="description" content="Expert HR consultancy, employment law compliance, business consulting, and training, practical support for UK employers."/>
 <link rel="icon" type="image/png" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
+/* ═══ CANONICAL NAV ══════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;z-index:500;
+  height:68px;
+  background:#F0F8FF;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+  border-bottom:1.5px solid #B3DCFA;
+  box-shadow:0 1px 8px rgba(13,79,128,.06);
+}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nav-brand-globe{height:48px;width:48px;object-fit:contain;flex-shrink:0;display:block;}
+.nav-brand-wordmark{
+  font-family:'Outfit',sans-serif;
+  font-size:20px;font-weight:700;
+  letter-spacing:3px;
+  color:#072F50;
+  line-height:1;white-space:nowrap;
+}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links>li{position:relative;}
+.nla,.nav-dd-btn{
+  font-family:'Inter',sans-serif;font-size:13.5px;
+  color:#0D4F80;padding:7px 13px;border-radius:6px;
+  display:flex;align-items:center;gap:4px;
+  background:none;border:none;cursor:pointer;
+  transition:color .15s,background .15s;
+  text-decoration:none;
+}
+.nla:hover,.nav-dd-btn:hover,.nla.active,.nav-dd-btn.open{
+  color:#072F50;background:rgba(13,79,128,.08);
+}
+.nav-dd-btn svg{transition:transform .18s;stroke:#0D4F80;}
+.nav-dd-btn.open svg{transform:rotate(180deg);}
+.nav-cta{
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;
+  background:#1A7EC4;color:#fff;
+  padding:9px 22px;border-radius:8px;
+  transition:background .15s;white-space:nowrap;
+  display:inline-block;text-decoration:none;border:none;
+}
+.nav-cta:hover{background:#0D4F80;}
+/* Dropdowns */
+.dd,.mega{
+  position:absolute;top:calc(100% + 8px);left:0;
+  background:#1e2638;border:1px solid rgba(255,255,255,.1);
+  border-radius:13px;padding:6px;
+  opacity:0;pointer-events:none;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s;
+  z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);
+}
+.dd.open,.mega.open{opacity:1;pointer-events:all;transform:translateY(0);}
+.dd{min-width:220px;}
+.mega{left:-20px;min-width:660px;padding:0;}
+.ddi-wrap{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.75);transition:background .12s,color .12s;text-decoration:none;}
+.ddi-wrap:hover{background:rgba(255,255,255,.08);color:#fff;}
+.ddi{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ddiv{height:.5px;background:rgba(255,255,255,.07);margin:4px 6px;}
+.mega-inner{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:.5px solid rgba(255,255,255,.07);}
+.mcol{padding:20px 18px;border-right:.5px solid rgba(255,255,255,.07);}
+.mcol:last-child{border-right:none;}
+.mclabel{font-size:10px;font-weight:600;letter-spacing:1.2px;color:#4AABF0;text-transform:uppercase;margin-bottom:14px;}
+.mi{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;transition:background .12s;margin-bottom:2px;text-decoration:none;}
+.mi:hover{background:rgba(255,255,255,.07);}
+.mi-icon{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.mi-name{font-size:13px;font-weight:500;color:#fff;line-height:1.3;}
+.mi-desc{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;line-height:1.4;}
+.mfoot{display:flex;gap:4px;padding:12px 16px;}
+.mfl{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);padding:7px 12px;border-radius:7px;transition:color .12s,background .12s;text-decoration:none;}
+.mfl:hover{color:#fff;background:rgba(255,255,255,.06);}
+/* Mobile burger */
+.hburg{
+  display:none;flex-direction:column;gap:5px;
+  padding:6px;background:none;border:none;cursor:pointer;
+}
+.hburg span{display:block;width:22px;height:2px;background:#0D4F80;border-radius:2px;transition:all .22s;}
+.hburg.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hburg.open span:nth-child(2){opacity:0;}
+.hburg.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+/* Mobile menu panel */
+.mobm{
+  display:none;position:fixed;
+  top:68px;left:0;right:0;bottom:0;
+  background:#0f172a;overflow-y:auto;
+  padding:16px 20px 40px;z-index:450;
+}
+.mobm.open{display:block;}
+.mobm a{display:block;padding:12px 14px;color:rgba(255,255,255,.78);font-size:15px;border-radius:8px;transition:background .12s;text-decoration:none;}
+.mobm a:hover{background:rgba(255,255,255,.07);color:#fff;}
+.mob-label{font-size:10px;font-weight:600;letter-spacing:1.1px;color:rgba(255,255,255,.3);text-transform:uppercase;padding:18px 14px 6px;}
+.mob-cta{
+  display:block;margin:20px 0 0;
+  font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;
+  text-align:center;background:#1A7EC4;color:#fff;
+  padding:14px;border-radius:10px;text-decoration:none;
+}
+/* Responsive */
+@media(max-width:900px){
+  .nav{padding:0 20px;}
+  .nav-links,.nav-cta{display:none;}
+  .hburg{display:flex;}
+}
+/* ═══ END CANONICAL NAV ═══════════════════════════════════ */
+
 :root{--sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;--sky-400:#4AABF0;--sky-600:#1A7EC4;--sky-800:#0D4F80;--sky-900:#072F50;--slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;--slate-400:#8A909E;--slate-600:#545B6B;--slate-900:#1C2231;--green:#1D9E75;--purple:#7c3aed;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;}
 *{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;}a{text-decoration:none;color:inherit;}
 .fu{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}.fu.vis{opacity:1;transform:translateY(0);}
 .fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
-.nav{position:sticky;top:0;z-index:500;height:64px;background:#1e3a5f;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);}
-.nav-brand{display:flex;align-items:center;gap:9px;}
-.nav-brand-logo{height:36px;width:auto;display:block;}
-.nav-brand-text{font-family:var(--fh);font-size:18px;font-weight:700;letter-spacing:-.3px;color:#fff;}.nav-brand-text span{color:var(--sky-400);}
-.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
-.nla{font-family:var(--fb);font-size:13.5px;color:rgba(255,255,255,.62);padding:7px 13px;border-radius:6px;transition:color .15s,background .15s;}.nla:hover,.nla.active{color:#fff;background:rgba(255,255,255,.08);}
-.nav-cta{font-family:var(--fh);font-size:13px;font-weight:500;background:var(--sky-600);color:#fff;border:none;padding:9px 22px;border-radius:8px;transition:background .15s;white-space:nowrap;display:inline-block;}.nav-cta:hover{background:var(--sky-800);}
 /* HERO */
 .page-hero{background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:64px 40px 60px;position:relative;overflow:hidden;}
 .hero-glow{position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.13) 0%,transparent 70%);}
@@ -93,7 +190,6 @@
 .footer-logo{display:flex;align-items:center;gap:12px;}.footer-logo img{height:30px;}
 .footer-links{display:flex;gap:20px;}.footer-links a{color:var(--slate-400);transition:color .15s;}.footer-links a:hover{color:var(--sky-600);}
 @media(max-width:900px){
-  .nav{padding:0 20px;}.nav-links,.nav-cta{display:none;}
   .page-hero,.services-sec,.cta-sec{padding:40px 20px;}
   .overview-strip{padding:0;flex-wrap:wrap;}.os-item{padding:16px;flex:0 0 50%;border-bottom:1px solid var(--slate-100);}
   .svc-grid{grid-template-columns:1fr;}
@@ -104,28 +200,82 @@
 </head>
 <body>
 <nav class="nav">
-  <a href="index.html" class="nav-brand">
-    <img src="logo-horizontal.jpg" alt="SolvvSpace" class="nav-brand-logo"/>
+  <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
+    <img src="solvvspace-logo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
+    <span class="nav-brand-wordmark">SOLVVSPACE</span>
   </a>
   <ul class="nav-links">
+    <li style="position:relative;">
+      <button class="nav-dd-btn" data-dd="dd-svc">
+        Services
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dd" id="dd-svc">
+        <a class="ddi-wrap" href="service-bespoke.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Bespoke development</a>
+        <a class="ddi-wrap" href="service-cyber.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>Cyber Essentials and security</a>
+        <a class="ddi-wrap" href="service-m365.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>Microsoft 365 deployment</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="service-managed-it.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>IT and managed services</a>
+        <a class="ddi-wrap" href="service-hr.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR systems development</a>
+        <a class="ddi-wrap" href="service-advisory.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Advisory and consultancy</a>
+        <a class="ddi-wrap" href="service-sharepoint.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>SharePoint and Power Apps</a>
+      </div>
+    </li>
     <li><a class="nla" href="solutions.html">Solutions</a></li>
-    <li><a class="nla active" href="hr-consulting.html">HR &amp; Compliance</a></li>
-    <li><a class="nla" href="hub-products.html">Products</a></li>
+    <li style="position:relative;">
+      <button class="nav-dd-btn" data-dd="dd-hub">
+        SS Hub
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dd" id="dd-hub">
+        <a class="ddi-wrap" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Products</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hr-consulting.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR and Compliance</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights and learning</a>
+        <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
+      </div>
+    </li>
     <li><a class="nla" href="hub-insights.html">Insights</a></li>
     <li><a class="nla" href="about.html">About</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Talk to an expert</a>
+  <a href="contact.html" class="nav-cta">Book a free call</a>
+  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
+  <div class="mob-label">Services</div>
+  <a href="service-bespoke.html">Bespoke development</a>
+  <a href="service-cyber.html">Cyber Essentials and security</a>
+  <a href="service-m365.html">Microsoft 365 deployment</a>
+  <a href="service-managed-it.html">IT and managed services</a>
+  <a href="service-hr.html">HR systems development</a>
+  <a href="service-advisory.html">Advisory and consultancy</a>
+  <a href="service-sharepoint.html">SharePoint and Power Apps</a>
+  <div class="mob-label">Explore</div>
+  <a href="solutions.html">Solutions</a>
+  <a href="hub-products.html">Products</a>
+  <a href="hr-consulting.html">HR and Compliance</a>
+  <a href="hub-insights.html">Insights and learning</a>
+  <a href="hub-tech-updates.html">Technology updates</a>
+  <div class="mob-label">Company</div>
+  <a href="about.html">About</a>
+  <a href="contact.html" class="mob-cta">Book a free call</a>
+</div>
 
 <div class="page-hero">
   <div class="hero-glow"></div>
   <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,.65);">HR &amp; Compliance</span></div>
   <div class="hero-ey">HR &amp; Compliance Consulting</div>
   <h1>Practical HR support.<br><em>Built for UK employers.</em></h1>
-  <p>From managing complex employee relations to keeping your business compliant with ever-changing employment law — we provide the hands-on HR and compliance expertise that growing organisations actually need.</p>
+  <p>From managing complex employee relations to keeping your business compliant with ever-changing employment law and we provide the hands on HR and compliance expertise that growing organisations actually need.</p>
   <div class="hero-badges">
     <div class="hbadge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Employment law compliant</div>
-    <div class="hbadge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>ET-safe policies &amp; processes</div>
+    <div class="hbadge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>ET safe policies &amp; processes</div>
     <div class="hbadge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>PRINCE2 &amp; ITIL certified</div>
     <div class="hbadge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="rgba(255,255,255,.6)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Tailored to your sector</div>
   </div>
@@ -155,26 +305,26 @@
 <section class="services-sec">
   <div class="sec-ey fu">Service area 01</div>
   <div class="sec-h2 fu d1">HR Consulting</div>
-  <p class="sec-sub fu d2">Hands-on HR support for the situations that matter most — from day-to-day people management to complex employee relations cases that need to be handled right.</p>
+  <p class="sec-sub fu d2">Hands on HR support for the situations that matter most and from day to day people management to complex employee relations cases that need to be handled right.</p>
   <div class="svc-grid">
     <div class="svc-card blue fu d1">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="6" r="3" stroke="#1A7EC4" stroke-width="1.4"/><path d="M2 18c0-2.8 2.2-5 5-5m4 0a5 5 0 015 5" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round"/></svg></div>
       <div class="svc-tag">Employee relations</div>
       <div class="svc-h">Disciplinaries, investigations &amp; hearings</div>
-      <p class="svc-p">Structured support for managing disciplinary procedures, grievance investigations, and formal hearings — ensuring your process is fair, documented, and defensible.</p>
+      <p class="svc-p">Structured support for managing disciplinary procedures, grievance investigations, and formal hearings and ensuring your process is fair, documented, and defensible.</p>
       <ul class="svc-list"><li>Disciplinary investigation support</li><li>Grievance handling &amp; mediation</li><li>Formal hearing preparation &amp; chairing</li><li>Appeal process management</li></ul>
     </div>
     <div class="svc-card blue fu d2">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4.5" width="15" height="11" rx="2" stroke="#1A7EC4" stroke-width="1.4"/><path d="M6 9h8M6 12h5" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round"/></svg></div>
       <div class="svc-tag">Absence management</div>
       <div class="svc-h">Absence &amp; Bradford Factor frameworks</div>
-      <p class="svc-p">Build a consistent, fair approach to absence management — including Bradford Factor scoring, trigger point frameworks, and return-to-work processes that reduce risk.</p>
-      <ul class="svc-list"><li>Bradford Factor implementation</li><li>Absence trigger frameworks</li><li>Long-term sickness management</li><li>Return-to-work interview processes</li></ul>
+      <p class="svc-p">Build a consistent, fair approach to absence management and including Bradford Factor scoring, trigger point frameworks, and return to work processes that reduce risk.</p>
+      <ul class="svc-list"><li>Bradford Factor implementation</li><li>Absence trigger frameworks</li><li>Long term sickness management</li><li>Return to work interview processes</li></ul>
     </div>
     <div class="svc-card blue fu d3">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 9l3 3 7-7" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="2.5" y="2.5" width="15" height="15" rx="3" stroke="#1A7EC4" stroke-width="1.4"/></svg></div>
       <div class="svc-tag">Policy &amp; compliance</div>
-      <div class="svc-h">HR policies that are ET-safe &amp; up to date</div>
+      <div class="svc-h">HR policies that are ET safe &amp; up to date</div>
       <p class="svc-p">Comprehensive HR policy suites written in plain English, aligned to current employment law, and designed to hold up at Employment Tribunal if needed.</p>
       <ul class="svc-list"><li>Full HR policy suite development</li><li>Employment contract templates</li><li>Policy audits &amp; gap analysis</li><li>Annual policy refresh service</li></ul>
     </div>
@@ -182,7 +332,7 @@
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10l4-4 4 4 4-6" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="svc-tag">Workforce planning</div>
       <div class="svc-h">Rotas, restructuring &amp; resource planning</div>
-      <p class="svc-p">Practical workforce planning support — from rota design and exception management to restructuring projects and TUPE compliance.</p>
+      <p class="svc-p">Practical workforce planning support and from rota design and exception management to restructuring projects and TUPE compliance.</p>
       <ul class="svc-list"><li>Rota &amp; scheduling frameworks</li><li>Restructuring &amp; redundancy support</li><li>TUPE guidance &amp; project management</li><li>Workforce cost modelling</li></ul>
     </div>
   </div>
@@ -192,34 +342,34 @@
 <section class="services-sec alt">
   <div class="sec-ey fu">Service area 02</div>
   <div class="sec-h2 fu d1">Business Consulting</div>
-  <p class="sec-sub fu d2">Operational and strategic support to make your organisation run more efficiently — from cost optimisation to leadership capability.</p>
+  <p class="sec-sub fu d2">Operational and strategic support to make your organisation run more efficiently and from cost optimisation to leadership capability.</p>
   <div class="svc-grid">
     <div class="svc-card green fu d1">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#16a34a" stroke-width="1.4"/><path d="M7 10l2.5 2.5 4-4" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="svc-tag">Operational efficiency</div>
       <div class="svc-h">Operational efficiency reviews</div>
-      <p class="svc-p">A structured review of how your organisation operates — identifying bottlenecks, duplication, and the gaps between process and practice that cost time and money.</p>
-      <ul class="svc-list"><li>End-to-end process mapping</li><li>Bottleneck and waste identification</li><li>Efficiency improvement roadmap</li><li>Implementation support</li></ul>
+      <p class="svc-p">A structured review of how your organisation operates and identifying bottlenecks, duplication, and the gaps between process and practice that cost time and money.</p>
+      <ul class="svc-list"><li>End to end process mapping</li><li>Bottleneck and waste identification</li><li>Efficiency improvement roadmap</li><li>Implementation support</li></ul>
     </div>
     <div class="svc-card green fu d2">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17l4-4 4 2 4-8 3 3" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="svc-tag">Cost optimisation</div>
       <div class="svc-h">Workforce cost optimisation</div>
-      <p class="svc-p">Rigorous analysis of your workforce spend — identifying where cost can be reduced without impacting service delivery, team morale, or legal risk.</p>
+      <p class="svc-p">Rigorous analysis of your workforce spend and identifying where cost can be reduced without impacting service delivery, team morale, or legal risk.</p>
       <ul class="svc-list"><li>Workforce cost benchmarking</li><li>Overtime &amp; agency spend analysis</li><li>Shift pattern optimisation</li><li>Savings identification &amp; modelling</li></ul>
     </div>
     <div class="svc-card green fu d3">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16l4-8 4 4 4-8" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="svc-tag">Process improvement</div>
       <div class="svc-h">Process improvement &amp; redesign</div>
-      <p class="svc-p">Lean-informed process redesign that cuts unnecessary steps, reduces handoffs, and builds workflows that work in practice — not just on paper.</p>
-      <ul class="svc-list"><li>As-is / to-be process mapping</li><li>SOP development &amp; documentation</li><li>Change management support</li><li>KPI framework design</li></ul>
+      <p class="svc-p">Lean-informed process redesign that cuts unnecessary steps, reduces handoffs, and builds workflows that work in practice and not just on paper.</p>
+      <ul class="svc-list"><li>As is / to be process mapping</li><li>SOP development &amp; documentation</li><li>Change management support</li><li>KPI framework design</li></ul>
     </div>
     <div class="svc-card green fu d4">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="#16a34a" stroke-width="1.4"/><path d="M5 17c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round"/></svg></div>
       <div class="svc-tag">Leadership support</div>
       <div class="svc-h">Leadership &amp; management support</div>
-      <p class="svc-p">Practical support for managers navigating people challenges — from one-to-one advisory to management team development and capability reviews.</p>
+      <p class="svc-p">Practical support for managers navigating people challenges and from one to one advisory to management team development and capability reviews.</p>
       <ul class="svc-list"><li>Manager advisory service</li><li>Management team effectiveness reviews</li><li>Leadership capability assessment</li><li>Succession planning frameworks</li></ul>
     </div>
   </div>
@@ -235,15 +385,15 @@
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5v5c0 4 2.8 7.5 7 8.5 4.2-1 7-4.5 7-8.5v-5L10 2z" stroke="#7c3aed" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
       <div class="svc-tag">Employment law</div>
       <div class="svc-h">Employment law updates &amp; ERA changes</div>
-      <p class="svc-p">Continuous monitoring of UK employment legislation — including Employment Rights Act changes and SSP updates — translated into practical action for your organisation.</p>
+      <p class="svc-p">Continuous monitoring of UK employment legislation and including Employment Rights Act changes and SSP updates and translated into practical action for your organisation.</p>
       <ul class="svc-list"><li>ERA 2025 compliance review</li><li>SSP &amp; statutory leave updates</li><li>Employment law briefings for managers</li><li>Contract and policy amendment service</li></ul>
     </div>
     <div class="svc-card purple fu d2">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="2.5" width="15" height="15" rx="3" stroke="#7c3aed" stroke-width="1.4"/><path d="M6 10l2.5 2.5 5.5-5.5" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="svc-tag">Audit &amp; risk</div>
       <div class="svc-h">HR audit &amp; risk reviews</div>
-      <p class="svc-p">A comprehensive review of your people practices, documentation, and compliance posture — identifying risk exposure before it becomes a problem.</p>
-      <ul class="svc-list"><li>HR compliance audit</li><li>Employment risk register</li><li>Right-to-work &amp; documentation audit</li><li>Remediation planning &amp; support</li></ul>
+      <p class="svc-p">A comprehensive review of your people practices, documentation, and compliance posture and identifying risk exposure before it becomes a problem.</p>
+      <ul class="svc-list"><li>HR compliance audit</li><li>Employment risk register</li><li>Right to work &amp; documentation audit</li><li>Remediation planning &amp; support</li></ul>
     </div>
     <div class="svc-card purple fu d3" style="grid-column:1/-1;">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h10M3 15h6" stroke="#7c3aed" stroke-width="1.4" stroke-linecap="round"/></svg></div>
@@ -259,28 +409,28 @@
 <section class="services-sec alt">
   <div class="sec-ey fu">Service area 04</div>
   <div class="sec-h2 fu d1">Training &amp; Development</div>
-  <p class="sec-sub fu d2">Practical, scenario-based training for managers and leaders — built around the real situations your people face every day.</p>
+  <p class="sec-sub fu d2">Practical, scenario-based training for managers and leaders and built around the real situations your people face every day.</p>
   <div class="svc-grid">
     <div class="svc-card amber fu d1">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="#d97706" stroke-width="1.4"/><path d="M5 17c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="#d97706" stroke-width="1.4" stroke-linecap="round"/><path d="M14.5 4.5c.8.6 1.5 1.5 1.5 2.5s-.7 1.9-1.5 2.5" stroke="#d97706" stroke-width="1.3" stroke-linecap="round"/></svg></div>
       <div class="svc-tag">Manager training</div>
       <div class="svc-h">ER, probation &amp; absence management training</div>
-      <p class="svc-p">Half-day and full-day workshops covering the skills managers need to handle people situations confidently — from probation reviews to formal ER processes.</p>
+      <p class="svc-p">Half-day and full-day workshops covering the skills managers need to handle people situations confidently and from probation reviews to formal ER processes.</p>
       <ul class="svc-list"><li>Managing disciplinaries &amp; grievances</li><li>Probation &amp; performance conversations</li><li>Absence management in practice</li><li>Difficult conversation frameworks</li></ul>
     </div>
     <div class="svc-card amber fu d2">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="5.5" width="15" height="11" rx="2" stroke="#d97706" stroke-width="1.4"/><path d="M7 5.5V4a1 1 0 011-1h4a1 1 0 011 1v1.5" stroke="#d97706" stroke-width="1.4" stroke-linecap="round"/><path d="M6 10h8M6 13h5" stroke="#d97706" stroke-width="1.4" stroke-linecap="round"/></svg></div>
       <div class="svc-tag">HR workshops</div>
       <div class="svc-h">HR workshops for managers &amp; teams</div>
-      <p class="svc-p">Interactive group sessions on employment law essentials, HR best practice, and the policy areas that managers most often get wrong — delivered in plain English.</p>
+      <p class="svc-p">Interactive group sessions on employment law essentials, HR best practice, and the policy areas that managers most often get wrong and delivered in plain English.</p>
       <ul class="svc-list"><li>Employment law essentials</li><li>Equality, diversity &amp; inclusion</li><li>Recruitment &amp; selection best practice</li><li>Managing performance effectively</li></ul>
     </div>
     <div class="svc-card amber fu d3" style="grid-column:1/-1;">
       <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="8" r="3.5" stroke="#d97706" stroke-width="1.4"/><path d="M4 18c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#d97706" stroke-width="1.4" stroke-linecap="round"/><path d="M15 5.5c1 .8 1.5 1.9 1.5 3.1 0 1-.4 2-1 2.7" stroke="#d97706" stroke-width="1.3" stroke-linecap="round"/></svg></div>
       <div class="svc-tag">Leadership coaching</div>
       <div class="svc-h">Leadership coaching &amp; development</div>
-      <p class="svc-p">One-to-one and group coaching for senior leaders and emerging managers — helping individuals build the capability, confidence, and judgment to lead well under pressure.</p>
-      <ul class="svc-list" style="display:grid;grid-template-columns:1fr 1fr;gap:5px 24px;"><li>One-to-one executive coaching</li><li>Emerging leaders programme</li><li>360° feedback &amp; development planning</li><li>Team effectiveness coaching</li></ul>
+      <p class="svc-p">One to one and group coaching for senior leaders and emerging managers and helping individuals build the capability, confidence, and judgment to lead well under pressure.</p>
+      <ul class="svc-list" style="display:grid;grid-template-columns:1fr 1fr;gap:5px 24px;"><li>One to one executive coaching</li><li>Emerging leaders programme</li><li>360° feedback &amp; development planning</li><li>Team effectiveness coaching</li></ul>
     </div>
   </div>
 </section>
@@ -290,7 +440,7 @@
   <div class="cta-glow"></div>
   <div style="position:relative;z-index:2;" class="fu">
     <h2>Let's talk about your HR challenges</h2>
-    <p>Whether you're dealing with a live employee relations issue or building out your HR capability from scratch — we can help. Start with a free, no-obligation conversation.</p>
+    <p>Whether you're dealing with a live employee relations issue or building out your HR capability from scratch and we can help. Start with a free, no obligation conversation.</p>
   </div>
   <div class="cta-btns fu d2">
     <a href="contact.html" class="cbtn cbtn-p">Book a free consultation</a>
@@ -309,9 +459,56 @@
   <div class="footer-logo"><img src="logo-horizontal.jpg" alt="SolvvSpace" style="height:28px;"/><span>© 2025 SolvvSpace Limited · Registered in England &amp; Wales (16153942) · Bedford MK41 9ST</span></div>
   <div class="footer-links"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html">Contact</a></div>
 </footer>
+
+
 <script>
-const _obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
-document.querySelectorAll('.fu').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');else _obs.observe(el);});
+// Scroll fade
+const _obs=new IntersectionObserver(
+  es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),
+  {threshold:.08,rootMargin:'0px 0px -20px 0px'}
+);
+document.querySelectorAll('.fu').forEach(el=>{
+  if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');
+  else _obs.observe(el);
+});
+// Dropdowns
+function closeAll(){
+  document.querySelectorAll('.dd.open,.mega.open').forEach(m=>m.classList.remove('open'));
+  document.querySelectorAll('.nav-dd-btn.open').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');});
+}
+document.querySelectorAll('[data-dd]').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    const id=btn.dataset.dd;
+    const menu=document.getElementById(id);
+    if(!menu)return;
+    const isOpen=menu.classList.contains('open');
+    closeAll();
+    if(!isOpen){menu.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true');}
+  });
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();});
+// Mobile menu
+const hburg=document.getElementById('hburg');
+const mobm=document.getElementById('mobm');
+if(hburg&&mobm){
+  hburg.addEventListener('click',()=>{
+    const open=mobm.classList.toggle('open');
+    hburg.classList.toggle('open',open);
+    hburg.setAttribute('aria-expanded',open);
+    document.body.style.overflow=open?'hidden':'';
+  });
+  mobm.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      mobm.classList.remove('open');
+      hburg.classList.remove('open');
+      hburg.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+}
 </script>
+
 </body>
 </html>
