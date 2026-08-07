@@ -81,7 +81,11 @@ function toggleDD(id,btn){
   <div class="fu">
     <div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;">Send us a message</div>
     <h2 style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:#1C2231;margin-bottom:22px;">We'll get back to you within one business day</h2>
-    <form style="display:flex;flex-direction:column;gap:14px;" action="mailto:hello@solvvspace.com" method="POST">
+    <form style="display:flex;flex-direction:column;gap:14px;" action="https://formspree.io/f/ab.conteh@solvvspace.com" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from SolvvSpace website"/>
+      <input type="hidden" name="_cc" value="allyubabah@gmail.com"/>
+      <input type="hidden" name="_next" value="https://solvvspace.com/contact.html?sent=true"/>
+      <input type="text" name="_gotcha" style="display:none;"/>
       <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Full name *</label><input type="text" name="name" required placeholder="Jane Smith" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
       <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Work email *</label><input type="email" name="email" required placeholder="jane@company.com" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
       <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Company</label><input type="text" name="company" placeholder="Your company" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
