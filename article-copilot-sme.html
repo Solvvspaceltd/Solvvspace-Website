@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Microsoft Copilot for small business — should you be using it yet? | SolvvSpace Insights</title>
+<link rel="icon" type="image/png" href="solvvspace-logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;--sky-400:#4AABF0;--sky-600:#1A7EC4;--sky-800:#0D4F80;--sky-900:#072F50;--slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;--slate-400:#8A909E;--slate-600:#545B6B;--slate-900:#1C2231;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;}a{text-decoration:none;color:inherit;}
+.nav{position:sticky;top:0;z-index:500;height:68px;background:#F0F8FF;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid #B3DCFA;}
+.nav-brand{display:flex;align-items:center;gap:10px;}.nav-brand img{height:48px;width:48px;object-fit:contain;}
+.nav-brand-wordmark{font-family:var(--fh);font-size:20px;font-weight:700;letter-spacing:3px;color:#072F50;}
+.nav-cta{font-family:var(--fh);font-size:13px;font-weight:500;background:var(--sky-600);color:#fff;padding:9px 22px;border-radius:8px;}.nav-cta:hover{background:var(--sky-800);}
+.article-hero{background:linear-gradient(155deg,#0f172a 0%,#3b0764 60%,#7c3aed 100%);padding:56px 40px 52px;position:relative;overflow:hidden;}
+.hero-glow{position:absolute;right:-60px;top:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,.18) 0%,transparent 70%);}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.breadcrumb a{color:rgba(255,255,255,.35);}.breadcrumb a:hover{color:rgba(255,255,255,.7);}.bc-sep{color:rgba(255,255,255,.18);}
+.art-cat{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:#c4b5fd;background:rgba(255,255,255,.1);border:0.5px solid rgba(255,255,255,.2);padding:3px 11px;border-radius:20px;margin-bottom:14px;}
+.art-hero-title{font-family:var(--fh);font-size:clamp(22px,4vw,34px);font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.4px;margin-bottom:16px;max-width:680px;}
+.art-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.art-av{width:32px;height:32px;border-radius:50%;background:var(--sky-600);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:11px;font-weight:700;color:#fff;}
+.art-author-name{font-size:13px;font-weight:500;color:rgba(255,255,255,.8);}.art-meta-sep{color:rgba(255,255,255,.2);}.art-meta-item{font-size:12px;color:rgba(255,255,255,.45);}
+.article-wrap{max-width:740px;margin:0 auto;padding:52px 40px 76px;}
+.article-body h2{font-family:var(--fh);font-size:22px;font-weight:700;color:var(--slate-900);margin:36px 0 12px;line-height:1.25;}
+.article-body h3{font-family:var(--fh);font-size:17px;font-weight:600;color:var(--slate-900);margin:28px 0 10px;}
+.article-body p{font-size:15px;color:var(--slate-700);line-height:1.82;margin-bottom:18px;}
+.article-body ul{padding-left:22px;margin-bottom:18px;}.article-body li{font-size:15px;color:var(--slate-700);line-height:1.75;margin-bottom:6px;}
+.article-body strong{font-weight:600;color:var(--slate-900);}.article-body a{color:var(--sky-600);text-decoration:underline;text-underline-offset:3px;}
+.callout{background:var(--sky-50);border-left:4px solid var(--sky-400);border-radius:0 10px 10px 0;padding:16px 20px;margin:24px 0;}
+.callout p{margin-bottom:0;font-size:14px;color:var(--sky-800);}.callout-title{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--sky-600);margin-bottom:6px;}
+.divider{height:1px;background:var(--slate-100);margin:36px 0;}
+.visual-block{background:var(--slate-50);border:1.5px solid var(--slate-100);border-radius:14px;padding:28px;margin:28px 0;}
+.visual-title{font-size:11px;font-weight:600;color:var(--slate-400);letter-spacing:.5px;margin-bottom:20px;text-transform:uppercase;}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.stat-box{background:#fff;border:1.5px solid var(--slate-200);border-radius:12px;padding:18px 16px;text-align:center;}
+.stat-val{font-family:var(--fh);font-size:28px;font-weight:700;color:var(--sky-600);margin-bottom:4px;}
+.stat-label{font-size:12px;color:var(--slate-600);line-height:1.4;}
+.timeline{display:flex;flex-direction:column;gap:0;}
+.tl-item{display:flex;gap:16px;padding-bottom:20px;position:relative;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--slate-200);}
+.tl-dot{width:32px;height:32px;border-radius:50%;background:var(--sky-600);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:12px;font-weight:700;flex-shrink:0;}
+.tl-body h4{font-family:var(--fh);font-size:14px;font-weight:600;color:var(--slate-900);margin-bottom:4px;margin-top:5px;}
+.tl-body p{font-size:13px;color:var(--slate-600);line-height:1.6;margin-bottom:0;}
+.related-sec{background:var(--slate-50);border-top:1px solid var(--slate-100);padding:52px 40px;}
+.related-title{font-family:var(--fh);font-size:20px;font-weight:700;color:var(--slate-900);margin-bottom:24px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.related-card{background:#fff;border:1.5px solid var(--slate-100);border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s;display:block;}.related-card:hover{border-color:var(--sky-200);transform:translateY(-2px);}
+.related-img{height:100px;}.related-cat{font-size:10px;font-weight:600;color:#fff;background:rgba(0,0,0,.35);padding:2px 8px;border-radius:20px;display:inline-block;margin:8px 10px;}
+.related-body{padding:12px 14px;}.related-card-title{font-family:var(--fh);font-size:13px;font-weight:600;color:var(--slate-900);line-height:1.4;margin-bottom:8px;}.related-read{font-size:12px;font-weight:600;color:var(--sky-600);}
+.article-cta{background:linear-gradient(135deg,#0f172a 0%,#0d2d4f 100%);padding:52px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+.article-cta h2{font-family:var(--fh);font-size:22px;font-weight:700;color:#fff;margin-bottom:8px;}.article-cta p{font-size:14px;color:rgba(255,255,255,.55);max-width:400px;line-height:1.7;}
+.art-cta-btn{font-family:var(--fh);font-size:13px;font-weight:600;background:#fff;color:var(--sky-800);padding:11px 24px;border-radius:8px;display:inline-block;}
+.footer{background:var(--slate-50);border-top:1px solid var(--slate-100);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--slate-400);}
+.footer-logo{display:flex;align-items:center;gap:10px;}.footer-logo img{height:28px;}
+.footer-links{display:flex;gap:20px;}.footer-links a{color:var(--slate-400);}.footer-links a:hover{color:var(--sky-600);}
+@media(max-width:900px){.nav{padding:0 20px;}.article-hero,.related-sec,.article-cta{padding:36px 20px;}.article-wrap{padding:36px 20px;}.related-grid{grid-template-columns:1fr;}.article-cta{flex-direction:column;}.footer{padding:16px 20px;}.stat-row{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><img src="solvvspace-logo.png" alt="SolvvSpace"/><span class="nav-brand-wordmark">SOLVVSPACE</span></a>
+  <a href="contact.html" class="nav-cta">Book a free call</a>
+</nav>
+<div class="article-hero">
+  <div class="hero-glow"></div>
+  <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><a href="hub-insights.html">Insights</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,.65);">AI and Copilot</span></div>
+  <div class="art-cat">AI and Copilot</div>
+  <h1 class="art-hero-title">Microsoft Copilot for small business — should you be using it yet?</h1>
+  <div class="art-meta">
+    <div style="display:flex;align-items:center;gap:8px;"><div class="art-av">SS</div><span class="art-author-name">SolvvSpace team</span></div>
+    <span class="art-meta-sep">·</span><span class="art-meta-item">January 2025</span>
+    <span class="art-meta-sep">·</span><span class="art-meta-item">6 min read</span>
+  </div>
+</div>
+<div class="article-wrap">
+  <div class="article-body">
+    <p>Microsoft Copilot has been one of the most talked about business technology releases in years. It is also one of the most misunderstood. The marketing promises AI woven into everything — drafting emails, summarising meetings, generating reports. The reality for most small businesses is more nuanced, and the question of whether to invest now or wait is a genuinely important one.</p>
+    
+    <h2>What Copilot actually is</h2>
+    <p>Microsoft 365 Copilot is an AI assistant built into the Office applications you already use — Word, Outlook, Teams, Excel, PowerPoint. It uses large language model technology to help you draft content, summarise information, analyse data, and automate repetitive tasks — all from within the applications your team already works in every day.</p>
+
+    <div class="visual-block"><div class="visual-title">What Copilot can do across M365</div><div class="stat-row">
+  <div class="stat-box"><div class="stat-val">Teams</div><div class="stat-label">Summarises meeting recordings, generates action points, drafts follow ups</div></div>
+  <div class="stat-box"><div class="stat-val">Outlook</div><div class="stat-label">Drafts and refines emails, summarises long threads, prioritises inbox</div></div>
+  <div class="stat-box"><div class="stat-val">Word</div><div class="stat-label">Drafts documents from prompts, rewrites sections, summarises long files</div></div>
+  <div class="stat-box"><div class="stat-val">Excel</div><div class="stat-label">Analyses data, identifies trends, creates charts, generates formulas</div></div>
+  <div class="stat-box"><div class="stat-val">PowerPoint</div><div class="stat-label">Builds slide decks from documents or prompts, designs layouts</div></div>
+  <div class="stat-box"><div class="stat-val">SharePoint</div><div class="stat-label">Searches across your organisation's files and surfaces relevant content</div></div>
+</div></div>
+
+    <h2>What it actually costs</h2>
+    <p>Copilot for Microsoft 365 is priced at £25.90 per user per month on top of your existing M365 licence. For a team of 20 people, that is approximately £6,200 per year. That is a meaningful investment, and it only makes sense if your team will genuinely use it — which brings us to the readiness question.</p>
+
+    <div class="callout"><div class="callout-title">The readiness question most businesses skip</div><p>Copilot works best when your Microsoft 365 environment is well configured — clean data, organised SharePoint, sensible permissions. If your SharePoint is a mess of unsorted documents and your Teams has channels nobody uses, Copilot will surface that mess back at you. The AI is only as good as the information it has access to.</p></div>
+
+    <h2>Signs your organisation is Copilot ready</h2>
+    <ul><li>Your Microsoft 365 tenant is actively used and reasonably well organised</li><li>You have SharePoint or OneDrive in use for document storage</li><li>Your team already uses Teams for communication rather than email chains</li><li>You have a Microsoft 365 Business Standard or Premium licence</li><li>You have considered data governance — what Copilot can and cannot access</li></ul>
+
+    <h2>Our honest recommendation for SMEs</h2>
+    <p>If your M365 environment is well set up and your team is genuinely bought in to using AI tools, Copilot can deliver real productivity gains — particularly around meeting summaries and document drafting. If your environment is not yet clean, invest in getting that right first. Switching on Copilot before your data is organised is like hiring a new employee and giving them no training and no filing system. The potential is there, but you will not see it.</p>
+
+    <div class="callout"><div class="callout-title">Start here</div><p>We offer a free Copilot readiness assessment — we review your M365 environment and tell you honestly whether you are in a position to benefit from Copilot today, and if not, what needs to change first.</p></div>
+
+    <p style="margin-top:32px;"><a href="hub-insights.html">Back to Insights</a></p>
+  </div>
+</div>
+<div class="related-sec">
+  <div class="related-title">You might also find useful</div>
+  <div class="related-grid">    <a class="related-card" href="article-m365-licences.html">
+      <div class="related-img" style="background:linear-gradient(135deg,#0078D4,#00B4F0);"><div class="related-cat">Microsoft 365</div></div>
+      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium — which licence does your team need?</div><div class="related-read">Read article</div></div>
+    </a>    <a class="related-card" href="article-cyber-essentials.html">
+      <div class="related-img" style="background:linear-gradient(135deg,#0d4f80,#1A7EC4);"><div class="related-cat">Cyber security</div></div>
+      <div class="related-body"><div class="related-card-title">Is Cyber Essentials worth it for a small business?</div><div class="related-read">Read article</div></div>
+    </a>    <a class="related-card" href="article-switch-it-supplier.html">
+      <div class="related-img" style="background:linear-gradient(135deg,#134e4a,#0f766e);"><div class="related-cat">Managed IT</div></div>
+      <div class="related-body"><div class="related-card-title">How to switch IT supplier without disrupting your business</div><div class="related-read">Read article</div></div>
+    </a></div>
+</div>
+<div class="article-cta">
+  <div><h2>Wondering if your business is ready for Copilot?</h2><p>Book a free, no obligation conversation with our team. No sales pitch — just honest advice.</p></div>
+  <a href="contact.html" class="art-cta-btn">Book a free Copilot readiness check</a>
+</div>
+<footer class="footer">
+  <div class="footer-logo"><img src="solvvspace-logo.png" alt="SolvvSpace"/><span>2025 SolvvSpace Limited · Registered in England and Wales (16153942)</span></div>
+  <div class="footer-links"><a href="hub-insights.html">More articles</a><a href="contact.html">Contact</a></div>
+</footer>
+</body>
+</html>
