@@ -13,7 +13,7 @@
 *{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;}a{text-decoration:none;color:inherit;}
 .fu{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}.fu.vis{opacity:1;transform:translateY(0);}
 .fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
-.nav{position:sticky;top:0;z-index:500;height:64px;background:#1a1f2e;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);}
+.nav{position:sticky;top:0;z-index:500;height:64px;background:#1e3a5f;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(255,255,255,.06);}
 .nav-brand{display:flex;align-items:center;gap:9px;}.nav-brand img{height:44px;width:44px;object-fit:contain;mix-blend-mode:screen;}
 .nav-brand-text{font-family:var(--fh);font-size:18px;font-weight:700;letter-spacing:-.3px;color:#fff;}.nav-brand-text span{color:var(--sky-400);}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
@@ -115,7 +115,7 @@
 </head>
 <body>
 <nav class="nav">
-  <a href="index.html" class="nav-brand"><img src="logo-stacked.png" alt="SolvvSpace"/><span class="nav-brand-text">Solvv<span>Space</span></span></a>
+  <a href="index.html" class="nav-brand"><img src="logo-final.png" alt="SolvvSpace" style="height:48px;width:48px;object-fit:contain;mix-blend-mode:screen;"/><span class="nav-brand-text">Solvv<span>Space</span></span></a>
   <ul class="nav-links">
     <li><a class="nla" href="solutions.html">Solutions</a></li>
     <li><a class="nla" href="hub-products.html">Products</a></li>
@@ -171,87 +171,73 @@
   <div class="sec-ey fu">Latest articles</div>
   <div class="articles-grid" id="articles-grid">
 
-    <a class="article-card fu d1" href="article-m365-licences.html" data-cat="microsoft">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&q=80&fit=crop');"></div><div class="ac-cat">Microsoft 365</div><div class="ac-read-time">7 min</div></div>
-      <div class="ac-body">
-        <div class="ac-title">M365 Business Basic vs Premium — which licence does your team actually need?</div>
-        <p class="ac-excerpt">Microsoft's licence tiers are confusing by design. We cut through the marketing and tell you which features matter, which you'll never use, and how to avoid paying for the wrong plan.</p>
-        <div class="ac-meta"><span>April 2025</span><span class="ac-read">Read article →</span></div>
+    <a class="article-card fu d1" href="article-cyber-essentials.html" data-cat="cyber">
+      <div class="ac-img" style="background:linear-gradient(135deg,#0d4f80,#1A7EC4);">
+        <div class="ac-cat">Cyber security</div><div class="ac-read-time">8 min</div>
       </div>
-    </a>
-
-    <a class="article-card fu d2" href="article-switch-it-supplier.html" data-cat="managed">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80&fit=crop');"></div><div class="ac-cat">Managed IT</div><div class="ac-read-time">6 min</div></div>
       <div class="ac-body">
-        <div class="ac-title">How to switch IT supplier without disrupting your business</div>
-        <p class="ac-excerpt">Changing IT provider feels risky — but staying with the wrong one costs more. A practical checklist covering data migration, contract exit, continuity planning, and what questions to ask.</p>
+        <div class="ac-title">Is Cyber Essentials worth it for a small business? A straight-talking guide</div>
+        <p class="ac-excerpt">What Cyber Essentials actually tests, what it costs, and the three reasons most SMEs don't realise they need it — until it's too late.</p>
         <div class="ac-meta"><span>March 2025</span><span class="ac-read">Read article →</span></div>
       </div>
     </a>
 
-    <a class="article-card fu d3" href="article-teams-onboarding.html" data-cat="hr">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&q=80&fit=crop');"></div><div class="ac-cat">HR &amp; people</div><div class="ac-read-time">8 min</div></div>
+    <a class="article-card fu d2" href="article-m365-licences.html" data-cat="microsoft">
+      <div class="ac-img" style="background:linear-gradient(135deg,#0078D4,#00B4F0);">
+        <div class="ac-cat">Microsoft 365</div><div class="ac-read-time">7 min</div>
+      </div>
       <div class="ac-body">
-        <div class="ac-title">Using Microsoft Teams to build a structured onboarding process — without any coding</div>
-        <p class="ac-excerpt">A repeatable, professional onboarding experience is within reach for any business already on Microsoft 365. Here's how to build one using Teams, SharePoint, and Power Automate — step by step.</p>
-        <div class="ac-meta"><span>February 2025</span><span class="ac-read">Read article →</span></div>
+        <div class="ac-title">M365 Business Basic vs Premium — which licence does your team actually need?</div>
+        <p class="ac-excerpt">Microsoft's licence tiers are confusing by design. We cut through the marketing and tell you which plan actually fits your business.</p>
+        <div class="ac-meta"><span>April 2025</span><span class="ac-read">Read article →</span></div>
       </div>
     </a>
 
-    <a class="article-card fu d4" href="article-azure-vs-m365.html" data-cat="microsoft">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80&fit=crop');"></div><div class="ac-cat">Microsoft 365</div><div class="ac-read-time">5 min</div></div>
+    <a class="article-card fu d3" href="article-switch-it-supplier.html" data-cat="managed">
+      <div class="ac-img" style="background:linear-gradient(135deg,#134e4a,#0f766e);">
+        <div class="ac-cat">Managed IT</div><div class="ac-read-time">6 min</div>
+      </div>
       <div class="ac-body">
-        <div class="ac-title">Do you actually need Azure if you're already on Microsoft 365?</div>
-        <p class="ac-excerpt">Many small businesses already use Azure without realising it. Others pay for it when they don't need it. We explain the difference, when Azure adds value, and when M365 alone is enough.</p>
-        <div class="ac-meta"><span>February 2025</span><span class="ac-read">Read article →</span></div>
+        <div class="ac-title">How to switch IT supplier without disrupting your business</div>
+        <p class="ac-excerpt">A practical checklist covering data migration, contract exit, and continuity planning — so the move goes smoothly.</p>
+        <div class="ac-meta"><span>March 2025</span><span class="ac-read">Read article →</span></div>
       </div>
     </a>
 
-    <a class="article-card fu d5" href="article-copilot-sme.html" data-cat="ai">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&q=80&fit=crop');"></div><div class="ac-cat">AI &amp; Copilot</div><div class="ac-read-time">6 min</div></div>
+    <a class="article-card fu d4" href="article-copilot-sme.html" data-cat="ai">
+      <div class="ac-img" style="background:linear-gradient(135deg,#3b0764,#7c3aed);">
+        <div class="ac-cat">AI &amp; Copilot</div><div class="ac-read-time">6 min</div>
+      </div>
       <div class="ac-body">
         <div class="ac-title">Microsoft Copilot for small business — should you be using it yet?</div>
-        <p class="ac-excerpt">An honest look at what Copilot can and can't do for a business under 50 users. What it costs, what you need in place before switching it on, and whether the ROI stacks up at your scale.</p>
+        <p class="ac-excerpt">An honest look at what Copilot can and can't do for a business under 50 users. What it costs and whether the ROI stacks up.</p>
         <div class="ac-meta"><span>January 2025</span><span class="ac-read">Read article →</span></div>
       </div>
     </a>
 
-    <a class="article-card fu d6" href="article-sharepoint-intranet.html" data-cat="microsoft">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80&fit=crop');"></div><div class="ac-cat">Microsoft 365</div><div class="ac-read-time">7 min</div></div>
-      <div class="ac-body">
-        <div class="ac-title">What makes a SharePoint intranet people actually use?</div>
-        <p class="ac-excerpt">Most SharePoint intranets fail because they're built for the IT team, not the people using them. Here's what separates a site that gets adopted from one that collects digital dust.</p>
-        <div class="ac-meta"><span>December 2024</span><span class="ac-read">Read article →</span></div>
+    <a class="article-card fu d5" href="article-hr-system-choice.html" data-cat="hr">
+      <div class="ac-img" style="background:linear-gradient(135deg,#701a75,#c026d3);">
+        <div class="ac-cat">HR &amp; people</div><div class="ac-read-time">9 min</div>
       </div>
-    </a>
-
-    <a class="article-card fu d1" href="article-cyber-insurance.html" data-cat="cyber">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&q=80&fit=crop');"></div><div class="ac-cat">Cyber security</div><div class="ac-read-time">5 min</div></div>
-      <div class="ac-body">
-        <div class="ac-title">Cyber insurance and Cyber Essentials — what you need to know</div>
-        <p class="ac-excerpt">Cyber insurance premiums are rising and underwriters are asking harder questions. Cyber Essentials certification can reduce your premium and make your application stronger. Here's how.</p>
-        <div class="ac-meta"><span>November 2024</span><span class="ac-read">Read article →</span></div>
-      </div>
-    </a>
-
-    <a class="article-card fu d2" href="article-hr-system-choice.html" data-cat="hr">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80&fit=crop');"></div><div class="ac-cat">HR &amp; people</div><div class="ac-read-time">9 min</div></div>
       <div class="ac-body">
         <div class="ac-title">Choosing an HR system for a business under 100 people — what actually matters</div>
-        <p class="ac-excerpt">The HR software market is full of enterprise platforms scaled down for SMEs. But most are over-engineered and under-supported. What should you actually look for — and what can you safely ignore?</p>
+        <p class="ac-excerpt">The HR software market is full of enterprise platforms scaled down for SMEs. What should you actually look for — and what can you safely ignore?</p>
         <div class="ac-meta"><span>October 2024</span><span class="ac-read">Read article →</span></div>
       </div>
     </a>
 
-    <a class="article-card fu d3" href="article-windows10-eol.html" data-cat="managed">
-      <div class="ac-img"><div class="ac-img-bg" style="background-image:url('https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=400&q=80&fit=crop');"></div><div class="ac-cat">Managed IT</div><div class="ac-read-time">5 min</div></div>
+    <a class="article-card fu d6" href="article-windows10-eol.html" data-cat="managed">
+      <div class="ac-img" style="background:linear-gradient(135deg,#1e3a5f,#1A7EC4);">
+        <div class="ac-cat">Managed IT</div><div class="ac-read-time">5 min</div>
+      </div>
       <div class="ac-body">
         <div class="ac-title">Windows 10 end of life — what your business needs to do before October 2025</div>
-        <p class="ac-excerpt">Microsoft ends support for Windows 10 in October 2025. After that, no security patches. If your team is still running it, here's what to do — and how long you have to do it.</p>
+        <p class="ac-excerpt">Microsoft ends support for Windows 10 in October 2025. No more security patches. If your team is still running it, here's your action plan.</p>
         <div class="ac-meta"><span>September 2024</span><span class="ac-read">Read article →</span></div>
       </div>
     </a>
 
+  </div>
   </div>
 </section>
 
@@ -275,7 +261,7 @@
   <div class="cert-badge"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#1A7EC4" stroke-width="1.1"/><path d="M4 6l1.5 1.5 2.5-2.5" stroke="#1A7EC4" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>ITIL &amp; PRINCE2</div>
 </div></div>
 <footer class="footer">
-  <div class="footer-logo"><img src="logo-stacked.png" alt="SolvvSpace"/><span>© 2025 SolvvSpace Limited · Registered in England &amp; Wales (16153942) · Bedford MK41 9ST</span></div>
+  <div class="footer-logo"><img src="logo-final.png" alt="SolvvSpace" style="height:48px;width:48px;object-fit:contain;mix-blend-mode:screen;"/><span>© 2025 SolvvSpace Limited · Registered in England &amp; Wales (16153942) · Bedford MK41 9ST</span></div>
   <div class="footer-links"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html">Contact</a></div>
 </footer>
 
