@@ -39,7 +39,7 @@ button{cursor:pointer;}
 
 /* ── BRAND LOGO (nav) ── */
 .nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none;}
-.nav-brand-globe{height:44px;width:44px;object-fit:contain;mix-blend-mode:screen;}
+.nav-brand-logo{height:38px;width:auto;display:block;mix-blend-mode:screen;filter:brightness(1.1);}
 .nav-brand-text{font-family:var(--fh);font-size:18px;font-weight:700;letter-spacing:-.3px;color:#fff;line-height:1;}
 .nav-brand-text span{color:var(--sky-400);}
 
@@ -395,6 +395,24 @@ button{cursor:pointer;}
 .sc.green{background:linear-gradient(145deg,#f0fdf4,#dcfce7);border-color:#86efac;}
 .sc.green:hover{border-color:#22c55e;}
 .sc.orange{background:linear-gradient(145deg,#fff7ed,#ffedd5);border-color:#fed7aa;}
+.sc.sky2{background:linear-gradient(145deg,#e8f4ff,#cfe6f8);border-color:var(--sky-200);}
+.sc.sky2:hover{border-color:var(--sky-400);}
+.sky2 .sc-tag{color:var(--sky-800);}
+.sky2 .sc-name{color:var(--sky-900);}
+.sky2 .sc-desc{color:var(--sky-800);}
+.sky2 .sc-out{color:#0369a1;}.sky2 .sc-out::before{background:var(--sky-600);}
+.sky2 .sc-link{color:var(--sky-600);}
+.sky2 .sc-icon{background:#bfdbfe;}
+.sky2::before{background:var(--sky-800);}
+.sc.green2{background:linear-gradient(145deg,#f0fdf4,#c6f7e2);border-color:#86efac;}
+.sc.green2:hover{border-color:#22c55e;}
+.green2 .sc-tag{color:#166534;}
+.green2 .sc-name{color:#14532d;}
+.green2 .sc-desc{color:#166534;}
+.green2 .sc-out{color:#15803d;}.green2 .sc-out::before{background:#22c55e;}
+.green2 .sc-link{color:#16a34a;}
+.green2 .sc-icon{background:#bbf7d0;}
+.green2::before{background:#16a34a;}
 .sc.teal{background:linear-gradient(145deg,#f0fffe,#ccfbf1);border-color:#5eead4;}
 .sc.teal:hover{border-color:#14b8a6;}
 .teal .sc-out::before{background:#0f766e;}
@@ -600,8 +618,7 @@ button{cursor:pointer;}
 <!-- ══ NAV ══════════════════════════════════════════════════════════ -->
 <nav class="nav">
   <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
-    <img src="logo-stacked.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
-    <span class="nav-brand-text">Solvv<span>Space</span></span>
+    <img src="logo-dark.jpg" alt="SolvvSpace" class="nav-brand-logo"/>
   </a>
 
   <ul class="nav-links">
@@ -682,6 +699,11 @@ button{cursor:pointer;}
           Products
         </a>
         <div class="ddiv"></div>
+        <a class="ddi-wrap" href="hr-consulting.html">
+          <div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>
+          HR &amp; Compliance
+        </a>
+        <div class="ddiv"></div>
         <a class="ddi-wrap" href="hub-insights.html">
           <div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>
           Insights &amp; learning
@@ -716,6 +738,7 @@ button{cursor:pointer;}
   <div class="moblabel">Explore</div>
   <a href="solutions.html">Solutions</a>
   <a href="hub-products.html">Products</a>
+  <a href="hr-consulting.html">HR &amp; Compliance</a>
   <a href="hub-insights.html">Insights &amp; learning</a>
   <a href="hub-tech-updates.html">Technology updates</a>
   <div class="moblabel">Company</div>
@@ -961,7 +984,7 @@ button{cursor:pointer;}
       <span class="sc-link">Explore Microsoft 365 →</span>
     </a>
 
-    <a class="sc purple fu d2" href="service-hr.html">
+    <a class="sc sky2 fu d2" href="service-hr.html">
       <div class="sc-tag">HR systems</div>
       <div class="sc-head">
         <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#9333ea" stroke-width="1.4"/><circle cx="15" cy="6" r="2.5" stroke="#9333ea" stroke-width="1.4"/><path d="M2 18c0-3 2.2-5 5-5m5 0c2.8 0 5 2 5 5" stroke="#9333ea" stroke-width="1.4" stroke-linecap="round"/></svg></div>
@@ -993,7 +1016,7 @@ button{cursor:pointer;}
       <span class="sc-link">Explore cyber security →</span>
     </a>
 
-    <a class="sc orange fu d4" href="service-managed-it.html">
+    <a class="sc green2 fu d4" href="service-managed-it.html">
       <div class="sc-tag">Managed IT</div>
       <div class="sc-head">
         <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#ea580c" stroke-width="1.4"/><path d="M8 11l2.5 2.5L14 9" stroke="#ea580c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -1032,94 +1055,70 @@ button{cursor:pointer;}
       <span class="sc-link" style="color:#0f766e;">Learn more &amp; request a demo →</span>
     </a>
   </div>
+  <div style="text-align:center;margin-top:28px;" class="fu">
+    <a href="service-m365.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:13.5px;font-weight:600;color:var(--sky-600);border:1.5px solid var(--sky-200);background:var(--sky-50);padding:11px 24px;border-radius:9px;transition:all .2s;">
+      <div class="mslg" style="width:16px;height:16px;gap:2px;" aria-hidden="true">
+        <div style="background:#F25022;border-radius:1px;"></div><div style="background:#7FBA00;border-radius:1px;"></div>
+        <div style="background:#00A4EF;border-radius:1px;"></div><div style="background:#FFB900;border-radius:1px;"></div>
+      </div>
+      Explore Microsoft technologies →
+    </a>
+  </div>
 </section>
 
-<!-- ══ MICROSOFT TECHNOLOGIES ═════════════════════════════════════════ -->
-<section class="ms-sec">
-  <div class="sec-ey fu">Microsoft technologies</div>
-  <div class="sec-h2 fu d1">The full Microsoft stack,<br>expertly delivered</div>
-  <p class="sec-sub fu d2" style="max-width:480px;margin-bottom:14px;">As a certified Gold Partner we deploy, manage, and optimise every layer of the Microsoft ecosystem.</p>
+<!-- ══ HR & COMPLIANCE TILES ════════════════════════════════════════ -->
+<section style="padding:76px 40px;background:var(--slate-50);">
+  <div class="sec-ey fu">HR &amp; Compliance consulting</div>
+  <div class="sec-h2 fu d1">People expertise, without the overhead</div>
+  <p class="sec-sub fu d2" style="margin-bottom:40px;">Practical HR and compliance support for growing businesses — from employment law to leadership development.</p>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
 
-  <div class="ms-built fu d3">
-    <div class="mslg" style="width:18px;height:18px;gap:2px;" aria-hidden="true">
-      <div style="background:#F25022;border-radius:1.5px;"></div>
-      <div style="background:#7FBA00;border-radius:1.5px;"></div>
-      <div style="background:#00A4EF;border-radius:1.5px;"></div>
-      <div style="background:#FFB900;border-radius:1.5px;"></div>
-    </div>
-    Built natively on Microsoft 365 — no extra platforms, no new logins, no data leaving your tenant
+    <a href="hr-consulting.html" class="oc6 fu d1" style="background:#fff;border:1.5px solid var(--sky-100);border-radius:14px;padding:24px;display:block;text-decoration:none;transition:border-color .22s,transform .22s,box-shadow .22s;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sky-400),var(--sky-600));transform:scaleX(0);transform-origin:left;transition:transform .3s;" class="tile-bar"></div>
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--sky-50);border:1px solid var(--sky-100);display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="6" r="2.5" stroke="#1A7EC4" stroke-width="1.4"/><path d="M2 17c0-2.8 2.2-5 5-5m4.5 0c2.5 0 4.5 2 4.5 4.5" stroke="#1A7EC4" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:var(--sky-600);margin-bottom:7px;">HR Consulting</div>
+      <div style="font-family:var(--fh);font-size:16px;font-weight:600;color:var(--slate-900);margin-bottom:8px;line-height:1.3;">Employee relations, absence &amp; HR policies</div>
+      <p style="font-size:13px;color:var(--slate-600);line-height:1.65;margin-bottom:14px;">Disciplinary and grievance support, Bradford Factor frameworks, and ET-safe policy suites — all handled by experienced HR professionals.</p>
+      <span style="font-size:13px;font-weight:600;color:var(--sky-600);">Learn more →</span>
+    </a>
+
+    <a href="hr-consulting.html#business" class="oc6 fu d2" style="background:#fff;border:1.5px solid #d1fae5;border-radius:14px;padding:24px;display:block;text-decoration:none;transition:border-color .22s,transform .22s,box-shadow .22s;position:relative;overflow:hidden;">
+      <div style="width:40px;height:40px;border-radius:10px;background:#f0fdf4;border:1px solid #d1fae5;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17l4-4 4 2 4-8 3 3" stroke="#16a34a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:#16a34a;margin-bottom:7px;">Business Consulting</div>
+      <div style="font-family:var(--fh);font-size:16px;font-weight:600;color:var(--slate-900);margin-bottom:8px;line-height:1.3;">Operational efficiency &amp; workforce cost optimisation</div>
+      <p style="font-size:13px;color:var(--slate-600);line-height:1.65;margin-bottom:14px;">Process reviews, workforce cost modelling, and leadership support to make your organisation run leaner and more effectively.</p>
+      <span style="font-size:13px;font-weight:600;color:#16a34a;">Learn more →</span>
+    </a>
+
+    <a href="hr-consulting.html#compliance" class="oc6 fu d3" style="background:#fff;border:1.5px solid #e9d5ff;border-radius:14px;padding:24px;display:block;text-decoration:none;transition:border-color .22s,transform .22s,box-shadow .22s;position:relative;overflow:hidden;">
+      <div style="width:40px;height:40px;border-radius:10px;background:#fdf4ff;border:1px solid #e9d5ff;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5v5c0 4 2.8 7.5 7 8.5 4.2-1 7-4.5 7-8.5v-5L10 2z" stroke="#7c3aed" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:#7c3aed;margin-bottom:7px;">Compliance &amp; Risk</div>
+      <div style="font-family:var(--fh);font-size:16px;font-weight:600;color:var(--slate-900);margin-bottom:8px;line-height:1.3;">Employment law updates, audits &amp; governance</div>
+      <p style="font-size:13px;color:var(--slate-600);line-height:1.65;margin-bottom:14px;">Stay ahead of ERA changes, SSP updates and employment law shifts. HR audits and governance frameworks to protect your organisation.</p>
+      <span style="font-size:13px;font-weight:600;color:#7c3aed;">Learn more →</span>
+    </a>
+
+    <a href="hr-consulting.html#training" class="oc6 fu d4" style="background:#fff;border:1.5px solid #fde68a;border-radius:14px;padding:24px;display:block;text-decoration:none;transition:border-color .22s,transform .22s,box-shadow .22s;position:relative;overflow:hidden;">
+      <div style="width:40px;height:40px;border-radius:10px;background:#fffbeb;border:1px solid #fde68a;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="#d97706" stroke-width="1.4"/><path d="M5 17c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="#d97706" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:#d97706;margin-bottom:7px;">Training &amp; Development</div>
+      <div style="font-family:var(--fh);font-size:16px;font-weight:600;color:var(--slate-900);margin-bottom:8px;line-height:1.3;">Manager training, HR workshops &amp; leadership coaching</div>
+      <p style="font-size:13px;color:var(--slate-600);line-height:1.65;margin-bottom:14px;">Practical, scenario-based training for managers navigating ER, probation, and absence — plus coaching for emerging leaders.</p>
+      <span style="font-size:13px;font-weight:600;color:#d97706;">Learn more →</span>
+    </a>
+
   </div>
-
-  <div class="msg">
-    <a class="mspc feat fu d1" href="service-m365.html">
-      <div class="mstag">Productivity · Most popular</div>
-      <h3>Microsoft 365</h3>
-      <p>The complete cloud productivity suite — Word, Excel, Teams, Outlook — with enterprise security and compliance built in. We handle deployment, licence optimisation, and ongoing management.</p>
-      <div class="ms-pills">
-        <span class="ms-pill">Teams &amp; collaboration</span>
-        <span class="ms-pill">Licence management</span>
-        <span class="ms-pill">Compliance tools</span>
-        <span class="ms-pill">Migration from Office 365</span>
-        <span class="ms-pill">Copilot ready</span>
-      </div>
-      <span class="ms-plink">Explore Microsoft 365 →</span>
+  <div style="text-align:center;margin-top:28px;" class="fu">
+    <a href="hr-consulting.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:13.5px;font-weight:600;color:#fff;background:var(--sky-600);padding:12px 28px;border-radius:9px;transition:background .2s;">
+      View all HR &amp; Compliance services →
     </a>
-    <a class="mspc fu d2" href="solutions.html">
-      <div class="mstag">Cloud &amp; infrastructure</div>
-      <h3>Azure cloud</h3>
-      <p>Scalable public cloud to replace or supplement on-premises servers — compute, storage, analytics, and networking managed by our certified team.</p>
-      <span class="ms-plink">Explore Azure →</span>
-    </a>
-    <a class="mspc fu d3" href="service-sharepoint.html">
-      <div class="mstag">Collaboration</div>
-      <h3>SharePoint &amp; Teams</h3>
-      <p>Modern intranet portals, document libraries, and team collaboration spaces — secure, scalable, accessible from any device.</p>
-      <span class="ms-plink">Explore SharePoint →</span>
-    </a>
-    <a class="mspc fu d4" href="solutions.html">
-      <div class="mstag">AI · New</div>
-      <h3>Microsoft Copilot</h3>
-      <p>AI woven into every M365 app — drafting, summarising meetings, generating insights. We govern, configure, and train your team for real ROI.</p>
-      <div class="ms-pills">
-        <span class="ms-pill">Copilot for M365</span>
-        <span class="ms-pill">Copilot Studio</span>
-        <span class="ms-pill">AI governance</span>
-      </div>
-      <span class="ms-plink">Explore Copilot →</span>
-    </a>
-    <a class="mspc fu d5" href="service-sharepoint.html">
-      <div class="mstag">Automation &amp; low-code</div>
-      <h3>Power Platform</h3>
-      <p>Bespoke Power Apps and Power Automate flows — including SolvvSpaceHR, SolvvSpaceStaff, and SolvvSpaceMultiTenant, deployable today.</p>
-      <span class="ms-plink">Explore Power Platform →</span>
-    </a>
-    <a class="mspc fu d6" href="solutions.html">
-      <div class="mstag">Business applications</div>
-      <h3>Dynamics 365</h3>
-      <p>All-in-one CRM and ERP for sales, marketing, customer service, and finance — a Gartner Leaders Quadrant platform, implemented end to end.</p>
-      <span class="ms-plink">Explore Dynamics 365 →</span>
-    </a>
-  </div>
-
-  <div class="ms-partrow fu">
-    <div class="ms-partleft">
-      <div class="mslg" style="width:26px;height:26px;gap:3px;" aria-hidden="true">
-        <div style="background:#F25022;border-radius:2px;"></div>
-        <div style="background:#7FBA00;border-radius:2px;"></div>
-        <div style="background:#00A4EF;border-radius:2px;"></div>
-        <div style="background:#FFB900;border-radius:2px;"></div>
-      </div>
-      <div class="ms-parttext">
-        <h4>Certified Microsoft Gold Partner</h4>
-        <p>Independently verified expertise across the Microsoft Cloud portfolio</p>
-      </div>
-    </div>
-    <div class="ms-pbadges">
-      <span class="ms-pbadge">Modern Work</span>
-      <span class="ms-pbadge">Azure Infrastructure</span>
-      <span class="ms-pbadge">Business Applications</span>
-      <span class="ms-pbadge">Security</span>
-    </div>
   </div>
 </section>
 
@@ -1134,10 +1133,7 @@ button{cursor:pointer;}
     <div class="tc fu d1">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
         <div class="stars" aria-label="5 stars"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg></div>
-        <!-- Miss Amy's Daycare logo placeholder — swap img src when logo file is available -->
-        <div style="height:36px;display:flex;align-items:center;justify-content:center;background:#fdf2f8;border-radius:7px;padding:0 10px;">
-          <span style="font-family:var(--fh);font-size:11px;font-weight:700;color:#be185d;white-space:nowrap;">Miss Amy's<br style="line-height:0;"/> <span style="color:#db2777;">Daycare</span></span>
-        </div>
+        <img src="logo-missamy.png" alt="Miss Amy's Daycare" style="height:44px;width:44px;object-fit:contain;border-radius:8px;"/>
       </div>
       <p class="tq">"SolvvSpace built us a website and systems that genuinely fit the way we run our nursery. They listened, they delivered, and they were with us every step of the way. Couldn't recommend them more highly."</p>
       <div class="tau">
@@ -1153,21 +1149,7 @@ button{cursor:pointer;}
     <div class="tc fu d2">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
         <div class="stars" aria-label="5 stars"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1l1.5 3.1 3.3.5-2.4 2.3.6 3.2-2.9-1.5-3 1.5.6-3.2L1.7 4.6l3.3-.5z" fill="#4AABF0"/></svg></div>
-        <!-- Sierra Leone coat of arms SVG (simplified heraldic shield) -->
-        <div style="width:36px;height:36px;flex-shrink:0;" title="Sierra Leone Embassy">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Sierra Leone coat of arms">
-            <!-- Shield outline -->
-            <path d="M4 4h28v20c0 6-14 9-14 9S4 30 4 24V4z" fill="#1D9E75" stroke="#0f6e56" stroke-width="1"/>
-            <!-- Green/white/blue thirds -->
-            <path d="M4 4h9v20.5c-3.5-1.2-7.5-3.5-9-6.5V4z" fill="#1D9E75"/>
-            <path d="M13 4h10v22.5c-1.5.7-3.4 1.3-5 1.5V4z" fill="#fff"/>
-            <path d="M23 4h9v16c-1.5 3-5.5 5.3-9 6.5V4z" fill="#1A7EC4"/>
-            <!-- Mountain silhouette -->
-            <path d="M7 19l5-7 4 5 4-7 5 9" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <!-- Top border line -->
-            <path d="M4 4h28" stroke="#0f6e56" stroke-width=".5"/>
-          </svg>
-        </div>
+        <img src="logo-sl-embassy.png" alt="Sierra Leone Embassy" style="height:44px;width:44px;object-fit:contain;border-radius:8px;"/>
       </div>
       <p class="tq">"SolvvSpace provided outstanding IT consultancy and digital support for our mission in Turkey. Professional, knowledgeable, and understanding of our specific requirements as a diplomatic institution."</p>
       <div class="tau">
@@ -1254,7 +1236,7 @@ button{cursor:pointer;}
 <!-- ══ FOOTER ═════════════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="footer-logo">
-    <img src="logo-stacked.png" alt="SolvvSpace"/>
+    <img src="logo-horizontal.jpg" alt="SolvvSpace" style="height:28px;width:auto;"/>
     <span>© 2025 SolvvSpace Limited · Registered in England &amp; Wales (16153942) · Bedford MK41 9ST</span>
   </div>
   <div class="footer-links">
