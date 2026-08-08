@@ -1,112 +1,553 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SharePoint & Power Apps | SolvvSpace</title>
-<meta name="description" content="Custom SharePoint intranet portals, Power Apps solutions, and workflow automation for UK businesses."/>
-<link rel="icon" type="image/png" href="logo-stacked.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/style.css"/>
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;color:#1C2231;background:#fff;-webkit-font-smoothing:antialiased;}
-a{text-decoration:none;color:inherit;}
-.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
-.fu.vis{opacity:1;transform:translateY(0);}
-.fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}
-.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
-</style>
-</head><body><nav class="nav">
-  <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
-    <img src="solvvspacelogo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
-    <span class="nav-brand-wordmark">SOLVVSPACE</span>
-  </a>
-  <ul class="nav-links">
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-svc">
-        Services
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SharePoint & Power Apps | SolvvSpace</title>
+    <meta
+      name="description"
+      content="Custom SharePoint intranet portals, Power Apps solutions, and workflow automation for UK businesses."
+    />
+    <link rel="icon" type="image/png" href="logo-stacked.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap");
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        color: #1c2231;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .fu {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+      .fu.vis {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fu.d1 {
+        transition-delay: 0.07s;
+      }
+      .fu.d2 {
+        transition-delay: 0.14s;
+      }
+      .fu.d3 {
+        transition-delay: 0.21s;
+      }
+      .fu.d4 {
+        transition-delay: 0.28s;
+      }
+      .fu.d5 {
+        transition-delay: 0.35s;
+      }
+      .fu.d6 {
+        transition-delay: 0.42s;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
+        <img
+          src="solvvspacelogo.png"
+          alt=""
+          class="nav-brand-globe"
+          aria-hidden="true"
+        />
+        <span class="nav-brand-wordmark">SOLVVSPACE</span>
+      </a>
+      <ul class="nav-links">
+        <li style="position: relative">
+          <button class="nav-dd-btn" data-dd="dd-svc">
+            Services
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M2.5 4l3 3 3-3"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="dd" id="dd-svc">
+            <a class="ddi-wrap" href="service-bespoke.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <rect
+                    x="1.5"
+                    y="1.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                  />
+                  <rect
+                    x="7.5"
+                    y="1.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".5"
+                  />
+                  <rect
+                    x="1.5"
+                    y="7.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".3"
+                  />
+                  <rect
+                    x="7.5"
+                    y="7.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".15"
+                  />
+                </svg>
+              </div>
+              Bespoke development</a
+            >
+            <a class="ddi-wrap" href="service-cyber.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path
+                    d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              Cyber Essentials and security</a
+            >
+            <a class="ddi-wrap" href="service-m365.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <rect
+                    x="1"
+                    y="1"
+                    width="5"
+                    height="5"
+                    rx="1"
+                    fill="#4AABF0"
+                  />
+                  <rect
+                    x="7"
+                    y="1"
+                    width="5"
+                    height="5"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".6"
+                  />
+                  <rect
+                    x="1"
+                    y="7"
+                    width="5"
+                    height="5"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".35"
+                  />
+                  <rect
+                    x="7"
+                    y="7"
+                    width="5"
+                    height="5"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".18"
+                  />
+                </svg>
+              </div>
+              Microsoft 365 deployment</a
+            >
+            <div class="ddiv"></div>
+            <a class="ddi-wrap" href="service-managed-it.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle
+                    cx="6.5"
+                    cy="6.5"
+                    r="4.5"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M4.5 6.5l2 2 3-3"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              IT and managed services</a
+            >
+            <a class="ddi-wrap" href="service-hr.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle
+                    cx="4.5"
+                    cy="4"
+                    r="1.8"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <circle
+                    cx="9"
+                    cy="4"
+                    r="1.8"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              HR systems development</a
+            >
+            <a class="ddi-wrap" href="service-advisory.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path
+                    d="M2 4h9M2 7h6M2 10h4"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              Advisory and consultancy</a
+            >
+            <a class="ddi-wrap" href="service-sharepoint.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <rect
+                    x="1"
+                    y="1"
+                    width="11"
+                    height="11"
+                    rx="2"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1" />
+                </svg>
+              </div>
+              SharePoint and Power Apps</a
+            >
+          </div>
+        </li>
+        <li><a class="nla" href="solutions.html">Solutions</a></li>
+        <li style="position: relative">
+          <button class="nav-dd-btn" data-dd="dd-hub">
+            SS Hub
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M2.5 4l3 3 3-3"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="dd" id="dd-hub">
+            <a class="ddi-wrap" href="hub-products.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <rect
+                    x="1.5"
+                    y="1.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                  />
+                  <rect
+                    x="7.5"
+                    y="1.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".5"
+                  />
+                  <rect
+                    x="1.5"
+                    y="7.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".3"
+                  />
+                  <rect
+                    x="7.5"
+                    y="7.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".15"
+                  />
+                </svg>
+              </div>
+              Products</a
+            >
+            <div class="ddiv"></div>
+            <a class="ddi-wrap" href="hr-consulting.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle
+                    cx="4.5"
+                    cy="4"
+                    r="1.8"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <circle
+                    cx="9"
+                    cy="4"
+                    r="1.8"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              HR and Compliance</a
+            >
+            <div class="ddiv"></div>
+            <a class="ddi-wrap" href="hub-insights.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path
+                    d="M2 4h9M2 7h6M2 10h4"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              Insights and learning</a
+            >
+            <div class="ddiv"></div>
+            <a class="ddi-wrap" href="hub-tech-updates.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle
+                    cx="6.5"
+                    cy="6.5"
+                    r="4.5"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M6.5 4v3l2 1"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              Technology updates</a
+            >
+          </div>
+        </li>
+        <li><a class="nla" href="hub-insights.html">Insights</a></li>
+        <li><a class="nla" href="about.html">About</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Book a free call</a>
+      <button
+        class="hburg"
+        id="hburg"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
       </button>
-      <div class="dd" id="dd-svc">
-        <a class="ddi-wrap" href="service-bespoke.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Bespoke development</a>
-        <a class="ddi-wrap" href="service-cyber.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>Cyber Essentials and security</a>
-        <a class="ddi-wrap" href="service-m365.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>Microsoft 365 deployment</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="service-managed-it.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>IT and managed services</a>
-        <a class="ddi-wrap" href="service-hr.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR systems development</a>
-        <a class="ddi-wrap" href="service-advisory.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Advisory and consultancy</a>
-        <a class="ddi-wrap" href="service-sharepoint.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>SharePoint and Power Apps</a>
-      </div>
-    </li>
-    <li><a class="nla" href="solutions.html">Solutions</a></li>
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-hub">
-        SS Hub
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="dd" id="dd-hub">
-        <a class="ddi-wrap" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Products</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hr-consulting.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR and Compliance</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights and learning</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
-      </div>
-    </li>
-    <li><a class="nla" href="hub-insights.html">Insights</a></li>
-    <li><a class="nla" href="about.html">About</a></li>
-  </ul>
-  <a href="contact.html" class="nav-cta">Book a free call</a>
-  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+    </nav>
 
-<!-- Mobile menu -->
-<div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
-  <div class="mob-label">Services</div>
-  <a href="service-bespoke.html">Bespoke development</a>
-  <a href="service-cyber.html">Cyber Essentials and security</a>
-  <a href="service-m365.html">Microsoft 365 deployment</a>
-  <a href="service-managed-it.html">IT and managed services</a>
-  <a href="service-hr.html">HR systems development</a>
-  <a href="service-advisory.html">Advisory and consultancy</a>
-  <a href="service-sharepoint.html">SharePoint and Power Apps</a>
-  <div class="mob-label">Explore</div>
-  <a href="solutions.html">Solutions</a>
-  <a href="hub-products.html">Products</a>
-  <a href="hr-consulting.html">HR and Compliance</a>
-  <a href="hub-insights.html">Insights and learning</a>
-  <a href="hub-tech-updates.html">Technology updates</a>
-  <div class="mob-label">Company</div>
-  <a href="about.html">About</a>
-  <a href="contact.html" class="mob-cta">Book a free call</a>
-</div>
-<div class="svc-hero">
-<div class="svc-hero-grid"></div>
-<div class="svc-hero-glow"></div>
-<div class="svc-hero-inner">
-  <div class="svc-breadcrumb"><a href="index.html" class="svc-bc-link">Home</a><span class="svc-bc-sep">/</span><span class="svc-bc-current">SharePoint & Power Apps</span></div>
-  <div class="svc-eyebrow-dark">Services · SharePoint & Power Apps</div>
-  <h1 class="svc-h1">Modern intranet & automation —<br><span class="svc-h1-accent">built inside your Microsoft 365</span></h1>
-  <p class="svc-hero-p">We design and build SharePoint intranet sites, Power Apps, and Power Automate workflows that connect your people, data, and processes and deployed in your own tenant.</p>
-  <div class="svc-badges"><div class="svc-badge">SharePoint Online</div><div class="svc-badge">Power Apps</div><div class="svc-badge">Power Automate</div><div class="svc-badge">Microsoft 365 native</div></div>
-</div>
-</div><section class="svc-section">
-<div class="svc-sec-label fu">What we build</div>
-<h2 class="svc-h2 fu d1">SharePoint and Power Platform solutions</h2>
-<p class="svc-sec-sub fu d2">Purpose-built for your organisation and not a template you have to bend into shape.</p>
-<div class="svc-grid svc-grid-2"><div class="fu d1 svc-card"><h3>SharePoint intranet design & build</h3><p>A modern, branded intranet your team will actually use and news, document libraries, team sites, and navigation designed around how your organisation works.</p><div class="svc-outcomes"><div><span></span>Information architecture design</div><div><span></span>Branded page templates & components</div><div><span></span>Document libraries & version control</div><div><span></span>Search optimisation across your content</div></div></div><div class="fu d2 svc-card"><h3>Power Apps development</h3><p>Bespoke applications built on Microsoft Power Apps and from data collection forms to complex multi-user management tools and all within your Microsoft 365 environment.</p><div class="svc-outcomes"><div><span></span>SolvvSpaceHR and HR management app</div><div><span></span>SolvvSpaceStaff and staff coordination</div><div><span></span>SolvvSpaceMultiTenant and multi-org ops</div><div><span></span>Custom apps to your specification</div></div></div><div class="fu d3 svc-card"><h3>Power Automate workflow automation</h3><p>Replace manual, repetitive processes with automated workflows and approval chains, notifications, data routing, and third party system integrations.</p><div class="svc-outcomes"><div><span></span>Leave and expense approvals</div><div><span></span>Document review & sign off flows</div><div><span></span>CRM and ERP data sync</div><div><span></span>Automated reporting & alerts</div></div></div><div class="fu d4 svc-card"><h3>Microsoft Teams integration</h3><p>SharePoint, Power Apps, and workflows surfaced directly inside Teams and so your team works from a single, unified hub.</p><div class="svc-outcomes"><div><span></span>Teams tabs for SharePoint sites</div><div><span></span>Bot & notification integrations</div><div><span></span>Meeting notes & action tracking</div><div><span></span>Unified search across M365</div></div></div></div>
-</section><div class="svc-cta">
-<div><h2 class="svc-cta-h2">Ready to discuss sharepoint?</h2><p class="svc-cta-p">Book a free discovery call and we'll scope exactly what you need and provide a clear, no obligation proposal.</p></div>
-<div class="svc-cta-btns"><a href="contact.html" class="svc-btn-primary">Book a free IT audit</a><a href="solutions.html" class="svc-btn-ghost">Explore services →</a></div>
-</div><footer class="svc-footer">
-  <div class="svc-footer-left"><img src="logo-stacked.png" alt="SolvvSpace" class="svc-footer-logo"/><span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span></div>
-  <div class="svc-footer-links"><a href="privacy.html" class="svc-footer-link">Privacy</a><a href="cookies.html" class="svc-footer-link">Cookies</a><a href="https://linkedin.com" target="_blank" class="svc-footer-link">LinkedIn</a><a href="contact.html" class="svc-footer-link">Contact</a></div>
-</footer>
-<script src="js/main.js"></script>
-
-</body></html>
+    <!-- Mobile menu -->
+    <div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
+      <div class="mob-label">Services</div>
+      <a href="service-bespoke.html">Bespoke development</a>
+      <a href="service-cyber.html">Cyber Essentials and security</a>
+      <a href="service-m365.html">Microsoft 365 deployment</a>
+      <a href="service-managed-it.html">IT and managed services</a>
+      <a href="service-hr.html">HR systems development</a>
+      <a href="service-advisory.html">Advisory and consultancy</a>
+      <a href="service-sharepoint.html">SharePoint and Power Apps</a>
+      <div class="mob-label">Explore</div>
+      <a href="solutions.html">Solutions</a>
+      <a href="hub-products.html">Products</a>
+      <a href="hr-consulting.html">HR and Compliance</a>
+      <a href="hub-insights.html">Insights and learning</a>
+      <a href="hub-tech-updates.html">Technology updates</a>
+      <div class="mob-label">Company</div>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="mob-cta">Book a free call</a>
+    </div>
+    <div class="svc-hero">
+      <div class="svc-hero-grid"></div>
+      <div class="svc-hero-glow"></div>
+      <div class="svc-hero-inner">
+        <div class="svc-breadcrumb">
+          <a href="index.html" class="svc-bc-link">Home</a
+          ><span class="svc-bc-sep">/</span
+          ><span class="svc-bc-current">SharePoint & Power Apps</span>
+        </div>
+        <div class="svc-eyebrow-dark">Services · SharePoint & Power Apps</div>
+        <h1 class="svc-h1">
+          Modern intranet & automation<br /><span class="svc-h1-accent"
+            >built inside your Microsoft 365</span
+          >
+        </h1>
+        <p class="svc-hero-p">
+          We design and build SharePoint intranet sites, Power Apps, and Power
+          Automate workflows that connect your people, data, and processes and
+          deployed in your own tenant.
+        </p>
+        <div class="svc-badges">
+          <div class="svc-badge">SharePoint Online</div>
+          <div class="svc-badge">Power Apps</div>
+          <div class="svc-badge">Power Automate</div>
+          <div class="svc-badge">Microsoft 365 native</div>
+        </div>
+      </div>
+    </div>
+    <section class="svc-section">
+      <div class="svc-sec-label fu">What we build</div>
+      <h2 class="svc-h2 fu d1">SharePoint and Power Platform solutions</h2>
+      <p class="svc-sec-sub fu d2">
+        Purpose-built for your organisation and not a template you have to bend
+        into shape.
+      </p>
+      <div class="svc-grid svc-grid-2">
+        <div class="fu d1 svc-card">
+          <h3>SharePoint intranet design & build</h3>
+          <p>
+            A modern, branded intranet your team will actually use and news,
+            document libraries, team sites, and navigation designed around how
+            your organisation works.
+          </p>
+          <div class="svc-outcomes">
+            <div><span></span>Information architecture design</div>
+            <div><span></span>Branded page templates & components</div>
+            <div><span></span>Document libraries & version control</div>
+            <div><span></span>Search optimisation across your content</div>
+          </div>
+        </div>
+        <div class="fu d2 svc-card">
+          <h3>Power Apps development</h3>
+          <p>
+            Bespoke applications built on Microsoft Power Apps and from data
+            collection forms to complex multi-user management tools and all
+            within your Microsoft 365 environment.
+          </p>
+          <div class="svc-outcomes">
+            <div><span></span>SolvvSpaceHR and HR management app</div>
+            <div><span></span>SolvvSpaceStaff and staff coordination</div>
+            <div><span></span>SolvvSpaceMultiTenant and multi-org ops</div>
+            <div><span></span>Custom apps to your specification</div>
+          </div>
+        </div>
+        <div class="fu d3 svc-card">
+          <h3>Power Automate workflow automation</h3>
+          <p>
+            Replace manual, repetitive processes with automated workflows and
+            approval chains, notifications, data routing, and third party system
+            integrations.
+          </p>
+          <div class="svc-outcomes">
+            <div><span></span>Leave and expense approvals</div>
+            <div><span></span>Document review & sign off flows</div>
+            <div><span></span>CRM and ERP data sync</div>
+            <div><span></span>Automated reporting & alerts</div>
+          </div>
+        </div>
+        <div class="fu d4 svc-card">
+          <h3>Microsoft Teams integration</h3>
+          <p>
+            SharePoint, Power Apps, and workflows surfaced directly inside Teams
+            and so your team works from a single, unified hub.
+          </p>
+          <div class="svc-outcomes">
+            <div><span></span>Teams tabs for SharePoint sites</div>
+            <div><span></span>Bot & notification integrations</div>
+            <div><span></span>Meeting notes & action tracking</div>
+            <div><span></span>Unified search across M365</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="svc-cta">
+      <div>
+        <h2 class="svc-cta-h2">Ready to discuss sharepoint?</h2>
+        <p class="svc-cta-p">
+          Book a free discovery call and we'll scope exactly what you need and
+          provide a clear, no obligation proposal.
+        </p>
+      </div>
+      <div class="svc-cta-btns">
+        <a href="contact.html" class="svc-btn-primary">Book a free IT audit</a
+        ><a href="solutions.html" class="svc-btn-ghost">Explore services →</a>
+      </div>
+    </div>
+    <footer class="svc-footer">
+      <div class="svc-footer-left">
+        <img
+          src="logo-stacked.png"
+          alt="SolvvSpace"
+          class="svc-footer-logo"
+        /><span
+          >&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp;
+          Wales (16153942) &middot; Bedford MK41 9ST</span
+        >
+      </div>
+      <div class="svc-footer-links">
+        <a href="privacy.html" class="svc-footer-link">Privacy</a
+        ><a href="cookies.html" class="svc-footer-link">Cookies</a
+        ><a href="https://linkedin.com" target="_blank" class="svc-footer-link"
+          >LinkedIn</a
+        ><a href="contact.html" class="svc-footer-link">Contact</a>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

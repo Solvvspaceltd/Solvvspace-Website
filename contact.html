@@ -1,212 +1,1078 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact Us | SolvvSpace</title>
-<meta name="description" content="Get in touch with SolvvSpace, book a free IT audit or discovery session."/>
-<link rel="icon" type="image/png" href="logo-stacked.png"/>
-<link rel="apple-touch-icon" href="logo-stacked.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/style.css"/>
-</head>
-<body><style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;color:#1C2231;background:#fff;-webkit-font-smoothing:antialiased;}
-a{text-decoration:none;color:inherit;}
-img{display:block;max-width:100%;}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | SolvvSpace</title>
+    <meta
+      name="description"
+      content="Get in touch with SolvvSpace, book a free IT audit or discovery session."
+    />
+    <link rel="icon" type="image/png" href="logo-stacked.png" />
+    <link rel="apple-touch-icon" href="logo-stacked.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        color: #1c2231;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
 
-.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
-.fu.vis{opacity:1;transform:translateY(0);}
-.fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}
-.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
-@media(max-width:900px){
-  nav{padding:0 20px!important;}
-  section{padding:40px 20px!important;}
-  div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important;}
-  div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important;}
-  div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important;}
-  div[style*="padding:56px 40px"]{padding:40px 20px!important;flex-direction:column!important;}
-  div[style*="padding:52px 40px"]{padding:36px 20px!important;}
-}
+      .fu {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+      .fu.vis {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fu.d1 {
+        transition-delay: 0.07s;
+      }
+      .fu.d2 {
+        transition-delay: 0.14s;
+      }
+      .fu.d3 {
+        transition-delay: 0.21s;
+      }
+      .fu.d4 {
+        transition-delay: 0.28s;
+      }
+      .fu.d5 {
+        transition-delay: 0.35s;
+      }
+      .fu.d6 {
+        transition-delay: 0.42s;
+      }
+      @media (max-width: 900px) {
+        nav {
+          padding: 0 20px !important;
+        }
+        section {
+          padding: 40px 20px !important;
+        }
+        div[style*="grid-template-columns:repeat(2"] {
+          grid-template-columns: 1fr !important;
+        }
+        div[style*="grid-template-columns:repeat(3"] {
+          grid-template-columns: 1fr !important;
+        }
+        div[style*="grid-template-columns:repeat(4"] {
+          grid-template-columns: 1fr 1fr !important;
+        }
+        div[style*="padding:56px 40px"] {
+          padding: 40px 20px !important;
+          flex-direction: column !important;
+        }
+        div[style*="padding:52px 40px"] {
+          padding: 36px 20px !important;
+        }
+      }
 
-.success-msg{
-  display:none;
-  background:linear-gradient(135deg,#f0fdf9,#dcfce7);
-  border:1.5px solid #86efac;
-  border-radius:16px;
-  padding:40px 32px;
-  text-align:center;
-}
-.success-msg.show{display:block;}
-.success-icon{
-  width:56px;height:56px;border-radius:50%;
-  background:#1D9E75;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 16px;
-}
-.success-msg h3{
-  font-family:'Outfit',sans-serif;
-  font-size:20px;font-weight:700;
-  color:#14532d;margin-bottom:8px;
-}
-.success-msg p{font-size:14px;color:#166534;line-height:1.72;}
-.success-msg .back-btn{
-  display:inline-block;margin-top:20px;
-  font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;
-  background:#1D9E75;color:#fff;
-  padding:10px 24px;border-radius:8px;
-  text-decoration:none;transition:background .18s;
-}
-.success-msg .back-btn:hover{background:#15803d;}
-</style><nav class="nav">
-  <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
-    <img src="solvvspacelogo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
-    <span class="nav-brand-wordmark">SOLVVSPACE</span>
-  </a>
-  <ul class="nav-links">
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-svc">
-        Services
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      .success-msg {
+        display: none;
+        background: linear-gradient(135deg, #f0fdf9, #dcfce7);
+        border: 1.5px solid #86efac;
+        border-radius: 16px;
+        padding: 40px 32px;
+        text-align: center;
+      }
+      .success-msg.show {
+        display: block;
+      }
+      .success-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #1d9e75;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+      }
+      .success-msg h3 {
+        font-family: "Outfit", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #14532d;
+        margin-bottom: 8px;
+      }
+      .success-msg p {
+        font-size: 14px;
+        color: #166534;
+        line-height: 1.72;
+      }
+      .success-msg .back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        font-family: "Outfit", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        background: #1d9e75;
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.18s;
+      }
+      .success-msg .back-btn:hover {
+        background: #15803d;
+      }
+    </style>
+    <nav class="nav">
+      <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
+        <img
+          src="solvvspacelogo.png"
+          alt=""
+          class="nav-brand-globe"
+          aria-hidden="true"
+        />
+        <span class="nav-brand-wordmark">SOLVVSPACE</span>
+      </a>
+      <ul class="nav-links">
+        <li style="position: relative">
+          <button class="nav-dd-btn" data-dd="dd-svc">
+            Services
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M2.5 4l3 3 3-3"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="dd" id="dd-svc">
+            <a class="ddi-wrap" href="service-bespoke.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <rect
+                    x="1.5"
+                    y="1.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                  />
+                  <rect
+                    x="7.5"
+                    y="1.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".5"
+                  />
+                  <rect
+                    x="1.5"
+                    y="7.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".3"
+                  />
+                  <rect
+                    x="7.5"
+                    y="7.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".15"
+                  />
+                </svg>
+              </div>
+              Bespoke development</a
+            >
+            <a class="ddi-wrap" href="service-cyber.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path
+                    d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              Cyber Essentials and security</a
+            >
+            <a class="ddi-wrap" href="service-m365.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <rect
+                    x="1"
+                    y="1"
+                    width="5"
+                    height="5"
+                    rx="1"
+                    fill="#4AABF0"
+                  />
+                  <rect
+                    x="7"
+                    y="1"
+                    width="5"
+                    height="5"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".6"
+                  />
+                  <rect
+                    x="1"
+                    y="7"
+                    width="5"
+                    height="5"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".35"
+                  />
+                  <rect
+                    x="7"
+                    y="7"
+                    width="5"
+                    height="5"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".18"
+                  />
+                </svg>
+              </div>
+              Microsoft 365 deployment</a
+            >
+            <div class="ddiv"></div>
+            <a class="ddi-wrap" href="service-managed-it.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle
+                    cx="6.5"
+                    cy="6.5"
+                    r="4.5"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M4.5 6.5l2 2 3-3"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              IT and managed services</a
+            >
+            <a class="ddi-wrap" href="service-hr.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle
+                    cx="4.5"
+                    cy="4"
+                    r="1.8"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <circle
+                    cx="9"
+                    cy="4"
+                    r="1.8"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              HR systems development</a
+            >
+            <a class="ddi-wrap" href="service-advisory.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path
+                    d="M2 4h9M2 7h6M2 10h4"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              Advisory and consultancy</a
+            >
+            <a class="ddi-wrap" href="service-sharepoint.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <rect
+                    x="1"
+                    y="1"
+                    width="11"
+                    height="11"
+                    rx="2"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1" />
+                </svg>
+              </div>
+              SharePoint and Power Apps</a
+            >
+          </div>
+        </li>
+        <li><a class="nla" href="solutions.html">Solutions</a></li>
+        <li style="position: relative">
+          <button class="nav-dd-btn" data-dd="dd-hub">
+            SS Hub
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+              <path
+                d="M2.5 4l3 3 3-3"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div class="dd" id="dd-hub">
+            <a class="ddi-wrap" href="hub-products.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <rect
+                    x="1.5"
+                    y="1.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                  />
+                  <rect
+                    x="7.5"
+                    y="1.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".5"
+                  />
+                  <rect
+                    x="1.5"
+                    y="7.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".3"
+                  />
+                  <rect
+                    x="7.5"
+                    y="7.5"
+                    width="4"
+                    height="4"
+                    rx="1"
+                    fill="#4AABF0"
+                    opacity=".15"
+                  />
+                </svg>
+              </div>
+              Products</a
+            >
+            <div class="ddiv"></div>
+            <a class="ddi-wrap" href="hr-consulting.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle
+                    cx="4.5"
+                    cy="4"
+                    r="1.8"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <circle
+                    cx="9"
+                    cy="4"
+                    r="1.8"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              HR and Compliance</a
+            >
+            <div class="ddiv"></div>
+            <a class="ddi-wrap" href="hub-insights.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path
+                    d="M2 4h9M2 7h6M2 10h4"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              Insights and learning</a
+            >
+            <div class="ddiv"></div>
+            <a class="ddi-wrap" href="hub-tech-updates.html"
+              ><div class="ddi">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <circle
+                    cx="6.5"
+                    cy="6.5"
+                    r="4.5"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M6.5 4v3l2 1"
+                    stroke="#4AABF0"
+                    stroke-width="1.1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              Technology updates</a
+            >
+          </div>
+        </li>
+        <li><a class="nla" href="hub-insights.html">Insights</a></li>
+        <li><a class="nla" href="about.html">About</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Book a free call</a>
+      <button
+        class="hburg"
+        id="hburg"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
       </button>
-      <div class="dd" id="dd-svc">
-        <a class="ddi-wrap" href="service-bespoke.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Bespoke development</a>
-        <a class="ddi-wrap" href="service-cyber.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>Cyber Essentials and security</a>
-        <a class="ddi-wrap" href="service-m365.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>Microsoft 365 deployment</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="service-managed-it.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>IT and managed services</a>
-        <a class="ddi-wrap" href="service-hr.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR systems development</a>
-        <a class="ddi-wrap" href="service-advisory.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Advisory and consultancy</a>
-        <a class="ddi-wrap" href="service-sharepoint.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>SharePoint and Power Apps</a>
-      </div>
-    </li>
-    <li><a class="nla" href="solutions.html">Solutions</a></li>
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-hub">
-        SS Hub
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="dd" id="dd-hub">
-        <a class="ddi-wrap" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Products</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hr-consulting.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR and Compliance</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights and learning</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
-      </div>
-    </li>
-    <li><a class="nla" href="hub-insights.html">Insights</a></li>
-    <li><a class="nla" href="about.html">About</a></li>
-  </ul>
-  <a href="contact.html" class="nav-cta">Book a free call</a>
-  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+    </nav>
 
-<!-- Mobile menu -->
-<div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
-  <div class="mob-label">Services</div>
-  <a href="service-bespoke.html">Bespoke development</a>
-  <a href="service-cyber.html">Cyber Essentials and security</a>
-  <a href="service-m365.html">Microsoft 365 deployment</a>
-  <a href="service-managed-it.html">IT and managed services</a>
-  <a href="service-hr.html">HR systems development</a>
-  <a href="service-advisory.html">Advisory and consultancy</a>
-  <a href="service-sharepoint.html">SharePoint and Power Apps</a>
-  <div class="mob-label">Explore</div>
-  <a href="solutions.html">Solutions</a>
-  <a href="hub-products.html">Products</a>
-  <a href="hr-consulting.html">HR and Compliance</a>
-  <a href="hub-insights.html">Insights and learning</a>
-  <a href="hub-tech-updates.html">Technology updates</a>
-  <div class="mob-label">Company</div>
-  <a href="about.html">About</a>
-  <a href="contact.html" class="mob-cta">Book a free call</a>
-</div>
-<div style="background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:52px 40px 48px;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px);"></div>
-  <div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.12) 0%,transparent 70%);"></div>
-  <div style="position:relative;z-index:2;max-width:660px;">
-    <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.35);margin-bottom:14px;">
-      <a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Home</a>
-      <span style="color:rgba(255,255,255,.18);">/</span>
-      <span style="color:rgba(255,255,255,.6);">Contact us</span>
+    <!-- Mobile menu -->
+    <div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
+      <div class="mob-label">Services</div>
+      <a href="service-bespoke.html">Bespoke development</a>
+      <a href="service-cyber.html">Cyber Essentials and security</a>
+      <a href="service-m365.html">Microsoft 365 deployment</a>
+      <a href="service-managed-it.html">IT and managed services</a>
+      <a href="service-hr.html">HR systems development</a>
+      <a href="service-advisory.html">Advisory and consultancy</a>
+      <a href="service-sharepoint.html">SharePoint and Power Apps</a>
+      <div class="mob-label">Explore</div>
+      <a href="solutions.html">Solutions</a>
+      <a href="hub-products.html">Products</a>
+      <a href="hr-consulting.html">HR and Compliance</a>
+      <a href="hub-insights.html">Insights and learning</a>
+      <a href="hub-tech-updates.html">Technology updates</a>
+      <div class="mob-label">Company</div>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="mob-cta">Book a free call</a>
     </div>
-    <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">Get in touch</div>
-    <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(28px,4vw,38px);font-weight:700;color:#fff;line-height:1.18;letter-spacing:-.5px;margin-bottom:14px;">Let's talk about<br><span style="color:#4AABF0;">what you actually need</span></h1>
-    <p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;margin-bottom:24px;">Whether you're ready to start or still figuring out what you need and we're happy to have a straight conversation. No sales pressure, no commitment.</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;"></div>
-  </div>
-</div>
-<section style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);display:grid;grid-template-columns:1fr 1fr;gap:40px;flex-wrap:wrap;">
-  <div class="fu">
-    <div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;">Send us a message</div>
-    <h2 style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:#1C2231;margin-bottom:22px;">We'll get back to you within one business day</h2>
-    <form style="display:flex;flex-direction:column;gap:14px;" action="https://formspree.io/f/xzepzllb" method="POST">
-      <input type="hidden" name="_subject" value="New enquiry from SolvvSpace website"/>
-      <input type="hidden" name="_cc" value="allyubabah@gmail.com"/>
-      <input type="hidden" name="_next" value="https://solvvspace.com/contact.html?sent=true"/>
-      <input type="text" name="_gotcha" style="display:none;"/>
-      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Full name *</label><input type="text" name="name" required placeholder="Jane Smith" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
-      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Work email *</label><input type="email" name="email" required placeholder="jane@company.com" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
-      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Company</label><input type="text" name="company" placeholder="Your company" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"/></div>
-      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">How can we help? *</label><select name="service" style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"><option value="">Select...</option><option>Free IT audit</option><option>Bespoke application development</option><option>Cyber Essentials &amp; security</option><option>Microsoft 365 deployment</option><option>IT &amp; managed services</option><option>HR systems development</option><option>Advisory &amp; consultancy</option><option>SharePoint &amp; Power Apps</option><option>Product demo (SolvvSpaceHR / IT Support)</option><option>Something else</option></select></div>
-      <div><label style="display:block;font-size:12px;font-weight:500;color:#545B6B;margin-bottom:5px;">Message</label><textarea name="message" rows="4" placeholder="Tell us what you're trying to solve..." style="width:100%;padding:10px 14px;border:1.5px solid #D4D8E0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1C2231;background:#fff;outline:none;resize:vertical;" onfocus="this.style.borderColor='#4AABF0'" onblur="this.style.borderColor='#D4D8E0'"></textarea></div>
-      <button type="submit" style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;background:#1A7EC4;color:#fff;padding:12px 28px;border-radius:8px;border:none;cursor:pointer;align-self:flex-start;">Send message →</button>
-      <p style="font-size:11px;color:#8A909E;">We'll reply within one business day. Your details are never shared with third parties.</p>
-    </form>
-
-    <!-- Success message shown after submission -->
-    <div class="success-msg" id="success-msg">
-      <div class="success-icon">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-          <path d="M6 13l5 5 9-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+    <div
+      style="
+        background: linear-gradient(
+          155deg,
+          #0f172a 0%,
+          #0d2d4f 50%,
+          #0d4f80 100%
+        );
+        padding: 52px 40px 48px;
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          inset: 0;
+          opacity: 0.04;
+          background-image:
+            repeating-linear-gradient(
+              0deg,
+              #fff 0,
+              #fff 1px,
+              transparent 1px,
+              transparent 40px
+            ),
+            repeating-linear-gradient(
+              90deg,
+              #fff 0,
+              #fff 1px,
+              transparent 1px,
+              transparent 40px
+            );
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          right: -80px;
+          top: -80px;
+          width: 360px;
+          height: 360px;
+          border-radius: 50%;
+          background: radial-gradient(
+            circle,
+            rgba(74, 171, 240, 0.12) 0%,
+            transparent 70%
+          );
+        "
+      ></div>
+      <div style="position: relative; z-index: 2; max-width: 660px">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.35);
+            margin-bottom: 14px;
+          "
+        >
+          <a
+            href="index.html"
+            style="color: rgba(255, 255, 255, 0.35); text-decoration: none"
+            >Home</a
+          >
+          <span style="color: rgba(255, 255, 255, 0.18)">/</span>
+          <span style="color: rgba(255, 255, 255, 0.6)">Contact us</span>
+        </div>
+        <div
+          style="
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #4aabf0;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          "
+        >
+          Get in touch
+        </div>
+        <h1
+          style="
+            font-family: &quot;Outfit&quot;, sans-serif;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.18;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+          "
+        >
+          Let's talk about<br /><span style="color: #4aabf0"
+            >what you actually need</span
+          >
+        </h1>
+        <p
+          style="
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.58);
+            line-height: 1.75;
+            max-width: 540px;
+            margin-bottom: 24px;
+          "
+        >
+          Whether you're ready to start or still figuring out what you need and
+          we're happy to have a straight conversation. No sales pressure, no
+          commitment.
+        </p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap"></div>
       </div>
-      <h3>Message received and thank you!</h3>
-      <p>We'll get back to you within one business day.<br/>In the meantime, feel free to explore our services or read our latest insights.</p>
-      <a href="index.html" class="back-btn">Back to home</a>
     </div>
-  </div>
-  <div class="fu d2" style="display:flex;flex-direction:column;gap:16px;">
-    <div style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:24px;">
-      <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#1A7EC4;text-transform:uppercase;margin-bottom:12px;">Our office</div>
-      <h3 style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;margin-bottom:8px;">SolvvSpace Limited</h3>
-      <p style="font-size:14px;color:#545B6B;line-height:1.8;">55 Barkers Lane<br>Bedford<br>MK41 9ST<br>England</p>
-      <div style="margin-top:14px;padding-top:14px;border-top:1px solid #ECEEF2;font-size:12px;color:#8A909E;">Registered in England &amp; Wales · Company No. 16153942</div>
-    </div>
-    <div style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:24px;">
-      <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#1A7EC4;text-transform:uppercase;margin-bottom:12px;">Office hours</div>
-      <table style="width:100%;font-size:13px;color:#545B6B;border-collapse:collapse;">
-        <tr><td style="padding:4px 0;">Monday and Friday</td><td style="text-align:right;font-weight:600;color:#1C2231;">09:00 and 17:30</td></tr>
-        <tr><td style="padding:4px 0;">Saturday and Sunday</td><td style="text-align:right;color:#8A909E;">Closed</td></tr>
-      </table>
-      <p style="font-size:12px;color:#1A7EC4;margin-top:10px;">24/7 monitoring for managed service clients</p>
-    </div>
-    <div style="background:linear-gradient(135deg,#0f172a,#0d4f80);border-radius:14px;padding:24px;">
-      <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#4AABF0;text-transform:uppercase;margin-bottom:8px;">Free offer</div>
-      <h3 style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;margin-bottom:8px;">Book a free IT audit</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:14px;">A no obligation review of your IT environment. We'll identify risks, inefficiencies, and quick wins and and give you a written report with prioritised recommendations.</p>
-      <a href="#" onclick="document.querySelector('select[name=service]').value='Free IT audit';return false;" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:9px 18px;border-radius:8px;text-decoration:none;display:inline-block;">Request the audit →</a>
-    </div>
-  </div>
-</section>
-<footer style="background:#F7F8FA;border-top:1px solid #ECEEF2;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8A909E;">
-  <div style="display:flex;align-items:center;gap:14px;">
-    <img src="logo-stacked.png" alt="SolvvSpace" style="height:44px;width:auto;mix-blend-mode:multiply;opacity:0.75;"/>
-    <span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span>
-  </div>
-  <div style="display:flex;gap:18px;">
-    <a href="privacy.html" style="color:#8A909E;text-decoration:none;">Privacy</a>
-    <a href="cookies.html" style="color:#8A909E;text-decoration:none;">Cookies</a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener" style="color:#8A909E;text-decoration:none;">LinkedIn</a>
-    <a href="contact.html" style="color:#8A909E;text-decoration:none;">Contact</a>
-  </div>
-</footer><script src="js/main.js"></script>
+    <section
+      style="
+        padding: 60px 40px;
+        background: linear-gradient(180deg, #f0f8ff 0%, #fff 80%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        flex-wrap: wrap;
+      "
+    >
+      <div class="fu">
+        <div
+          style="
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            color: #1a7ec4;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+          "
+        >
+          Send us a message
+        </div>
+        <h2
+          style="
+            font-family: &quot;Outfit&quot;, sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #1c2231;
+            margin-bottom: 22px;
+          "
+        >
+          We'll get back to you within one business day
+        </h2>
+        <form
+          style="display: flex; flex-direction: column; gap: 14px"
+          action="https://formspree.io/f/xzepzllb"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New enquiry from SolvvSpace website"
+          />
+          <input type="hidden" name="_cc" value="allyubabah@gmail.com" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://solvvspace.com/contact.html?sent=true"
+          />
+          <input type="text" name="_gotcha" style="display: none" />
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 12px;
+                font-weight: 500;
+                color: #545b6b;
+                margin-bottom: 5px;
+              "
+              >Full name *</label
+            ><input
+              type="text"
+              name="name"
+              required
+              placeholder="Jane Smith"
+              style="
+                width: 100%;
+                padding: 10px 14px;
+                border: 1.5px solid #d4d8e0;
+                border-radius: 8px;
+                font-size: 14px;
+                font-family: &quot;Inter&quot;, sans-serif;
+                color: #1c2231;
+                background: #fff;
+                outline: none;
+              "
+              onfocus="this.style.borderColor = '#4AABF0'"
+              onblur="this.style.borderColor = '#D4D8E0'"
+            />
+          </div>
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 12px;
+                font-weight: 500;
+                color: #545b6b;
+                margin-bottom: 5px;
+              "
+              >Work email *</label
+            ><input
+              type="email"
+              name="email"
+              required
+              placeholder="jane@company.com"
+              style="
+                width: 100%;
+                padding: 10px 14px;
+                border: 1.5px solid #d4d8e0;
+                border-radius: 8px;
+                font-size: 14px;
+                font-family: &quot;Inter&quot;, sans-serif;
+                color: #1c2231;
+                background: #fff;
+                outline: none;
+              "
+              onfocus="this.style.borderColor = '#4AABF0'"
+              onblur="this.style.borderColor = '#D4D8E0'"
+            />
+          </div>
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 12px;
+                font-weight: 500;
+                color: #545b6b;
+                margin-bottom: 5px;
+              "
+              >Company</label
+            ><input
+              type="text"
+              name="company"
+              placeholder="Your company"
+              style="
+                width: 100%;
+                padding: 10px 14px;
+                border: 1.5px solid #d4d8e0;
+                border-radius: 8px;
+                font-size: 14px;
+                font-family: &quot;Inter&quot;, sans-serif;
+                color: #1c2231;
+                background: #fff;
+                outline: none;
+              "
+              onfocus="this.style.borderColor = '#4AABF0'"
+              onblur="this.style.borderColor = '#D4D8E0'"
+            />
+          </div>
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 12px;
+                font-weight: 500;
+                color: #545b6b;
+                margin-bottom: 5px;
+              "
+              >How can we help? *</label
+            ><select
+              name="service"
+              style="
+                width: 100%;
+                padding: 10px 14px;
+                border: 1.5px solid #d4d8e0;
+                border-radius: 8px;
+                font-size: 14px;
+                font-family: &quot;Inter&quot;, sans-serif;
+                color: #1c2231;
+                background: #fff;
+                outline: none;
+              "
+              onfocus="this.style.borderColor = '#4AABF0'"
+              onblur="this.style.borderColor = '#D4D8E0'"
+            >
+              <option value="">Select...</option>
+              <option>Free IT audit</option>
+              <option>Bespoke application development</option>
+              <option>Cyber Essentials &amp; security</option>
+              <option>Microsoft 365 deployment</option>
+              <option>IT &amp; managed services</option>
+              <option>HR systems development</option>
+              <option>Advisory &amp; consultancy</option>
+              <option>SharePoint &amp; Power Apps</option>
+              <option>Product demo (SolvvSpaceHR / IT Support)</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div>
+            <label
+              style="
+                display: block;
+                font-size: 12px;
+                font-weight: 500;
+                color: #545b6b;
+                margin-bottom: 5px;
+              "
+              >Message</label
+            ><textarea
+              name="message"
+              rows="4"
+              placeholder="Tell us what you're trying to solve..."
+              style="
+                width: 100%;
+                padding: 10px 14px;
+                border: 1.5px solid #d4d8e0;
+                border-radius: 8px;
+                font-size: 14px;
+                font-family: &quot;Inter&quot;, sans-serif;
+                color: #1c2231;
+                background: #fff;
+                outline: none;
+                resize: vertical;
+              "
+              onfocus="this.style.borderColor = '#4AABF0'"
+              onblur="this.style.borderColor = '#D4D8E0'"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            style="
+              font-family: &quot;Outfit&quot;, sans-serif;
+              font-size: 14px;
+              font-weight: 600;
+              background: #1a7ec4;
+              color: #fff;
+              padding: 12px 28px;
+              border-radius: 8px;
+              border: none;
+              cursor: pointer;
+              align-self: flex-start;
+            "
+          >
+            Send message →
+          </button>
+          <p style="font-size: 11px; color: #8a909e">
+            We'll reply within one business day. Your details are never shared
+            with third parties.
+          </p>
+        </form>
 
-</body></html>
+        <!-- Success message shown after submission -->
+        <div class="success-msg" id="success-msg">
+          <div class="success-icon">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <path
+                d="M6 13l5 5 9-9"
+                stroke="#fff"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Message received and thank you!</h3>
+          <p>
+            We'll get back to you within one business day.<br />In the meantime,
+            feel free to explore our services or read our latest insights.
+          </p>
+          <a href="index.html" class="back-btn">Back to home</a>
+        </div>
+      </div>
+      <div
+        class="fu d2"
+        style="display: flex; flex-direction: column; gap: 16px"
+      >
+        <div
+          style="
+            background: #fff;
+            border: 1.5px solid #dcf0fd;
+            border-radius: 14px;
+            padding: 24px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: 600;
+              letter-spacing: 1px;
+              color: #1a7ec4;
+              text-transform: uppercase;
+              margin-bottom: 12px;
+            "
+          >
+            Our office
+          </div>
+          <h3
+            style="
+              font-family: &quot;Outfit&quot;, sans-serif;
+              font-size: 16px;
+              font-weight: 600;
+              margin-bottom: 8px;
+            "
+          >
+            SolvvSpace Limited
+          </h3>
+          <p style="font-size: 14px; color: #545b6b; line-height: 1.8">
+            55 Barkers Lane<br />Bedford<br />MK41 9ST<br />England
+          </p>
+          <div
+            style="
+              margin-top: 14px;
+              padding-top: 14px;
+              border-top: 1px solid #eceef2;
+              font-size: 12px;
+              color: #8a909e;
+            "
+          >
+            Registered in England &amp; Wales · Company No. 16153942
+          </div>
+        </div>
+        <div
+          style="
+            background: #fff;
+            border: 1.5px solid #dcf0fd;
+            border-radius: 14px;
+            padding: 24px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: 600;
+              letter-spacing: 1px;
+              color: #1a7ec4;
+              text-transform: uppercase;
+              margin-bottom: 12px;
+            "
+          >
+            Office hours
+          </div>
+          <table
+            style="
+              width: 100%;
+              font-size: 13px;
+              color: #545b6b;
+              border-collapse: collapse;
+            "
+          >
+            <tr>
+              <td style="padding: 4px 0">Monday and Friday</td>
+              <td style="text-align: right; font-weight: 600; color: #1c2231">
+                09:00 and 17:30
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 4px 0">Saturday and Sunday</td>
+              <td style="text-align: right; color: #8a909e">Closed</td>
+            </tr>
+          </table>
+          <p style="font-size: 12px; color: #1a7ec4; margin-top: 10px">
+            24/7 monitoring for managed service clients
+          </p>
+        </div>
+        <div
+          style="
+            background: linear-gradient(135deg, #0f172a, #0d4f80);
+            border-radius: 14px;
+            padding: 24px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: 600;
+              letter-spacing: 1px;
+              color: #4aabf0;
+              text-transform: uppercase;
+              margin-bottom: 8px;
+            "
+          >
+            Free offer
+          </div>
+          <h3
+            style="
+              font-family: &quot;Outfit&quot;, sans-serif;
+              font-size: 16px;
+              font-weight: 600;
+              color: #fff;
+              margin-bottom: 8px;
+            "
+          >
+            Book a free IT audit
+          </h3>
+          <p
+            style="
+              font-size: 13px;
+              color: rgba(255, 255, 255, 0.6);
+              line-height: 1.65;
+              margin-bottom: 14px;
+            "
+          >
+            A no obligation review of your IT environment. We'll identify risks,
+            inefficiencies, and quick wins and and give you a written report
+            with prioritised recommendations.
+          </p>
+          <a
+            href="#"
+            onclick="
+              document.querySelector('select[name=service]').value =
+                'Free IT audit';
+              return false;
+            "
+            style="
+              font-family: &quot;Outfit&quot;, sans-serif;
+              font-size: 13px;
+              font-weight: 600;
+              background: #fff;
+              color: #0d4f80;
+              padding: 9px 18px;
+              border-radius: 8px;
+              text-decoration: none;
+              display: inline-block;
+            "
+            >Request the audit →</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer
+      style="
+        background: #f7f8fa;
+        border-top: 1px solid #eceef2;
+        padding: 26px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 12px;
+        color: #8a909e;
+      "
+    >
+      <div style="display: flex; align-items: center; gap: 14px">
+        <img
+          src="logo-stacked.png"
+          alt="SolvvSpace"
+          style="
+            height: 44px;
+            width: auto;
+            mix-blend-mode: multiply;
+            opacity: 0.75;
+          "
+        />
+        <span
+          >&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp;
+          Wales (16153942) &middot; Bedford MK41 9ST</span
+        >
+      </div>
+      <div style="display: flex; gap: 18px">
+        <a href="privacy.html" style="color: #8a909e; text-decoration: none"
+          >Privacy</a
+        >
+        <a href="cookies.html" style="color: #8a909e; text-decoration: none"
+          >Cookies</a
+        >
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener"
+          style="color: #8a909e; text-decoration: none"
+          >LinkedIn</a
+        >
+        <a href="contact.html" style="color: #8a909e; text-decoration: none"
+          >Contact</a
+        >
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
