@@ -6,132 +6,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
 <style>
-/* ═══ CANONICAL NAV ══════════════════════════════════════ */
-.nav{
-  position:sticky;top:0;z-index:500;
-  height:68px;
-  background:#F0F8FF;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 40px;
-  border-bottom:1.5px solid #B3DCFA;
-  box-shadow:0 1px 8px rgba(13,79,128,.06);
-}
-.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
-.nav-brand-globe{height:48px;width:48px;object-fit:contain;flex-shrink:0;display:block;}
-.nav-brand-wordmark{
-  font-family:'Outfit',sans-serif;
-  font-size:20px;font-weight:700;
-  letter-spacing:3px;
-  color:#072F50;
-  line-height:1;white-space:nowrap;
-}
-.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
-.nav-links>li{position:relative;}
-.nla,.nav-dd-btn{
-  font-family:'Inter',sans-serif;font-size:13.5px;
-  color:#0D4F80;padding:7px 13px;border-radius:6px;
-  display:flex;align-items:center;gap:4px;
-  background:none;border:none;cursor:pointer;
-  transition:color .15s,background .15s;
-  text-decoration:none;
-}
-.nla:hover,.nav-dd-btn:hover,.nla.active,.nav-dd-btn.open{
-  color:#072F50;background:rgba(13,79,128,.08);
-}
-.nav-dd-btn svg{transition:transform .18s;stroke:#0D4F80;}
-.nav-dd-btn.open svg{transform:rotate(180deg);}
-.nav-cta{
-  font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;
-  background:#1A7EC4;color:#fff;
-  padding:9px 22px;border-radius:8px;
-  transition:background .15s;white-space:nowrap;
-  display:inline-block;text-decoration:none;border:none;
-}
-.nav-cta:hover{background:#0D4F80;}
-/* Dropdowns */
-.dd,.mega{
-  position:absolute;top:calc(100% + 8px);left:0;
-  background:#1e2638;border:1px solid rgba(255,255,255,.1);
-  border-radius:13px;padding:6px;
-  opacity:0;pointer-events:none;transform:translateY(-6px);
-  transition:opacity .18s,transform .18s;
-  z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.4);
-}
-.dd.open,.mega.open{opacity:1;pointer-events:all;transform:translateY(0);}
-.dd{min-width:220px;}
-.mega{left:-20px;min-width:660px;padding:0;}
-.ddi-wrap{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:rgba(255,255,255,.75);transition:background .12s,color .12s;text-decoration:none;}
-.ddi-wrap:hover{background:rgba(255,255,255,.08);color:#fff;}
-.ddi{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.ddiv{height:.5px;background:rgba(255,255,255,.07);margin:4px 6px;}
-.mega-inner{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:.5px solid rgba(255,255,255,.07);}
-.mcol{padding:20px 18px;border-right:.5px solid rgba(255,255,255,.07);}
-.mcol:last-child{border-right:none;}
-.mclabel{font-size:10px;font-weight:600;letter-spacing:1.2px;color:#4AABF0;text-transform:uppercase;margin-bottom:14px;}
-.mi{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;transition:background .12s;margin-bottom:2px;text-decoration:none;}
-.mi:hover{background:rgba(255,255,255,.07);}
-.mi-icon{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.mi-name{font-size:13px;font-weight:500;color:#fff;line-height:1.3;}
-.mi-desc{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;line-height:1.4;}
-.mfoot{display:flex;gap:4px;padding:12px 16px;}
-.mfl{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);padding:7px 12px;border-radius:7px;transition:color .12s,background .12s;text-decoration:none;}
-.mfl:hover{color:#fff;background:rgba(255,255,255,.06);}
-/* Mobile burger */
-.hburg{
-  display:none;flex-direction:column;gap:5px;
-  padding:6px;background:none;border:none;cursor:pointer;
-}
-.hburg span{display:block;width:22px;height:2px;background:#0D4F80;border-radius:2px;transition:all .22s;}
-.hburg.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.hburg.open span:nth-child(2){opacity:0;}
-.hburg.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-/* Mobile menu panel */
-.mobm{
-  display:none;position:fixed;
-  top:68px;left:0;right:0;bottom:0;
-  background:#0f172a;overflow-y:auto;
-  padding:16px 20px 40px;z-index:450;
-}
-.mobm.open{display:block;}
-.mobm a{display:block;padding:12px 14px;color:rgba(255,255,255,.78);font-size:15px;border-radius:8px;transition:background .12s;text-decoration:none;}
-.mobm a:hover{background:rgba(255,255,255,.07);color:#fff;}
-.mob-label{font-size:10px;font-weight:600;letter-spacing:1.1px;color:rgba(255,255,255,.3);text-transform:uppercase;padding:18px 14px 6px;}
-.mob-cta{
-  display:block;margin:20px 0 0;
-  font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;
-  text-align:center;background:#1A7EC4;color:#fff;
-  padding:14px;border-radius:10px;text-decoration:none;
-}
-/* Responsive */
-@media(max-width:900px){
-  .nav{padding:0 20px;}
-  .nav-links,.nav-cta{display:none;}
-  .hburg{display:flex;}
-}
-/* ═══ END CANONICAL NAV ═══════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
-*{{box-sizing:border-box;margin:0;padding:0;}}
-body{{font-family:'Inter',sans-serif;color:#1C2231;background:#fff;-webkit-font-smoothing:antialiased;}}
-a{{text-decoration:none;color:inherit;}}
-.fu{{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}}
-.fu.vis{{opacity:1;transform:translateY(0);}}
-.fu.d1{{transition-delay:.07s}}.fu.d2{{transition-delay:.14s}}.fu.d3{{transition-delay:.21s}}
-.fu.d4{{transition-delay:.28s}}.fu.d5{{transition-delay:.35s}}.fu.d6{{transition-delay:.42s}}
-@media(max-width:900px){{
-  nav{{padding:0 20px!important;}}
-  section,[style*="padding:60px 40px"],[style*="padding:56px 40px"],[style*="padding:52px 40px"]{{padding:40px 20px!important;}}
-  [style*="grid-template-columns:repeat(2"],[style*="grid-template-columns:1fr 1fr"]{{grid-template-columns:1fr!important;}}
-  [style*="grid-template-columns:repeat(3"]{{grid-template-columns:1fr!important;}}
-  [style*="grid-template-columns:repeat(4"]{{grid-template-columns:1fr 1fr!important;}}
-  [style*="display:flex;gap:48px"]{{flex-direction:column;}}
-  [style*="flex:0 0 300px"]{{flex:none!important;width:100%!important;}}
-}}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;color:#1C2231;background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.fu{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+.fu.d1{transition-delay:.07s}.fu.d2{transition-delay:.14s}.fu.d3{transition-delay:.21s}
+.fu.d4{transition-delay:.28s}.fu.d5{transition-delay:.35s}.fu.d6{transition-delay:.42s}
 </style>
 </head><body><nav class="nav">
   <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
-    <img src="solvvspace-logo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
+    <img src="solvvspacelogo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
     <span class="nav-brand-wordmark">SOLVVSPACE</span>
   </a>
   <ul class="nav-links">
@@ -196,77 +85,28 @@ a{{text-decoration:none;color:inherit;}}
   <a href="about.html">About</a>
   <a href="contact.html" class="mob-cta">Book a free call</a>
 </div>
-<script>
-function toggleDD(id,btn){var el=document.getElementById(id);var isOpen=el.style.display==='block';document.querySelectorAll('[id^="dd-"]').forEach(function(d){d.style.display='none';});if(!isOpen)el.style.display='block';document.addEventListener('click',function close(e){if(!el.contains(e.target)&&e.target!==btn){el.style.display='none';document.removeEventListener('click',close);}});}
-</script><div style="background:linear-gradient(155deg,#0f172a 0%,#0d2d4f 50%,#0d4f80 100%);padding:52px 40px 48px;position:relative;overflow:hidden;">
-<div style="position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px);"></div>
-<div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.12) 0%,transparent 70%);"></div>
-<div style="position:relative;z-index:2;max-width:660px;">
-  <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:12px;display:flex;align-items:center;gap:6px;"><a href="index.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Home</a><span style="color:rgba(255,255,255,.18);">/</span><span style="color:rgba(255,255,255,.6);">Advisory & consultancy</span></div>
-  <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:#4AABF0;text-transform:uppercase;margin-bottom:10px;">Services · Advisory</div>
-  <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:#fff;line-height:1.18;letter-spacing:-.4px;margin-bottom:12px;">Strategy that aligns technology<br><span style="color:#4AABF0;">with your business goals</span></h1>
-  <p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:540px;margin-bottom:22px;">We help you make the right technology and HR decisions and with no vendor bias and no upsell pressure. Just straight advice from people who've seen what works.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;"><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.68);">No vendor bias</div><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.68);">Technology roadmaps</div><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.68);">Digital transformation</div><div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.68);">Board-level advisory</div></div>
+<div class="svc-hero">
+<div class="svc-hero-grid"></div>
+<div class="svc-hero-glow"></div>
+<div class="svc-hero-inner">
+  <div class="svc-breadcrumb"><a href="index.html" class="svc-bc-link">Home</a><span class="svc-bc-sep">/</span><span class="svc-bc-current">Advisory & consultancy</span></div>
+  <div class="svc-eyebrow-dark">Services · Advisory</div>
+  <h1 class="svc-h1">Strategy that aligns technology<br><span class="svc-h1-accent">with your business goals</span></h1>
+  <p class="svc-hero-p">We help you make the right technology and HR decisions and with no vendor bias and no upsell pressure. Just straight advice from people who've seen what works.</p>
+  <div class="svc-badges"><div class="svc-badge">No vendor bias</div><div class="svc-badge">Technology roadmaps</div><div class="svc-badge">Digital transformation</div><div class="svc-badge">Board-level advisory</div></div>
 </div>
-</div><section style="padding:60px 40px;background:linear-gradient(180deg,#F0F8FF 0%,#fff 80%);">
-<div style="font-size:11px;font-weight:600;letter-spacing:1.2px;color:#1A7EC4;text-transform:uppercase;margin-bottom:8px;" class="fu">Advisory services</div>
-<h2 style="font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,30px);font-weight:700;color:#1C2231;line-height:1.2;margin-bottom:10px;" class="fu d1">The thinking partner your business needs</h2>
-<p style="font-size:14px;color:#545B6B;line-height:1.7;max-width:500px;margin-bottom:36px;" class="fu d2">Before you invest in new technology or HR systems, you need someone in your corner who isn't trying to sell you a product.</p>
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;"><div class="fu d1" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:22px 20px;transition:border-color .15s;"><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:7px;">Technology roadmap development</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">A clear, prioritised plan for your technology investments over the next 12–36 months and aligned to your business strategy, budget, and growth plans.</p><div style='margin-top:12px;'><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Current state IT landscape assessment</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Gap analysis vs growth objectives</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Costed roadmap with phased delivery</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Ongoing roadmap review & update</div></div></div><div class="fu d2" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:22px 20px;transition:border-color .15s;"><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:7px;">Digital transformation planning</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">We help you define what digital transformation means for your organisation and and build a practical, achievable plan your team can deliver.</p><div style='margin-top:12px;'><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Process mapping & efficiency analysis</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Change management planning</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>KPI and measurement framework</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Phased delivery programme</div></div></div><div class="fu d3" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:22px 20px;transition:border-color .15s;"><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:7px;">Procurement & vendor selection</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">Independent guidance on software, hardware, and services procurement and we help you write specs, evaluate vendors, and negotiate contracts.</p><div style='margin-top:12px;'><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Requirements definition & market analysis</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>RFP/RFQ preparation & evaluation</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Vendor presentation & scoring</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Contract review & negotiation</div></div></div><div class="fu d4" style="background:#fff;border:1.5px solid #DCF0FD;border-radius:14px;padding:22px 20px;transition:border-color .15s;"><h3 style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#1C2231;margin-bottom:7px;">Board-level IT & HR advisory</h3><p style="font-size:13px;color:#545B6B;line-height:1.65;">A trusted voice at board and leadership level and translating technology and people strategy into language that drives decisions and unlocks investment.</p><div style='margin-top:12px;'><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Board report preparation</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Risk and opportunity assessment</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Regulatory & compliance guidance</div><div style='display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#545B6B;margin-bottom:4px;'><span style='width:5px;height:5px;border-radius:50%;background:#4AABF0;flex-shrink:0;margin-top:5px;'></span>Investor & stakeholder briefings</div></div></div></div>
-</section><div style="background:#0f172a;padding:56px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
-<div><h2 style="font-family:'Outfit',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#fff;margin-bottom:8px;">Ready to discuss advisory?</h2><p style="font-size:14px;color:rgba(255,255,255,.5);max-width:440px;line-height:1.7;">Book a free discovery call and we'll scope exactly what you need and provide a clear, no obligation proposal.</p></div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="contact.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#0D4F80;padding:11px 24px;border-radius:8px;text-decoration:none;">Book a free IT audit</a><a href="solutions.html" style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);padding:11px 22px;border-radius:8px;text-decoration:none;">Explore services →</a></div>
-</div><footer style="background:#F7F8FA;border-top:1px solid #ECEEF2;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#8A909E;">
-  <div style="display:flex;align-items:center;gap:14px;"><img src="logo-stacked.png" alt="SolvvSpace" style="height:44px;width:auto;mix-blend-mode:multiply;opacity:0.75;"/><span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span></div>
-  <div style="display:flex;gap:18px;"><a href="privacy.html" style="color:#8A909E;text-decoration:none;">Privacy</a><a href="cookies.html" style="color:#8A909E;text-decoration:none;">Cookies</a><a href="https://linkedin.com" target="_blank" style="color:#8A909E;text-decoration:none;">LinkedIn</a><a href="contact.html" style="color:#8A909E;text-decoration:none;">Contact</a></div>
+</div><section class="svc-section">
+<div class="svc-sec-label fu">Advisory services</div>
+<h2 class="svc-h2 fu d1">The thinking partner your business needs</h2>
+<p class="svc-sec-sub fu d2">Before you invest in new technology or HR systems, you need someone in your corner who isn't trying to sell you a product.</p>
+<div class="svc-grid svc-grid-2"><div class="fu d1 svc-card"><h3>Technology roadmap development</h3><p>A clear, prioritised plan for your technology investments over the next 12–36 months and aligned to your business strategy, budget, and growth plans.</p><div class="svc-outcomes"><div><span></span>Current state IT landscape assessment</div><div><span></span>Gap analysis vs growth objectives</div><div><span></span>Costed roadmap with phased delivery</div><div><span></span>Ongoing roadmap review & update</div></div></div><div class="fu d2 svc-card"><h3>Digital transformation planning</h3><p>We help you define what digital transformation means for your organisation and and build a practical, achievable plan your team can deliver.</p><div class="svc-outcomes"><div><span></span>Process mapping & efficiency analysis</div><div><span></span>Change management planning</div><div><span></span>KPI and measurement framework</div><div><span></span>Phased delivery programme</div></div></div><div class="fu d3 svc-card"><h3>Procurement & vendor selection</h3><p>Independent guidance on software, hardware, and services procurement and we help you write specs, evaluate vendors, and negotiate contracts.</p><div class="svc-outcomes"><div><span></span>Requirements definition & market analysis</div><div><span></span>RFP/RFQ preparation & evaluation</div><div><span></span>Vendor presentation & scoring</div><div><span></span>Contract review & negotiation</div></div></div><div class="fu d4 svc-card"><h3>Board-level IT & HR advisory</h3><p>A trusted voice at board and leadership level and translating technology and people strategy into language that drives decisions and unlocks investment.</p><div class="svc-outcomes"><div><span></span>Board report preparation</div><div><span></span>Risk and opportunity assessment</div><div><span></span>Regulatory & compliance guidance</div><div><span></span>Investor & stakeholder briefings</div></div></div></div>
+</section><div class="svc-cta">
+<div><h2 class="svc-cta-h2">Ready to discuss advisory?</h2><p class="svc-cta-p">Book a free discovery call and we'll scope exactly what you need and provide a clear, no obligation proposal.</p></div>
+<div class="svc-cta-btns"><a href="contact.html" class="svc-btn-primary">Book a free IT audit</a><a href="solutions.html" class="svc-btn-ghost">Explore services →</a></div>
+</div><footer class="svc-footer">
+  <div class="svc-footer-left"><img src="logo-stacked.png" alt="SolvvSpace" class="svc-footer-logo"/><span>&copy; 2025 SolvvSpace Limited &middot; Registered in England &amp; Wales (16153942) &middot; Bedford MK41 9ST</span></div>
+  <div class="svc-footer-links"><a href="privacy.html" class="svc-footer-link">Privacy</a><a href="cookies.html" class="svc-footer-link">Cookies</a><a href="https://linkedin.com" target="_blank" class="svc-footer-link">LinkedIn</a><a href="contact.html" class="svc-footer-link">Contact</a></div>
 </footer>
-<script>
-// Scroll fade
-const _obs=new IntersectionObserver(
-  es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),
-  {threshold:.08,rootMargin:'0px 0px -20px 0px'}
-);
-document.querySelectorAll('.fu').forEach(el=>{
-  if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('vis');
-  else _obs.observe(el);
-});
-// Dropdowns
-function closeAll(){
-  document.querySelectorAll('.dd.open,.mega.open').forEach(m=>m.classList.remove('open'));
-  document.querySelectorAll('.nav-dd-btn.open').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');});
-}
-document.querySelectorAll('[data-dd]').forEach(btn=>{
-  btn.addEventListener('click',e=>{
-    e.stopPropagation();
-    const id=btn.dataset.dd;
-    const menu=document.getElementById(id);
-    if(!menu)return;
-    const isOpen=menu.classList.contains('open');
-    closeAll();
-    if(!isOpen){menu.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true');}
-  });
-});
-document.addEventListener('click',closeAll);
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();});
-// Mobile menu
-const hburg=document.getElementById('hburg');
-const mobm=document.getElementById('mobm');
-if(hburg&&mobm){
-  hburg.addEventListener('click',()=>{
-    const open=mobm.classList.toggle('open');
-    hburg.classList.toggle('open',open);
-    hburg.setAttribute('aria-expanded',open);
-    document.body.style.overflow=open?'hidden':'';
-  });
-  mobm.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click',()=>{
-      mobm.classList.remove('open');
-      hburg.classList.remove('open');
-      hburg.setAttribute('aria-expanded','false');
-      document.body.style.overflow='';
-    });
-  });
-}
-</script>
+<script src="js/main.js"></script>
 
 </body></html>
