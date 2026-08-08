@@ -61,22 +61,17 @@
       .fu.d6 {
         transition-delay: 0.42s;
       }
+      .sol-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
       @media (max-width: 900px) {
         nav {
           padding: 0 20px !important;
         }
-        [style*="padding:60px 40px"],
-        [style*="padding:56px 40px"] {
+        section {
           padding: 40px 20px !important;
         }
-        [style*="grid-template-columns:repeat(2"],
-        [style*="grid-template-columns:1fr 1fr"] {
-          grid-template-columns: 1fr !important;
-        }
-        [style*="grid-template-columns:repeat(3"] {
-          grid-template-columns: 1fr !important;
-        }
-        [style*="grid-template-columns:2fr"] {
+        .sol-grid-2 {
           grid-template-columns: 1fr !important;
         }
         footer {
@@ -635,7 +630,7 @@
         The full Microsoft stack, expertly delivered
       </h2>
       <div
-        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px"
+        class="sol-grid-2" style="display: grid; gap: 12px"
       >
         <div
           class="fu d1"
@@ -955,7 +950,7 @@
         Know your risk before someone else finds it
       </h2>
       <div
-        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px"
+        class="sol-grid-2" style="display: grid; gap: 12px"
       >
         <div
           class="fu d1"
@@ -1136,7 +1131,7 @@
         Built for you and not adapted from a template
       </h2>
       <div
-        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px"
+        class="sol-grid-2" style="display: grid; gap: 12px"
       >
         <div
           class="fu d1"
@@ -1360,7 +1355,7 @@
         HR technology that works the way your people do
       </h2>
       <div
-        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px"
+        class="sol-grid-2" style="display: grid; gap: 12px"
       >
         <div
           class="fu d1"
@@ -1493,7 +1488,7 @@
         Your IT department and without the overhead
       </h2>
       <div
-        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px"
+        class="sol-grid-2" style="display: grid; gap: 12px"
       >
         <div
           class="fu d1"
