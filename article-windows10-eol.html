@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Windows 10 end of life and what your business needs to do before October 2025 | SolvvSpace Insights</title>
-<link rel="icon" type="image/png" href="solvvspace-logo.png"/>
+<title>Windows 10 support has ended. What your business should do now | SolvvSpace Insights</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/style.css"/>
 <style>
+
 
 :root{--sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;--sky-400:#4AABF0;--sky-600:#1A7EC4;--sky-800:#0D4F80;--sky-900:#072F50;--slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;--slate-400:#8A909E;--slate-600:#545B6B;--slate-900:#1C2231;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;}
 *{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;}a{text-decoration:none;color:inherit;}
@@ -56,65 +55,54 @@
 .footer-links{display:flex;gap:20px;}.footer-links a{color:var(--slate-400);}.footer-links a:hover{color:var(--sky-600);}
 @media(max-width:900px){.nav{padding:0 20px;}.article-hero,.related-sec,.article-cta{padding:36px 20px;}.article-wrap{padding:36px 20px;}.related-grid{grid-template-columns:1fr;}.article-cta{flex-direction:column;}.footer{padding:16px 20px;}.stat-row{grid-template-columns:1fr 1fr;}}
 </style>
+<link rel="icon" type="image/png" href="solvvspace-logo.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<link rel="stylesheet" href="site.css"/>
 </head>
 <body>
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
-    <img src="solvvspacelogo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
+    <img src="solvvspace-logo.png" alt="" class="nav-brand-globe" width="40" height="40"/>
     <span class="nav-brand-wordmark">SOLVVSPACE</span>
   </a>
   <ul class="nav-links">
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-svc">
-        Services
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+    <li>
+      <button class="nav-dd-btn" data-dd="dd-svc" aria-haspopup="true">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2.5 4l3 3 3-3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd" id="dd-svc">
-        <a class="ddi-wrap" href="service-bespoke.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Bespoke development</a>
-        <a class="ddi-wrap" href="service-cyber.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>Cyber Essentials and security</a>
-        <a class="ddi-wrap" href="service-m365.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>Microsoft 365 deployment</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="service-managed-it.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>IT and managed services</a>
-        <a class="ddi-wrap" href="service-hr.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR systems development</a>
-        <a class="ddi-wrap" href="service-advisory.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Advisory and consultancy</a>
-        <a class="ddi-wrap" href="service-sharepoint.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>SharePoint and Power Apps</a>
+        <a class="ddi-wrap" href="service-m365.html">Microsoft 365 and Azure</a>
+        <a class="ddi-wrap" href="service-cyber.html">Cyber Essentials and security</a>
+        <a class="ddi-wrap" href="service-managed-it.html">IT and managed services</a>
+        <a class="ddi-wrap" href="service-hr.html">HR systems</a>
+        <a class="ddi-wrap" href="service-bespoke.html">Bespoke development</a>
+        <a class="ddi-wrap" href="service-sharepoint.html">SharePoint and Power Apps</a>
+        <a class="ddi-wrap" href="service-advisory.html">Advisory and consultancy</a>
       </div>
     </li>
     <li><a class="nla" href="solutions.html">Solutions</a></li>
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-hub">
-        SS Hub
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+    <li>
+      <button class="nav-dd-btn" data-dd="dd-hub" aria-haspopup="true">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2.5 4l3 3 3-3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd" id="dd-hub">
-        <a class="ddi-wrap" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Products</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hr-consulting.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR and Compliance</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights and learning</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
+        <a class="ddi-wrap" href="hub-products.html">Products</a>
+        <a class="ddi-wrap" href="hr-consulting.html">HR and Compliance</a>
+        <a class="ddi-wrap" href="hub-insights.html">Insights and learning</a>
+        <a class="ddi-wrap" href="hub-tech-updates.html">Technology updates</a>
       </div>
     </li>
-    <li><a class="nla active" href="hub-insights.html">Insights</a></li>
+    <li><a class="nla active" href="hub-insights.html" aria-current="page">Insights</a></li>
     <li><a class="nla" href="about.html">About</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Book a free call</a>
-  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hburg" id="hburg" aria-label="Open menu" aria-controls="mobm" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- Mobile menu -->
-<div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
+<div class="mobm" id="mobm" aria-label="Menu">
   <div class="mob-label">Services</div>
-  <a href="service-bespoke.html">Bespoke development</a>
+  <a href="service-m365.html">Microsoft 365 and Azure</a>
   <a href="service-cyber.html">Cyber Essentials and security</a>
-  <a href="service-m365.html">Microsoft 365 deployment</a>
   <a href="service-managed-it.html">IT and managed services</a>
-  <a href="service-hr.html">HR systems development</a>
-  <a href="service-advisory.html">Advisory and consultancy</a>
+  <a href="service-hr.html">HR systems</a>
+  <a href="service-bespoke.html">Bespoke development</a>
   <a href="service-sharepoint.html">SharePoint and Power Apps</a>
+  <a href="service-advisory.html">Advisory and consultancy</a>
   <div class="mob-label">Explore</div>
   <a href="solutions.html">Solutions</a>
   <a href="hub-products.html">Products</a>
@@ -125,37 +113,44 @@
   <a href="about.html">About</a>
   <a href="contact.html" class="mob-cta">Book a free call</a>
 </div>
+<div class="mob-overlay" id="mob-overlay"></div>
 <div class="article-hero">
   <div class="hero-glow"></div>
   <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><a href="hub-insights.html">Insights</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,.65);">Managed IT</span></div>
   <div class="art-cat">Managed IT</div>
-  <h1 class="art-hero-title">Windows 10 end of life and what your business needs to do before October 2025</h1>
+  <h1 class="art-hero-title">Windows 10 support has ended. What your business should do now</h1>
   <div class="art-meta">
     <div style="display:flex;align-items:center;gap:8px;"><div class="art-av">SS</div><span class="art-author-name">SolvvSpace team</span></div>
-    <span class="art-meta-sep">·</span><span class="art-meta-item">September 2024</span>
+    <span class="art-meta-sep">·</span><span class="art-meta-item">November 2025</span>
     <span class="art-meta-sep">·</span><span class="art-meta-item">5 min read</span>
   </div>
 </div>
 <div class="article-wrap">
   <div class="article-body">
-    <p>Microsoft will end support for Windows 10 on 14 October 2025. After that date, Windows 10 devices will no longer receive security updates, bug fixes, or technical support from Microsoft. For businesses still running Windows 10 across their fleet, this is not an abstract future problem and it is a live risk that needs a plan.</p>
-    
-    <div class="callout"><div class="callout-title">What end of support actually means</div><p>It does not mean Windows 10 stops working on that date. Your computers will still turn on. But without security patches, every new vulnerability discovered after October 2025 will remain unpatched and exploitable. For a business that handles customer data or operates in any regulated sector, this creates real liability.</p></div>
+    <p>Microsoft ended support for Windows 10 on 14 October 2025. Since then, Windows 10 machines receive no security updates, no bug fixes and no technical help from Microsoft unless they are enrolled in paid Extended Security Updates. If any device in your organisation still runs it, that device is the easiest way in for an attacker, and it is likely to fail a Cyber Essentials assessment.</p>
 
-    <div class="visual-block"><div class="visual-title">The Windows 10 end of life timeline</div><div class="timeline">
-  <div class="tl-item"><div class="tl-dot" style="background:#1D9E75;">Now</div><div class="tl-body"><h4>Audit your devices</h4><p>Find out how many devices in your organisation are running Windows 10 and whether they meet the hardware requirements for Windows 11.</p></div></div>
-  <div class="tl-item"><div class="tl-dot" style="background:#1A7EC4;">Q1 25</div><div class="tl-body"><h4>Plan your upgrade path</h4><p>Decide which devices can be upgraded to Windows 11 for free and which need to be replaced. Build a budget and timeline.</p></div></div>
-  <div class="tl-item"><div class="tl-dot" style="background:#d97706;">Q2 25</div><div class="tl-body"><h4>Begin upgrades and replacements</h4><p>Start rolling out Windows 11 upgrades. Replace hardware that cannot be upgraded. Do not leave this until September.</p></div></div>
-  <div class="tl-item"><div class="tl-dot" style="background:#ef4444;">Oct 25</div><div class="tl-body"><h4>End of support deadline</h4><p>14 October 2025. Any device still running Windows 10 after this date receives no further security patches from Microsoft.</p></div></div>
+    <div class="callout"><div class="callout-title">What end of support actually means</div><p>Your computers did not stop working on 14 October. They still turn on and run your software. What changed is that every vulnerability found since then stays open on those machines for good. For anyone handling customer data, or working toward Cyber Essentials, that is a real liability.</p></div>
+
+    <div class="visual-block"><div class="visual-title">Closing the gap, in order</div>
+<div class="timeline">
+  <div class="tl-item"><div class="tl-dot" style="background:#1D9E75;">1</div><div class="tl-body"><h4>Find every Windows 10 device</h4><p>Laptops, desktops, the reception PC, the machine that runs the label printer. Intune or a simple inventory script will list them in minutes.</p></div></div>
+  <div class="tl-item"><div class="tl-dot" style="background:#1A7EC4;">2</div><div class="tl-body"><h4>Check which can run Windows 11</h4><p>Windows 11 needs a TPM 2.0 chip and a supported processor. Machines bought before 2018 often fall short. The free PC Health Check tool answers this per device.</p></div></div>
+  <div class="tl-item"><div class="tl-dot" style="background:#d97706;">3</div><div class="tl-body"><h4>Upgrade or replace</h4><p>Upgrade what can be upgraded for free. Budget to replace the rest, starting with machines that hold sensitive data or face the internet.</p></div></div>
+  <div class="tl-item"><div class="tl-dot" style="background:#0D4F80;">4</div><div class="tl-body"><h4>Cover the stragglers</h4><p>Anything you cannot move straight away should go on Extended Security Updates, or be taken off the network, until it is replaced.</p></div></div>
 </div></div>
 
-    <h2>Can my devices run Windows 11?</h2>
-    <p>Windows 11 has stricter hardware requirements than Windows 10 and most notably a requirement for a TPM 2.0 chip and a compatible processor. Devices purchased before 2018 often do not meet these requirements. The free Microsoft PC Health Check tool will tell you in under a minute whether any given device is compatible. Run it across your fleet before making any decisions.</p>
+    <h2>Your options, plainly</h2>
+    <ul>
+      <li><strong>Upgrade compatible devices to Windows 11.</strong> The upgrade itself is free. The cost is the IT time to test your applications and roll it out properly.</li>
+      <li><strong>Replace devices that cannot upgrade.</strong> Older hardware is usually slower and costlier to support anyway, so this is a sensible point to refresh it.</li>
+      <li><strong>Buy Extended Security Updates as a bridge.</strong> Microsoft sells security updates for Windows 10 business devices for up to three years, priced per device and rising each year. It buys time. It is not a plan.</li>
+      <li><strong>Move work to the cloud.</strong> If your team mostly works in a browser and Microsoft 365, cloud based working reduces how much depends on each local machine.</li>
+    </ul>
 
-    <h2>Your main options</h2>
-    <ul><li><strong>Upgrade compatible devices to Windows 11 for free.</strong> If your hardware meets the requirements, this is straightforward and costs nothing beyond the IT time to do it.</li><li><strong>Replace incompatible devices.</strong> If key machines cannot be upgraded, this is the moment to replace them. Factor in the cost of new hardware in your planning.</li><li><strong>Purchase Extended Security Updates.</strong> Microsoft is offering Extended Security Updates for Windows 10 at a cost and £25 per device for year one, doubling each subsequent year. This buys time but is not a long term solution.</li><li><strong>Accelerate your cloud migration.</strong> If your team works primarily in a browser, moving to cloud based working reduces your dependency on local OS versions entirely.</li></ul>
+    <h2>Does this affect Cyber Essentials?</h2>
+    <p>Yes. Cyber Essentials requires every device in scope to run software that is still supported and receiving security updates. An unsupported Windows 10 machine in scope will fail the assessment unless it is covered by Extended Security Updates or removed from scope.</p>
 
-    <div class="callout"><div class="callout-title">Do not leave this until September 2025</div><p>Every year we see businesses scramble in the final months before a Microsoft deadline. Hardware lead times, IT availability, and budget approvals all take time. Start your audit now and build a realistic plan and Q1 2025 is the right moment to do this, not Q3.</p></div>
+    <div class="callout"><div class="callout-title">Where to start this week</div><p>Run the inventory first. Most organisations find a handful of forgotten machines they did not know were still on Windows 10, and those are exactly the ones that cause trouble.</p></div>
 
     <p style="margin-top:32px;"><a href="hub-insights.html">Back to Insights</a></p>
   </div>
@@ -170,19 +165,23 @@
       <div class="related-body"><div class="related-card-title">How to switch IT supplier without disrupting your business</div><div class="related-read">Read article</div></div>
     </a>    <a class="related-card" href="article-m365-licences.html">
       <div class="related-img" style="background:linear-gradient(135deg,#0078D4,#00B4F0);"><div class="related-cat">Microsoft 365</div></div>
-      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium and which licence does your team need?</div><div class="related-read">Read article</div></div>
+      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium: which licence does your team need?</div><div class="related-read">Read article</div></div>
     </a></div>
 </div>
 <div class="article-cta">
-  <div><h2>Need help auditing your Windows 10 devices?</h2><p>Book a free, no obligation conversation with our team. No sales pitch and just honest advice.</p></div>
+  <div><h2>Still running Windows 10 somewhere?</h2><p>Book a free, no obligation conversation with our team. No sales pitch, just honest advice.</p></div>
   <a href="contact.html" class="art-cta-btn">Book a free device audit</a>
 </div>
+<div class="cert-bar" aria-label="Certifications">
+  <span>Microsoft Gold Partner</span><span>Cyber Essentials</span><span>ITIL and PRINCE2</span><span>Agile PM</span>
+</div>
 <footer class="footer">
-  <div class="footer-logo"><img src="solvvspace-logo.png" alt="" class="nav-brand-globe" aria-hidden="true"/><span>2025 SolvvSpace Limited · Registered in England and Wales (16153942)</span></div>
-  <div class="footer-links"><a href="hub-insights.html">More articles</a><a href="contact.html">Contact</a></div>
+  <a href="index.html" class="footer-brand" aria-label="SolvvSpace home"><img src="solvvspace-logo.png" alt="" width="28" height="28"/><span>SOLVVSPACE</span></a>
+  <span class="footer-legal">&copy; 2026 SolvvSpace Limited. Registered in England and Wales, company number 16153942. Bedford MK41 9ST.</span>
 </footer>
 
-<script src="js/main.js"></script>
 
+
+<script src="site.js"></script>
 </body>
 </html>

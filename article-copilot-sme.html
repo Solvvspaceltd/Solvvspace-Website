@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Microsoft Copilot for small business and should you be using it yet? | SolvvSpace Insights</title>
-<link rel="icon" type="image/png" href="solvvspace-logo.png"/>
+<title>Microsoft Copilot for small business: should you be using it yet? | SolvvSpace Insights</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/style.css"/>
 <style>
+
 
 :root{--sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;--sky-400:#4AABF0;--sky-600:#1A7EC4;--sky-800:#0D4F80;--sky-900:#072F50;--slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;--slate-400:#8A909E;--slate-600:#545B6B;--slate-900:#1C2231;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;}
 *{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;}a{text-decoration:none;color:inherit;}
@@ -56,65 +55,54 @@
 .footer-links{display:flex;gap:20px;}.footer-links a{color:var(--slate-400);}.footer-links a:hover{color:var(--sky-600);}
 @media(max-width:900px){.nav{padding:0 20px;}.article-hero,.related-sec,.article-cta{padding:36px 20px;}.article-wrap{padding:36px 20px;}.related-grid{grid-template-columns:1fr;}.article-cta{flex-direction:column;}.footer{padding:16px 20px;}.stat-row{grid-template-columns:1fr 1fr;}}
 </style>
+<link rel="icon" type="image/png" href="solvvspace-logo.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<link rel="stylesheet" href="site.css"/>
 </head>
 <body>
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
-    <img src="solvvspacelogo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
+    <img src="solvvspace-logo.png" alt="" class="nav-brand-globe" width="40" height="40"/>
     <span class="nav-brand-wordmark">SOLVVSPACE</span>
   </a>
   <ul class="nav-links">
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-svc">
-        Services
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+    <li>
+      <button class="nav-dd-btn" data-dd="dd-svc" aria-haspopup="true">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2.5 4l3 3 3-3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd" id="dd-svc">
-        <a class="ddi-wrap" href="service-bespoke.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Bespoke development</a>
-        <a class="ddi-wrap" href="service-cyber.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>Cyber Essentials and security</a>
-        <a class="ddi-wrap" href="service-m365.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>Microsoft 365 deployment</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="service-managed-it.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>IT and managed services</a>
-        <a class="ddi-wrap" href="service-hr.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR systems development</a>
-        <a class="ddi-wrap" href="service-advisory.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Advisory and consultancy</a>
-        <a class="ddi-wrap" href="service-sharepoint.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>SharePoint and Power Apps</a>
+        <a class="ddi-wrap" href="service-m365.html">Microsoft 365 and Azure</a>
+        <a class="ddi-wrap" href="service-cyber.html">Cyber Essentials and security</a>
+        <a class="ddi-wrap" href="service-managed-it.html">IT and managed services</a>
+        <a class="ddi-wrap" href="service-hr.html">HR systems</a>
+        <a class="ddi-wrap" href="service-bespoke.html">Bespoke development</a>
+        <a class="ddi-wrap" href="service-sharepoint.html">SharePoint and Power Apps</a>
+        <a class="ddi-wrap" href="service-advisory.html">Advisory and consultancy</a>
       </div>
     </li>
     <li><a class="nla" href="solutions.html">Solutions</a></li>
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-hub">
-        SS Hub
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+    <li>
+      <button class="nav-dd-btn" data-dd="dd-hub" aria-haspopup="true">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2.5 4l3 3 3-3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd" id="dd-hub">
-        <a class="ddi-wrap" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Products</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hr-consulting.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR and Compliance</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights and learning</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
+        <a class="ddi-wrap" href="hub-products.html">Products</a>
+        <a class="ddi-wrap" href="hr-consulting.html">HR and Compliance</a>
+        <a class="ddi-wrap" href="hub-insights.html">Insights and learning</a>
+        <a class="ddi-wrap" href="hub-tech-updates.html">Technology updates</a>
       </div>
     </li>
-    <li><a class="nla active" href="hub-insights.html">Insights</a></li>
+    <li><a class="nla active" href="hub-insights.html" aria-current="page">Insights</a></li>
     <li><a class="nla" href="about.html">About</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Book a free call</a>
-  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hburg" id="hburg" aria-label="Open menu" aria-controls="mobm" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- Mobile menu -->
-<div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
+<div class="mobm" id="mobm" aria-label="Menu">
   <div class="mob-label">Services</div>
-  <a href="service-bespoke.html">Bespoke development</a>
+  <a href="service-m365.html">Microsoft 365 and Azure</a>
   <a href="service-cyber.html">Cyber Essentials and security</a>
-  <a href="service-m365.html">Microsoft 365 deployment</a>
   <a href="service-managed-it.html">IT and managed services</a>
-  <a href="service-hr.html">HR systems development</a>
-  <a href="service-advisory.html">Advisory and consultancy</a>
+  <a href="service-hr.html">HR systems</a>
+  <a href="service-bespoke.html">Bespoke development</a>
   <a href="service-sharepoint.html">SharePoint and Power Apps</a>
+  <a href="service-advisory.html">Advisory and consultancy</a>
   <div class="mob-label">Explore</div>
   <a href="solutions.html">Solutions</a>
   <a href="hub-products.html">Products</a>
@@ -125,14 +113,15 @@
   <a href="about.html">About</a>
   <a href="contact.html" class="mob-cta">Book a free call</a>
 </div>
+<div class="mob-overlay" id="mob-overlay"></div>
 <div class="article-hero">
   <div class="hero-glow"></div>
   <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><a href="hub-insights.html">Insights</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,.65);">AI and Copilot</span></div>
   <div class="art-cat">AI and Copilot</div>
-  <h1 class="art-hero-title">Microsoft Copilot for small business and should you be using it yet?</h1>
+  <h1 class="art-hero-title">Microsoft Copilot for small business: should you be using it yet?</h1>
   <div class="art-meta">
     <div style="display:flex;align-items:center;gap:8px;"><div class="art-av">SS</div><span class="art-author-name">SolvvSpace team</span></div>
-    <span class="art-meta-sep">·</span><span class="art-meta-item">January 2025</span>
+    <span class="art-meta-sep">·</span><span class="art-meta-item">June 2026</span>
     <span class="art-meta-sep">·</span><span class="art-meta-item">6 min read</span>
   </div>
 </div>
@@ -141,7 +130,7 @@
     <p>Microsoft Copilot has been one of the most talked about business technology releases in years. It is also one of the most misunderstood. The marketing promises AI woven into everything and drafting emails, summarising meetings, generating reports. The reality for most small businesses is more nuanced, and the question of whether to invest now or wait is a genuinely important one.</p>
     
     <h2>What Copilot actually is</h2>
-    <p>Microsoft 365 Copilot is an AI assistant built into the Office applications you already use and Word, Outlook, Teams, Excel, PowerPoint. It uses large language model technology to help you draft content, summarise information, analyse data, and automate repetitive tasks and all from within the applications your team already works in every day.</p>
+    <p>Microsoft 365 Copilot is an AI assistant built into the Office applications you already use and Word, Outlook, Teams, Excel, PowerPoint. It uses large language model technology to help you draft content, summarise information, analyse data, and automate repetitive tasks, all from within the applications your team already works in every day.</p>
 
     <div class="visual-block"><div class="visual-title">What Copilot can do across M365</div><div class="stat-row">
   <div class="stat-box"><div class="stat-val">Teams</div><div class="stat-label">Summarises meeting recordings, generates action points, drafts follow ups</div></div>
@@ -153,7 +142,7 @@
 </div></div>
 
     <h2>What it actually costs</h2>
-    <p>Copilot for Microsoft 365 is priced at £25.90 per user per month on top of your existing M365 licence. For a team of 20 people, that is approximately £6,200 per year. That is a meaningful investment, and it only makes sense if your team will genuinely use it and which brings us to the readiness question.</p>
+    <p>There are now two routes. The full Microsoft 365 Copilot licence costs around £30 per user per month on top of your existing plan. Since December 2025, organisations with up to 300 users can choose Microsoft 365 Copilot Business instead, a cheaper tier built for smaller businesses and often sold bundled with Business Standard or Premium. Either way it is a meaningful spend across a team, and it only pays off if your people genuinely use it, which brings us to readiness.</p>
 
     <div class="callout"><div class="callout-title">The readiness question most businesses skip</div><p>Copilot works best when your Microsoft 365 environment is well configured and clean data, organised SharePoint, sensible permissions. If your SharePoint is a mess of unsorted documents and your Teams has channels nobody uses, Copilot will surface that mess back at you. The AI is only as good as the information it has access to.</p></div>
 
@@ -163,7 +152,7 @@
     <h2>Our honest recommendation for SMEs</h2>
     <p>If your M365 environment is well set up and your team is genuinely bought in to using AI tools, Copilot can deliver real productivity gains and particularly around meeting summaries and document drafting. If your environment is not yet clean, invest in getting that right first. Switching on Copilot before your data is organised is like hiring a new employee and giving them no training and no filing system. The potential is there, but you will not see it.</p>
 
-    <div class="callout"><div class="callout-title">Start here</div><p>We offer a free Copilot readiness assessment and we review your M365 environment and tell you honestly whether you are in a position to benefit from Copilot today, and if not, what needs to change first.</p></div>
+    <div class="callout"><div class="callout-title">Start here</div><p>We offer a free Copilot readiness assessment. We review your M365 environment and tell you honestly whether you are in a position to benefit from Copilot today, and if not, what needs to change first.</p></div>
 
     <p style="margin-top:32px;"><a href="hub-insights.html">Back to Insights</a></p>
   </div>
@@ -172,7 +161,7 @@
   <div class="related-title">You might also find useful</div>
   <div class="related-grid">    <a class="related-card" href="article-m365-licences.html">
       <div class="related-img" style="background:linear-gradient(135deg,#0078D4,#00B4F0);"><div class="related-cat">Microsoft 365</div></div>
-      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium and which licence does your team need?</div><div class="related-read">Read article</div></div>
+      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium: which licence does your team need?</div><div class="related-read">Read article</div></div>
     </a>    <a class="related-card" href="article-cyber-essentials.html">
       <div class="related-img" style="background:linear-gradient(135deg,#0d4f80,#1A7EC4);"><div class="related-cat">Cyber security</div></div>
       <div class="related-body"><div class="related-card-title">Is Cyber Essentials worth it for a small business?</div><div class="related-read">Read article</div></div>
@@ -182,15 +171,19 @@
     </a></div>
 </div>
 <div class="article-cta">
-  <div><h2>Wondering if your business is ready for Copilot?</h2><p>Book a free, no obligation conversation with our team. No sales pitch and just honest advice.</p></div>
+  <div><h2>Wondering if your business is ready for Copilot?</h2><p>Book a free, no obligation conversation with our team. No sales pitch, just honest advice.</p></div>
   <a href="contact.html" class="art-cta-btn">Book a free Copilot readiness check</a>
 </div>
+<div class="cert-bar" aria-label="Certifications">
+  <span>Microsoft Gold Partner</span><span>Cyber Essentials</span><span>ITIL and PRINCE2</span><span>Agile PM</span>
+</div>
 <footer class="footer">
-  <div class="footer-logo"><img src="solvvspace-logo.png" alt="" class="nav-brand-globe" aria-hidden="true"/><span>2025 SolvvSpace Limited · Registered in England and Wales (16153942)</span></div>
-  <div class="footer-links"><a href="hub-insights.html">More articles</a><a href="contact.html">Contact</a></div>
+  <a href="index.html" class="footer-brand" aria-label="SolvvSpace home"><img src="solvvspace-logo.png" alt="" width="28" height="28"/><span>SOLVVSPACE</span></a>
+  <span class="footer-legal">&copy; 2026 SolvvSpace Limited. Registered in England and Wales, company number 16153942. Bedford MK41 9ST.</span>
 </footer>
 
-<script src="js/main.js"></script>
 
+
+<script src="site.js"></script>
 </body>
 </html>

@@ -4,12 +4,11 @@
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Is Cyber Essentials worth it for a small business? | SolvvSpace Insights</title>
 <meta name="description" content="A straight-talking guide to Cyber Essentials, what it covers, what it costs, and whether your organisation needs it right now."/>
-<link rel="icon" type="image/png" href="logo-stacked.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/style.css"/>
 <style>
+
 
 :root{--sky-50:#F0F8FF;--sky-100:#DCF0FD;--sky-200:#B3DCFA;--sky-400:#4AABF0;--sky-600:#1A7EC4;--sky-800:#0D4F80;--sky-900:#072F50;--slate-50:#F7F8FA;--slate-100:#ECEEF2;--slate-200:#D4D8E0;--slate-400:#8A909E;--slate-600:#545B6B;--slate-900:#1C2231;--fh:'Outfit',sans-serif;--fb:'Inter',sans-serif;}
 *{box-sizing:border-box;margin:0;padding:0;}body{font-family:var(--fb);color:var(--slate-900);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;}a{text-decoration:none;color:inherit;}
@@ -68,65 +67,54 @@
 @media(max-width:900px){.nav{padding:0 20px;}.article-hero,.related-sec,.article-cta{padding:36px 20px;}.article-wrap{padding:36px 20px;}.related-grid{grid-template-columns:1fr 1fr;}.article-cta{flex-direction:column;}.footer{padding:16px 20px;}}
 @media(max-width:600px){.related-grid{grid-template-columns:1fr;}}
 </style>
+<link rel="icon" type="image/png" href="solvvspace-logo.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<link rel="stylesheet" href="site.css"/>
 </head>
 <body>
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
-    <img src="solvvspacelogo.png" alt="" class="nav-brand-globe" aria-hidden="true"/>
+    <img src="solvvspace-logo.png" alt="" class="nav-brand-globe" width="40" height="40"/>
     <span class="nav-brand-wordmark">SOLVVSPACE</span>
   </a>
   <ul class="nav-links">
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-svc">
-        Services
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+    <li>
+      <button class="nav-dd-btn" data-dd="dd-svc" aria-haspopup="true">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2.5 4l3 3 3-3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd" id="dd-svc">
-        <a class="ddi-wrap" href="service-bespoke.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Bespoke development</a>
-        <a class="ddi-wrap" href="service-cyber.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.2v3.5c0 2.4 1.8 4.4 4.5 5 2.7-.6 4.5-2.6 4.5-5V3.2L6.5 1z" stroke="#4AABF0" stroke-width="1.1" stroke-linejoin="round"/></svg></div>Cyber Essentials and security</a>
-        <a class="ddi-wrap" href="service-m365.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#4AABF0"/><rect x="7" y="1" width="5" height="5" rx="1" fill="#4AABF0" opacity=".6"/><rect x="1" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".35"/><rect x="7" y="7" width="5" height="5" rx="1" fill="#4AABF0" opacity=".18"/></svg></div>Microsoft 365 deployment</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="service-managed-it.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M4.5 6.5l2 2 3-3" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>IT and managed services</a>
-        <a class="ddi-wrap" href="service-hr.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR systems development</a>
-        <a class="ddi-wrap" href="service-advisory.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Advisory and consultancy</a>
-        <a class="ddi-wrap" href="service-sharepoint.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="1" width="11" height="11" rx="2" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 6h11M6 6v6" stroke="#4AABF0" stroke-width="1.1"/></svg></div>SharePoint and Power Apps</a>
+        <a class="ddi-wrap" href="service-m365.html">Microsoft 365 and Azure</a>
+        <a class="ddi-wrap" href="service-cyber.html">Cyber Essentials and security</a>
+        <a class="ddi-wrap" href="service-managed-it.html">IT and managed services</a>
+        <a class="ddi-wrap" href="service-hr.html">HR systems</a>
+        <a class="ddi-wrap" href="service-bespoke.html">Bespoke development</a>
+        <a class="ddi-wrap" href="service-sharepoint.html">SharePoint and Power Apps</a>
+        <a class="ddi-wrap" href="service-advisory.html">Advisory and consultancy</a>
       </div>
     </li>
     <li><a class="nla" href="solutions.html">Solutions</a></li>
-    <li style="position:relative;">
-      <button class="nav-dd-btn" data-dd="dd-hub">
-        SS Hub
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2.5 4l3 3 3-3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+    <li>
+      <button class="nav-dd-btn" data-dd="dd-hub" aria-haspopup="true">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2.5 4l3 3 3-3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd" id="dd-hub">
-        <a class="ddi-wrap" href="hub-products.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0"/><rect x="7.5" y="1.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".5"/><rect x="1.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".3"/><rect x="7.5" y="7.5" width="4" height="4" rx="1" fill="#4AABF0" opacity=".15"/></svg></div>Products</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hr-consulting.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="4.5" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><circle cx="9" cy="4" r="1.8" stroke="#4AABF0" stroke-width="1.1"/><path d="M1 11c0-2 1.6-3.5 3.5-3.5m3 0c2 0 3.5 1.5 3.5 3.5" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>HR and Compliance</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-insights.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 4h9M2 7h6M2 10h4" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round"/></svg></div>Insights and learning</a>
-        <div class="ddiv"></div>
-        <a class="ddi-wrap" href="hub-tech-updates.html"><div class="ddi"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="#4AABF0" stroke-width="1.1"/><path d="M6.5 4v3l2 1" stroke="#4AABF0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technology updates</a>
+        <a class="ddi-wrap" href="hub-products.html">Products</a>
+        <a class="ddi-wrap" href="hr-consulting.html">HR and Compliance</a>
+        <a class="ddi-wrap" href="hub-insights.html">Insights and learning</a>
+        <a class="ddi-wrap" href="hub-tech-updates.html">Technology updates</a>
       </div>
     </li>
-    <li><a class="nla active" href="hub-insights.html">Insights</a></li>
+    <li><a class="nla active" href="hub-insights.html" aria-current="page">Insights</a></li>
     <li><a class="nla" href="about.html">About</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Book a free call</a>
-  <button class="hburg" id="hburg" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hburg" id="hburg" aria-label="Open menu" aria-controls="mobm" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- Mobile menu -->
-<div class="mobm" id="mobm" role="dialog" aria-label="Navigation">
+<div class="mobm" id="mobm" aria-label="Menu">
   <div class="mob-label">Services</div>
-  <a href="service-bespoke.html">Bespoke development</a>
+  <a href="service-m365.html">Microsoft 365 and Azure</a>
   <a href="service-cyber.html">Cyber Essentials and security</a>
-  <a href="service-m365.html">Microsoft 365 deployment</a>
   <a href="service-managed-it.html">IT and managed services</a>
-  <a href="service-hr.html">HR systems development</a>
-  <a href="service-advisory.html">Advisory and consultancy</a>
+  <a href="service-hr.html">HR systems</a>
+  <a href="service-bespoke.html">Bespoke development</a>
   <a href="service-sharepoint.html">SharePoint and Power Apps</a>
+  <a href="service-advisory.html">Advisory and consultancy</a>
   <div class="mob-label">Explore</div>
   <a href="solutions.html">Solutions</a>
   <a href="hub-products.html">Products</a>
@@ -137,15 +125,16 @@
   <a href="about.html">About</a>
   <a href="contact.html" class="mob-cta">Book a free call</a>
 </div>
+<div class="mob-overlay" id="mob-overlay"></div>
 
 <div class="article-hero">
   <div class="article-hero-glow"></div>
   <div class="breadcrumb"><a href="index.html">Home</a><span class="bc-sep">/</span><a href="hub-insights.html">Insights</a><span class="bc-sep">/</span><span style="color:rgba(255,255,255,.65);">Cyber Essentials</span></div>
   <div class="art-cat">Cyber security</div>
-  <h1 class="art-hero-title">Is Cyber Essentials worth it for a small business? A straight-talking guide</h1>
+  <h1 class="art-hero-title">Is Cyber Essentials worth it for a small business? A straight talking guide</h1>
   <div class="art-meta">
     <div class="art-author"><div class="art-av">SS</div><span class="art-author-name">SolvvSpace team</span></div>
-    <span class="art-meta-sep">·</span><span class="art-meta-item">March 2025</span>
+    <span class="art-meta-sep">·</span><span class="art-meta-item">November 2026</span>
     <span class="art-meta-sep">·</span><span class="art-meta-item">8 min read</span>
   </div>
 </div>
@@ -169,7 +158,7 @@
     </div>
 
     <h2>What does Cyber Essentials actually cover?</h2>
-    <p>The scheme tests your organisation against five technical controls and the areas where the vast majority of cyber breaches occur:</p>
+    <p>The scheme tests your organisation against five technical controls, the areas where the vast majority of cyber breaches occur:</p>
     <ul>
       <li><strong>Firewalls</strong> and are your network boundaries properly protected?</li>
       <li><strong>Secure configuration</strong> and have you removed unnecessary features and changed default passwords?</li>
@@ -186,13 +175,13 @@
 
     <h2>Cyber Essentials vs Cyber Essentials Plus and what's the difference?</h2>
     <p><strong>Cyber Essentials</strong> is a self assessment. You fill in a questionnaire, an assessor reviews your answers, and if you pass, you receive certification. It's the starting point for most organisations.</p>
-    <p><strong>Cyber Essentials Plus</strong> goes further. An assessor actually tests your systems and running vulnerability scans, checking your patch status, and verifying that your technical controls do what you say they do. It carries more credibility and is increasingly required by larger procurement teams.</p>
+    <p><strong>Cyber Essentials Plus</strong> goes further. An assessor actually tests your systems, running vulnerability scans, checking your patch status, and verifying that your technical controls do what you say they do. It carries more credibility and is increasingly required by larger procurement teams.</p>
     <p>If you're primarily looking to reduce risk and have a defensible security posture, Cyber Essentials is usually the right starting point. If you're selling to enterprise clients or tendering for larger contracts, Cyber Essentials Plus signals a higher level of assurance.</p>
 
     <h2>How much does it cost and how long does it take?</h2>
-    <p>The certification fee itself varies by assessor but typically ranges from <strong>£300–£500 for Cyber Essentials</strong> and <strong>£1,500–£3,000 for Cyber Essentials Plus</strong>, depending on the size of your organisation and the scope being assessed.</p>
-    <p>The real cost is the time and remediation work required to pass. Most organisations have at least some gaps and a device running an outdated OS, a shared admin account, a firewall policy that hasn't been reviewed. Fixing these before assessment is where most of the effort goes.</p>
-    <p>Working with SolvvSpace, organisations typically achieve certification <strong>in four to six weeks</strong> from starting the process. We handle the pre assessment gap analysis, the remediation work, and the submission and so your team's time is minimal.</p>
+    <p>The certification fee itself varies by assessor but typically ranges from <strong>£300 to £500 for Cyber Essentials</strong> and <strong>£1,500 to £3,000 for Cyber Essentials Plus</strong>, depending on the size of your organisation and the scope being assessed.</p>
+    <p>The real cost is the time and remediation work required to pass. Most organisations have at least some gaps: a device running an outdated OS, a shared admin account, a firewall policy that hasn't been reviewed. Fixing these before assessment is where most of the effort goes.</p>
+    <p>Working with SolvvSpace, organisations typically achieve certification <strong>in four to six weeks</strong> from starting the process. We handle the pre assessment gap analysis, the remediation work, and the submission, so your team's time is minimal.</p>
 
     <div class="divider"></div>
 
@@ -213,11 +202,11 @@
     </div>
 
     <h2>How SolvvSpace manages the process</h2>
-    <p>Most organisations attempt Cyber Essentials in-house and either take far longer than expected or fail on their first attempt because the gap analysis wasn't thorough enough. Our approach removes both problems:</p>
+    <p>Most organisations attempt Cyber Essentials in house and either take far longer than expected or fail on their first attempt because the gap analysis wasn't thorough enough. Our approach removes both problems:</p>
     <ul>
-      <li><strong>Week 1–2:</strong> Pre assessment gap analysis and we review your infrastructure, policies, and configurations against all five controls and produce a prioritised remediation list.</li>
-      <li><strong>Week 2–4:</strong> Remediation and we handle the technical fixes directly, or provide your IT team with clear instructions if you prefer to manage this internally.</li>
-      <li><strong>Week 4–6:</strong> Assessment and submission and we complete the questionnaire with you, submit to the certification body, and manage any follow up queries from the assessor.</li>
+      <li><strong>Weeks 1 to 2:</strong> Pre assessment gap analysis. We review your infrastructure, policies, and configurations against all five controls and produce a prioritised remediation list.</li>
+      <li><strong>Weeks 2 to 4:</strong> Remediation. We handle the technical fixes directly, or provide your IT team with clear instructions if you prefer to manage this internally.</li>
+      <li><strong>Weeks 4 to 6:</strong> Assessment and submission. We complete the questionnaire with you, submit to the certification body, and manage any follow up queries from the assessor.</li>
     </ul>
     <p>After certification, we track your renewal date and flag it in advance so your certificate never lapses without notice.</p>
 
@@ -230,9 +219,9 @@
 <div class="related-sec">
   <div class="related-title">You might also find useful</div>
   <div class="related-grid">
-    <a class="related-card" href="article-cyber-insurance.html">
-      <div class="related-img" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&q=80&fit=crop');"><div class="related-cat">Cyber security</div></div>
-      <div class="related-body"><div class="related-card-title">Cyber insurance and Cyber Essentials and what you need to know</div><div class="related-read">Read article →</div></div>
+    <a class="related-card" href="article-windows10-eol.html">
+      <div class="related-img" style="background:linear-gradient(135deg,#1e3a5f,#1A7EC4);"><div class="related-cat">Managed IT</div></div>
+      <div class="related-body"><div class="related-card-title">Windows 10 support has ended. What to do now</div><div class="related-read">Read article →</div></div>
     </a>
     <a class="related-card" href="article-switch-it-supplier.html">
       <div class="related-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80&fit=crop');"><div class="related-cat">Managed IT</div></div>
@@ -240,22 +229,26 @@
     </a>
     <a class="related-card" href="article-m365-licences.html">
       <div class="related-img" style="background-image:url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&q=80&fit=crop');"><div class="related-cat">Microsoft 365</div></div>
-      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium and which licence does your team actually need?</div><div class="related-read">Read article →</div></div>
+      <div class="related-body"><div class="related-card-title">M365 Business Basic vs Premium: which licence does your team actually need?</div><div class="related-read">Read article →</div></div>
     </a>
   </div>
 </div>
 
 <div class="article-cta">
-  <div><h2>Ready to get Cyber Essentials certified?</h2><p>We handle the full process and gap analysis, remediation, and submission and so your team's time is minimal. Most organisations achieve certification in four to six weeks.</p></div>
+  <div><h2>Ready to get Cyber Essentials certified?</h2><p>We handle the full process, from gap analysis to remediation and submission, so your team's time is minimal. Most organisations achieve certification in four to six weeks.</p></div>
   <div style="display:flex;flex-direction:column;gap:10px;"><a href="contact.html" class="art-cta-btn">Book a free pre assessment</a><a href="service-cyber.html" style="font-size:13px;color:rgba(255,255,255,.55);text-align:center;padding:8px;">Learn about our cyber services →</a></div>
 </div>
 
+<div class="cert-bar" aria-label="Certifications">
+  <span>Microsoft Gold Partner</span><span>Cyber Essentials</span><span>ITIL and PRINCE2</span><span>Agile PM</span>
+</div>
 <footer class="footer">
-  <div class="footer-logo"><img src="logo-stacked.png" alt="SolvvSpace"/><span>© 2025 SolvvSpace Limited · Registered in England &amp; Wales (16153942)</span></div>
-  <div class="footer-links"><a href="privacy.html">Privacy</a><a href="hub-insights.html">More articles</a><a href="contact.html">Contact</a></div>
+  <a href="index.html" class="footer-brand" aria-label="SolvvSpace home"><img src="solvvspace-logo.png" alt="" width="28" height="28"/><span>SOLVVSPACE</span></a>
+  <span class="footer-legal">&copy; 2026 SolvvSpace Limited. Registered in England and Wales, company number 16153942. Bedford MK41 9ST.</span>
 </footer>
 
-<script src="js/main.js"></script>
 
+
+<script src="site.js"></script>
 </body>
 </html>

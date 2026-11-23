@@ -1,0 +1,154 @@
+/* ==========================================================================
+   SolvvSpace shared site styles
+   One source of truth for the header, mobile menu, certification strip and
+   footer. Every page links this file AFTER its own <style> block, so these
+   rules win wherever a page still carries an older copy.
+   ========================================================================== */
+
+:root{
+  --ss-navy:#072F50;
+  --ss-navy-2:#0D4F80;
+  --ss-sky:#1A7EC4;
+  --ss-sky-2:#4AABF0;
+  --ss-teal:#0A97B2;
+  --ss-ice:#F0F8FF;
+  --ss-line:#B3DCFA;
+  --ss-ink:#1C2231;
+  --ss-muted:#545B6B;
+  --ss-soft:#8A909E;
+}
+
+/* ---------- Header ---------- */
+.nav{
+  position:sticky;top:0;z-index:500;
+  height:68px;
+  background:var(--ss-ice);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:0 40px;
+  border-bottom:1px solid var(--ss-line);
+}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nav-brand-globe{height:40px;width:40px;object-fit:contain;flex-shrink:0;display:block;background:none;}
+.nav-brand-wordmark{
+  font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;
+  letter-spacing:3px;color:var(--ss-navy);line-height:1;white-space:nowrap;
+}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0;}
+.nav-links>li{position:relative;}
+.nla,.nav-dd-btn{
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:500;
+  color:var(--ss-navy-2);padding:8px 13px;border-radius:7px;
+  display:flex;align-items:center;gap:5px;
+  background:none;border:none;cursor:pointer;text-decoration:none;
+  transition:color .15s,background .15s;
+}
+.nla:hover,.nav-dd-btn:hover,.nla.active,.nav-dd-btn.open{color:var(--ss-navy);background:rgba(13,79,128,.08);}
+.nav-dd-btn svg{transition:transform .18s;stroke:currentColor;}
+.nav-dd-btn.open svg{transform:rotate(180deg);}
+.nav-cta{
+  font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;
+  background:var(--ss-sky);color:#fff;padding:10px 22px;border-radius:999px;
+  text-decoration:none;white-space:nowrap;display:inline-block;border:none;
+  transition:background .15s;
+}
+.nav-cta:hover{background:var(--ss-navy-2);}
+
+/* Dropdowns: text only, light, aligned to the header */
+.dd{
+  position:absolute;top:calc(100% + 10px);left:0;min-width:250px;
+  background:#fff;border:1px solid var(--ss-line);border-radius:12px;padding:8px;
+  box-shadow:0 18px 48px rgba(7,47,80,.14);
+  opacity:0;pointer-events:none;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s;z-index:600;
+}
+.dd.open{opacity:1;pointer-events:auto;transform:none;}
+.ddi-wrap{
+  display:block;padding:9px 12px;border-radius:8px;
+  font-family:'Inter',sans-serif;font-size:14px;color:var(--ss-ink);text-decoration:none;
+  transition:background .12s,color .12s;
+}
+.ddi-wrap:hover{background:var(--ss-ice);color:var(--ss-sky);}
+.ddi{display:none !important;}
+.ddiv{height:1px;background:#E6EEF6;margin:6px 8px;}
+
+/* Burger */
+.hburg{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;padding:9px;background:none;border:none;cursor:pointer;border-radius:8px;}
+.hburg:hover{background:rgba(13,79,128,.08);}
+.hburg span{display:block;width:22px;height:2px;background:var(--ss-navy);border-radius:2px;transition:transform .22s,opacity .22s;}
+.hburg.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hburg.open span:nth-child(2){opacity:0;}
+.hburg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* Mobile menu: slim panel from the right, page dimmed behind */
+.mobm{
+  position:fixed;top:68px;right:0;bottom:0;width:min(300px,86vw);
+  background:#fff;border-left:1px solid var(--ss-line);
+  box-shadow:-12px 0 40px rgba(7,47,80,.12);
+  overflow-y:auto;padding:8px 14px 32px;z-index:460;
+  transform:translateX(105%);transition:transform .26s ease;
+  display:block;visibility:hidden;
+}
+.mobm.open{transform:none;visibility:visible;}
+.mobm a{
+  display:block;padding:11px 12px;border-radius:8px;
+  font-family:'Inter',sans-serif;font-size:15px;font-weight:500;color:var(--ss-navy-2);text-decoration:none;
+}
+.mobm a:hover{background:var(--ss-ice);color:var(--ss-navy);}
+.mob-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--ss-soft);padding:18px 12px 6px;}
+.mobm a.mob-cta{margin-top:18px;text-align:center;background:var(--ss-sky);color:#fff;border-radius:999px;font-family:'Outfit',sans-serif;font-weight:600;}
+.mobm a.mob-cta:hover{background:var(--ss-navy-2);color:#fff;}
+.mob-overlay{position:fixed;inset:68px 0 0 0;background:rgba(7,47,80,.28);z-index:450;opacity:0;pointer-events:none;transition:opacity .26s;}
+.mob-overlay.open{opacity:1;pointer-events:auto;}
+
+@media (max-width:960px){
+  .nav{padding:0 20px;}
+  .nav-links,.nav-cta{display:none;}
+  .hburg{display:flex;}
+}
+@media (max-width:380px){
+  .nav-brand-wordmark{font-size:16px;letter-spacing:2px;}
+}
+
+/* ---------- Certification strip (text only) ---------- */
+.cert-bar{
+  background:#fff;border-top:1px solid #E6EEF6;
+  padding:18px 40px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 26px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ss-muted);
+}
+.cert-bar span{white-space:nowrap;}
+
+/* ---------- Footer ---------- */
+.footer{
+  background:var(--ss-ice);border-top:1px solid var(--ss-line);
+  padding:26px 40px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;
+  font-family:'Inter',sans-serif;font-size:13px;color:var(--ss-muted);
+}
+.footer-brand{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.footer-brand img{height:28px;width:28px;object-fit:contain;}
+.footer-brand span{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;letter-spacing:2.5px;color:var(--ss-navy);}
+.footer-legal{line-height:1.6;}
+.footer-links,.footer-logo{display:none !important;}
+
+@media (max-width:700px){
+  .cert-bar{padding:16px 20px;justify-content:flex-start;font-size:12px;gap:6px 18px;}
+  .footer{padding:22px 20px;flex-direction:column;align-items:flex-start;}
+}
+
+/* Scroll reveal, shared */
+.fu{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.fu.vis{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  .fu{opacity:1;transform:none;transition:none;}
+}
+
+/* ---------- Mobile safety net for older pages that lay out with inline grids ---------- */
+@media (max-width:760px){
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns:repeat(2,1fr)"],
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+  [style*="grid-column:span 2"],[style*="grid-column:1/-1"]{grid-column:auto !important;}
+  [style*="padding:60px 40px"],[style*="padding:52px 40px"],[style*="padding:76px 40px"],[style*="padding:56px 40px"]{padding-left:20px !important;padding-right:20px !important;}
+}
