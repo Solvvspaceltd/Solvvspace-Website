@@ -60,47 +60,32 @@ img{display:block;max-width:100%;}
 @keyframes ss-spin{to{transform:rotate(360deg)}}
 @keyframes ss-float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 6px))}}
 
-.stage{
-  --stage:min(520px,92vw);
-  --cw:clamp(98px,calc(var(--stage) * .29),170px);
-  --r:calc(var(--stage) * .5 - var(--cw) * .5 - 4px);
-  --dur:90s;
-  position:relative;width:var(--stage);height:var(--stage);margin:0 auto;
-}
-.ring{position:absolute;left:50%;top:50%;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;}
-.ring.r1{width:calc(var(--r) * 2);height:calc(var(--r) * 2);border:1px solid rgba(74,171,240,.22);}
-.ring.r2{width:calc(var(--r) * 1.3);height:calc(var(--r) * 1.3);border:1px dashed rgba(74,171,240,.18);}
-.ring-spin{position:absolute;inset:0;animation:ss-spin 140s linear infinite reverse;pointer-events:none;}
-.core{
-  position:absolute;left:50%;top:50%;width:calc(var(--stage) * .27);aspect-ratio:1;
-  transform:translate(-50%,-50%);animation:ss-float 7s ease-in-out infinite;
-}
-.core::before{
-  content:"";position:absolute;inset:-35%;border-radius:50%;
-  background:radial-gradient(circle,rgba(74,171,240,.35) 0%,rgba(10,151,178,.12) 40%,transparent 70%);
-}
+.stage{position:relative;width:min(860px,100%);height:440px;margin:0 auto;}
+.orbit-path{position:absolute;left:50%;top:50%;width:0;height:0;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.orbit-path.back{z-index:1;border:1px solid rgba(74,171,240,.22);clip-path:inset(0 0 50% 0);}
+.orbit-path.front{z-index:55;border:1px solid rgba(74,171,240,.42);clip-path:inset(50% 0 0 0);}
+.core{position:absolute;left:50%;top:50%;width:200px;aspect-ratio:1;z-index:50;transform:translate(-50%,-50%);animation:ss-float 7s ease-in-out infinite;}
+.core::before{content:"";position:absolute;inset:-40%;border-radius:50%;background:radial-gradient(circle,rgba(74,171,240,.38) 0%,rgba(10,151,178,.12) 40%,transparent 70%);}
 .core img{position:relative;width:100%;height:100%;object-fit:contain;}
-
-.orbit{position:absolute;inset:0;animation:ss-spin var(--dur) linear infinite;}
-.sat{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(var(--a)) translateX(var(--r)) rotate(calc(var(--a) * -1));}
-.sat-in{position:absolute;left:0;top:0;width:0;height:0;animation:ss-spin var(--dur) linear infinite reverse;}
 .pc{
-  position:absolute;left:0;top:0;width:var(--cw);transform:translate(-50%,-50%);
-  padding:12px 14px;border-radius:14px;text-align:left;
-  background:rgba(12,40,72,.62);
-  border:1px solid rgba(148,200,240,.22);
-  box-shadow:0 10px 30px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  transition:border-color .2s,background .2s;
+  position:absolute;left:50%;top:50%;width:196px;opacity:0;
+  transform:translate(-50%,-50%);will-change:transform,opacity;
+  padding:14px 16px;border-radius:14px;text-align:left;
+  background:#fff;border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 12px 34px rgba(0,0,0,.35);
+  transition:border-color .35s,background .35s,box-shadow .35s;
 }
-a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
-.pc-k{display:block;font-size:10px;font-weight:600;letter-spacing:1.3px;text-transform:uppercase;color:var(--sky-2);margin-bottom:4px;}
-.pc-v{display:block;font-family:var(--fh);font-size:14px;font-weight:600;line-height:1.3;color:#fff;}
-.stage:hover .orbit,.stage:hover .sat-in,.stage:focus-within .orbit,.stage:focus-within .sat-in{animation-play-state:paused;}
+.pc-k{display:block;font-size:10px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--sky);margin-bottom:4px;}
+.pc-v{display:block;font-family:var(--fh);font-size:15px;font-weight:600;line-height:1.3;color:var(--ink);}
+.pc-go{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--sky);max-height:0;opacity:0;overflow:hidden;transition:max-height .35s,opacity .35s,margin .35s;}
+.pc.front{border-color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 0 5px rgba(74,171,240,.35);}
+.pc.front .pc-go{max-height:20px;opacity:1;margin-top:8px;}
+a.pc:hover{box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 0 5px rgba(74,171,240,.35);}
+.hero-tag{position:relative;z-index:2;margin-top:14px;font-family:var(--fb);font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.75);}
 
 .hero-h1{
   position:relative;z-index:2;
-  margin-top:-4px;
+  margin-top:30px;
   font-family:var(--fh);font-weight:800;white-space:nowrap;
   font-size:clamp(22px,6.2vw,76px);line-height:1.05;letter-spacing:-.02em;
 }
@@ -171,25 +156,26 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
 .out p{font-size:15px;color:var(--muted);line-height:1.65;}
 
 /* =====================================================================
-   HR AND COMPLIANCE: dark band, four columns of text
+   HR AND COMPLIANCE: tiles on the dark band
    ===================================================================== */
 .hr{padding:110px 0;color:#fff;background:linear-gradient(160deg,#072F50 0%,#061f38 100%);position:relative;overflow:hidden;}
 .hr::after{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(74,171,240,.14);box-shadow:0 0 0 80px rgba(74,171,240,.03),0 0 0 160px rgba(74,171,240,.02);pointer-events:none;}
 .hr .eyebrow{color:var(--sky-2);}
 .hr .h2{color:#fff;}
 .hr .lede{color:rgba(255,255,255,.62);}
-.hr-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-top:1px solid rgba(255,255,255,.12);}
-.hr-col{display:block;padding:32px 28px 30px 0;border-right:1px solid rgba(255,255,255,.1);transition:background .25s;}
-.hr-col+.hr-col{padding-left:28px;}
-.hr-col:last-child{border-right:none;}
-.hr-col:hover{background:rgba(255,255,255,.03);}
-.hr-k{font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px;}
-.hr-col:nth-child(odd) .hr-k{color:var(--sky-2);}
-.hr-col:nth-child(even) .hr-k{color:#3FD3B0;}
-.hr-col ul{list-style:none;}
-.hr-col li{font-family:var(--fh);font-size:18px;font-weight:500;line-height:1.4;color:#fff;padding:7px 0;}
-.hr-go{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:14px;font-weight:600;color:rgba(255,255,255,.7);transition:color .2s;}
-.hr-col:hover .hr-go{color:#fff;}
+.hr-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:52px;}
+.hr-tile{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:16px;padding:30px 30px 26px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;}
+.hr-tile::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--c);}
+.hr-tile:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.3);}
+.hr-k{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--c);margin-bottom:10px;}
+.hr-tile h3{font-family:var(--fh);font-size:21px;font-weight:600;line-height:1.3;color:var(--ink);margin-bottom:10px;}
+.hr-tile p{font-size:15px;line-height:1.65;color:var(--muted);flex:1;}
+.hr-go{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:var(--fh);font-size:14px;font-weight:600;color:var(--c);}
+.hr-go svg{transition:transform .25s;}
+.hr-tile:hover .hr-go svg{transform:translateX(4px);}
+.hr-all{position:relative;z-index:1;margin-top:36px;text-align:center;}
+.hr-all a{display:inline-block;font-family:var(--fh);font-size:15px;font-weight:600;color:#fff;padding:12px 26px;border:1px solid rgba(255,255,255,.3);border-radius:999px;transition:background .2s,border-color .2s;}
+.hr-all a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6);}
 
 /* =====================================================================
    TESTIMONIALS
@@ -228,9 +214,6 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
   .svc-d{grid-column:2 / 4;grid-row:2;margin-top:-12px;}
   .out-grid{grid-template-columns:1fr;gap:40px;}
   .out-left{position:static;}
-  .hr-cols{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .hr-col,.hr-col+.hr-col{padding:28px 24px 28px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}
-  .hr-col:nth-child(even){padding-left:24px;border-left:1px solid rgba(255,255,255,.1);}
   .voice-grid{grid-template-columns:1fr;gap:0;}
   .voice,.voice:first-child,.voice:last-child{padding:32px 0;border-left:none;border-top:1px solid #E3EBF3;}
   .voice:first-child{border-top:none;padding-top:0;}
@@ -238,10 +221,14 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
 @media (max-width:640px){
   .wrap{padding:0 20px;}
   .hero{padding:28px 14px 64px;}
-  .stage{--stage:min(380px,94vw);}
-  .pc{padding:9px 10px;border-radius:11px;}
+  .stage{height:360px;}
+  .core{width:112px;}
+  .hero-h1{margin-top:14px;}
+  .pc{width:138px;padding:10px 11px;border-radius:11px;}
   .pc-k{font-size:8.5px;letter-spacing:1px;margin-bottom:2px;}
-  .pc-v{font-size:11.5px;}
+  .pc-v{font-size:12px;}
+  .pc.front .pc-go{margin-top:5px;}
+  .hero-tag{font-size:11.5px;letter-spacing:3.5px;margin-top:10px;}
   .hero-foot{flex-direction:column;gap:28px;text-align:center;margin-top:20px;}
   .hero-sub{font-size:15.5px;}
   .orb-btn{width:112px;height:112px;font-size:13px;}
@@ -253,14 +240,14 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
   .out{grid-template-columns:48px 1fr;gap:14px;padding:22px 0;}
   .out-n{font-size:32px;}
   .out h3{font-size:18px;}
-  .hr-cols{grid-template-columns:1fr;margin-top:36px;}
-  .hr-col,.hr-col+.hr-col,.hr-col:nth-child(even){padding:24px 0;border-left:none;}
-  .hr-col li{font-size:16px;padding:5px 0;}
+  .hr-grid{grid-template-columns:1fr;gap:14px;margin-top:36px;}
+  .hr-tile{padding:24px 22px 22px;}
+  .hr-tile h3{font-size:19px;}
   .voice blockquote{font-size:17px;}
   .close{padding:80px 20px;}
 }
 @media (prefers-reduced-motion:reduce){
-  .orbit,.sat-in,.ring-spin,.core,.stars2,.orb-btn::before{animation:none !important;}
+  .core,.stars2,.orb-btn::before{animation:none !important;}
   html{scroll-behavior:auto;}
 }
 </style>
@@ -269,7 +256,7 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
 <body>
 
 <nav class="nav" aria-label="Main">
-  <a href="index.html" class="nav-brand" aria-label="SolvvSpace home">
+  <a href="./" class="nav-brand" aria-label="SolvvSpace home">
     <img src="solvvspace-logo.png" alt="" class="nav-brand-globe" width="40" height="40"/>
     <span class="nav-brand-wordmark">SOLVVSPACE</span>
   </a>
@@ -277,49 +264,49 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
     <li>
       <button class="nav-dd-btn" data-dd="dd-svc" aria-haspopup="true">Services <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2.5 4l3 3 3-3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd" id="dd-svc">
-        <a class="ddi-wrap" href="service-m365.html">Microsoft 365 and Azure</a>
-        <a class="ddi-wrap" href="service-cyber.html">Cyber Essentials and security</a>
-        <a class="ddi-wrap" href="service-managed-it.html">IT and managed services</a>
-        <a class="ddi-wrap" href="service-hr.html">HR systems</a>
-        <a class="ddi-wrap" href="service-bespoke.html">Bespoke development</a>
-        <a class="ddi-wrap" href="service-sharepoint.html">SharePoint and Power Apps</a>
-        <a class="ddi-wrap" href="service-advisory.html">Advisory and consultancy</a>
+        <a class="ddi-wrap" href="service-m365">Microsoft 365 and Azure</a>
+        <a class="ddi-wrap" href="service-cyber">Cyber Essentials and security</a>
+        <a class="ddi-wrap" href="service-managed-it">IT and managed services</a>
+        <a class="ddi-wrap" href="service-hr">HR systems</a>
+        <a class="ddi-wrap" href="service-bespoke">Bespoke development</a>
+        <a class="ddi-wrap" href="service-sharepoint">SharePoint and Power Apps</a>
+        <a class="ddi-wrap" href="service-advisory">Advisory and consultancy</a>
       </div>
     </li>
-    <li><a class="nla" href="solutions.html">Solutions</a></li>
+    <li><a class="nla" href="solutions">Solutions</a></li>
     <li>
       <button class="nav-dd-btn" data-dd="dd-hub" aria-haspopup="true">SS Hub <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2.5 4l3 3 3-3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="dd" id="dd-hub">
-        <a class="ddi-wrap" href="hub-products.html">Products</a>
-        <a class="ddi-wrap" href="hr-consulting.html">HR and Compliance</a>
-        <a class="ddi-wrap" href="hub-insights.html">Insights and learning</a>
-        <a class="ddi-wrap" href="hub-tech-updates.html">Technology updates</a>
+        <a class="ddi-wrap" href="hub-products">Products</a>
+        <a class="ddi-wrap" href="hr-consulting">HR and Compliance</a>
+        <a class="ddi-wrap" href="hub-insights">Insights and learning</a>
+        <a class="ddi-wrap" href="hub-tech-updates">Technology updates</a>
       </div>
     </li>
-    <li><a class="nla" href="hub-insights.html">Insights</a></li>
-    <li><a class="nla" href="about.html">About</a></li>
+    <li><a class="nla" href="hub-insights">Insights</a></li>
+    <li><a class="nla" href="about">About</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Book a free call</a>
+  <a href="contact" class="nav-cta">Book a free call</a>
   <button class="hburg" id="hburg" aria-label="Open menu" aria-controls="mobm" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobm" id="mobm" aria-label="Menu">
   <div class="mob-label">Services</div>
-  <a href="service-m365.html">Microsoft 365 and Azure</a>
-  <a href="service-cyber.html">Cyber Essentials and security</a>
-  <a href="service-managed-it.html">IT and managed services</a>
-  <a href="service-hr.html">HR systems</a>
-  <a href="service-bespoke.html">Bespoke development</a>
-  <a href="service-sharepoint.html">SharePoint and Power Apps</a>
-  <a href="service-advisory.html">Advisory and consultancy</a>
+  <a href="service-m365">Microsoft 365 and Azure</a>
+  <a href="service-cyber">Cyber Essentials and security</a>
+  <a href="service-managed-it">IT and managed services</a>
+  <a href="service-hr">HR systems</a>
+  <a href="service-bespoke">Bespoke development</a>
+  <a href="service-sharepoint">SharePoint and Power Apps</a>
+  <a href="service-advisory">Advisory and consultancy</a>
   <div class="mob-label">Explore</div>
-  <a href="solutions.html">Solutions</a>
-  <a href="hub-products.html">Products</a>
-  <a href="hr-consulting.html">HR and Compliance</a>
-  <a href="hub-insights.html">Insights and learning</a>
-  <a href="hub-tech-updates.html">Technology updates</a>
+  <a href="solutions">Solutions</a>
+  <a href="hub-products">Products</a>
+  <a href="hr-consulting">HR and Compliance</a>
+  <a href="hub-insights">Insights and learning</a>
+  <a href="hub-tech-updates">Technology updates</a>
   <div class="mob-label">Company</div>
-  <a href="about.html">About</a>
-  <a href="contact.html" class="mob-cta">Book a free call</a>
+  <a href="about">About</a>
+  <a href="contact" class="mob-cta">Book a free call</a>
 </div>
 <div class="mob-overlay" id="mob-overlay"></div>
 
@@ -330,22 +317,20 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
   <div class="stars" aria-hidden="true"></div>
   <div class="stars2" aria-hidden="true"></div>
 
-  <div class="stage">
-    <div class="ring r1" aria-hidden="true"></div>
-    <div class="ring-spin" aria-hidden="true"><div class="ring r2"></div></div>
+  <div class="stage" aria-label="What we do">
+    <div class="orbit-path back" aria-hidden="true"></div>
+    <div class="orbit-path front" aria-hidden="true"></div>
     <div class="core" aria-hidden="true"><img src="solvvspace-logo-light.png" alt=""/></div>
-
-    <div class="orbit">
-      <div class="sat" style="--a:-90deg"><div class="sat-in"><a class="pc" href="service-m365.html"><span class="pc-k">Microsoft 365</span><span class="pc-v">Deployed, secured and managed</span></a></div></div>
-      <div class="sat" style="--a:-30deg"><div class="sat-in"><a class="pc" href="service-cyber.html"><span class="pc-k">Cyber Essentials</span><span class="pc-v">Certification, start to finish</span></a></div></div>
-      <div class="sat" style="--a:30deg"><div class="sat-in"><a class="pc" href="service-managed-it.html"><span class="pc-k">Managed IT</span><span class="pc-v">Monitored around the clock</span></a></div></div>
-      <div class="sat" style="--a:90deg"><div class="sat-in"><a class="pc" href="hr-consulting.html"><span class="pc-k">HR and compliance</span><span class="pc-v">Employment law, handled</span></a></div></div>
-      <div class="sat" style="--a:150deg"><div class="sat-in"><a class="pc" href="service-bespoke.html"><span class="pc-k">Bespoke apps</span><span class="pc-v">Built on Power Platform</span></a></div></div>
-      <div class="sat" style="--a:210deg"><div class="sat-in"><a class="pc" href="hub-products.html"><span class="pc-k">Our products</span><span class="pc-v">HR, Payslip, IT Support, Clashd</span></a></div></div>
-    </div>
+    <a class="pc" href="service-m365"><span class="pc-k">Microsoft 365</span><span class="pc-v">Deployed, secured and managed</span><span class="pc-go">Explore</span></a>
+    <a class="pc" href="service-cyber"><span class="pc-k">Cyber Essentials</span><span class="pc-v">Certification, start to finish</span><span class="pc-go">Explore</span></a>
+    <a class="pc" href="service-managed-it"><span class="pc-k">Managed IT</span><span class="pc-v">Monitored around the clock</span><span class="pc-go">Explore</span></a>
+    <a class="pc" href="hr-consulting"><span class="pc-k">HR and compliance</span><span class="pc-v">Employment law, handled</span><span class="pc-go">Explore</span></a>
+    <a class="pc" href="service-bespoke"><span class="pc-k">Bespoke apps</span><span class="pc-v">Built on Power Platform</span><span class="pc-go">Explore</span></a>
+    <a class="pc" href="hub-products"><span class="pc-k">Our products</span><span class="pc-v">HR, Payslip, IT Support, Clashd</span><span class="pc-go">Explore</span></a>
   </div>
 
   <h1 class="hero-h1" id="hero-title"><span class="w1">Solve</span><span class="dot">.</span> <span class="w2">Transform</span><span class="dot">.</span> <span class="w3">Innovate</span><span class="dot">.</span></h1>
+  <p class="hero-tag">Modern Workplace Specialist</p>
 
   <div class="hero-foot">
     <p class="hero-sub">IT, HR and Microsoft 365 expertise for organisations that want technology to work as hard as they do. Based in Bedford, working across the UK, Sierra Leone and beyond.</p>
@@ -368,16 +353,16 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
     </div>
 
     <div class="svc-list">
-      <a class="svc fu" href="service-m365.html"><span class="svc-n">01</span><span class="svc-t">Microsoft 365 and Azure</span><span class="svc-d">Deployment, migration, licence optimisation and Copilot readiness.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="svc fu" href="service-cyber.html"><span class="svc-n">02</span><span class="svc-t">Cyber Essentials and security</span><span class="svc-d">System audits, certification and managed endpoint protection.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="svc fu" href="service-managed-it.html"><span class="svc-n">03</span><span class="svc-t">IT and managed services</span><span class="svc-d">Helpdesk, monitoring, backup and a virtual IT director when you need one.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="svc fu" href="service-hr.html"><span class="svc-n">04</span><span class="svc-t">HR systems</span><span class="svc-d">Records, onboarding, leave and performance, running inside your own tenant.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="svc fu" href="service-bespoke.html"><span class="svc-n">05</span><span class="svc-t">Bespoke development</span><span class="svc-d">Custom applications and integrations built around how you actually work.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="svc fu" href="service-sharepoint.html"><span class="svc-n">06</span><span class="svc-t">SharePoint and Power Apps</span><span class="svc-d">Intranets, automation and low code apps your team will adopt.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="svc fu" href="service-advisory.html"><span class="svc-n">07</span><span class="svc-t">Advisory and consultancy</span><span class="svc-d">Technology roadmaps and strategy that hold together for the next three years.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="svc fu" href="service-m365"><span class="svc-n">01</span><span class="svc-t">Microsoft 365 and Azure</span><span class="svc-d">Deployment, migration, licence optimisation and Copilot readiness.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="svc fu" href="service-cyber"><span class="svc-n">02</span><span class="svc-t">Cyber Essentials and security</span><span class="svc-d">System audits, certification and managed endpoint protection.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="svc fu" href="service-managed-it"><span class="svc-n">03</span><span class="svc-t">IT and managed services</span><span class="svc-d">Helpdesk, monitoring, backup and a virtual IT director when you need one.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="svc fu" href="service-hr"><span class="svc-n">04</span><span class="svc-t">HR systems</span><span class="svc-d">Records, onboarding, leave and performance, running inside your own tenant.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="svc fu" href="service-bespoke"><span class="svc-n">05</span><span class="svc-t">Bespoke development</span><span class="svc-d">Custom applications and integrations built around how you actually work.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="svc fu" href="service-sharepoint"><span class="svc-n">06</span><span class="svc-t">SharePoint and Power Apps</span><span class="svc-d">Intranets, automation and low code apps your team will adopt.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="svc fu" href="service-advisory"><span class="svc-n">07</span><span class="svc-t">Advisory and consultancy</span><span class="svc-d">Technology roadmaps and strategy that hold together for the next three years.</span><span class="svc-go"><span>Explore</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
 
-    <a class="svc-more fu" href="solutions.html">See the Microsoft technologies we work with <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="svc-more fu" href="solutions">See the Microsoft technologies we work with <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
 
@@ -388,7 +373,7 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
       <div class="eyebrow fu">What changes</div>
       <h2 class="h2 fu d1" id="out-title">Measured by what changes, not hours billed.</h2>
       <p class="lede fu d2">Every engagement is judged on what is different inside your organisation once we have finished.</p>
-      <a class="text-link fu d3" href="contact.html">Start with a free discovery call <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="text-link fu d3" href="contact">Start with a free discovery call <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <ol class="out-list">
       <li class="out fu"><span class="out-n">01</span><div><h3>Hours back, every week</h3><p>Manual steps cut and approvals automated, so time goes to the work that matters rather than to IT tickets.</p></div></li>
@@ -410,12 +395,14 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
       </div>
       <p class="lede fu d2">Practical support for employers, from the difficult conversation this week to the employment law change next year.</p>
     </div>
-    <div class="hr-cols">
-      <a class="hr-col fu" href="hr-consulting.html#hr"><div class="hr-k">HR consulting</div><ul><li>Disciplinaries and investigations</li><li>Absence and Bradford Factor</li><li>Policies that hold up at tribunal</li></ul><span class="hr-go">Learn more <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="hr-col fu d1" href="hr-consulting.html#business"><div class="hr-k">Business consulting</div><ul><li>Operational efficiency reviews</li><li>Workforce cost optimisation</li><li>Process improvement</li></ul><span class="hr-go">Learn more <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="hr-col fu d2" href="hr-consulting.html#compliance"><div class="hr-k">Compliance and risk</div><ul><li>Employment law updates</li><li>HR audits and risk reviews</li><li>Governance support</li></ul><span class="hr-go">Learn more <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <a class="hr-col fu d3" href="hr-consulting.html#training"><div class="hr-k">Training and development</div><ul><li>Manager training</li><li>HR workshops</li><li>Leadership coaching</li></ul><span class="hr-go">Learn more <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <div class="hr-grid">
+      <a class="hr-tile fu" href="hr-consulting#hr" style="--c:#1A7EC4;"><div class="hr-k">HR consulting</div><h3>Employee relations, absence and HR policies</h3><p>Disciplinary and grievance support, Bradford Factor frameworks and policies that hold up at tribunal, handled by experienced HR professionals.</p><span class="hr-go">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="hr-tile fu d1" href="hr-consulting#business" style="--c:#0E9F6E;"><div class="hr-k">Business consulting</div><h3>Operational efficiency and workforce cost</h3><p>Process reviews, workforce cost modelling and leadership support to help your organisation run leaner and more effectively.</p><span class="hr-go">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="hr-tile fu d2" href="hr-consulting#compliance" style="--c:#7C3AED;"><div class="hr-k">Compliance and risk</div><h3>Employment law updates, audits and governance</h3><p>Stay ahead of Employment Rights Act changes, SSP updates and new obligations, with audits and governance that protect your organisation.</p><span class="hr-go">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="hr-tile fu d3" href="hr-consulting#training" style="--c:#D97706;"><div class="hr-k">Training and development</div><h3>Manager training, workshops and coaching</h3><p>Practical, scenario based training for managers handling employee relations, probation and absence, plus coaching for emerging leaders.</p><span class="hr-go">Learn more <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
+    <div class="hr-all fu"><a href="hr-consulting">View all HR and Compliance services</a></div>
+  
   </div>
 </section>
 
@@ -427,7 +414,7 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
     <div class="voice-grid">
       <figure class="voice fu">
         <div class="voice-logo"><img src="logo-missamy.png" alt="Miss Amy's Daycare" width="56" height="56"/></div>
-        <blockquote>"I was nervous about the whole thing. I run a nursery, not a tech company. But honestly, they just got it. The website looks exactly how I imagined it, and the systems actually make my day easier. I didn't feel like just another client."</blockquote>
+        <blockquote>"I was nervous about the whole thing. Running a nursery is my world, not technology. But honestly, they just got it. The website looks exactly how I imagined it, and the systems actually make my day easier. I didn't feel like just another client."</blockquote>
         <figcaption class="voice-by"><strong>Miss Amy</strong><span>Founder, Miss Amy's Daycare</span></figcaption>
       </figure>
       <figure class="voice fu d1">
@@ -437,7 +424,7 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
       </figure>
       <figure class="voice fu d2">
         <div class="voice-logo"><span class="bmark">BENEVOLENT<small>SECONDARY SCHOOL</small></span></div>
-        <blockquote>"Before this, we were drowning in spreadsheets. Now everything is in one place and the staff actually use it, which tells you everything. It was built around how we work, not how a tech company thinks we should work."</blockquote>
+        <blockquote>"Before this, we were drowning in spreadsheets. Now everything is in one place and the staff actually use it, which tells you everything. It was built around how we actually work, not the other way round."</blockquote>
         <figcaption class="voice-by"><strong>School Administrator</strong><span>Benevolent Secondary School</span></figcaption>
       </figure>
     </div>
@@ -449,19 +436,67 @@ a.pc:hover{border-color:rgba(74,171,240,.7);background:rgba(16,56,98,.8);}
   <div class="stars" aria-hidden="true"></div>
   <h2 id="close-title" class="fu">Let's solve it.</h2>
   <p class="fu d1">Tell us what is slowing you down. A free, no obligation call is the first step.</p>
-  <a class="orb-btn" href="contact.html"><span>Book a<br/>call</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <a class="orb-btn" href="contact"><span>Book a<br/>call</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </section>
 
 </main>
 
-<div class="cert-bar" aria-label="Certifications">
-  <span>Microsoft Gold Partner</span><span>Cyber Essentials</span><span>ITIL and PRINCE2</span><span>Agile PM</span>
-</div>
 <footer class="footer">
-  <a href="index.html" class="footer-brand" aria-label="SolvvSpace home"><img src="solvvspace-logo.png" alt="" width="28" height="28"/><span>SOLVVSPACE</span></a>
-  <span class="footer-legal">&copy; 2026 SolvvSpace Limited. Registered in England and Wales, company number 16153942. Bedford MK41 9ST.</span>
+  <div class="footer-top">
+    <a href="./" class="footer-brand" aria-label="SolvvSpace home"><img src="solvvspace-logo.png" alt="" width="28" height="28"/><span>SOLVVSPACE</span></a>
+    <ul class="footer-certs" aria-label="Certifications"><li>Cyber Essentials</li><li>ITIL and PRINCE2</li><li>Agile PM</li></ul>
+  </div>
+  <p class="footer-legal">&copy; 2026 SolvvSpace Limited. Modern Workplace Specialist. Registered in England and Wales, company number 16153942. Bedford, United Kingdom.</p>
 </footer>
 
+<script>
+/* Hero orbit: cards circle the globe on a tilted path and rest for three seconds when they reach the front. */
+(function(){
+  var stage=document.querySelector('.stage'); if(!stage) return;
+  var cards=[].slice.call(stage.querySelectorAll('.pc'));
+  var paths=stage.querySelectorAll('.orbit-path');
+  var N=cards.length, STEP=2*Math.PI/N, HOLD=3000, MOVE=1600;
+  var rot=0, from=0, phase='hold', t0=performance.now(), pausedAt=null, rx=0, ry=0;
+  var still=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function measure(){
+    var w=stage.clientWidth, h=stage.clientHeight, cw=cards[0].offsetWidth, ch=0;
+    cards.forEach(function(c){ ch=Math.max(ch,c.offsetHeight); });
+    rx=Math.max(80, w/2 - cw*0.66/2 - 4);
+    ry=Math.max(50, h/2 - (ch+24)/2 - 4);
+    for(var i=0;i<paths.length;i++){ paths[i].style.width=(2*rx)+'px'; paths[i].style.height=(2*ry)+'px'; }
+  }
+  function draw(){
+    cards.forEach(function(c,i){
+      var a=Math.PI/2 + i*STEP - rot, depth=(Math.sin(a)+1)/2, s=0.5+0.5*depth*depth;
+      c.style.transform='translate(-50%,-50%) translate('+(Math.cos(a)*rx).toFixed(1)+'px,'+(Math.sin(a)*ry).toFixed(1)+'px) scale('+s.toFixed(3)+')';
+      c.style.zIndex=depth>0.5 ? String(60+Math.round(depth*40)) : String(2+Math.round(depth*40));
+      c.style.opacity=(0.25+0.75*depth*depth).toFixed(3);
+      c.classList.toggle('front', phase==='hold' && depth>0.98);
+    });
+  }
+  function ease(p){ return p<.5 ? 4*p*p*p : 1-Math.pow(-2*p+2,3)/2; }
+  function tick(now){
+    if(pausedAt===null){
+      if(phase==='hold' && now-t0>=HOLD){ phase='move'; t0=now; from=rot; }
+      else if(phase==='move'){
+        var p=Math.min(1,(now-t0)/MOVE); rot=from+STEP*ease(p);
+        if(p>=1){ phase='hold'; t0=now; }
+      }
+    }
+    draw(); requestAnimationFrame(tick);
+  }
+  function pause(){ if(pausedAt===null) pausedAt=performance.now(); }
+  function resume(){ if(pausedAt!==null){ t0+=performance.now()-pausedAt; pausedAt=null; } }
+  stage.addEventListener('mouseenter',pause); stage.addEventListener('mouseleave',resume);
+  stage.addEventListener('focusin',pause); stage.addEventListener('focusout',resume);
+  document.addEventListener('visibilitychange',function(){ if(document.hidden) pause(); else resume(); });
+  function relayout(){ measure(); draw(); }
+  window.addEventListener('resize',relayout); window.addEventListener('load',relayout);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+  relayout();
+  if(!still) requestAnimationFrame(tick);
+})();
+</script>
 <script src="site.js"></script>
 </body>
 </html>

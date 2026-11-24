@@ -152,3 +152,15 @@
   [style*="grid-column:span 2"],[style*="grid-column:1/-1"]{grid-column:auto !important;}
   [style*="padding:60px 40px"],[style*="padding:52px 40px"],[style*="padding:76px 40px"],[style*="padding:56px 40px"]{padding-left:20px !important;padding-right:20px !important;}
 }
+
+/* ---------- Footer, sorted (Nov 2026): brand and certifications on one line, legal below ---------- */
+.footer{display:block;padding:30px 40px 26px;}
+.footer-top{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid #D6E8F7;}
+.footer-certs{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;}
+.footer-certs li{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;color:var(--ss-navy-2);background:#fff;border:1px solid var(--ss-line);border-radius:999px;padding:5px 13px;white-space:nowrap;}
+.footer-legal{padding-top:16px;font-size:12.5px;line-height:1.6;color:var(--ss-soft);}
+.cert-bar{display:none !important;}
+@media (max-width:700px){
+  .footer{padding:24px 20px 22px;}
+  .footer-top{flex-direction:column;align-items:flex-start;}
+}
